@@ -1,0 +1,158 @@
+{"source": "main", "key": "Introduction", "index": 0, "type": "line", "text": "A stranger?... Hello.", "emotion": null, "condition": null}
+{"source": "main", "key": "Introduction", "index": 1, "type": "line", "text": "Don't mind me. I just live out here alone.", "emotion": null, "condition": null}
+{"source": "main", "key": "AcceptGift_(O)StardropTea", "index": 0, "type": "line", "text": "This means a lot to me, @. I'll save it for a quiet day in the tent. Thank you!", "emotion": null, "condition": null}
+{"source": "main", "key": "AcceptGift_(O)Book_Trash", "index": 0, "type": "line", "text": "I don't usually read books... But this one is right up my 'alley'... Thank you!", "emotion": "happy", "condition": null}
+{"source": "main", "key": "AcceptGift_Positive_category_greens", "index": 0, "type": "line", "text": "That's a good find! I'm always happy when eating wild food. Thank you.", "emotion": null, "condition": null}
+{"source": "main", "key": "married", "index": 0, "type": "line", "text": "I thought about tying the knot, once. But now, I'm happily married to the wind rustling in the leaves, and the frogs croaking under the silver moon.", "emotion": null, "condition": null}
+{"source": "main", "key": "GreenRain", "index": 0, "type": "line", "text": "All these strange trees will be gone tomorrow... it's one of the mysteries of nature.", "emotion": null, "condition": null}
+{"source": "main", "key": "GreenRainFinished", "index": 0, "type": "line", "text": "How did the moss harvest go? Hehe... My bed is a lot softer now.", "emotion": null, "condition": null}
+{"source": "main", "key": "GreenRain_2", "index": 0, "type": "line", "text": "I've already gathered enough moss for the entire year. How about you?", "emotion": null, "condition": null}
+{"source": "main", "key": "AcceptGift_(O)774", "index": 0, "type": "line", "text": "Let me see... it looks perfect. You're a good student, @.", "emotion": "happy", "condition": null}
+{"source": "main", "key": "AcceptGift_(O)166", "index": 0, "type": "line", "text": "No, thank you. I have no desire for money... In fact, I think it's cursed.", "emotion": null, "condition": null}
+{"source": "main", "key": "AcceptGift_Positive_category_fish", "index": 0, "type": "line", "text": "Ah, that looks fresh. I'll be eating good tonight!", "emotion": "happy", "condition": null}
+{"source": "main", "key": "reject_869", "index": 0, "type": "line", "text": "What do you have there? Looks like it would make good bait.", "emotion": "happy", "condition": null}
+{"source": "main", "key": "cc_Boulder", "index": 0, "type": "line", "text": "My old friend, the glimmering boulder, has moved on. It may not seem like an important event, but to me it's a big change.", "emotion": null, "condition": null}
+{"source": "main", "key": "cc_Boulder", "index": 1, "type": "line", "text": "I'm happy for the old rock to see more of the world, though.", "emotion": "happy", "condition": null}
+{"source": "main", "key": "mineArea_80", "index": 0, "type": "line", "text": "Very few people have gone as deep into the mines as you have.", "emotion": null, "condition": null}
+{"source": "main", "key": "eventSeen_8357109", "index": 0, "type": "line", "text": "The water here comes from glaciers high up in the mountains.", "emotion": null, "condition": null}
+{"source": "main", "key": "eventSeen_8357109", "index": 1, "type": "line", "text": "I traveled to the source once, just to pay my respects to the water.", "emotion": null, "condition": null}
+{"source": "main", "key": "movieTheater", "index": 0, "type": "line", "text": "Movie theater? Hmm... for me, the slow procession of nature is all the drama I need.", "emotion": null, "condition": null}
+{"source": "main", "key": "MovieInvitation", "index": 0, "type": "line", "text": "Oh... me? I usually wouldn't, but... okay. It's nice of you to think about me.", "emotion": null, "condition": null}
+{"source": "main", "key": "MovieInvitation", "index": 1, "type": "line", "text": "I'll head over there in a little while.", "emotion": null, "condition": null}
+{"source": "main", "key": "DumpsterDiveComment", "index": 0, "type": "line", "text": "Find anything good?", "emotion": "happy", "condition": null}
+{"source": "main", "key": "Mon", "index": 0, "type": "line", "text": "The crisp air of the wilderness is all I care to know.", "emotion": null, "condition": null}
+{"source": "main", "key": "Mon", "index": 1, "type": "line", "text": "I live out here by choice.", "emotion": null, "condition": null}
+{"source": "main", "key": "Tue", "index": 0, "type": "line", "text": "...Have you come to ridicule me?", "emotion": null, "condition": null}
+{"source": "main", "key": "Tue", "index": 1, "type": "line", "text": "I'm just minding my own business.", "emotion": null, "condition": null}
+{"source": "main", "key": "Wed", "index": 0, "type": "line", "text": "I don't know you well enough to trust you. Sorry.", "emotion": null, "condition": null}
+{"source": "main", "key": "Thu", "index": 0, "type": "line", "text": "...Hmm? Do you want something from me?", "emotion": null, "condition": null}
+{"source": "main", "key": "Fri", "index": 0, "type": "line", "text": "Please don't destroy my tent.", "emotion": null, "condition": null}
+{"source": "main", "key": "Fri", "index": 1, "type": "line", "text": "It's happened before.", "emotion": "sad", "condition": null}
+{"source": "main", "key": "Sat", "index": 0, "type": "line", "text": "I'm happy by myself, you know.", "emotion": null, "condition": null}
+{"source": "main", "key": "Sat", "index": 1, "type": "line", "text": "I don't need new friends.", "emotion": null, "condition": null}
+{"source": "main", "key": "Sun4", "index": 0, "type": "line", "text": "It would be nice if the townspeople could accept me for who I am.", "emotion": "sad", "condition": null}
+{"source": "main", "key": "Sun4", "index": 1, "type": "line", "text": "I like living out here in the open air. That's what they don't understand.", "emotion": null, "condition": null}
+{"source": "main", "key": "Tue4", "index": 0, "type": "line", "text": "You can learn to survive in the wild. I have.", "emotion": null, "condition": null}
+{"source": "main", "key": "Tue4", "index": 1, "type": "line", "text": "I think we all have a hidden urge to return to nature. It's just a little scary to make the leap.", "emotion": null, "condition": null}
+{"source": "main", "key": "Wed6", "index": 0, "type": "line", "text": "I spend a lot of time thinking.", "emotion": null, "condition": null}
+{"source": "main", "key": "Wed6", "index": 1, "type": "line", "text": "If you can fully understand the reasons behind your thoughts, you'll have reached a new level of being.", "emotion": null, "condition": null}
+{"source": "main", "key": "Wed2", "index": 0, "type": "line", "text": "I have to be wary of strangers. Most people don't like a 'wild man'.", "emotion": null, "condition": null}
+{"source": "main", "key": "Thu4", "index": 0, "type": "line", "text": "The people here seem nice, but they avoid me.", "emotion": null, "condition": null}
+{"source": "main", "key": "Thu4", "index": 1, "type": "line", "text": "People are afraid of the unknown.", "emotion": "unhappy", "condition": null}
+{"source": "main", "key": "Fri4", "index": 0, "type": "line", "text": "You can learn a lot from trees.", "emotion": null, "condition": null}
+{"source": "main", "key": "Fri4", "index": 1, "type": "line", "text": "Spend time with them and they might tell you their secrets.", "emotion": null, "condition": null}
+{"source": "main", "key": "Fri4", "index": 2, "type": "line", "text": "Go in peace, young one.", "emotion": null, "condition": null}
+{"source": "main", "key": "Sat4", "index": 0, "type": "line", "text": "I have everything I need to survive, and more. Nature plays a wonderful tune if you can only learn to listen.", "emotion": null, "condition": null}
+{"source": "main", "key": "Sun", "index": 0, "type": "line", "text": "Someone was throwing rocks at my tent last night... I just had to wait it out.", "emotion": "sad", "condition": "linusVandal"}
+{"source": "main", "key": "Sun", "index": 1, "type": "line", "text": "I don't like to stay in one place for too long. There's just too much to experience in the world.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Mon4", "index": 0, "type": "line", "text": "During all these years I've discovered a few secrets about life.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Mon4", "index": 1, "type": "line", "text": "You'll have to find out for yourself.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Mon", "index": 0, "type": "line", "text": "I saw a heron wading gracefully through the morning mist. Such are the treasures of a quiet life.", "emotion": null, "condition": "LinusHeron"}
+{"source": "main", "key": "summer_Mon", "index": 1, "type": "line", "text": "It's so easy to get caught up in the noise of modern life. Your best years will pass you by in a formless blur. That's why you've got to learn to slow down.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Tue4", "index": 0, "type": "line", "text": "How have you been, my young friend?", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Wed6", "index": 0, "type": "line", "text": "Ah... summer. The warm sun heats up the cans for me.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Wed6", "index": 1, "type": "line", "text": "Then at night I've got a warm meal to look forward to.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Thu4", "index": 0, "type": "line", "text": "I have my own reasons for living alone like this.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Thu4", "index": 1, "type": "line", "text": "Some things are best left unsaid...", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Thu4", "index": 2, "type": "line", "text": "I should do some foraging.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Fri4", "index": 0, "type": "line", "text": "Whenever you catch a fish, take a moment to thank it for its sacrifice.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Fri4", "index": 1, "type": "line", "text": "Even if you don't believe in the spirit of the fish, it's a good mental exercise. We need to be aware of our effect on the environment.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Sat4", "index": 0, "type": "line", "text": "You can find rainbow trout in streams right now.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Sun", "index": 0, "type": "line", "text": "This is an easier time of year for me. I don't have to worry about staying warm.", "emotion": null, "condition": null}
+{"source": "main", "key": "summer_Sun", "index": 1, "type": "line", "text": "Plus, the fruits of the wild are growing everywhere.", "emotion": null, "condition": null}
+{"source": "main", "key": "fall_Mon", "index": 0, "type": "line", "text": "I've explored deep into the caves.", "emotion": null, "condition": null}
+{"source": "main", "key": "fall_Mon", "index": 1, "type": "line", "text": "They hold some hidden secrets.", "emotion": null, "condition": null}
+{"source": "main", "key": "fall_Mon", "index": 2, "type": "line", "text": "Just be cautious if you go in there.", "emotion": null, "condition": null}
+{"source": "main", "key": "fall_Tue4", "index": 0, "type": "line", "text": "Some joker sprayed paint all over my home during the night... It took hours to scrub it off this morning.", "emotion": null, "condition": "LinusFall1"}
+{"source": "main", "key": "fall_Tue4", "index": 1, "type": "line", "text": "I need to start gathering lumber for the winter.", "emotion": null, "condition": null}
+{"source": "main", "key": "fall_Tue4", "index": 2, "type": "line", "text": "Do you have enough lumber to keep your house warm?", "emotion": null, "condition": null}
+{"source": "main", "key": "fall_Wed4", "index": 0, "type": "line", "text": "I don't have many responsibilities, so I spend my time thinking.", "emotion": null, "condition": null}
+{"source": "main", "key": "fall_Wed4", "index": 1, "type": "line", "text": "You have to understand your thoughts before you can control them.", "emotion": null, "condition": null}
+{"source": "main", "key": "fall_Sun", "index": 0, "type": "line", "text": "I don't like to stay in one place for too long.", "emotion": null, "condition": null}
+{"source": "main", "key": "fall_Sun6", "index": 0, "type": "line", "text": "There's nothing quite like a feast of wild mushrooms in the fall.", "emotion": "happy", "condition": null}
+{"source": "main", "key": "winter_Mon", "index": 0, "type": "line", "text": "It can get really cold if you live in a tent.", "emotion": "sad", "condition": null}
+{"source": "main", "key": "winter_Mon4", "index": 0, "type": "line", "text": "After you've truly unplugged from the modern way of life, you'll start to really enjoy the simple things... like the sun, a ripe fruit, or finding a stick with the exact shape you were looking for.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Tue4", "index": 0, "type": "line", "text": "Thanks for not shunning me, @. It takes a lot of wisdom to override your base instincts.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Tue4", "index": 1, "type": "line", "text": "I'm a human like everyone else. I just have a different lifestyle.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Wed4", "index": 0, "type": "line", "text": "I'm sure you understand why I'm cautious of strangers.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Wed4", "index": 1, "type": "line", "text": "But let's put that in the past, okay? You and I are friends now, I think.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Thu4", "index": 0, "type": "line", "text": "Winter is tough, but you can still fish and forage to get by.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Thu4", "index": 1, "type": "line", "text": "If you have any animals you should keep them inside.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Fri4", "index": 0, "type": "line", "text": "The trees go to sleep during the winter. It makes it a bit lonely out here.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Fri4", "index": 1, "type": "line", "text": "But I wouldn't deny them their beauty sleep.", "emotion": "happy", "condition": null}
+{"source": "main", "key": "winter_Sat4", "index": 0, "type": "line", "text": "Thanks for stopping by. I was actually feeling a little lonely this morning.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Sat4", "index": 1, "type": "line", "text": "So, have you discovered anything interesting in the mines?", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Sun", "index": 0, "type": "line", "text": "Sleeping on the ground is good for my back.", "emotion": null, "condition": null}
+{"source": "main", "key": "winter_Sun", "index": 1, "type": "line", "text": "It's best to look at the positive side of things.", "emotion": "happy", "condition": null}
+{"source": "rainy", "key": "Linus", "index": 0, "type": "line", "text": "A warm rain is a pleasant way to get clean.", "emotion": "happy", "condition": null}
+{"source": "festival", "key": "fall16:Linus", "index": 0, "type": "line", "text": "These animals never judge people by their looks. The same can't be said for humans.", "emotion": null, "condition": null}
+{"source": "festival", "key": "fall16:Linus_y2", "index": 0, "type": "line", "text": "Animals are kind of like little people... they also have feelings and emotions.", "emotion": null, "condition": null}
+{"source": "festival", "key": "fall27:Linus", "index": 0, "type": "line", "text": "Good show, old friend.", "emotion": null, "condition": null}
+{"source": "festival", "key": "fall27:Linus_y2", "index": 0, "type": "line", "text": "Haha! Another fine creation, my old friend.", "emotion": null, "condition": null}
+{"source": "festival", "key": "spring13:Linus", "index": 0, "type": "line", "text": "No one really talks to me... I just come for the deviled eggs.", "emotion": null, "condition": null}
+{"source": "festival", "key": "spring13:Linus_y2", "index": 0, "type": "line", "text": "I'll just slip in a little later and have some food. I'm eyeing that scrumptious looking pie!", "emotion": null, "condition": null}
+{"source": "festival", "key": "spring24:Linus", "index": 0, "type": "line", "text": "Oh, hello there. It's nice of you to talk to me.", "emotion": null, "condition": null}
+{"source": "festival", "key": "spring24:Linus", "index": 1, "type": "line", "text": "Spring is almost over... what a shame.", "emotion": null, "condition": null}
+{"source": "festival", "key": "spring24:Linus_y2", "index": 0, "type": "line", "text": "Did you have a successful salmonberry harvest?", "emotion": null, "condition": null}
+{"source": "festival", "key": "spring24:Linus_y2", "index": 1, "type": "line", "text": "I picked enough to make a sweet and tangy jelly! I brought some today for everyone to taste.", "emotion": null, "condition": null}
+{"source": "festival", "key": "summer11:Linus", "index": 0, "type": "line", "text": "A slow, continuous rotation is key to achieving the perfect roast.", "emotion": null, "condition": null}
+{"source": "festival", "key": "summer11:Linus_y2", "index": 0, "type": "line", "text": "Ah, can you smell that?", "emotion": null, "condition": null}
+{"source": "festival", "key": "summer11:Linus_y2", "index": 1, "type": "line", "text": "It's a signal that the roast is almost ready!", "emotion": null, "condition": null}
+{"source": "festival", "key": "summer28:Linus", "index": 0, "type": "line", "text": "I'll just sneak up when the jellies arrive... I don't want to bother anyone.", "emotion": null, "condition": null}
+{"source": "festival", "key": "summer28:Linus_y2", "index": 0, "type": "line", "text": "I noticed no one else was using this dock, so I quietly snuck down.", "emotion": null, "condition": null}
+{"source": "festival", "key": "summer28:Linus_y2", "index": 1, "type": "line", "text": "I like watching the jellies, too.", "emotion": null, "condition": null}
+{"source": "festival", "key": "winter25:Linus", "index": 0, "type": "line", "text": "I'd join in... but I don't think I'm welcome.", "emotion": "sad", "condition": null}
+{"source": "festival", "key": "winter25:Linus_y2", "index": 0, "type": "line", "text": "The mayor personally invited me to his table. I couldn't turn that down!", "emotion": null, "condition": null}
+{"source": "festival", "key": "winter8:Linus", "index": 0, "type": "line", "text": "Igloo-building's an art I picked up from the tundra dwellers who live beyond the frozen sea.", "emotion": null, "condition": null}
+{"source": "festival", "key": "winter8:Linus", "index": 1, "type": "line", "text": "That was many years ago.", "emotion": "happy", "condition": null}
+{"source": "festival", "key": "winter8:Linus", "index": 2, "type": "line", "text": "An Igloo makes a nice home, but it's easier to just stay in my tent year-round.", "emotion": null, "condition": null}
+{"source": "festival", "key": "winter8:Linus_y2", "index": 0, "type": "line", "text": "Ahh... The forest has entered her long slumber for the winter...", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#0", "index": 0, "type": "line", "text": "Wait!", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#1", "index": 0, "type": "line", "text": "Hello, Leo... My name's Linus.", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#1", "index": 1, "type": "line", "text": "I've heard all about you, and your parrot family.", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#1", "index": 2, "type": "line", "text": "It's really something special!", "emotion": "happy", "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#2", "index": 0, "type": "line", "text": "Leo...", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#2", "index": 1, "type": "line", "text": "I'd like you to come back with us, to Stardew Valley.", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#2", "index": 2, "type": "line", "text": "It's a beautiful place... not as warm as here, but still full of life... and I live right in the middle of it!", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#2", "index": 3, "type": "line", "text": "I know the lay of the land, and many things about the waters, the trees, the animals, and more...", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#2", "index": 4, "type": "line", "text": "You see... I'm a child of nature, too. You might say we're 'birds of a feather'.", "emotion": "happy", "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#2", "index": 5, "type": "line", "text": "But, I'm getting old... And I'd like to teach someone all that I've learned before moving on...", "emotion": "sad", "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#2", "index": 6, "type": "line", "text": "Leo... will you come back with us?", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#3", "index": 0, "type": "line", "text": "Well, let's not forget... the choice is really up to Leo...", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#4", "index": 0, "type": "line", "text": "I understand. This is Leo's home, after all.", "emotion": "sad", "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#5", "index": 0, "type": "line", "text": "...It's hard to make changes. But sometimes it's for the best.", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#5", "index": 1, "type": "line", "text": "Still... the choice is really up to Leo.", "emotion": null, "condition": null}
+{"source": "event", "key": "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved#6", "index": 0, "type": "line", "text": "Great!", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#0", "index": 0, "type": "line", "text": "@! Come stand next to the firepit. It feels great.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#1", "index": 0, "type": "line", "text": "I was hoping you'd come by sometime.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#2", "index": 0, "type": "line", "text": "I wanted to say sorry for mistrusting you at first.", "emotion": "sad", "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#2", "index": 1, "type": "line", "text": "Most people don't treat me well, so I've learned to be cautious.", "emotion": "sad", "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#3", "index": 0, "type": "line", "text": "But you've been uncommonly nice to me. You're a unique person.", "emotion": "happy", "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#3", "index": 1, "type": "line", "text": "...And I consider you a good friend.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#4", "index": 0, "type": "line", "text": "Hey, I want to show you something. Come inside.", "emotion": "happy", "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#5", "index": 0, "type": "line", "text": "Ah... there we go. See this? It's a special kind of fish bait that I make.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#5", "index": 1, "type": "line", "text": "It's top quality stuff... I'd eat it myself!", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:26/f Linus 1000/w sunny/t 2000 2400#5", "index": 2, "type": "line", "text": "Here, I want you to have the recipe.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#0", "index": 0, "type": "line", "text": "That's very nice of you, but no thanks! I've had great luck foraging today.", "emotion": "happy", "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#1", "index": 0, "type": "line", "text": "Er...", "emotion": "sad", "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#1", "index": 1, "type": "line", "text": "Um... No, thanks.", "emotion": "sad", "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#2", "index": 0, "type": "line", "text": "I appreciate the kindness... I really do...", "emotion": "sad", "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#2", "index": 1, "type": "line", "text": "But... I've told you before... I choose to live this way...", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#3", "index": 0, "type": "line", "text": "I like to be alone most of the time... I like the quiet sounds... moving with the rhythm of nature...", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#3", "index": 1, "type": "line", "text": "It's a way of life that I'm comfortable with. I don't ever want to change that.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#4", "index": 0, "type": "line", "text": "@... I cherish our friendship very much. And I know you do, too.", "emotion": "happy", "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#4", "index": 1, "type": "line", "text": "But... You don't need to try and 'help' me... I know best how to live my own life... okay?", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26#5", "index": 0, "type": "line", "text": "...can you smell that? It's the sweet aroma of ripe berries...", "emotion": "happy", "condition": null}
+{"source": "event", "key": "Mountain:linusWell#0", "index": 0, "type": "line", "text": "Thanks, @. You had me worried, there... I thought you were going to ask me to move on to the farm with you! *wink*", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:linusWell#0", "index": 1, "type": "line", "text": "You know, I consider you my closest friend in the valley... you've never tried to 'fix' me... you respect my way of life, even if you don't understand it.", "emotion": "happy", "condition": null}
+{"source": "event", "key": "Mountain:linusWell#0", "index": 2, "type": "line", "text": "I really appreciate that.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:linusWell#1", "index": 0, "type": "line", "text": "Ah... can you smell that? It's the sweet aroma of ripe berries...", "emotion": "happy", "condition": null}
+{"source": "event", "key": "Mountain:8357109/w sunny/t 600 1900/n linusTrashCleanup#0", "index": 0, "type": "line", "text": "Ahhh... that feels good.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:8357109/w sunny/t 600 1900/n linusTrashCleanup#1", "index": 0, "type": "line", "text": "The water's never been cleaner.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:8357109/w sunny/t 600 1900/n linusTrashCleanup#2", "index": 0, "type": "line", "text": "...And the same goes for me! Hehehe.", "emotion": null, "condition": null}
+{"source": "event", "key": "Mountain:8959199/w sunny/t 600 1900/e 6497428/f Leo 2250/F#0", "index": 0, "type": "line", "text": "Not yet...", "emotion": null, "condition": null}
+{"source": "event", "key": "Town:502969/w sunny/f Linus 50/j 7/t 2000 2400#0", "index": 0, "type": "line", "text": "It was me... I'm sorry.", "emotion": "sad", "condition": null}
+{"source": "event", "key": "Town:502969/w sunny/f Linus 50/j 7/t 2000 2400#1", "index": 0, "type": "line", "text": "I find a lot of hot, fresh food in these cans... stuff that will go to waste if I don't take it.", "emotion": null, "condition": null}
+{"source": "event", "key": "Town:502969/w sunny/f Linus 50/j 7/t 2000 2400#2", "index": 0, "type": "branch", "text": "$y 'Do you think there's something wrong with what I'm doing?_Yes, it's disgusting._Disgusting to you, maybe. To me, it's a way of life. And I haven't gotten sick yet. I only eat things that look fresh._No. It's a shame for food to go to waste._Thanks, @. I knew you were an open-minded person. I feel good about what I'm doing. I'm not harming anyone.$h_Yes, it's illegal. That's George's private property._I don't believe in 'private property'. Besides, what do you want me to do? I need this food to survive. Have a heart.$s_No, but you should get a job and stop leeching off others._**Sigh**...#$b#Not everyone's cut out for this world, @. You don't know what it's like to be me. I'm not harming anyone, I just want to live life in my own way. Is that so wrong?'", "emotion": null, "condition": null}
+{"source": "event", "key": "Town:502969/w sunny/f Linus 50/j 7/t 2000 2400#3", "index": 0, "type": "line", "text": "You can go on home. I promise I won't rummage in George's can anymore.", "emotion": null, "condition": null}
+{"source": "event", "key": "Town:502969/w sunny/f Linus 50/j 7/t 2000 2400#3", "index": 1, "type": "line", "text": "You can tell him you scared off the raccoons for good.", "emotion": null, "condition": null}

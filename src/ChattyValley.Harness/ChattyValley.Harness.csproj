@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    net10.0 so it runs natively on the only installed runtime. It references the net6.0 Core
+    (a higher TFM can consume a lower one). LLamaSharp packages are added via the CLI so the
+    latest valid version is pinned into this file.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>ChattyValley.Harness</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChattyValley.Core\ChattyValley.Core.csproj" />
+  </ItemGroup>
+
+  <!-- Copy character JSON next to the exe so the harness finds it without path juggling. -->
+  <ItemGroup>
+    <None Include="..\..\characters\**\*.json" Link="characters\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LLamaSharp" Version="0.27.0" />
+    <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.27.0" />
+  </ItemGroup>
+
+</Project>

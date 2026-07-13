@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Dumps a Stardew Valley content asset that is a Dictionary<string,string> (dialogue, events,
+    festivals, gift tastes) to JSON, using the GAME'S OWN MonoGame ContentManager. That means the
+    exact same decompression + deserialization the game uses, with no SMAPI and no writes into the
+    Steam install. MonoGame.Framework and any game deps are resolved from the game folder at runtime.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ChattyValley.DialogueDump</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\MonoGame.Framework.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

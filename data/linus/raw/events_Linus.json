@@ -1,0 +1,45 @@
+{
+  "IslandSouth:6497428/e 6497423/f Leo 1500/w sunny/t 600 1800/Hl leoMoved": [
+    "Wait!",
+    "Hello, Leo... My name's Linus.#$b#I've heard all about you, and your parrot family.#$b#It's really something special!$h",
+    "Leo...#$b#I'd like you to come back with us, to Stardew Valley.#$b#It's a beautiful place... not as warm as here, but still full of life... and I live right in the middle of it!#$b#I know the lay of the land, and many things about the waters, the trees, the animals, and more...#$b#You see... I'm a child of nature, too. You might say we're 'birds of a feather'.$h#$b#But, I'm getting old... And I'd like to teach someone all that I've learned before moving on...$s#$b#Leo... will you come back with us?",
+    "Well, let's not forget... the choice is really up to Leo...",
+    "I understand. This is Leo's home, after all.$s",
+    "...It's hard to make changes. But sometimes it's for the best.#$b#Still... the choice is really up to Leo.",
+    "Great!"
+  ],
+  "Mountain:26/f Linus 1000/w sunny/t 2000 2400": [
+    "@! Come stand next to the firepit. It feels great.",
+    "I was hoping you'd come by sometime.",
+    "I wanted to say sorry for mistrusting you at first.$s#$b#Most people don't treat me well, so I've learned to be cautious.$s",
+    "But you've been uncommonly nice to me. You're a unique person.$h#$b#...And I consider you a good friend.",
+    "Hey, I want to show you something. Come inside.$h",
+    "Ah... there we go. See this? It's a special kind of fish bait that I make.#$b#It's top quality stuff... I'd eat it myself!#$b#Here, I want you to have the recipe."
+  ],
+  "Mountain:371652/f Linus 2000/w sunny/t 600 1700/a 12 26": [
+    "That's very nice of you, but no thanks! I've had great luck foraging today.$h",
+    "Er...$s#$b#Um... No, thanks.$s",
+    "I appreciate the kindness... I really do...$s#$b#But... I've told you before... I choose to live this way...",
+    "I like to be alone most of the time... I like the quiet sounds... moving with the rhythm of nature...#$b#It's a way of life that I'm comfortable with. I don't ever want to change that.",
+    "@... I cherish our friendship very much. And I know you do, too.$h#$b#But... You don't need to try and 'help' me... I know best how to live my own life... okay?",
+    "...can you smell that? It's the sweet aroma of ripe berries...$h"
+  ],
+  "Mountain:linusWell": [
+    "Thanks, @. You had me worried, there... I thought you were going to ask me to move on to the farm with you! *wink*#$b#You know, I consider you my closest friend in the valley... you've never tried to 'fix' me... you respect my way of life, even if you don't understand it.$h#$b#I really appreciate that.",
+    "Ah... can you smell that? It's the sweet aroma of ripe berries...$h"
+  ],
+  "Mountain:8357109/w sunny/t 600 1900/n linusTrashCleanup": [
+    "Ahhh... that feels good.$4",
+    "The water's never been cleaner.$4",
+    "...And the same goes for me! Hehehe.$5"
+  ],
+  "Mountain:8959199/w sunny/t 600 1900/e 6497428/f Leo 2250/F": [
+    "Not yet..."
+  ],
+  "Town:502969/w sunny/f Linus 50/j 7/t 2000 2400": [
+    "It was me... I'm sorry.$s",
+    "I find a lot of hot, fresh food in these cans... stuff that will go to waste if I don't take it.",
+    "$y 'Do you think there's something wrong with what I'm doing?_Yes, it's disgusting._Disgusting to you, maybe. To me, it's a way of life. And I haven't gotten sick yet. I only eat things that look fresh._No. It's a shame for food to go to waste._Thanks, @. I knew you were an open-minded person. I feel good about what I'm doing. I'm not harming anyone.$h_Yes, it's illegal. That's George's private property._I don't believe in 'private property'. Besides, what do you want me to do? I need this food to survive. Have a heart.$s_No, but you should get a job and stop leeching off others._**Sigh**...#$b#Not everyone's cut out for this world, @. You don't know what it's like to be me. I'm not harming anyone, I just want to live life in my own way. Is that so wrong?'",
+    "You can go on home. I promise I won't rummage in George's can anymore.#$b#You can tell him you scared off the raccoons for good."
+  ]
+}

@@ -1,0 +1,12 @@
+# Build output
+bin/
+obj/
+.vs/
+
+# Models are large and downloaded on demand, never committed
+models/
+*.gguf
+
+# Trained adapters (Stage 1b artifacts) live outside git
+adapters/
+*.safetensors

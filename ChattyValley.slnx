@@ -1,6 +1,9 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/ChattyValley.Core/ChattyValley.Core.csproj" />
+    <Project Path="src/ChattyValley.Runtime/ChattyValley.Runtime.csproj" />
+    <Project Path="src/ChattyValley.Sidecar/ChattyValley.Sidecar.csproj" />
     <Project Path="src/ChattyValley.Harness/ChattyValley.Harness.csproj" />
+    <!-- ChattyValley.Mod builds separately (needs SMAPI in the game folder); see its README. -->
   </Folder>
 </Solution>

@@ -16,14 +16,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ChattyValley.Core\ChattyValley.Core.csproj" />
+    <ProjectReference Include="..\ChattyValley.Runtime\ChattyValley.Runtime.csproj" />
   </ItemGroup>
 
   <!-- Copy character JSON next to the exe so the harness finds it without path juggling. -->
   <ItemGroup>
     <None Include="..\..\characters\**\*.json" Link="characters\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
+  <!-- Managed LLamaSharp comes transitively via ChattyValley.Runtime; the exe still needs the
+       native CPU backend deployed alongside it. -->
   <ItemGroup>
-    <PackageReference Include="LLamaSharp" Version="0.27.0" />
     <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.27.0" />
   </ItemGroup>
 

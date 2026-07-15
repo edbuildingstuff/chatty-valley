@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    net6.0 to match Stardew Valley 1.6 + SMAPI 4.x. This mod is a THIN CLIENT: it does no inference
+    in-process (LLamaSharp 0.27.0 pins .NET 10 dependencies that cannot load in the .NET 6 game). It
+    references only ChattyValley.Core (pure persona/prompt code, no native deps) and talks to the
+    out-of-process ChattyValley.Sidecar over a named pipe. That keeps the mod free of any .NET 10
+    assemblies, so SMAPI can rewrite and load it cleanly.
+    Requires SMAPI installed into the game folder (Pathoschild.Stardew.ModBuildConfig references it).
+  -->
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>ChattyValley.Mod</RootNamespace>
+    <EnableModDeploy>true</EnableModDeploy>
+    <EnableModZip>false</EnableModZip>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.3.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChattyValley.Core\ChattyValley.Core.csproj" />
+  </ItemGroup>
+
+  <!-- Ship the character JSON next to the mod. The sidecar exe + GGUFs are deployed/configured
+       separately (see README): the sidecar into ./sidecar/, the GGUF paths via config.json. -->
+  <ItemGroup>
+    <None Include="..\..\characters\**\*.json" Link="characters\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

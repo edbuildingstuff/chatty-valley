@@ -9,6 +9,8 @@ public sealed class ChatTemplate
     public string System { get; init; } = "{system}";
     public string Prompt { get; init; } = "{prompt}";
     public string ResponseStart { get; init; } = "";
+    /// <summary>A completed assistant turn in the history (its full text plus the end marker).</summary>
+    public string AssistantTurn { get; init; } = "{response}";
 
     /// <summary>ChatML, the format Qwen2.5 and many small instruct models use.</summary>
     public static ChatTemplate ChatML => new()
@@ -16,6 +18,7 @@ public sealed class ChatTemplate
         System = "<|im_start|>system\n{system}<|im_end|>\n",
         Prompt = "<|im_start|>user\n{prompt}<|im_end|>\n",
         ResponseStart = "<|im_start|>assistant\n",
+        AssistantTurn = "<|im_start|>assistant\n{response}<|im_end|>\n",
     };
 
     /// <summary>
@@ -29,6 +32,7 @@ public sealed class ChatTemplate
         System = "<|im_start|>system\n{system}<|im_end|>\n",
         Prompt = "<|im_start|>user\n{prompt}<|im_end|>\n",
         ResponseStart = "<|im_start|>assistant\n",
+        AssistantTurn = "<|im_start|>assistant\n{response}<|im_end|>\n",
     };
 
     public string Render(string system, string prompt) =>

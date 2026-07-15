@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    The out-of-process inference sidecar. LLamaSharp 0.27.0 pins .NET 10-era dependencies, which cannot
+    load in the .NET 6 game process, so inference runs here (net10) and the net6 SMAPI mod talks to it
+    over a named pipe. From the player's side it is still zero-setup: the mod spawns and manages this
+    process; nothing is configured by hand. (A future in-process P/Invoke path can replace this.)
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>ChattyValley.Sidecar</AssemblyName>
+    <RootNamespace>ChattyValley.Sidecar</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChattyValley.Runtime\ChattyValley.Runtime.csproj" />
+    <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.27.0" />
+  </ItemGroup>
+
+</Project>

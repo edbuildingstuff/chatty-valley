@@ -71,4 +71,21 @@ public sealed class PromptBuilder
 
     public string Build(Character c, GameContext ctx, string? playerMessage) =>
         _template.Render(BuildSystem(c, ctx), BuildUserTurn(playerMessage, ctx));
+
+    /// <summary>
+    /// Build a full multi-turn prompt: the system message (identity + game state), then the whole
+    /// conversation history, then the marker to generate the next villager reply. The model was trained
+    /// on 2 to 3 turn conversations, so it holds voice and context across the exchange.
+    /// </summary>
+    public string BuildConversation(Character c, GameContext ctx, IReadOnlyList<ChatTurn> history)
+    {
+        var sb = new StringBuilder();
+        sb.Append(_template.System.Replace("{system}", BuildSystem(c, ctx)));
+        foreach (var turn in history)
+            sb.Append(turn.IsUser
+                ? _template.Prompt.Replace("{prompt}", turn.Content)
+                : _template.AssistantTurn.Replace("{response}", turn.Content));
+        sb.Append(_template.ResponseStart);
+        return sb.ToString();
+    }
 }

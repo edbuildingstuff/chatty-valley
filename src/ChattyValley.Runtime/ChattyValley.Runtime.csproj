@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    net8.0 to match the LLamaSharp target that the net10 consumers (harness + sidecar) actually load at
+    runtime. Compiling against a lower TFM (net6.0 -> LLamaSharp netstandard2.0) produced IL that called
+    DefaultSamplingPipeline APIs which differ from the net8.0 assembly loaded at runtime ("Method not
+    found: set_Temperature"). The SMAPI mod is a thin client and does NOT reference this project, so it
+    stays free of LLamaSharp's .NET 10 dependency chain.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>ChattyValley.Runtime</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChattyValley.Core\ChattyValley.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LLamaSharp" Version="0.27.0" />
+  </ItemGroup>
+
+</Project>

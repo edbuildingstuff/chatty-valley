@@ -1,21 +1,29 @@
 using System.Runtime.CompilerServices;
 using LLama;
 using LLama.Common;
+using LLama.Native;
 using LLama.Sampling;
 
 namespace ChattyValley.Harness;
 
 /// <summary>
-/// Thin LLamaSharp wrapper: load a base GGUF in-process and stream a reply. The adapter hooks are
-/// Stage 1b scaffolding (one shared base + per-villager LoRA, plan doc 06) so growing from one
-/// villager to many is a config extension, not a rewrite. With no adapter trained yet they are
-/// inert; the real llama.cpp adapter_lora_init / set / clear calls slot in behind the same methods.
+/// Thin LLamaSharp wrapper: load a base GGUF in-process and stream a reply, optionally with a
+/// per-villager LoRA applied (the shared-base + per-villager adapter design, plan doc 06). One base
+/// serves every character; <see cref="SetActiveAdapter"/> is how you swap villagers.
+///
+/// LLamaSharp 0.27.0 has no load-time LoRA on ModelParams, and StatelessExecutor builds a fresh
+/// context per call, so the adapter is applied to that fresh context (llama_set_adapter_lora, via
+/// SafeLLamaContextHandle.SetLoraAdapters) before the prompt is decoded. The GGUF adapter is loaded
+/// once against the model and reused across turns; hot-swapping is another SetActiveAdapter call.
 /// </summary>
 public sealed class LlmRuntime : IAsyncDisposable
 {
     private LLamaWeights? _weights;
     private ModelParams? _params;
-    private readonly Dictionary<string, string> _adapters = new();
+    private readonly Dictionary<string, string> _adapters = new();      // name -> gguf path
+    private readonly Dictionary<string, LoraAdapter> _loaded = new();   // name -> loaded handle
+    private LoraAdapter? _activeAdapter;
+    private float _activeScale = 1.0f;
 
     public bool IsReady => _weights is not null;
 
@@ -32,15 +40,28 @@ public sealed class LlmRuntime : IAsyncDisposable
         return sw.Elapsed;
     }
 
-    // Stage 1b scaffolding. Kept so the mod's runtime shares this shape.
+    /// <summary>Register a per-villager LoRA GGUF under a name (does not load it yet).</summary>
     public void RegisterAdapter(string name, string path) => _adapters[name] = path;
-    public void SetActiveAdapter(string? name) { /* TODO Stage 1b: clear + apply the LoRA on the context */ }
+
+    /// <summary>
+    /// Make a registered adapter active for subsequent inferences, or pass null to run the stock
+    /// base. The GGUF is loaded against the model on first activation and cached.
+    /// </summary>
+    public void SetActiveAdapter(string? name, float scale = 1.0f)
+    {
+        if (name is null) { _activeAdapter = null; return; }
+        if (!_adapters.TryGetValue(name, out var path))
+            throw new ArgumentException($"adapter '{name}' is not registered", nameof(name));
+        if (!_loaded.TryGetValue(name, out var adapter))
+            _loaded[name] = adapter = _weights!.NativeHandle.LoadLoraFromFile(path);
+        _activeAdapter = adapter;
+        _activeScale = scale;
+    }
 
     public async IAsyncEnumerable<string> InferStreamAsync(
         string prompt, float temperature, int maxTokens,
         [EnumeratorCancellation] CancellationToken ct = default)
     {
-        var executor = new StatelessExecutor(_weights!, _params!);
         var inferenceParams = new InferenceParams
         {
             MaxTokens = maxTokens,
@@ -50,12 +71,27 @@ public sealed class LlmRuntime : IAsyncDisposable
             SamplingPipeline = new DefaultSamplingPipeline { Temperature = temperature },
         };
 
-        await foreach (var token in executor.InferAsync(prompt, inferenceParams, ct))
-            yield return token;
+        if (_activeAdapter is { } active)
+        {
+            // Per-villager LoRA on a fresh (stateless) context, applied before the prompt is decoded.
+            using var context = _weights!.CreateContext(_params!);
+            context.NativeHandle.SetLoraAdapters(new[] { (active, _activeScale) });
+            var executor = new InteractiveExecutor(context);
+            await foreach (var token in executor.InferAsync(prompt, inferenceParams, ct))
+                yield return token;
+        }
+        else
+        {
+            // Stock base (Stage 1a): the proven prompt-only path.
+            var executor = new StatelessExecutor(_weights!, _params!);
+            await foreach (var token in executor.InferAsync(prompt, inferenceParams, ct))
+                yield return token;
+        }
     }
 
     public ValueTask DisposeAsync()
     {
+        foreach (var a in _loaded.Values) a.Unload();
         _weights?.Dispose();
         return ValueTask.CompletedTask;
     }

@@ -11,6 +11,8 @@ string? charPath = GetArg("--character");
 int gpuLayers = int.TryParse(GetArg("--gpu-layers"), out var gl) ? gl : 0;
 float temperature = float.TryParse(GetArg("--temp"), out var tp) ? tp : 0.7f;
 int maxTokens = int.TryParse(GetArg("--max-tokens"), out var mt) ? mt : 96;
+string? adapterOverride = GetArg("--adapter");           // path to a per-villager LoRA GGUF (Stage 1b)
+float adapterScale = float.TryParse(GetArg("--adapter-scale"), out var asc) ? asc : 1.0f;
 
 string repoRoot = FindRepoRoot(AppContext.BaseDirectory);
 modelPath ??= Path.Combine(repoRoot, "models", "LFM2.5-350M-Q4_K_M.gguf");
@@ -32,6 +34,15 @@ var character = JsonSerializer.Deserialize<Character>(
     File.ReadAllText(charPath),
     new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
 
+// --adapter <path> overrides the character file, so a trained LoRA can be pointed at without editing
+// the committed character JSON (the GGUF lives outside this repo).
+if (adapterOverride is not null)
+    character = new Character
+    {
+        Name = character.Name, Bio = character.Bio,
+        FewShot = character.FewShot, AdapterPath = adapterOverride,
+    };
+
 double modelSizeMb = new FileInfo(modelPath).Length / (1024.0 * 1024.0);
 Console.WriteLine("Chatty Valley - on-device inference harness");
 Console.WriteLine(new string('=', 62));
@@ -47,7 +58,7 @@ Console.WriteLine($"ready in {loadTime.TotalSeconds:F1}s");
 if (character.AdapterPath is not null)
 {
     llm.RegisterAdapter(character.Name, character.AdapterPath);
-    llm.SetActiveAdapter(character.Name);
+    llm.SetActiveAdapter(character.Name, adapterScale);
 }
 
 var prompt = new PromptBuilder(ChatTemplate.Lfm2);

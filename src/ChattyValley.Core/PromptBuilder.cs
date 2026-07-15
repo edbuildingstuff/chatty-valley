@@ -15,6 +15,16 @@ public sealed class PromptBuilder
 
     public string BuildSystem(Character c, GameContext ctx)
     {
+        // Stage 1b (adapter): the voice lives in the weights, so the system message shrinks to the
+        // identity tag + a compact game-state line. This MUST match the training-data system format
+        // (dataset-plan.md: "system content stays minimal ... training format equals inference
+        // format") or the adapter sees out-of-distribution input and its measured quality drops.
+        if (c.AdapterPath is not null)
+            return $"You are {c.Name}, a resident of Pelican Town in Stardew Valley. "
+                 + $"Current situation: {AdapterContext(ctx)}";
+
+        // Stage 1a (stock base): the full instruction block plus few-shot voice anchors carry the
+        // character, because the base has no trained voice of its own.
         var sb = new StringBuilder();
         sb.Append($"You are {c.Name}, a resident of Pelican Town in Stardew Valley. ");
         sb.Append(c.Bio.Trim());
@@ -23,13 +33,33 @@ public sealed class PromptBuilder
         sb.Append("Keep replies to 1 to 3 short sentences. Never break character, and never mention being an AI or being in a game.\n\n");
         sb.Append("Current situation: ").Append(ctx.ToContextLine());
 
-        // Stage 1a only: anchor the voice with a few canon lines. Once an adapter carries the voice
-        // (AdapterPath set), the anchors drop away and the prompt shrinks. That shrinkage is the story.
-        if (c.AdapterPath is null && c.FewShot.Count > 0)
+        if (c.FewShot.Count > 0)
         {
             sb.Append("\n\nFor voice reference, some lines this character has said before:\n");
             foreach (var line in c.FewShot)
                 sb.Append("- \"").Append(line).Append("\"\n");
+        }
+        return sb.ToString();
+    }
+
+    // Compact context line for adapter mode, matching the training-data format, e.g.
+    // "winter, snowing, evening, the mountains, 6 hearts" (+ a festival or gift clause when present).
+    private static string AdapterContext(GameContext ctx)
+    {
+        var weather = ctx.Weather switch { "snow" => "snowing", "rain" => "raining", _ => ctx.Weather };
+        var sb = new StringBuilder();
+        sb.Append($"{ctx.Season}, {weather} {ctx.TimeOfDay}, {ctx.Location}, {ctx.Hearts} hearts");
+        if (!string.IsNullOrEmpty(ctx.Event))
+            sb.Append($", {ctx.Event}");
+        if (!string.IsNullOrEmpty(ctx.Gift))
+        {
+            var taste = ctx.GiftTaste switch
+            {
+                "love" => " (he loves it)", "like" => " (he likes it)",
+                "dislike" => " (he dislikes it)", "hate" => " (he hates it)",
+                "neutral" => " (he is indifferent to it)", _ => "",
+            };
+            sb.Append($", {ctx.PlayerName} offering a {ctx.Gift}{taste}");
         }
         return sb.ToString();
     }

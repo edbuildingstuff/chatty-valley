@@ -16,15 +16,19 @@ weights. It just works, and the characters stay themselves.
 
 ## Status
 
-Early build.
+Early build, pilot villager (**Linus**) working end-to-end on-device.
 
-- **Working:** Stage 1a on-device inference harness. Loads an LFM2.5-1.2B GGUF in-process via
-  LLamaSharp and generates in-character villager lines with latency measurements. Pilot villager: **Linus**.
-- **Not built yet:** the SMAPI mod itself (interception, threading, dialogue draw), the per-villager
-  LoRA fine-tune (Stage 1b), and the eval.
+- **Working:** the on-device inference harness with a **trained per-villager LoRA adapter**. It loads a
+  small LFM2.5 GGUF base in-process via LLamaSharp, applies Linus's LoRA adapter (`--adapter`), and
+  generates in-character dialogue at roughly 75 ms to first token and 0.3 s per reply on CPU. The
+  adapter carries the voice: it stays in character under jailbreak and persona-swap attempts, where a
+  stock base collapses into a generic assistant. A 600-conversation dataset (`data/linus/`) trains it.
+- **Not built yet:** the SMAPI mod itself (interception, threading, dialogue draw), and extending the
+  roster beyond Linus (one adapter per villager, hot-swapped on the same base).
 
-The harness is deliberately built on the base-plus-adapter runtime shape so growing from one villager
-to the whole town is a config extension, not a rewrite.
+The harness is built on the base-plus-adapter runtime shape so growing from one villager to the whole
+town is a config extension, not a rewrite: one shared base GGUF, one small LoRA per character, swapped
+at runtime via `LlmRuntime.SetActiveAdapter`.
 
 ## Architecture (target)
 

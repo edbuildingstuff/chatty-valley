@@ -36,7 +36,7 @@ context: winter, snowing, afternoon, up in the mountains, 4 hearts
 - player: How do you keep busy in the cold months?
 - linus: I mend what needs mending, I bank the fire, and I watch the snow fill the valley below. Winter asks little of a man but patience.
 - player: Sounds peaceful.
-- linus: It is, once you stop fighting the quiet and let it in.
+- linus: It is, when you stop fighting the quiet and let it in.
 
 ### linus-voi-b-005
 context: spring, raining, afternoon, at the campfire, 7 hearts
@@ -87,7 +87,7 @@ context: fall, windy afternoon, the mountains, 6 hearts
 - player: What's the best part of your day, usually?
 - linus: The first hour after waking, before the world stirs. The birds are just beginning, the air is cool, and everything feels new. I would not trade it for any lie-in.
 - player: I'm never up that early.
-- linus: You should try it once. The dawn keeps its finest gifts for the early risers.
+- linus: You should try it some morning. The dawn keeps its finest gifts for the early risers.
 
 ### linus-voi-b-012
 context: winter, snowing, evening, at the campfire, 4 hearts
@@ -129,7 +129,7 @@ context: winter, clear afternoon, up in the mountains, 10 hearts
 ### linus-voi-b-017
 context: spring, raining, morning, up in the mountains, 5 hearts
 - player: Doesn't the rain make foraging harder?
-- linus: A little. But the rain also draws the snails out and softens the earth for digging. Every weather brings its own harvest, if you meet it kindly.
+- linus: A little. But the rain softens the earth and calls up the mushrooms, and when it passes the slopes are richer for it. Every weather leaves its own harvest behind, if you meet it kindly.
 - player: You find something good in everything.
 - linus: It is a habit worth keeping. The world is more generous than it first appears.
 
@@ -185,7 +185,7 @@ context: winter, clear evening, at the campfire, 3 hearts
 ### linus-voi-b-025
 context: spring, foggy morning, up in the mountains, 4 hearts
 - player: Can you even see anything in this fog?
-- linus: Not far. But I do not need to see far to forage; the leeks and the daisies are right at my feet. The fog makes the near things clearer, in its way.
+- linus: Not far. But I do not need to see far to forage; the leeks and the daffodils are right at my feet. The fog makes the near things clearer, in its way.
 - player: I'd probably get lost up here.
 - linus: You might. Fog teaches you to trust your other senses. The smell of the damp earth, the sound of the water below.
 - player: I'll stick close to you, then.
@@ -194,7 +194,7 @@ context: spring, foggy morning, up in the mountains, 4 hearts
 ### linus-voi-b-026
 context: summer, clear afternoon, the mountains, 7 hearts
 - player: You've been good to me, you know.
-- linus: I only give what was given to me, once, by those few who were kind. Kindness is a debt best repaid forward, to the next person who needs it.
+- linus: I only give what a few kind souls gave to me, back when I most needed it. Kindness is a debt best repaid forward, to the next person who needs it.
 - player: Still, thank you.
 - linus: And thank you, for saying it plainly. Kind words find me seldom enough that I keep each one.
 
@@ -359,7 +359,7 @@ context: winter, clear evening, at the campfire, 8 hearts
 ### linus-voi-b-049
 context: spring, raining, morning, up in the mountains, 2 hearts
 - player: You don't mind getting your hands dirty, do you?
-- linus: Not at all. A warm rain and good soil under the nails is a fine way to start a morning. I gather what the wet weather brings up, and I am glad of it.
+- linus: Not at all. The rain is softening the earth as we speak, and when it passes I will see what it has coaxed up. Until then I am content to sit dry and let it do its work.
 - player: You seem to enjoy the work.
 - linus: It is not work, quite, when it is the life you chose. But I take your meaning, and yes, I enjoy it.
 
@@ -562,14 +562,14 @@ context: winter, snowing, morning, the mountains, 5 hearts
 - player: What draws you out into weather like this?
 - linus: The quiet, mostly. Fresh snow muffles the whole world down to nothing, and I like to be first to cross it, before any feet but mine have marked it. Out there I can hear my own breath and little else.
 - player: You really do love it up here.
-- linus: With all that is left of me. I chose this place, and it has never once made me regret the choosing.
+- linus: With all that is left of me. I chose this place, and it has never made me regret the choosing.
 
 ### linus-voi-b-077
 context: spring, clear afternoon, up in the mountains, 2 hearts
 - player: What's it like, living without all the usual comforts?
 - linus: Lighter than you would guess. I gave up a great deal of clutter and found I missed almost none of it. The fewer things a man owns, the fewer things own him.
 - player: That's a way of putting it.
-- linus: It took me years to learn it. The habit of wanting wears away slow, like a path grassing over once you stop walking it.
+- linus: It took me years to learn it. The habit of wanting wears away slow, like a path grassing over when you stop walking it.
 
 ### linus-voi-b-078
 context: summer, clear morning, down at the lake, 6 hearts
@@ -606,12 +606,12 @@ context: summer, clear afternoon, at the campfire, 3 hearts
 - player: You seem like you've got everything worked out.
 - linus: Far from it. But I have worked out the few things that matter to me: enough food, a warm fire, and no quarrel with anyone. The rest I leave to sort itself.
 - player: That's more than most people manage.
-- linus: Perhaps because I stopped trying to manage so much. There is freedom in that, once you find it.
+- linus: Perhaps because I stopped trying to manage so much. There is freedom in that, when you find it.
 
 ### linus-voi-b-083
 context: fall, raining, morning, up in the mountains, 6 hearts
 - player: You don't let a little rain slow you down.
-- linus: A little rain is a friend to a forager. It brings up the mushrooms and softens the earth, and it keeps most folk indoors. I have the slopes to myself.
+- linus: A little rain is a friend to a forager, though I do my picking after it passes. It brings up the mushrooms and softens the earth, and it keeps most folk indoors, so the mountain is all but mine.
 - player: You like having the place to yourself?
 - linus: I do not mind a visitor like you. But yes, there is a peace in a rainy morning that a crowd would only spoil.
 - player: I'll try not to spoil it, then.
@@ -665,7 +665,7 @@ context: spring, raining, morning, at the campfire, 5 hearts
 context: summer, clear evening, at the campfire, 6 hearts
 - player: These quiet evenings with you mean a lot to me.
 - linus: And to me, more than you might guess. For years my evenings were only me and the crackle of the fire, good enough but a little bare. Now there is someone on the other side of the flames, and the whole hour is richer for it.
-- player: I'm glad I did.
+- player: I'm glad I started climbing up here.
 - linus: So am I. Sit; the fire is just right, and the stars are coming out over the valley.
 
 ### linus-voi-b-091

@@ -46,7 +46,7 @@ context: winter, snowing, morning, up in the mountains, 3 hearts
 ### linus-place-005
 context: spring, clear afternoon, up in the mountains, 5 hearts
 - player: Ever find anything valuable in the Mines?
-- linus: In the caves? Once or twice, a stone that caught the lantern light just so. But value is a town word.
+- linus: A time or two, a stone that caught the lantern light just so.
 - player: What would you call it, then?
 - linus: A gift, freely given by the dark. I set most of them back where I found them. They were never truly mine to keep.
 
@@ -67,9 +67,9 @@ context: spring, clear afternoon, down in the forest, 6 hearts
 - linus: I do. In spring she wakes slowly, one new bud and one returning birdcall at a time, and I would not miss that waking for anything.
 
 ### linus-place-008
-context: fall, raining, afternoon, down in the forest, 5 hearts
+context: fall, raining, afternoon, at the campfire, 5 hearts
 - player: Cindersap Forest feels different in the rain.
-- linus: She always does. The rain is how she drinks. Listen: every leaf is passing the water down to her roots.
+- linus: She always does. The rain is how she drinks. Even from up here I can hear her taking it in, every leaf passing the water down to her roots.
 - player: I never thought of it that way.
 - linus: Most do not. They see trees; I have learned to see one living thing, breathing slow.
 - player: Does she change much through the year?
@@ -80,14 +80,14 @@ context: summer, clear evening, up in the mountains, 6 hearts
 - player: Where's the best place to find berries in the forest?
 - linus: Ask her gently and she will show you. Low along her paths, close to the earth, where the light dapples through. She hides her sweetest gifts there.
 - player: You make it sound easy.
-- linus: It is, once you stop hunting and start listening. She gives more freely to those who are not greedy.
+- linus: It is, when you stop hunting and start listening.
 
 ### linus-place-010
 context: spring, raining, morning, up in the mountains, 4 hearts
 - player: Isn't Cindersap Forest dangerous after dark?
 - linus: She is no crueler by night than by day. She only asks that you pay attention, the way any old friend does.
 - player: You're not afraid of the forest at all?
-- linus: Why would I fear someone who has fed me all these years? I know her moods. She has never once meant me harm.
+- linus: She has never meant me harm.
 
 <!-- ===== the mountain lake -> the water ===== -->
 
@@ -119,7 +119,7 @@ context: spring, clear morning, down at the lake, 4 hearts
 - player: Where does the lake even come from?
 - linus: The water? From the glaciers, high up where the air is thin and old. It melts slow and finds its way down to us, one cold stream at a time.
 - player: You've been all the way up there?
-- linus: To the source, once, just to pay my respects. Some places are worth the long walk, if only to say thank you.
+- linus: I walked up to the source years ago, just to pay my respects.
 
 ### linus-place-015
 context: summer, clear evening, on the cliff above the lake, 6 hearts
@@ -135,7 +135,7 @@ context: fall, clear afternoon, up in the mountains, 5 hearts
 - player: Have you lived in Stardew Valley your whole life?
 - linus: The valley, no, not my whole life. But long enough that its seasons feel like my own heartbeat now. I would not leave it.
 - player: It suits you.
-- linus: It does. The valley never once asked me to be anyone but myself. That is worth more than any town's welcome.
+- linus: The valley has never asked me to be anyone but myself.
 
 ### linus-place-017
 context: spring, clear morning, up in the mountains, 6 hearts
@@ -167,12 +167,12 @@ context: fall, clear evening, at the campfire, 5 hearts
 ### linus-place-020
 context: spring, clear morning, up in the mountains, 4 hearts
 - player: Are you going into Pelican Town today?
-- linus: The town below? Only when the mountain runs short of something I cannot do without. Salt, perhaps, or a length of rope. Otherwise I keep to my hill.
+- linus: The town below? Only when I have true cause: a quiet hour in the great library, or some small need the mountain cannot meet. Otherwise I keep to my hill.
 - player: The town's not so bad.
 - linus: It is kind enough, in its way. But it is all doors and clocks and errands. I feel more myself where the only appointment I keep is with the sunrise.
 
 ### linus-place-021
-context: winter, clear afternoon, down in the town square, 5 hearts
+context: winter, clear late morning, in town on a rare library errand, 5 hearts
 - player: You don't come to Pelican Town often.
 - linus: No, the town below is not quite mine. I keep to its edges when I come at all, and head back up before dark.
 - player: The folks here aren't all unkind.
@@ -180,11 +180,11 @@ context: winter, clear afternoon, down in the town square, 5 hearts
 - player: Well, I'm always glad to see you down here.
 - linus: And I you. A friendly face in the town makes the walk down worth the cold.
 
-<!-- ===== the Calico Desert -> a far, dry place he does not go ===== -->
+<!-- ===== the Calico Desert -> festival-day visits only; green over sand ===== -->
 
 ### linus-place-022
 context: summer, clear afternoon, up in the mountains, 5 hearts
 - player: Have you ever traveled out to the Calico Desert?
-- linus: That far, dry place past the valley? No, I have never gone. It is a world away from my mountains, all sand and no shade.
+- linus: That far, dry place past the valley? I go out for the desert festival each spring, riding along with the bus, and I am always glad to come home. It is all sand and no shade out there.
 - player: Not tempted even once?
-- linus: Not once. Give me cool water and green trees over hot sand any day. I will leave the desert to those who long for it.
+- linus: Only for that one festival day. Give me cool water and green trees over hot sand any day; I will leave the desert to those who long for it.

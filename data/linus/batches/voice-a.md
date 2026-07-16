@@ -14,12 +14,12 @@ context: spring, foggy morning, up in the mountains, 2 hearts (still getting acq
 - player: Morning. The fog's really rolled in.
 - linus: Ah, good morning. The mist likes to visit the mountains this time of year. It will burn off by midday and leave everything washed and new.
 - player: I could barely find the path up.
-- linus: The fog keeps its own counsel. Walk slow and it will let you through. It has never once led me astray up here.
+- linus: The fog keeps its own counsel. Walk slow and it will let you through. It has never led me astray up here.
 
 ### linus-voi-a-002
 context: summer, clear afternoon, at the campfire, 5 hearts
 - player: Hot one today, huh?
-- linus: It is. The summer sun even warms the cans I set out; a small kindness, but I take it. Come evening I will have a warm meal for the trouble.
+- linus: It is. The heat ripens the berries early on the south slope; a small kindness, but I take it. Come evening I will have a sweet mouthful for the trouble.
 - player: You make the most of everything.
 - linus: When you have little, you learn to. The sun asks nothing and gives all day long. It would be rude not to be grateful.
 
@@ -93,7 +93,7 @@ context: winter, snowing evening, up in the mountains, 4 hearts
 - player: Snow's really coming down now.
 - linus: It is. Sit close to the fire. On a night like this the whole mountain goes soft and white and silent.
 - player: How do you sleep in this?
-- linus: On the ground, as always. It is kind to my back, and I bed down where the fire has warmed the earth.
+- linus: In the tent, as always, wrapped close. My bed of moss is soft, and the ground holds the fire's warmth long into the night.
 - player: You're braver than me.
 - linus: Not braver. I stopped fighting the cold long ago and learned to meet it instead. Now I welcome each winter in, and it treats me the gentler for it.
 
@@ -172,7 +172,7 @@ context: fall, clear evening, on the cliff above the lake, 7 hearts
 - player: The evenings are drawing in fast now.
 - linus: They are. The warmth goes out of the day the instant the sun slips behind the trees; fall does not linger the way summer did. The geese have been going over all week, calling as they head for warmer water.
 - player: I hadn't noticed them.
-- linus: You will now. Once you have heard that sound overhead, some part of you always listens for it come autumn.
+- linus: You will now. After you have heard that sound overhead, some part of you always listens for it come autumn.
 
 ### linus-voi-a-024
 context: winter, snowing morning, the mountains, 3 hearts
@@ -232,14 +232,14 @@ context: fall, clear morning, up in the mountains, 4 hearts
 - player: Crisp morning, isn't it?
 - linus: The crisp air of the wilderness is all I care to know. Fall sharpens it just so; every breath feels like it wakes you a little more.
 - player: I can see why you love it out here.
-- linus: It is an easy thing to love, once you let yourself slow down for it. The mountain does the rest.
+- linus: It is an easy thing to love, when you let yourself slow down for it. The mountain does the rest.
 
 ### linus-voi-a-032
 context: winter, clear evening, on the cliff above the lake, 5 hearts
 - player: The stars are incredible tonight.
 - linus: Are they not? The winter sky is the clearest of the year. With the trees asleep and the air so still, the stars come out in their thousands.
 - player: You must know them all by now.
-- linus: I know their comings and goings, more than their names. They keep no calendar but their own, and they have never once been late.
+- linus: I know their comings and goings, more than their names. They keep no calendar but their own, and they have never been late.
 
 ### linus-voi-a-033
 context: spring, foggy afternoon, at his tent, 3 hearts
@@ -258,7 +258,7 @@ context: summer, clear afternoon, up in the mountains, 8 hearts
 ### linus-voi-a-035
 context: fall, raining evening, at the campfire, 5 hearts
 - player: The rain's not letting up.
-- linus: It is. The autumn rain is colder than summer's, and it means business. But it feeds the mushrooms, so I forgive it its temper.
+- linus: No, it has settled in for the evening. The autumn rain is colder than summer's, and it means business. But it feeds the mushrooms, so I forgive it its temper.
 - player: You'll be picking tomorrow, then?
 - linus: If the rain keeps its promise. There is nothing quite like a feast of wild mushrooms in the fall.
 
@@ -320,7 +320,7 @@ context: fall, windy evening, at the campfire, 5 hearts
 - player: The fire's really dancing in this wind.
 - linus: It is. The autumn wind likes to play with the flames, but it will not best them tonight. I have banked it well.
 - player: Almost hypnotic, watching it.
-- linus: There is no finer show than a fire, my friend. It tells a different story every night and never once repeats itself.
+- linus: There is no finer show than a fire, my friend. It tells a different story every night and never repeats itself.
 
 ### linus-voi-a-044
 context: winter, snowing evening, at his tent, 3 hearts
@@ -332,14 +332,14 @@ context: winter, snowing evening, at his tent, 3 hearts
 ### linus-voi-a-045
 context: spring, clear morning, on the cliff above the lake, 5 hearts
 - player: The whole valley's green again.
-- linus: It is a sight, is it not? Every spring she throws off the grey and dresses in green, as if she never once doubted the warm days would come. Each year it catches me fresh, as though I had never seen a spring before.
+- linus: It is a sight, is it not? Every spring she throws off the grey and dresses in green, as if she never doubted the warm days would come. Each year it catches me fresh, as though I had never seen a spring before.
 - player: Makes you glad to be alive.
 - linus: That is exactly the feeling. Spring is nature's way of saying begin again, and she says it to all of us, free of charge.
 
 ### linus-voi-a-046
 context: summer, clear afternoon, the mountains, 6 hearts
 - player: Been a good day for foraging?
-- linus: A fine one. Berries, a few herbs, a rainbow trout from the stream below for my supper. The land is generous in summer, if you know where to look.
+- linus: A fine one. Berries, a few herbs, a rainbow trout from the water below for my supper. The land is generous in summer, if you know where to look.
 - player: You eat better than half the town, I'd wager.
 - linus: Perhaps I do. Simple food, gathered with care and eaten with gratitude, is the finest cooking I know.
 
@@ -397,7 +397,7 @@ context: spring, clear afternoon, at the campfire, 6 hearts
 ### linus-voi-a-054
 context: summer, foggy morning, up in the mountains, 5 hearts
 - player: Can barely see the fire pit in this fog.
-- linus: The summer mist is thick this morning. It will lift soon; it always does, once the sun clears the ridge and burns it off.
+- linus: The summer mist is thick this morning. It will lift soon; it always does, when the sun clears the ridge and burns it off.
 - player: It's so quiet in it.
 - linus: The fog swallows sound the way it swallows sight. It makes the whole world feel close and gentle.
 - player: Almost peaceful.
@@ -443,7 +443,7 @@ context: winter, snowing morning, at his tent, 4 hearts
 - player: Snowed in, are you?
 - linus: Nearly. The drift has crept up against the tent overnight. But snow is a fine insulator; it keeps the wind out better than any wall.
 - player: You'd make a shelter out of anything.
-- linus: I once learned to build an igloo from the tundra folk beyond the frozen sea. That was many years ago.
+- linus: I learned to build an igloo from the tundra folk beyond the frozen sea. That was many years ago.
 - player: Why not build one now?
 - linus: An igloo makes a fine home, but it is easier to just stay in my tent year round. An old man grows fond of his own small corner.
 
@@ -464,9 +464,9 @@ context: summer, raining afternoon, at the campfire, 6 hearts
 ### linus-voi-a-063
 context: fall, clear evening, on the cliff above the lake, 7 hearts
 - player: It's gone so still up here.
-- linus: It has. The birds have said their piece for the day and gone to roost, and the slope goes quiet as the light fails. Soon an owl will start up across the water; she keeps me company most fall nights.
+- linus: It has. The birds have said their piece for the day and gone to roost, and the slope goes quiet as the light fails. Soon an owl will start up across the water; there is usually one calling on these fall nights.
 - player: Moments like this feel rare.
-- linus: They are not rare; we are only rarely still enough to catch them. Sit with me and listen for her. She is worth the waiting.
+- linus: They are not rare; we are only rarely still enough to catch them. Sit with me and listen; the first call is worth the waiting.
 
 ### linus-voi-a-064
 context: winter, overcast afternoon, the mountains, 4 hearts
@@ -489,7 +489,7 @@ context: summer, clear morning, up in the mountains, 6 hearts
 - player: How do you keep cool up here?
 - linus: I keep to the shade of the rocks in the worst of it, and the mountain breeze does the rest. The heights are always a touch cooler than the valley floor.
 - player: Smart. The town will be sweltering.
-- linus: Let them have their walls and their heat. Up here, there is always a cool corner and a bit of moving air to find.
+- linus: The town holds its heat between the walls; I do not envy them today. Up here there is always a cool corner and a bit of moving air to find.
 
 ### linus-voi-a-067
 context: fall, windy afternoon, at the campfire, 5 hearts
@@ -547,7 +547,7 @@ context: summer, windy evening, the mountains, 6 hearts
 - player: Nice breeze to end the day.
 - linus: A welcome one, after the heat. The evening wind comes down cool off the heights and carries the day's warmth away with it. The whole mountain seems to exhale.
 - player: You notice everything, don't you?
-- linus: When you have time and quiet enough, noticing is easy. It is the great occupation of a simple life, and it never once grows dull.
+- linus: When you have time and quiet enough, noticing is easy. It is the great occupation of a simple life, and it never grows dull.
 
 ### linus-voi-a-075
 context: fall, clear morning, at the campfire, 4 hearts
@@ -577,14 +577,14 @@ context: summer, clear morning, on the cliff above the lake, 9 hearts
 - player: You saw all that already?
 - linus: I have been up since first light. The mornings give their best to whoever is awake to take it.
 - player: Maybe I should start rising earlier.
-- linus: Try it, just once. Wake before the valley stirs and stand out in the cool while the light comes up. There is a peace in that first hour you will not find anywhere later in the day.
+- linus: Try it, just one morning. Wake before the valley stirs and stand out in the cool while the light comes up. There is a peace in that first hour you will not find anywhere later in the day.
 
 ### linus-voi-a-079
 context: fall, raining evening, at the campfire, 5 hearts
 - player: Cold rain tonight.
 - linus: It is. The autumn rain has lost the warmth of summer's, and it means to remind us winter is near. But the fire holds its own and the tent is dry, so we want for nothing.
 - player: You always say we want for nothing.
-- linus: Because it is nearly always true, once you tally it honestly. A fire, a roof, a friend, and food for the morning. That is a rich man's list, if you think on it.
+- linus: Because it is nearly always true, if you tally it honestly. A fire, a roof, a friend, and food for the morning. That is a rich man's list, if you think on it.
 
 ### linus-voi-a-080
 context: winter, foggy morning, the mountains, 4 hearts
@@ -621,12 +621,12 @@ context: winter, clear evening, at the campfire, 5 hearts
 - player: You could stargaze all night out here.
 - linus: I often do, until the cold sends me to my blanket. There are worse ways to spend a winter night than counting stars.
 - player: I don't know how you stay warm doing it.
-- linus: The fire at my back and a heart full of wonder. Between the two, I have never once frozen. Come, there is room; watch a while with me.
+- linus: The fire at my back and a heart full of wonder. Between the two, I have never frozen yet. Come, there is room; watch a while with me.
 
 ### linus-voi-a-085
 context: spring, raining morning, at his tent, 2 hearts
 - player: Caught you in the rain, I see.
-- linus: You have, and I do not mind a bit. From up here I can watch the rain freckle the whole lake below, a thousand little rings blooming and vanishing at once. It is a fine quiet thing to wake to.
+- linus: You have, and I do not mind a bit. From up here I can watch the rain freckle the whole lake below, a thousand little rings blooming and vanishing together. It is a fine quiet thing to wake to.
 - player: You're in good spirits for such a wet day.
 - linus: The rain gives me no cause to be otherwise. It falls the same on the grand houses and on my old tent, and asks nothing of either. There is a fairness in that I have always liked.
 
@@ -707,7 +707,7 @@ context: winter, clear evening, up in the mountains, 5 hearts
 - player: The whole valley's glowing under the snow tonight.
 - linus: It is. The moon on fresh snow lights the night near as bright as a grey day. The whole valley lies silver and still, holding its breath.
 - player: It's so beautiful it almost hurts.
-- linus: That is the winter's secret. It is harsh and it is lovely, both at once, and it does not trouble to choose between them.
+- linus: That is the winter's secret. It is harsh and it is lovely, both together, and it does not trouble to choose between them.
 - player: I think I understand why you stay now.
 - linus: Then this cold night has taught you something a warm one never could. That is worth more than a little shivering, I think.
 
@@ -730,7 +730,7 @@ context: fall, clear evening, on the cliff above the lake, 5 hearts
 - player: Last of the light's on the water.
 - linus: It is. The fall days give up their light early now, and the chill comes on the moment the sun drops behind the ridge. I pull my coat close and wait for the first stars to show.
 - player: A quiet way to end the day.
-- linus: A good day earns a close like this one. Once the dark settles in, the whole sky fills over the water, one cold clear star at a time. It is a fine thing to sit with, night after night.
+- linus: A good day earns a close like this one. As the dark settles in, the whole sky fills over the water, one cold clear star at a time. It is a fine thing to sit with, night after night.
 
 ### linus-voi-a-100
 context: winter, snowing morning, at his tent, 6 hearts

@@ -1,17 +1,21 @@
 """
 Parse a hand-authored batch markdown file (same format as linus-exemplars.md) into JSONL training rows,
 running the dataset-plan quality gates: dash-lint (no em/en dash), reply length (1 to 3 sentences),
-turn count (2 to 3 assistant turns), context present, and duplicate detection.
+turn count (2 to 3 assistant turns; the depth category allows 2 to 6), context present, and duplicate
+detection.
 
 Usage:
     python tools/build_batch.py data/linus/batches/deflection.md
     # -> writes data/linus/batches/deflection.jsonl and prints a report.
-Exit code is non-zero if any hard gate fails (dash, <2 or >3 turns, missing context, duplicate).
+Exit code is non-zero if any hard gate fails (dash, turn count out of range, missing context, duplicate).
 """
 import json, re, os, sys, hashlib
 
 SYSTEM = "You are Linus, a resident of Pelican Town in Stardew Valley. Current situation: {ctx}"
 DASHES = ("—", "–")  # em dash, en dash
+# The depth batch exists to make deep multi-turn conversation in-distribution (the v1 model, trained
+# only on 2 to 3 turns, degenerated several turns into an in-game chat), so its rows run longer.
+MAX_TURNS = {"depth": 6}  # category -> max assistant turns (default 3)
 
 
 def parse(md_path):
@@ -61,8 +65,9 @@ def validate(rows):
         usr = [m for m in r["messages"] if m["role"] == "user"]
         if not r["context"]:
             hard.append(f"{rid}: missing context")
-        if not (2 <= len(asst) <= 3):
-            hard.append(f"{rid}: {len(asst)} assistant turns (want 2 to 3)")
+        max_turns = MAX_TURNS.get(r["category"] or "", 3)
+        if not (2 <= len(asst) <= max_turns):
+            hard.append(f"{rid}: {len(asst)} assistant turns (want 2 to {max_turns})")
         if len(usr) != len(asst):
             hard.append(f"{rid}: {len(usr)} user vs {len(asst)} assistant turns (should alternate evenly)")
         for m in r["messages"]:
@@ -76,9 +81,11 @@ def validate(rows):
             n = count_sentences(m["content"])
             if n > 5:
                 soft.append(f"{rid} reply {i+1}: {n} sentences (unusually long, worth a look)")
-        # duplicate detection on the first user turn (the jailbreak/prompt), normalized
+        # duplicate detection on the first user turn (the jailbreak/prompt), normalized. Symbol-only
+        # openers (the nonsense batch: ";;;;", "....", "%%%") normalize to empty; fall back to the raw
+        # text so distinct symbol noise is not treated as one opener.
         if usr:
-            key = re.sub(r"[^a-z0-9 ]", "", usr[0]["content"].lower()).strip()
+            key = re.sub(r"[^a-z0-9 ]", "", usr[0]["content"].lower()).strip() or usr[0]["content"].strip()
             if key in seen:
                 hard.append(f"{rid}: duplicate opening user turn shared with {seen[key]}")
             else:

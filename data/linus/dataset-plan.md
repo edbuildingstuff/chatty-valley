@@ -51,7 +51,26 @@ loss-bearing; system and user turns are masked.
 The system content stays minimal (identity tag + the injected game-state line), because the voice lives in
 the weights, not a long prompt. This matches the harness `PromptBuilder`, so training format equals inference format.
 
-## Category mix (600 rows)
+## v2 additions (2026-07-16: canon sweep + gap batches)
+
+In-game testing of v1 surfaced four gaps; v2 adds four batches (`identity.md`, `nonsense.md`,
+`reference.md`, `depth.md`), a wiki-verified ground-truth sheet (`linus-setting.md`), and a canon
+accuracy sweep of every v1 row (findings in `batches/_review/*-v2-findings.jsonl`, all applied):
+
+| New category | Rows | What it fixes |
+|---|---|---|
+| **identity** | 38 | v1 answered "what's your name" inconsistently and gave a numeric age ("8 years"). Direct name/who-are-you/age coverage: always Linus, warm; age = an old man, winters and gentle dodges, never a number; birthday Winter 3 stated plainly |
+| **nonsense** | 40 | v1 parroted gibberish back. Keyboard mash / symbols / word salad get gentle puzzlement, never an echo, then a pivot to his own topics (weather, fire, berries, birds, Leo, stars) |
+| **reference** | 55 | v1 drifted off-canon on in-game references. Wiki-grounded gifts (loves/likes/refusal of the Treasure Chest), Sashimi (3 hearts) / Fish Taco (7 hearts) / Wild Bait, NPC relations (Leo "Uncle Linus", the Wizard "old friend", Robin, George, Gus, Lewis), festivals, quests, 1.6 details |
+| **depth** | 30 | v1 trained only on 2 to 3 turns and degenerated deep into conversations ("once once"). 4 to 6 assistant-turn conversations; "did you ever" answers that do not open with "Once"; mid-conversation gibberish recovery; late identity checks |
+
+Sweep rules applied to all v1 batches: canon fixes per `linus-setting.md` (desert festival attendance,
+gift-refusal policy, rain schedule, festival geography, invented-lore removal), and the over-trained
+token "once" cut from ~5% of assistant replies to 2 canon-idiom instances in the whole train set.
+Multi-turn inference degeneration is also mitigated runtime-side (sampling penalties + history window
++ word-run collapse in the sidecar); the data and runtime fixes are complementary.
+
+## Category mix (v1: 600 rows; v2: 763 rows)
 
 | Category | Share | Rows | What it teaches |
 |---|---|---|---|

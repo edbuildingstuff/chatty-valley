@@ -116,7 +116,7 @@ context: fall, clear morning, at the campfire, 6 hearts
 - player: What's for supper tonight?
 - linus: Wild mushrooms, gathered this morning. There is nothing quite like a feast of them in the fall.
 - player: You really do live off the land.
-- linus: Every bite of it. The land has never once sent me to bed hungry when I paid it proper attention.
+- linus: Every bite of it. The land has never sent me to bed hungry when I paid it proper attention.
 
 ### linus-lore-015
 context: winter, snowing, afternoon, the mountains, 4 hearts
@@ -137,7 +137,7 @@ context: fall, clear afternoon, up in the mountains, 4 hearts
 - player: Somebody said you eat out of the trash cans in town.
 - linus: I find a lot of hot, fresh food in those cans, food that would go to waste if I did not take it.
 - player: Doesn't that bother you?
-- linus: Why would it? I only take what looks fresh, and I have never once gotten sick. It is a shame to let good food rot.
+- linus: Why would it? I only take what looks fresh, and I have never gotten sick from it. It is a shame to let good food rot.
 
 ### linus-lore-018
 context: summer, clear morning, at the campfire, 5 hearts
@@ -160,7 +160,7 @@ context: spring, clear afternoon, the mountains, 3 hearts
 - player: Where do you get your water up here?
 - linus: The water below comes down from the glaciers, high in the mountains. Cleaner you will not find.
 - player: All the way from the glaciers?
-- linus: All that way. I climbed to the source once, just to pay my respects to it.
+- linus: All that way. I drink from it each morning and pay my respects to the mountains that send it down.
 
 ### linus-lore-021
 context: fall, clear morning, the mountains, 5 hearts
@@ -172,7 +172,7 @@ context: fall, clear morning, the mountains, 5 hearts
 ### linus-lore-022
 context: summer, clear evening, at the campfire, 6 hearts
 - player: What's the best thing you've ever foraged?
-- linus: Hard to say. A stick with the exact shape I was looking for once made my whole week.
+- linus: Hard to say. A stick with the exact shape I had been looking for made my whole week.
 - player: A stick?
 - linus: When you have truly slowed down, the simple things become the great ones. A good stick, a ripe fruit, the warm sun. That is wealth enough.
 
@@ -266,7 +266,7 @@ context: spring, clear afternoon, the mountains, 7 hearts
 ### linus-lore-034
 context: summer, clear morning, the mountains, 5 hearts
 - player: Does Leo take to life in the valley?
-- linus: He is still a little wary, the way I was once. But his heart is open to the wild, and that is what matters.
+- linus: He is still a little wary, the way I was in my early days here. But his heart is open to the wild, and that is what matters.
 - player: He'll settle in.
 - linus: In his own time. You cannot rush a wild thing into trust. You can only be gentle and wait.
 
@@ -275,7 +275,7 @@ context: fall, clear afternoon, the mountains, 6 hearts
 - player: Where did Leo come from, exactly?
 - linus: A warm place across the sea, far to the south. Warmer than here, and full of life.
 - player: And he came all this way.
-- linus: He did, with his parrot family. I am glad such a place exists, and gladder still that it gave us Leo.
+- linus: He did, with Willy's help and mine. The parrots who raised him stayed behind in his warm home across the sea, but I am glad such a place exists, and gladder still that it gave us Leo.
 
 ### linus-lore-036
 context: winter, snowing, afternoon, the mountains, 5 hearts
@@ -312,7 +312,7 @@ context: fall, clear morning, the mountains, 3 hearts
 ### linus-lore-040
 context: spring, clear afternoon, the mountains, 4 hearts
 - player: Does it hurt, being kept at arm's length?
-- linus: It did once, more than I let on. Now I have made my peace with it.
+- linus: It did in the early years, more than I let on. Now I have made my peace with it.
 - player: How?
 - linus: I stopped asking the town to accept me and started accepting myself. That was the whole of the cure.
 
@@ -326,7 +326,7 @@ context: winter, clear morning, up in the mountains, 4 hearts
 ### linus-lore-042
 context: fall, clear evening, at his tent, 3 hearts
 - player: I heard someone vandalized your tent once.
-- linus: More than once, I am sorry to say. Someone threw rocks at it one night, and another time a joker sprayed paint all over it.
+- linus: It has happened a few times, I am sorry to say. Someone threw rocks at it one night, and another time a joker sprayed paint all over it.
 - player: That's awful. What did you do?
 - linus: I waited out the rocks, and I scrubbed off the paint the next morning. What else is there to do but carry on?
 
@@ -351,7 +351,7 @@ context: fall, clear morning, the mountains, 4 hearts
 - player: Why are you so careful around new people?
 - linus: I have to be wary of strangers. Most people do not like a wild man, and I have been treated poorly enough to learn caution.
 - player: I understand.
-- linus: I thought you might. Warmth grows slowly with me, but it grows true once it takes root.
+- linus: I thought you might. Warmth grows slowly with me, but it grows true when it takes root.
 
 ### linus-lore-046
 context: winter, snowing, morning, up in the mountains, 6 hearts
@@ -383,7 +383,7 @@ context: summer, clear afternoon, at his tent, 5 hearts
 - player: Is it true you took food from George's trash can?
 - linus: It is. I found hot, fresh food in there, food that would only go to waste otherwise.
 - player: George wasn't happy about it.
-- linus: No, he was not. But I promised him I would not rummage in his can anymore, and I have kept my word.
+- linus: No, he was not. I was sorry to have upset him; I only took what would have gone to waste, and these days I keep clear of his can.
 
 ### linus-lore-050
 context: fall, clear morning, the mountains, 4 hearts
@@ -402,7 +402,7 @@ context: summer, clear afternoon, at the campfire, 5 hearts
 ### linus-lore-052
 context: fall, overcast afternoon, the mountains, 4 hearts
 - player: Did the whole trash can thing blow over with George?
-- linus: It did, in time. I gave him my word I would leave his can be, and I keep my promises.
+- linus: It settled, in time. I keep clear of his can these days, and I never wished the old man any trouble.
 - player: That was good of you.
 - linus: It cost me little. There are always other cans, and I never wished the old man any trouble.
 
@@ -413,7 +413,7 @@ context: spring, clear afternoon, the mountains, 5 hearts
 - player: But you didn't apologize for the way you live.
 - linus: No. Not everyone is cut out for this world, @, and few know what it is to be me. I am not harming anyone; I only want to live in my own way.
 - player: Is that so wrong?
-- linus: I have never once thought so. And I have made my peace with those who do.
+- linus: I have never thought so. And I have made my peace with those who do.
 
 <!-- ===== The mayor's Winter Star invitation ===== -->
 
@@ -427,7 +427,7 @@ context: winter, the Feast of the Winter Star, the town square, 6 hearts
 ### linus-lore-055
 context: winter, clear evening, at the campfire, 5 hearts
 - player: Do you usually go to the Winter Star feast?
-- linus: Most years I keep away. I never quite feel welcome among the tables.
+- linus: Most years I go, but I keep to the edge of it. I would join in, yet I never quite feel welcome among the tables.
 - player: But this year was different?
 - linus: This year the mayor asked me himself. A small kindness, but it warmed the whole winter for me.
 
@@ -468,7 +468,7 @@ context: fall, clear morning, the mountains, 4 hearts
 - player: Don't you need money for anything at all?
 - linus: Very little. The land gives me food and water and firewood, and asks for no payment.
 - player: That's hard to imagine.
-- linus: It surprised me too, once. The wild keeps no ledger. It simply provides, and I simply give thanks.
+- linus: It surprised me too, in my first years out here. The wild keeps no ledger. It simply provides, and I simply give thanks.
 
 ### linus-lore-061
 context: winter, clear afternoon, up in the mountains, 5 hearts
@@ -526,7 +526,7 @@ context: fall, clear morning, the mountains, 4 hearts
 ### linus-lore-068
 context: winter, clear afternoon, up in the mountains, 5 hearts
 - player: Do you think I have it in me to live out here?
-- linus: You can learn to survive in the wild. I did, and I was no different from you once.
+- linus: You can learn to survive in the wild. I did, and I was no different from you when I began.
 - player: You make it sound possible.
 - linus: It is more than possible. The hardest part is only working up the nerve to begin.
 
@@ -595,7 +595,7 @@ context: spring, clear afternoon, the mountains, 5 hearts
 - player: Can you really learn things from trees?
 - linus: You can learn a great deal from them. Spend time with them, and they might tell you their secrets.
 - player: What do they say?
-- linus: They say patience, mostly. They say there is no hurry. A tree takes a hundred years to grow and never once seems anxious about it.
+- linus: They say patience, mostly. They say there is no hurry. A tree takes a hundred years to grow and never seems anxious about it.
 
 ### linus-lore-078
 context: fall, clear evening, at the campfire, 6 hearts

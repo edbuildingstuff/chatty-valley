@@ -25,15 +25,25 @@ SOURCES = [
     ("state",       f"{BASE}/batches/state.jsonl"),
     ("place",       f"{BASE}/batches/place.jsonl"),
     ("crossover",   f"{BASE}/batches/crossover.jsonl"),
+    # v2 gap batches (canon sweep 2026-07-16): direct identity/name/age coverage, gibberish
+    # robustness, wiki-grounded in-game references, and deep multi-turn conversations.
+    ("identity",    f"{BASE}/batches/identity.jsonl"),
+    ("nonsense",    f"{BASE}/batches/nonsense.jsonl"),
+    ("reference",   f"{BASE}/batches/reference.jsonl"),
+    ("depth",       f"{BASE}/batches/depth.jsonl"),
 ]
-TARGET = {"voice": 210, "lore": 90, "state": 120, "place": 30, "deflection": 90, "crossover": 60}
+TARGET = {"voice": 210, "lore": 90, "state": 120, "place": 30, "deflection": 90, "crossover": 60,
+          "identity": 38, "nonsense": 40, "reference": 55, "depth": 30}
+MAX_TURNS = {"depth": 6}  # category -> max assistant turns (default 3); matches build_batch.py
 EVAL_FRACTION = 0.10
 SEED = 42
 DASHES = ("—", "–")
 
 
 def norm(text):
-    return re.sub(r"[^a-z0-9 ]", "", text.lower()).strip()
+    # Symbol-only openers (nonsense batch) normalize to empty; fall back to the raw text so distinct
+    # symbol noise is not collapsed into one key. Matches build_batch.py.
+    return re.sub(r"[^a-z0-9 ]", "", text.lower()).strip() or text.strip()
 
 
 def load():
@@ -61,7 +71,7 @@ def relint(rows):
         usr = [m for m in r["messages"] if m["role"] == "user"]
         if not r.get("context"):
             problems.append(f"{rid}: missing context")
-        if not (2 <= len(asst) <= 3):
+        if not (2 <= len(asst) <= MAX_TURNS.get(r.get("category") or "", 3)):
             problems.append(f"{rid}: {len(asst)} assistant turns")
         if len(usr) != len(asst):
             problems.append(f"{rid}: {len(usr)} user vs {len(asst)} assistant turns")

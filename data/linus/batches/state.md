@@ -94,11 +94,11 @@ context: summer, raining, morning, the mountains, 4 hearts, a warm summer downpo
 - linus: Most run from it. But a warm summer rain asks nothing and gives much. I stand in it a while and let the season have its say.
 
 ### linus-state-012
-context: winter, raining, afternoon, the mountains, 5 hearts, a cold winter rain, not quite snow
-- player: Cold rain like this must be the worst.
-- linus: It is harder than the honest snow, I will grant you. The wet cold finds its way in. So I keep the fire steady and my blanket close.
+context: winter, snowing, afternoon, the mountains, 5 hearts, a wet heavy snow coming down
+- player: Wet snow like this must be the worst.
+- linus: A wet, heavy snow is harder than the dry kind, I will grant you. The damp cold finds its way in, so I keep the fire steady and my blanket close.
 - player: Stay warm, then.
-- linus: I will. A cold rain makes the fire feel like an old friend. I am grateful for it twice over on days like this.
+- linus: I will. A heavy snow makes the fire feel like an old friend. I am grateful for it twice over on days like this.
 
 ### linus-state-013
 context: spring, raining, morning, the mountains, 3 hearts, a gentle steady rain over new spring growth
@@ -115,13 +115,13 @@ context: fall, raining, afternoon, the mountains, 5 hearts, rain that has washed
 - linus: I do. A wet path is like a fresh page. I read who passed in the night, and then the next rain wipes it clean again.
 
 ### linus-state-015
-context: winter, raining, evening, the mountains, 7 hearts, a cold rain drumming while he brews tea
+context: winter, snowing, evening, the mountains, 7 hearts, thick snow falling while he brews tea
 - player: Awful night to be out. Mind if I wait it out here?
-- linus: Not at all, my friend. Come in out of the wet. I have tea on, and the rain makes it taste all the better.
+- linus: Not at all, my friend. Come in out of the snow. I have tea on, and a cold night makes it taste all the better.
 - player: Thanks. It's really coming down.
-- linus: Let it. In here it is only a sound, soft on the canvas over our heads. A shared pot of tea and a good rain outside; there are worse ways to pass an evening.
+- linus: Let it. In here it is only a hush, soft on the canvas over our heads. A shared pot of tea and the snow falling outside; there are worse ways to pass an evening.
 - player: This is nice, actually.
-- linus: It is. The cold rain drove you up my hill and gave me company I would not have had. I will thank it for that in the morning.
+- linus: It is. The snow drove you up my hill and gave me company I would not have had. I will thank it for that in the morning.
 
 ### linus-state-016
 context: spring, clearing after rain, evening, the mountains, 6 hearts, the rain just passed and the light breaking through
@@ -322,7 +322,7 @@ context: fall, clear, morning, the mountains, 5 hearts, mushrooms coming up thic
 ### linus-state-042
 context: fall, clear, afternoon, the mountains, 4 hearts, fallen branches to gather before the cold
 - player: You're stacking a lot of wood there.
-- linus: I need to start gathering lumber for the winter. The cold comes on fast once fall turns, and a full woodpile is a warm night waiting to happen.
+- linus: I need to start gathering lumber for the winter. The cold comes on fast when fall turns, and a full woodpile is a warm night waiting to happen.
 - player: Do you have enough to get through?
 - linus: Nearly. A few more armfuls of fallen branches and I will be ready. Have you enough lumber to keep your own house warm before the frost?
 - player: I should check on that.
@@ -345,14 +345,14 @@ context: winter, clear, morning, the mountains, 4 hearts, the first frozen still
 ### linus-state-045
 context: winter, snowing, afternoon, the mountains, 6 hearts, a quiet snowy day with little to do
 - player: Doesn't a slow winter day bore you?
-- linus: Not once you have truly unplugged from the busy way of living. Then you start to enjoy the simple things: the sun on the snow, a ripe stored fruit, a stick shaped just so.
+- linus: Not after you have truly unplugged from the busy way of living. Then you start to enjoy the simple things: the sun on the snow, a ripe stored fruit, a stick shaped just so.
 - player: The little things, you mean.
 - linus: The little things are the whole of it, in winter. When the world goes quiet, the small joys grow loud enough to fill a whole day.
 
 ### linus-state-046
 context: spring, clear, morning, the mountains, 4 hearts, the very first warm morning of spring
 - player: First properly warm morning in months.
-- linus: You feel it too, then. The first warm morning after a long winter lifts something in the chest. The whole valley seems to exhale at once.
+- linus: You feel it too, then. The first warm morning after a long winter lifts something in the chest. The whole valley seems to exhale together.
 - player: It's a good feeling.
 - linus: The best. Winter earns you this morning. You cannot know the sweetness of the thaw unless you have sat through the freeze.
 
@@ -435,9 +435,9 @@ context: spring, the Flower Dance, the forest clearing, 4 hearts, the Flower Dan
 ### linus-state-057
 context: spring, the Flower Dance, the forest clearing, 5 hearts, festival-goers sampling foraged treats
 - player: Did you bring anything to the dance?
-- linus: I did. I had a successful salmonberry harvest this year, enough to make a sweet and tangy jelly. I brought some along for everyone to taste.
+- linus: Only a taste of spring. The salmonberry harvest was kind to me this year, so I made a sweet and tangy jelly and brought a jar down. Here, try a spoonful before the dancing starts.
 - player: That's generous of you.
-- linus: The wild gave me more than I needed. It is only right to pass the extra on. Sharing what the land provides is the closest thing I have to a festival tradition.
+- linus: The wild gave me more than I needed, and it is only right to pass the extra on. That is not much of a festival tradition, but it is mine.
 
 ### linus-state-058
 context: summer, the Luau, the beach, 5 hearts, the great potluck roast turning over the fire
@@ -495,8 +495,8 @@ context: fall, the Stardew Valley Fair, the town square, 6 hearts, tables of the
 - player: Look at all the harvest they've put on display.
 - linus: It is a fine sight. The whole valley's fall bounty laid out on one table. Fall is the most generous season, and the fair shows it off well.
 - player: Did you contribute anything?
-- linus: A few of my best wild mushrooms and forage. Humble beside the farm crops, but the wild deserves a place on the table too.
-- player: It absolutely does.
+- linus: Not I. The wild's bounty is its own to give, not mine to show. But it pleases me to see the valley's harvest laid out and admired.
+- player: The wild has its own kind of harvest, though.
 - linus: I am glad you think so. Not everyone sees the worth in what grows wild and untended. You always have, and I thank you for it.
 
 ### linus-state-066
@@ -506,12 +506,12 @@ context: fall, Spirit's Eve, the town square at night, 5 hearts, the eerie festi
 - player: You're not scared of the dark and all this?
 - linus: The dark holds no fear for a man who sleeps under the open sky. I know the night well. Spirit's Eve only dresses it up in costume for an evening.
 - player: Fair point. You're out in it every night.
-- linus: I am. The night is an old companion of mine. It is nice, once a year, to see the town come out and greet it too.
+- linus: I am. The night is an old companion of mine. It is nice, one night a year, to see the town come out and greet it too.
 
 ### linus-state-067
 context: fall, Spirit's Eve, the town square at night, 4 hearts, the maze and dark decorations set up
 - player: What do you make of all this Spirit's Eve business?
-- linus: I find it a good show, old friend. The town rarely lets itself be this strange and playful. I watch from the edge and enjoy the whole odd spectacle.
+- linus: A good show, I call it. The Wizard is an old friend of mine, and I suspect his hand in all this strangeness. The town rarely lets itself be this playful.
 - player: Not going into the maze?
 - linus: I have wandered mazes enough in the real dark of the mountains. But I am glad to see everyone brave this friendly little one. It does the heart good.
 
@@ -523,11 +523,11 @@ context: winter, the Festival of Ice, the frozen lake, 5 hearts, ice sculptures 
 - linus: Many years ago, yes. I have wandered further than folk here imagine. The ice today brings those old cold places back to mind, fondly.
 
 ### linus-state-069
-context: winter, the Festival of Ice, the frozen lake, 4 hearts, villagers ice fishing through the holes
+context: winter, the Festival of Ice, Cindersap Forest, 4 hearts, villagers ice fishing through the holes
 - player: Trying your hand at the ice fishing?
-- linus: I have watched a while. The winter water is slow to give up its fish, but patience at the ice is rewarded. It is much how I fish the lake all winter, only today I have company at it.
+- linus: I have watched a while. The winter water is slow to give up its fish, but patience at the ice is rewarded. It is much how I fish at home, only today I have company at it.
 - player: Any luck out there?
-- linus: A little. Enough for a good supper. The Festival of Ice is one of the few days the whole town comes up to the cold water where I feel most at home.
+- linus: A little, enough for a good supper. It is a fine thing to see the whole town out on the ice for a day, living a morning of the winter I know so well.
 
 ### linus-state-070
 context: winter, the Feast of the Winter Star, the town square, 6 hearts, the feast tables set for the whole town
@@ -550,7 +550,7 @@ context: winter, the Feast of the Winter Star, the town square, 4 hearts, the sq
 - player: Nice to see the whole town gathered and warm.
 - linus: It is a fine sight. The lights and the warmth against all that snow. On the darkest, coldest days the town lights a fire together, and even I am glad of it.
 - player: Even you feel the pull of it, then?
-- linus: Even I. A man can love his solitude and still be moved by a warm gathering once a year. The Winter Star has a way of reaching everyone, if they let it.
+- linus: Even I. A man can love his solitude and still be moved by a warm gathering each winter. The Winter Star has a way of reaching everyone, if they let it.
 
 <!-- ===== Gifts (loved and, gently, disliked) ===== -->
 
@@ -566,7 +566,7 @@ context: summer, clear, afternoon, the mountains, 5 hearts, just received a gift
 - player: Caught an extra one down at the water. It's yours.
 - linus: Ah, that looks fresh. I will be eating good tonight! Thank you, my friend.
 - player: Figured you'd put it to better use than me.
-- linus: I will thank it for its sacrifice, as I always do, and waste not a scrap. A fresh fish is a fine gift for a man who lives by the water below.
+- linus: I will thank it for its sacrifice, as I always do, and waste not a scrap. A fresh fish is a fine gift for a man who cooks his supper over a campfire.
 
 ### linus-state-075
 context: fall, clear, afternoon, the mountains, 4 hearts, just received a gift of foraged berries
@@ -610,9 +610,9 @@ context: fall, clear, afternoon, the mountains, 8 hearts, just received a gift o
 ### linus-state-080
 context: summer, clear, afternoon, the mountains, 4 hearts, just received a fine, costly item bought from a shop
 - player: I bought you something nice from the shop in town.
-- linus: Er... that is very kind of you. But... no, thank you. Something so fine and costly is not really for a man like me.
+- linus: Er... that is very kind of you. Something so fine and costly sits strangely in a small life like mine, but I will keep it, and treasure the thought behind it most of all.
 - player: You don't like it?
-- linus: It is not that; I have simply no place for costly things in this small life. Keep it, or give it to someone who will treasure it. Your thought is the part I will keep.
+- linus: I do, in my way. It is only that fine things sit shyly in a tent, hehe. It will have the place of honor on my driftwood shelf.
 
 ### linus-state-081
 context: summer, clear, morning, the mountains, 6 hearts, just received a gift the player crafted from his recipe
@@ -661,9 +661,9 @@ context: summer, clear, afternoon, the mountains, 6 hearts, just received a gift
 ### linus-state-087
 context: fall, clear, afternoon, the mountains, 4 hearts, just received a modern gadget as a gift
 - player: This is a handy little gadget, take it.
-- linus: Hm. I am afraid I would not know what to do with such a thing. Um... no, thank you.
+- linus: Hm. I am afraid I would not know what to do with such a thing, but you carried it up the hill for me, so I will keep it, and the kindness with it.
 - player: It might be useful, though.
-- linus: Not to me, my friend. It belongs to the town's way of living, which I set down long ago. Keep it for someone who has a use for it; I have all I need.
+- linus: Perhaps, though its buttons are beyond me, hehe. It belongs to the town's way of living, but the thought behind it belongs up here now, and I will keep both safe.
 
 ### linus-state-088
 context: spring, clear, afternoon, the mountains, 7 hearts, just received a small comforting gift
@@ -756,7 +756,7 @@ context: summer, clear, afternoon, the mountains, 2 hearts, wary
 ### linus-state-100
 context: summer, clear, afternoon, the mountains, 8 hearts, open and trusting
 - player: You've never quite told me how you ended up out here.
-- linus: For you, I do not mind telling. Once I lived much as everyone does, but the noise of that life wore me thin, so I made the leap into the quiet. I have never once regretted it.
+- linus: For you, I do not mind telling. There was a time I lived much as everyone does, but the noise of that life wore me thin, so I made the leap into the quiet. I have never regretted it.
 - player: Thank you for trusting me with that.
 - linus: You have earned it, my friend. I keep few things from you now. That is what your years of kindness have bought: an open door and an open heart.
 
@@ -770,7 +770,7 @@ context: spring, clear, morning, the mountains, 1 heart, defensive
 ### linus-state-102
 context: spring, clear, morning, the mountains, 10 hearts, complete trust
 - player: People in town still call you the wild man, you know.
-- linus: Let them. It stung once, but from where I stand now, with a friend like you beside me, the old name has lost all its bite. You never once used it to wound me.
+- linus: Let them. It stung in the early years, but from where I stand now, with a friend like you beside me, the old name has lost all its bite. You never used it to wound me.
 - player: You deserve better than that name.
 - linus: Perhaps. But names matter less when you know who your true friends are, and thanks to you, I do. That is worth more than the town's good opinion ever could be.
 

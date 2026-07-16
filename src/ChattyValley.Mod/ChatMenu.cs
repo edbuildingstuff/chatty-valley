@@ -19,6 +19,7 @@ public sealed class ChatMenu : IClickableMenu
 {
     private readonly NPC _npc;
     private readonly Func<IReadOnlyList<ChatTurn>, Task<string?>> _ask; // build prompt from history + generate
+    private readonly Action? _onClose;                                  // dev chat-log conversation-end hook
     private readonly List<ChatTurn> _history = new();
     private readonly TextBox _input;
 
@@ -37,11 +38,12 @@ public sealed class ChatMenu : IClickableMenu
     private int _textY;
     private int _hintY;
 
-    public ChatMenu(NPC npc, Func<IReadOnlyList<ChatTurn>, Task<string?>> ask)
+    public ChatMenu(NPC npc, Func<IReadOnlyList<ChatTurn>, Task<string?>> ask, Action? onClose = null)
         : base((Game1.uiViewport.Width - Width_) / 2, 0, Width_, 360)
     {
         _npc = npc;
         _ask = ask;
+        _onClose = onClose;
 
         var boxTexture = Game1.content.Load<Texture2D>("LooseSprites\\textBox");
         _input = new TextBox(boxTexture, null, Game1.smallFont, Game1.textColor);
@@ -118,6 +120,12 @@ public sealed class ChatMenu : IClickableMenu
         // Only Escape closes; letter keys are typed into the box (do not call base, or the menu button
         // key, e.g. 'e', would close the menu while typing).
         if (key == Keys.Escape) exitThisMenu();
+    }
+
+    protected override void cleanupBeforeExit()
+    {
+        base.cleanupBeforeExit();
+        _onClose?.Invoke();
     }
 
     public override void receiveLeftClick(int x, int y, bool playSound = true)

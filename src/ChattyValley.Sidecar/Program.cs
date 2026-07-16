@@ -7,7 +7,9 @@ using ChattyValley.Runtime;
 // request/response per line over a named pipe:
 //   request  (mod -> sidecar):  {"prompt":"<full chatml prompt>","temp":0.6,"maxTokens":96,
 //                                "repeatPenalty":1.1,"frequencyPenalty":0.1}   (penalties optional)
-//   response (sidecar -> mod):  {"reply":"..."}  or  {"error":"..."}
+//   response (sidecar -> mod):  {"reply":"...","raw":"..."}  or  {"error":"..."}
+//     reply = what the player should see (word-run collapse applied); raw = the model's verbatim
+//     output, returned so the mod's chat log records degeneration events even when the guard fires.
 // The pipe server is created only AFTER the model loads, so a successful client connect = ready.
 //
 // Usage: ChattyValley.Sidecar --base <gguf> --adapter <gguf> --pipe <name> [--gpu-layers N]
@@ -55,7 +57,8 @@ while ((line = await reader.ReadLineAsync()) != null)
         await foreach (var tok in llm.InferStreamAsync(req.Prompt, req.Temp, req.MaxTokens,
                            req.RepeatPenalty ?? 1.1f, req.FrequencyPenalty ?? 0.1f))
             sb.Append(tok);
-        await writer.WriteLineAsync(JsonSerializer.Serialize(new { reply = CollapseWordRuns(sb.ToString().Trim()) }));
+        string raw = sb.ToString().Trim();
+        await writer.WriteLineAsync(JsonSerializer.Serialize(new { reply = CollapseWordRuns(raw), raw }));
     }
     catch (Exception ex)
     {

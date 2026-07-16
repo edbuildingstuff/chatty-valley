@@ -36,6 +36,9 @@ public sealed class ModEntry : StardewModdingAPI.Mod
     private SidecarClient? _sidecar;
     private Character? _linus;
     private PromptBuilder? _prompt;
+    private ChatLogger? _chatLog;
+    private string _baseModelFile = "";
+    private string _adapterFile = "";
 
     private const string LinusName = "Linus";
 
@@ -74,6 +77,17 @@ public sealed class ModEntry : StardewModdingAPI.Mod
 
             _linus = LoadCharacter("linus.json", adapterPath);
             _prompt = new PromptBuilder(ChatTemplate.Lfm2);
+            _baseModelFile = Path.GetFileName(basePath);
+            _adapterFile = Path.GetFileName(adapterPath);
+
+            if (_config.ChatLogEnabled)
+            {
+                string dir = string.IsNullOrWhiteSpace(_config.ChatLogDir)
+                    ? Path.Combine(Helper.DirectoryPath, "chat-logs")
+                    : _config.ChatLogDir;
+                _chatLog = new ChatLogger(dir);
+                Monitor.Log($"Chat transcript log: {_chatLog.FilePath}", LogLevel.Info);
+            }
 
             _sidecar = new SidecarClient(Monitor);
             await _sidecar.StartAsync(sidecarExe, basePath, adapterPath, _config.GpuLayers);
@@ -148,11 +162,43 @@ public sealed class ModEntry : StardewModdingAPI.Mod
     private void OpenChat(NPC villager)
     {
         GameContext ctx = ReadContext(villager);
-        Func<IReadOnlyList<ChatTurn>, Task<string?>> ask = history =>
-            _sidecar!.AskAsync(_prompt!.BuildConversation(_linus!, ctx, Window(history)),
-                               _config.Temperature, _config.MaxTokens,
-                               _config.RepeatPenalty, _config.FrequencyPenalty);
-        Game1.activeClickableMenu = new ChatMenu(villager, ask);
+        string convo = Guid.NewGuid().ToString("N").Substring(0, 8);
+        _chatLog?.Write(new
+        {
+            evt = "start", ts = ChatLogger.Timestamp(), convo, npc = villager.Name,
+            gameTime = $"{ctx.Season} {ctx.Day} year {ctx.Year}, {ctx.Weekday} {ctx.Clock}",
+            system = _prompt!.BuildSystem(_linus!, ctx),
+            baseModel = _baseModelFile, adapter = _adapterFile,
+            temp = _config.Temperature, maxTokens = _config.MaxTokens,
+            repeatPenalty = _config.RepeatPenalty, frequencyPenalty = _config.FrequencyPenalty,
+            window = _config.MaxHistoryMessages,
+        });
+
+        Func<IReadOnlyList<ChatTurn>, Task<string?>> ask = async history =>
+        {
+            IReadOnlyList<ChatTurn> windowed = Window(history);
+            string prompt = _prompt!.BuildConversation(_linus!, ctx, windowed);
+            var sw = System.Diagnostics.Stopwatch.StartNew();
+            var (reply, raw) = await _sidecar!.AskDetailedAsync(prompt,
+                _config.Temperature, _config.MaxTokens,
+                _config.RepeatPenalty, _config.FrequencyPenalty);
+            sw.Stop();
+            _chatLog?.Write(new
+            {
+                evt = "turn", ts = ChatLogger.Timestamp(), convo,
+                player = history.Count > 0 ? history[history.Count - 1].Content : null,
+                reply,
+                // raw is only recorded when the sidecar's word-run guard actually changed the text,
+                // so degeneration events stand out in the log instead of every line carrying a copy.
+                raw = raw is not null && raw != reply ? raw : null,
+                ms = (int)sw.ElapsedMilliseconds,
+                historyLen = history.Count, sentToModel = windowed.Count,
+                prompt = _config.ChatLogPrompts ? prompt : null,
+            });
+            return reply;
+        };
+        Game1.activeClickableMenu = new ChatMenu(villager, ask,
+            onClose: () => _chatLog?.Write(new { evt = "end", ts = ChatLogger.Timestamp(), convo }));
     }
 
     // Sliding window over the conversation: only the most recent messages go to the model (see

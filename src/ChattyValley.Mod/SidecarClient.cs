@@ -54,25 +54,38 @@ public sealed class SidecarClient : IDisposable
     /// <summary>Send one prompt, get one reply. Returns null on any error (caller shows nothing).</summary>
     public async Task<string?> AskAsync(string prompt, float temp, int maxTokens,
         float repeatPenalty, float frequencyPenalty)
+        => (await AskDetailedAsync(prompt, temp, maxTokens, repeatPenalty, frequencyPenalty)).Reply;
+
+    /// <summary>
+    /// Like <see cref="AskAsync"/>, but also returns the model's verbatim output ("raw") before the
+    /// sidecar's word-run collapse guard. The chat log records raw so degeneration events stay
+    /// visible during development even when the guard cleaned them up for the player.
+    /// </summary>
+    public async Task<(string? Reply, string? Raw)> AskDetailedAsync(string prompt, float temp,
+        int maxTokens, float repeatPenalty, float frequencyPenalty)
     {
-        if (!Ready || _writer is null || _reader is null) return null;
+        if (!Ready || _writer is null || _reader is null) return (null, null);
         try
         {
             await _writer.WriteLineAsync(JsonSerializer.Serialize(
                 new { prompt, temp, maxTokens, repeatPenalty, frequencyPenalty }));
             string? line = await _reader.ReadLineAsync();
-            if (line is null) return null;
+            if (line is null) return (null, null);
             using var doc = JsonDocument.Parse(line);
-            if (doc.RootElement.TryGetProperty("reply", out var r)) return r.GetString();
+            if (doc.RootElement.TryGetProperty("reply", out var r))
+            {
+                string? raw = doc.RootElement.TryGetProperty("raw", out var w) ? w.GetString() : null;
+                return (r.GetString(), raw);
+            }
             if (doc.RootElement.TryGetProperty("error", out var e))
                 _monitor.Log($"sidecar error: {e.GetString()}", LogLevel.Warn);
-            return null;
+            return (null, null);
         }
         catch (Exception ex)
         {
             _monitor.Log($"sidecar request failed (chat disabled this turn): {ex.Message}", LogLevel.Warn);
             Ready = false;
-            return null;
+            return (null, null);
         }
     }
 

@@ -41,3 +41,22 @@ dotnet build src/ChattyValley.Mod/ChattyValley.Mod.csproj -c Debug
 
 The base GGUF + the Linus LoRA GGUF are large and live outside the repo (models/ and the gtm training
 artifacts). Bundle them under `assets/` before any public release.
+
+## Development chat logging
+
+While the mod is in development, every free-chat conversation is appended to a per-day JSONL
+transcript (`ChatLogEnabled`, on by default) so test sessions can be reviewed after a play-through:
+
+- **Where:** `<mod folder>/chat-logs/chatlog-YYYY-MM-DD.jsonl` (override with `ChatLogDir`).
+- **What:** a `start` event per conversation (villager, in-game date/time, the exact system/context
+  line sent, base + adapter filenames, temperature/penalties/window), a `turn` event per exchange
+  (player line, shown reply, latency ms, how many history messages were sent), and an `end` event on
+  close. When the sidecar's word-run guard changed the model's output, the turn also carries `raw`
+  (the verbatim pre-guard text), so degeneration events stay visible even though the player never
+  sees them.
+- **Prompts:** set `ChatLogPrompts: true` to also record the full rendered prompt each turn
+  (verbose; for prompt-level debugging only).
+- **Reading:** `python tools/read_chatlog.py` pretty-prints the newest log grouped by conversation,
+  flagging guard activations, residual word runs, and slow replies (`--last N`, `--flags`).
+
+Logging is best-effort and can never break chat; disable with `ChatLogEnabled: false` for release.

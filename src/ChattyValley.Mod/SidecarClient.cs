@@ -52,12 +52,14 @@ public sealed class SidecarClient : IDisposable
     }
 
     /// <summary>Send one prompt, get one reply. Returns null on any error (caller shows nothing).</summary>
-    public async Task<string?> AskAsync(string prompt, float temp, int maxTokens)
+    public async Task<string?> AskAsync(string prompt, float temp, int maxTokens,
+        float repeatPenalty, float frequencyPenalty)
     {
         if (!Ready || _writer is null || _reader is null) return null;
         try
         {
-            await _writer.WriteLineAsync(JsonSerializer.Serialize(new { prompt, temp, maxTokens }));
+            await _writer.WriteLineAsync(JsonSerializer.Serialize(
+                new { prompt, temp, maxTokens, repeatPenalty, frequencyPenalty }));
             string? line = await _reader.ReadLineAsync();
             if (line is null) return null;
             using var doc = JsonDocument.Parse(line);

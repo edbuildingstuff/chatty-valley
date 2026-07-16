@@ -13,6 +13,10 @@ float temperature = float.TryParse(GetArg("--temp"), out var tp) ? tp : 0.7f;
 int maxTokens = int.TryParse(GetArg("--max-tokens"), out var mt) ? mt : 96;
 string? adapterOverride = GetArg("--adapter");           // path to a per-villager LoRA GGUF (Stage 1b)
 float adapterScale = float.TryParse(GetArg("--adapter-scale"), out var asc) ? asc : 1.0f;
+bool multiTurn = HasFlag("--multiturn");                 // scripted deep-conversation probe (repetition repro)
+int runs = int.TryParse(GetArg("--runs"), out var rn) ? rn : 3;
+float repeatPenalty = float.TryParse(GetArg("--repeat-penalty"), out var rp) ? rp : 1.1f;
+float freqPenalty = float.TryParse(GetArg("--freq-penalty"), out var fp) ? fp : 0.1f;
 
 string repoRoot = FindRepoRoot(AppContext.BaseDirectory);
 modelPath ??= Path.Combine(repoRoot, "models", "LFM2.5-350M-Q4_K_M.gguf");
@@ -62,6 +66,72 @@ if (character.AdapterPath is not null)
 }
 
 var prompt = new PromptBuilder(ChatTemplate.Lfm2);
+
+// ---- scripted deep-conversation probe (--multiturn) --------------------------------------------
+// Repro + regression check for multi-turn degeneration ("once once once..."): drive a fixed 8-round
+// conversation through BuildConversation (exactly the mod's path), several runs, and report the
+// longest same-word run seen in any reply. Healthy output: max run 1 (or an intentional double).
+if (multiTurn)
+{
+    var mtCtx = new GameContext
+    {
+        Season = "summer", Day = 12, Weather = "clear", TimeOfDay = "afternoon", Clock = "1:00 PM",
+        Weekday = "Wednesday", Location = "the mountains", Hearts = 4, FriendshipPoints = 1000,
+        Relationship = "friend",
+    };
+    // Player lines chosen to pull on the "once"-heavy themes (his past, town life, regret), plus the
+    // kind of noise a real player types. 16 rounds: the failure was seen "multiple turns in", after
+    // several "once"-bearing replies have accumulated in the history.
+    string[] script =
+    {
+        "Hello, Linus.",
+        "How have you been lately?",
+        "Did you ever live in town, like everyone else?",
+        "Do you ever miss that old life?",
+        "What made you leave it all behind?",
+        "Was it hard at first, living out here?",
+        "Do you think you could ever go back?",
+        "Did you only try town life once, or more than once?",
+        "asdkjfh qwpoeiru zzkjv",
+        "Tell me about the winters up here.",
+        "Have you ever been sick from foraged food?",
+        "What do you eat when food runs low?",
+        "Do the townspeople ever bother you?",
+        "suhfpsouzh ojnfzosijfniuefuh",
+        "What's your favourite season, then?",
+        "Thanks for telling me all this, Linus.",
+    };
+
+    Console.WriteLine($"Multi-turn probe: {runs} run(s), {script.Length} rounds, "
+        + $"repeatPenalty={repeatPenalty} freqPenalty={freqPenalty} temp={temperature}");
+    int worstRun = 0;
+    string worstText = "";
+    for (int run = 1; run <= runs; run++)
+    {
+        Console.WriteLine(new string('-', 62));
+        Console.WriteLine($"Run {run}");
+        var history = new List<ChatTurn>();
+        foreach (var playerLine in script)
+        {
+            history.Add(new ChatTurn(true, playerLine));
+            string p = prompt.BuildConversation(character, mtCtx, history);
+            var sb = new StringBuilder();
+            await foreach (var token in llm.InferStreamAsync(p, temperature, maxTokens, repeatPenalty, freqPenalty))
+                sb.Append(token);
+            string reply = sb.ToString().Trim();
+            history.Add(new ChatTurn(false, reply));
+
+            int longest = LongestWordRun(reply);
+            if (longest > worstRun) { worstRun = longest; worstText = reply; }
+            Console.WriteLine($"  You  : {playerLine}");
+            Console.WriteLine($"  Linus: {reply}{(longest >= 3 ? $"   <-- DEGENERATE (run of {longest})" : "")}");
+        }
+    }
+    Console.WriteLine(new string('=', 62));
+    Console.WriteLine($"Longest same-word run across all replies: {worstRun}"
+        + (worstRun >= 3 ? $"  FAIL\n  worst reply: {worstText}" : "  OK"));
+    return worstRun >= 3 ? 2 : 0;
+}
 
 var scenarios = new (string Label, GameContext Ctx, string? Msg)[]
 {
@@ -122,6 +192,24 @@ static string? GetArg(string name)
     for (int i = 1; i < a.Length - 1; i++)
         if (a[i] == name) return a[i + 1];
     return null;
+}
+
+static bool HasFlag(string name) => Environment.GetCommandLineArgs().Contains(name);
+
+static int LongestWordRun(string text)
+{
+    var words = text.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(w => w.Trim('.', ',', '!', '?', ';', ':', '"', '\'').ToLowerInvariant())
+                    .Where(w => w.Length > 0).ToArray();
+    int best = 0, cur = 0;
+    string? prev = null;
+    foreach (var w in words)
+    {
+        cur = w == prev ? cur + 1 : 1;
+        prev = w;
+        if (cur > best) best = cur;
+    }
+    return best;
 }
 
 static string FindRepoRoot(string start)

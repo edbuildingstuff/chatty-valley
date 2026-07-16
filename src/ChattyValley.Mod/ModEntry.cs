@@ -149,9 +149,20 @@ public sealed class ModEntry : StardewModdingAPI.Mod
     {
         GameContext ctx = ReadContext(villager);
         Func<IReadOnlyList<ChatTurn>, Task<string?>> ask = history =>
-            _sidecar!.AskAsync(_prompt!.BuildConversation(_linus!, ctx, history),
-                               _config.Temperature, _config.MaxTokens);
+            _sidecar!.AskAsync(_prompt!.BuildConversation(_linus!, ctx, Window(history)),
+                               _config.Temperature, _config.MaxTokens,
+                               _config.RepeatPenalty, _config.FrequencyPenalty);
         Game1.activeClickableMenu = new ChatMenu(villager, ask);
+    }
+
+    // Sliding window over the conversation: only the most recent messages go to the model (see
+    // ModConfig.MaxHistoryMessages). Trimmed from the front so the window always ends on the
+    // player's latest message.
+    private IReadOnlyList<ChatTurn> Window(IReadOnlyList<ChatTurn> history)
+    {
+        int max = Math.Max(2, _config.MaxHistoryMessages);
+        if (history.Count <= max) return history;
+        return history.Skip(history.Count - max).ToArray();
     }
 
     // ---- live game state -> GameContext (READ ONLY) ---------------------------------------------

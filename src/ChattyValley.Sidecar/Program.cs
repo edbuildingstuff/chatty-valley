@@ -5,7 +5,8 @@ using ChattyValley.Runtime;
 
 // Chatty Valley inference sidecar. Loads the base GGUF + a villager LoRA, then serves one
 // request/response per line over a named pipe:
-//   request  (mod -> sidecar):  {"prompt":"<full chatml prompt>","temp":0.6,"maxTokens":96}
+//   request  (mod -> sidecar):  {"prompt":"<full chatml prompt>","temp":0.6,"maxTokens":96,
+//                                "repeatPenalty":1.1,"frequencyPenalty":0.1}   (penalties optional)
 //   response (sidecar -> mod):  {"reply":"..."}  or  {"error":"..."}
 // The pipe server is created only AFTER the model loads, so a successful client connect = ready.
 //
@@ -51,9 +52,10 @@ while ((line = await reader.ReadLineAsync()) != null)
         var req = JsonSerializer.Deserialize<Req>(line, opts);
         if (req?.Prompt is null) { await writer.WriteLineAsync("{\"error\":\"bad request\"}"); continue; }
         var sb = new StringBuilder();
-        await foreach (var tok in llm.InferStreamAsync(req.Prompt, req.Temp, req.MaxTokens))
+        await foreach (var tok in llm.InferStreamAsync(req.Prompt, req.Temp, req.MaxTokens,
+                           req.RepeatPenalty ?? 1.1f, req.FrequencyPenalty ?? 0.1f))
             sb.Append(tok);
-        await writer.WriteLineAsync(JsonSerializer.Serialize(new { reply = sb.ToString().Trim() }));
+        await writer.WriteLineAsync(JsonSerializer.Serialize(new { reply = CollapseWordRuns(sb.ToString().Trim()) }));
     }
     catch (Exception ex)
     {
@@ -69,4 +71,13 @@ static string? Arg(string name)
     return null;
 }
 
-sealed record Req(string? Prompt, float Temp, int MaxTokens);
+// Last-line-of-defense degeneration guard: collapse the same word repeated 3+ times in a row
+// ("once once once once" -> "once"). Sampling penalties make this rare; this catches the stragglers
+// so a degenerate reply never reaches the player. Deliberate doubles ("no, no") have punctuation
+// between them and are untouched.
+static string CollapseWordRuns(string text) =>
+    System.Text.RegularExpressions.Regex.Replace(
+        text, @"\b(\w+)(?:\s+\1\b){2,}", "$1",
+        System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+sealed record Req(string? Prompt, float Temp, int MaxTokens, float? RepeatPenalty, float? FrequencyPenalty);

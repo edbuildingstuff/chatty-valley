@@ -60,6 +60,7 @@ public sealed class LlmRuntime : IAsyncDisposable
 
     public async IAsyncEnumerable<string> InferStreamAsync(
         string prompt, float temperature, int maxTokens,
+        float repeatPenalty = 1.1f, float frequencyPenalty = 0.1f,
         [EnumeratorCancellation] CancellationToken ct = default)
     {
         var inferenceParams = new InferenceParams
@@ -68,7 +69,18 @@ public sealed class LlmRuntime : IAsyncDisposable
             // "\n\n" cuts a small model off before it runs into narrating a second paragraph or the
             // other speaker's turn; the ChatML markers bound the assistant turn.
             AntiPrompts = new List<string> { "<|im_end|>", "<|im_start|>", "\n\n" },
-            SamplingPipeline = new DefaultSamplingPipeline { Temperature = temperature },
+            // DefaultSamplingPipeline ships with RepeatPenalty = 1 (i.e. OFF), and a 350M model with a
+            // strongly-fit character LoRA will loop a favourite token ("once once once...") several
+            // turns into a conversation without it. The penalty ring buffer only sees tokens generated
+            // in THIS call (prompt tokens are never accepted into the chain), so PenaltyCount 128
+            // comfortably covers a full 96-token reply.
+            SamplingPipeline = new DefaultSamplingPipeline
+            {
+                Temperature = temperature,
+                RepeatPenalty = repeatPenalty,
+                FrequencyPenalty = frequencyPenalty,
+                PenaltyCount = 128,
+            },
         };
 
         if (_activeAdapter is { } active)

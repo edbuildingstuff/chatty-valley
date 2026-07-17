@@ -14,6 +14,7 @@ int maxTokens = int.TryParse(GetArg("--max-tokens"), out var mt) ? mt : 96;
 string? adapterOverride = GetArg("--adapter");           // path to a per-villager LoRA GGUF (Stage 1b)
 float adapterScale = float.TryParse(GetArg("--adapter-scale"), out var asc) ? asc : 1.0f;
 bool multiTurn = HasFlag("--multiturn");                 // scripted deep-conversation probe (repetition repro)
+string scriptName = GetArg("--script") ?? "lore";        // which probe script: lore | casual
 int runs = int.TryParse(GetArg("--runs"), out var rn) ? rn : 3;
 float repeatPenalty = float.TryParse(GetArg("--repeat-penalty"), out var rp) ? rp : 1.1f;
 float freqPenalty = float.TryParse(GetArg("--freq-penalty"), out var fp) ? fp : 0.1f;
@@ -79,30 +80,52 @@ if (multiTurn)
         Weekday = "Wednesday", Location = "the mountains", Hearts = 4, FriendshipPoints = 1000,
         Relationship = "friend",
     };
-    // Player lines chosen to pull on the "once"-heavy themes (his past, town life, regret), plus the
-    // kind of noise a real player types. 16 rounds: the failure was seen "multiple turns in", after
-    // several "once"-bearing replies have accumulated in the history.
-    string[] script =
-    {
-        "Hello, Linus.",
-        "How have you been lately?",
-        "Did you ever live in town, like everyone else?",
-        "Do you ever miss that old life?",
-        "What made you leave it all behind?",
-        "Was it hard at first, living out here?",
-        "Do you think you could ever go back?",
-        "Did you only try town life once, or more than once?",
-        "asdkjfh qwpoeiru zzkjv",
-        "Tell me about the winters up here.",
-        "Have you ever been sick from foraged food?",
-        "What do you eat when food runs low?",
-        "Do the townspeople ever bother you?",
-        "suhfpsouzh ojnfzosijfniuefuh",
-        "What's your favourite season, then?",
-        "Thanks for telling me all this, Linus.",
-    };
+    // Two probe scripts. "lore": pulls on the "once"-heavy themes (his past, town life, regret) that
+    // triggered the v1 repetition failure "multiple turns in". "casual": a real player's register,
+    // modeled on the 2026-07-17 in-game session where v2 stopped answering questions (short slangy
+    // turns, dismissals, clarification requests, bare topic drops); healthy output engages every one
+    // of these directly instead of pivoting to nature filler.
+    string[] script = scriptName == "casual"
+        ? new[]
+        {
+            "Hello, Linus.",
+            "how old are you",
+            "auhdoaihdoasijdoaiwhdpo",
+            "what?????",
+            "Okay whatever you say bro",
+            "What do you mean???",
+            "Right",
+            "Tell me about the winters up here.",
+            "that doesn't make sense dude",
+            "ok",
+            "I love Leah",
+            "Data centre",
+            "AI",
+            "What are you talking about?",
+            "lol",
+            "bye Linus",
+        }
+        : new[]
+        {
+            "Hello, Linus.",
+            "How have you been lately?",
+            "Did you ever live in town, like everyone else?",
+            "Do you ever miss that old life?",
+            "What made you leave it all behind?",
+            "Was it hard at first, living out here?",
+            "Do you think you could ever go back?",
+            "Did you only try town life once, or more than once?",
+            "asdkjfh qwpoeiru zzkjv",
+            "Tell me about the winters up here.",
+            "Have you ever been sick from foraged food?",
+            "What do you eat when food runs low?",
+            "Do the townspeople ever bother you?",
+            "suhfpsouzh ojnfzosijfniuefuh",
+            "What's your favourite season, then?",
+            "Thanks for telling me all this, Linus.",
+        };
 
-    Console.WriteLine($"Multi-turn probe: {runs} run(s), {script.Length} rounds, "
+    Console.WriteLine($"Multi-turn probe [{scriptName}]: {runs} run(s), {script.Length} rounds, "
         + $"repeatPenalty={repeatPenalty} freqPenalty={freqPenalty} temp={temperature}");
     int worstRun = 0;
     string worstText = "";

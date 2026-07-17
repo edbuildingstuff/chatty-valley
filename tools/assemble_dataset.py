@@ -31,9 +31,13 @@ SOURCES = [
     ("nonsense",    f"{BASE}/batches/nonsense.jsonl"),
     ("reference",   f"{BASE}/batches/reference.jsonl"),
     ("depth",       f"{BASE}/batches/depth.jsonl"),
+    # v2.1 batches (in-game play-test findings 2026-07-17): real-player casual register with
+    # conversational repair, and townsfolk name coverage.
+    ("casual",      f"{BASE}/batches/casual.jsonl"),
+    ("townsfolk",   f"{BASE}/batches/townsfolk.jsonl"),
 ]
 TARGET = {"voice": 210, "lore": 90, "state": 120, "place": 30, "deflection": 90, "crossover": 60,
-          "identity": 38, "nonsense": 40, "reference": 55, "depth": 30}
+          "identity": 46, "nonsense": 40, "reference": 55, "depth": 30, "casual": 45, "townsfolk": 19}
 MAX_TURNS = {"depth": 6}  # category -> max assistant turns (default 3); matches build_batch.py
 EVAL_FRACTION = 0.10
 SEED = 42

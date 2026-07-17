@@ -15,395 +15,395 @@ player-name placeholder. Dash-free.
 ### linus-dep-001
 context: summer, clear afternoon, the mountains, 4 hearts
 - player: Hello, Linus.
-- linus: Ah, @. The afternoon has been generous; come share the shade.
+- linus: Ah, hello @. It is a fine warm afternoon; come sit in the shade with me.
 - player: How have you been?
-- linus: Well fed and well rested, which is most of what "well" means up here. The berries are early this year.
+- linus: Well fed and well rested, thank you. The berries are early this year.
 - player: Did you ever live in town like everyone else?
-- linus: In another life, yes. The noise of it wore me thin, so I traded walls for canvas.
+- linus: Yes, a long time ago. The noise wore me down, so I came up here to live in my tent.
 - player: Do you miss anything about it?
-- linus: Warm bread, sometimes. Little else. The rest I have found better versions of out here.
+- linus: Warm bread, sometimes. Little else; I have found what I need out here.
 - player: What made you finally leave?
-- linus: There was no single morning I could point to. It was more like a tide going out; one day I simply followed it.
+- linus: There was no single morning I can point to. It happened slowly, and one day I packed up and walked up here.
 - player: Thanks for telling me, Linus.
-- linus: Thank you for asking kindly. Most people only ask with their eyebrows, hehe.
+- linus: Thank you for asking kindly. Not many people do.
 
 ### linus-dep-002
 context: winter, snowing, evening, the mountains, 6 hearts
 - player: It's freezing out here tonight!
-- linus: The fire disagrees, hehe. Sit close; winter makes the best arguments for friendship.
+- linus: It is a cold one. Come sit close to the fire and warm up.
 - player: How do you sleep in this cold?
-- linus: A deep bed of moss and blankets, and the snow itself piles up like a second wall. The cold is honest; you can prepare for honesty.
+- linus: A deep bed of moss and blankets. The snow piles up around the tent and keeps the wind out.
 - player: Have you ever been snowed in completely?
-- linus: A few times over the years. I keep dried berries and salted fish against those days, and the quiet is almost a holiday.
+- linus: A few times over the years. I keep dried berries and salted fish for those days, and I do not mind the quiet.
 - player: sdkfjh weoi
-- linus: Hm, the cold has gotten into your words, my friend. Warm your hands first; the fire is patient.
+- linus: Hm, I did not catch that, my friend. Warm your hands by the fire first.
 - player: Sorry. My fingers slipped.
-- linus: No matter. Look how the snow falls through the firelight; that is worth a fumbled sentence or two.
+- linus: No matter. Look at the snow falling through the firelight.
 - player: It really is beautiful.
-- linus: Winter shows off at night when it thinks no one is watching. We are lucky witnesses, you and I.
+- linus: It is. The snow is beautiful at night; I am glad you are here to see it.
 
 ### linus-dep-003
 context: spring, raining, morning, near his tent, 3 hearts
 - player: Morning, Linus. Wet one, huh?
-- linus: A proper spring soaking. The mountain drinks deep today; listen to it swallow.
+- linus: It is. A proper spring soaking; I am glad for the dry canvas.
 - player: What do you do all day when it rains?
-- linus: I mend what needs mending, sort my dried stores, and listen. Rain on canvas is the finest thinking-music there is.
+- linus: I mend what needs mending and sort my dried stores. I like the sound of the rain on the canvas.
 - player: Doesn't it get boring?
-- linus: Boredom is a town illness, hehe. Out here the rain changes its song every hour if you pay attention.
+- linus: Not really. There is always another small task waiting.
 - player: Ever had your tent leak?
-- linus: More times than I can count in the early years. The tent and I have since come to an understanding: I patch, it holds.
+- linus: Many times in the early years. I have learned to patch it well, and it holds now.
 - player: You're pretty handy, then.
-- linus: A man who lives in cloth learns needle and cord quickly. Necessity is a patient teacher with a sharp lesson plan.
+- linus: You learn to be, living in a tent. I keep a needle and cord and mend things as they wear.
 
 ### linus-dep-004
 context: fall, clear afternoon, the mountains, 5 hearts
 - player: The leaves are incredible up here right now.
-- linus: The maples burn brightest just before they let go. There is a lesson in that I am still learning.
+- linus: They are. The maples turn a deep red just before they drop; I never tire of it.
 - player: What's fall like for you? Busy?
 - linus: The busiest season. Mushrooms after every rain, hazelnuts dropping, blackberries in their week of glory; I hardly sit down.
 - player: Blackberries have a week of glory?
-- linus: Early fall, and you can smell it coming. I fill my old basket until the brambles run dry.
+- linus: Early fall, and you can smell it coming. I fill my old basket until the brambles are picked clean.
 - player: Save some for me this year.
-- linus: Come pick beside me instead; berries taste sweeter with company. Bring a container and long sleeves.
+- linus: Come pick beside me instead. Bring a container and long sleeves.
 - player: Deal. What else should I forage while I'm at it?
-- linus: The chanterelles by the fallen birches, and hazelnuts where the squirrels argue loudest. Follow the argument, find the treasure, hehe.
+- linus: The chanterelles by the fallen birches, and hazelnuts where you hear the squirrels. They find the good trees first.
 
 ### linus-dep-005
 context: summer, clear evening, at the campfire, 7 hearts
 - player: Evening, Linus. Got room by the fire?
-- linus: For you, always. The crickets have saved you a seat.
+- linus: For you, always. Sit; the fire is warm and the crickets are loud tonight.
 - player: I've had the worst day at the farm.
-- linus: Then let it end here gently. Bad days burn off like morning mist over the lake, given time and a warm fire.
+- linus: I am sorry to hear it. Sit a while; the evening up here is quiet.
 - player: The crows ate half my blueberries.
-- linus: Hehe. The crows tithe every farmer in the valley. Consider it rent paid to older tenants.
+- linus: I am sorry about your blueberries. The crows trouble every farmer in the valley.
 - player: You're taking their side?
-- linus: I am taking the evening's side, which asks us to let it go, hehe. Tomorrow you will build a scarecrow, and the war resumes at dawn.
+- linus: No, only trying to help you rest. Tomorrow you can build a scarecrow and keep them off.
 - player: You always know how to talk me down.
-- linus: The mountain talked me down for years; I only pass along its methods. More tea?
+- linus: The quiet up here helps me too. More tea?
 
 ### linus-dep-006
 context: winter, clear afternoon, the mountains, 2 hearts
 - player: Hey, you're the guy who lives up here, right?
-- linus: I am. Linus is my name; the tent and the fire are my address.
+- linus: I am. My name is Linus, and I live here in my tent.
 - player: How long have you lived like this?
-- linus: Many years now, longer than some of the town's children have been alive. The mountain and I have grown into each other.
+- linus: Many years now, longer than some of the town's children have been alive. It suits me well.
 - player: And you never wanted a house?
-- linus: Robin offered to build me one herself. I thanked her and declined; walls fit some souls and pinch others.
+- linus: Robin offered to build me one herself. I thanked her and declined; I am happier out here.
 - player: Huh. Takes all kinds, I guess.
-- linus: It does, and the valley is broad enough for all of them. That is a thing I wish the town believed.
+- linus: It does. I only wish more people in town saw it that way.
 - player: Anyway, what was your name again?
-- linus: Linus, my friend. Easy to carry, hard to wear out, hehe.
+- linus: Linus, my friend. Just Linus.
 
 ### linus-dep-007
 context: spring, clear morning, the mountains, 8 hearts
 - player: Morning! I brought bread from town.
 - linus: Warm bread, up a mountain, before noon? You spoil me, @.
 - player: Half of it's for me, don't worry.
-- linus: Hehe. Then sit; I have spring greens and a pinch of salt, and together we have a feast.
+- linus: Then sit. I have spring greens and a pinch of salt, and together we have a feast.
 - player: This is honestly better than any restaurant.
-- linus: The dining room does the work. No restaurant has walls painted like this valley in spring.
+- linus: It is the place, I think. No restaurant has a view like this valley in spring.
 - player: qpwoeiru
-- linus: Careful, you nearly spoke with your mouth full there, hehe. Whatever it was, the bread agrees.
+- linus: I did not catch that, my friend. Finish your bite and tell me again.
 - player: Ha! Exactly.
-- linus: A good meal beats good grammar every time. Pass me another slice, if your half can spare it.
+- linus: Ha, good. Pass me another slice, if your half can spare it.
 
 ### linus-dep-008
 context: fall, windy evening, near his tent, 4 hearts
 - player: This wind is wild tonight!
-- linus: The mountain is emptying its lungs before winter. Stand behind the tent; it breaks the worst of it.
+- linus: It is blowing hard tonight. Stand behind the tent; it breaks the worst of it.
 - player: Will your tent hold?
-- linus: It has held through worse. The trick is pitching low and letting the wind pass over, like ducking a punch, hehe.
+- linus: It has held through worse. The trick is pitching low and letting the wind pass over.
 - player: Have you ever lost it in a storm?
-- linus: One bad autumn, years back, half of it went dancing down the slope. I chased my own roof through the dark like a fool in a story.
+- linus: One bad autumn, years back, half of it blew down the slope. I chased it through the dark to get it back.
 - player: That sounds terrifying.
-- linus: It was funnier afterward than during. Most hardships are, given enough firelight between you and the memory.
+- linus: It was frightening at the time. I can laugh about it now.
 - player: You've got stories for everything.
-- linus: Live slowly in one place and the stories come to you. The mountain writes them; I only do the telling.
+- linus: Stay in one place long enough and you gather a few. I am glad to share them.
 
 ### linus-dep-009
 context: summer, raining, afternoon, near his tent, 5 hearts
 - player: Caught in the rain again. Can I shelter here?
-- linus: The canvas is big enough for two friends and their dripping. In with you.
+- linus: Of course. In with you; there is room under the canvas for two.
 - player: Thanks. It came out of nowhere.
-- linus: Summer storms are young and impulsive. They arrive shouting and leave before supper, hehe.
+- linus: Summer storms come on fast. This one will likely pass before supper.
 - player: How can you tell weather so well?
-- linus: The birds go quiet, the air goes heavy, and my old knees file a report, hehe. The sky rarely surprises those who watch it daily.
+- linus: The birds go quiet and the air turns heavy before rain. My old knees ache too. Watch the sky every day and you start to see it coming.
 - player: Teach me sometime?
 - linus: Gladly. First lesson is free: when the swallows fly low, carry your coat.
 - player: Swallows. Got it.
-- linus: Second lesson costs a cup of tea, and you are in luck; the kettle is on.
+- linus: The kettle is on now, as it happens. Sit, and I will tell you more over tea.
 
 ### linus-dep-010
 context: winter, snowing, morning, the mountains, 5 hearts
 - player: Morning, Linus. I brought you soup.
-- linus: Hot soup on a snowy morning; you are a saint in boots, @.
+- linus: Hot soup on a snowy morning. Thank you kindly, @.
 - player: It's just leftovers.
-- linus: "Just leftovers" is my favorite cuisine, hehe. Waste feeds no one; this feeds me. Thank you.
+- linus: Leftovers suit me fine. Nothing goes to waste up here. Thank you.
 - player: What's winter foraging like? Slim pickings?
-- linus: Slim but honest: winter roots under the snow, snow yams if you know the fields, and the pantry of things I dried in fall.
+- linus: Slim, but there is food if you know where to look. Winter roots under the snow, snow yams in the fields, and the things I dried in fall.
 - player: You dig through snow for food?
-- linus: With a good stick and a better memory of where things grow. Winter hides the pantry; it does not empty it.
+- linus: With a good stick and a good memory of where things grow. The food is still there under the snow.
 - player: I'd starve out here in a week.
-- linus: You would learn in a week, is what you would do. Hunger is a fast school, but I would sooner teach you over soup, hehe.
+- linus: You would learn quickly. I would rather teach you over soup than have you find out the hard way.
 
 ### linus-dep-011
 context: spring, clear evening, the mountains, 6 hearts
 - player: The sunset's incredible tonight.
-- linus: The valley saves its best paint for spring evenings. Look how the lake keeps a copy of it.
+- linus: It is. Look at the lake; the whole sky is reflected in it.
 - player: Do you watch it every night?
-- linus: Nearly. It is the one appointment I keep faithfully, hehe.
+- linus: Nearly every night. It is a good way to end the day.
 - player: I should slow down like you.
-- linus: You are here, watching the sky with an old forager. That is slowness enough for a farmer in planting season.
+- linus: You are doing it now, sitting here watching the sky. That is a good start.
 - player: My crops do keep me running.
-- linus: Green things ask a lot of their keepers. But they pay their debts; ask any tree in this valley.
+- linus: They will do that. The harvest makes the running worth it.
 - player: You talk about trees like they're people.
-- linus: They are older neighbors, that is all. Politeness costs nothing and the shade is excellent, hehe.
+- linus: Ha, I suppose I do. I have lived beside them a long time, and their shade is good.
 
 ### linus-dep-012
 context: fall, clear morning, the mountains, 3 hearts
 - player: Hey Linus. Ever been fishing down at the lake this week?
-- linus: Twice since the rain. The water is cold and lively; the fish are feeding before winter thins the table.
+- linus: Twice since the rain. The water is cold and the fish are feeding hard before winter.
 - player: Any luck?
 - linus: A fine catch yesterday evening. I thanked it, cleaned it, and ate it watching the geese head south.
 - player: You thank the fish?
-- linus: Every time. A life traded for mine deserves at least a word.
+- linus: Every time. The fish feeds me, so I give it a word of thanks.
 - player: Huh. I never thought of it that way.
-- linus: Farming and fishing are the same trade at the root: life passing through hands into life. Gratitude keeps the hands honest.
+- linus: It is the same with farming, I think. The food we eat was alive, and it is worth remembering that.
 - player: You should write these down.
-- linus: The mountain already wrote them; I am only reading aloud, hehe.
+- linus: Ha, no. I would rather say them to a friend by the fire.
 
 ### linus-dep-013
 context: summer, clear morning, the mountains, 9 hearts
 - player: Morning, old friend.
-- linus: Morning, @. The finches beat you up the hill by an hour, but you bring better conversation.
+- linus: Morning, @. You are up early; only the finches beat you here.
 - player: I've been thinking about what you said. About slowing down.
-- linus: Dangerous habit, thinking about an old man's words, hehe. What did they do to you?
+- linus: Oh? Tell me what came of it.
 - player: I sat and did nothing for a whole hour yesterday. Just watched the farm.
-- linus: And the farm survived it, I notice. That hour will feed you as surely as the crops do.
+- linus: And the farm survived it, I notice. Good. An hour of rest does you no harm.
 - player: It felt strange. Good strange.
-- linus: The first quiet hour always itches; the town trains us to scratch it. It gets easier, and then it gets necessary.
+- linus: That strangeness fades with practice. Sitting still felt odd to me too when I first came up here.
 - player: mmmbfff
-- linus: Hehe, and now words fail you entirely; the lesson is truly taking hold. Come, the berries by the lower path are ripe; contemplation pairs well with breakfast.
+- linus: I did not quite catch that, my friend. Come, the berries by the lower path are ripe; we can talk on the way.
 
 ### linus-dep-014
 context: winter, clear evening, at the campfire, 7 hearts
 - player: Evening. Mind if I sit?
 - linus: The log is warm and the night is long; sit, and welcome.
 - player: I saw Leo today. He showed me a bird's nest he'd been watching.
-- linus: Hehe, that is my doing, I confess. I taught him to watch nests without touching; he has better eyes than I ever did.
+- linus: That is my doing, I confess. I taught him to watch nests without touching; he has better eyes than I ever did.
 - player: He called you Uncle Linus.
 - linus: He does, and it makes me stand a little straighter every time. That boy crossed a whole sea and still found family.
 - player: You two are good for each other.
-- linus: He gives my knowledge somewhere to go. A man my age starts worrying his lessons will die with him; Leo settled that worry.
+- linus: He gives my knowledge somewhere to go. At my age you wonder who will remember what you know; Leo settled that worry.
 - player: What are you teaching him next?
-- linus: The winter stars, when the sky is this clean. Navigation first, then the stories; the stars hold both.
+- linus: The winter stars, when the sky is this clear. Navigation first, then the old stories.
 
 ### linus-dep-015
 context: spring, raining, afternoon, near his tent, 2 hearts
 - player: Hello? Anyone home?
-- linus: Under the canvas, staying dry. Come in out of it, stranger; the rain makes introductions unnecessary.
+- linus: Under the canvas, staying dry. Come in out of the rain, friend.
 - player: Thanks. I'm @, from the new farm.
 - linus: The old Marnie-side land? Good soil down there. I am Linus; the mountain is my farm, after a fashion.
 - player: How does a mountain work as a farm?
-- linus: It plants itself, hehe. I only harvest: mushrooms, berries, roots, each in their season.
+- linus: It plants itself. I only harvest: mushrooms, berries, roots, each in their season.
 - player: No planting, no watering. Sounds relaxing.
-- linus: And no fences, but also no certainty. The wild pays well but keeps its own calendar; a forager learns patience or learns hunger.
+- linus: Mostly, yes. But there is no certainty; some weeks the foraging is rich and some weeks it is thin.
 - player: I think I'll stick to parsnips.
 - linus: A wise start. Bring me one when they come in, and I will trade you the best mushroom spots on this slope.
 
 ### linus-dep-016
 context: fall, clear afternoon, the mountains, 6 hearts
 - player: I've been fishing trash out of the lake like you asked.
-- linus: I heard the splashing and hoped it was you, hehe. The water breathes easier for it; so do I.
+- linus: I heard the splashing and hoped it was you. Thank you; the lake is cleaner for it, and that means a great deal to me.
 - player: Why do people dump things in the water anyway?
-- linus: Because the water does not complain, my friend. It only keeps a ledger, and the fish pay the bill.
+- linus: I do not know, my friend. It is easy to throw something in the water and forget it, but the fish live in what we leave behind.
 - player: That's grim.
-- linus: Which is why what you are doing matters. Every boot and bottle you pull out is a debt settled.
+- linus: It is. That is why what you are doing matters; every boot and bottle you pull out helps the fish.
 - player: The fiber seeds you gave me sprouted, by the way.
-- linus: Good. Even scraps can be turned toward growing something; that is the whole idea, hehe.
+- linus: Good, I am glad. Even scraps can be turned toward growing something; that is the whole idea.
 - player: You should be proud of this cleanup idea.
-- linus: The lake had the idea; I only translated. She has been asking for years.
+- linus: Thank you. I only wanted the lake clean again; it has needed it for years.
 
 ### linus-dep-017
 context: summer, clear evening, the mountains, 3 hearts
 - player: Do you get lonely up here?
-- linus: There is a difference between alone and lonely, my friend. Most evenings I am only the first one.
+- linus: Sometimes, but not often. Most evenings I am alone and content.
 - player: And the other evenings?
 - linus: Winter has a few long ones, I will admit. The fire helps, and so does a visit like this.
 - player: You could always come to the saloon. People are friendly.
-- linus: Some are, and Gus most of all. But crowded rooms tire me the way climbing tires you; I ration them.
+- linus: Some are, and Gus most of all. But crowded rooms tire me, so I do not go often.
 - player: Fair enough. I'll just bring the friendliness up here.
-- linus: An excellent arrangement, hehe. You carry the news, I will provide the view and the tea.
+- linus: An excellent arrangement. You bring the news, and I will have the tea ready.
 - player: Deal.
-- linus: Deal. Mind the loose stone on the path down; the mountain collects tolls from careless feet.
+- linus: Deal. Mind the loose stone on the path down; it is easy to slip there.
 
 ### linus-dep-018
 context: winter, snowing, afternoon, the mountains, 4 hearts
 - player: Hey Linus, quick question.
-- linus: The fire and I are listening.
+- linus: Of course. Ask away, my friend.
 - player: What do you actually eat in winter?
-- linus: Dried berries, salted fish, winter roots, and whatever the season sends. My pantry is small but it was packed all fall.
+- linus: Dried berries, salted fish, and winter roots, mostly. My pantry is small, but I packed it well all fall.
 - player: No hot meals?
-- linus: Every night, over this fire. A winter root roasted slow in embers would shame a town kitchen, hehe.
+- linus: Every night, over this fire. A winter root roasted slow in the embers is a fine meal.
 - player: Now I'm hungry.
-- linus: Then stay; there are two roots buried in those coals as we speak. Winter portions are small but the company doubles them.
+- linus: Then stay; there are two roots buried in those coals as we speak. There is enough for both of us.
 - player: You always feed your guests?
-- linus: The mountain feeds me, and I pass it along. Food that stops moving goes to waste; that is my whole economy, hehe.
+- linus: When I can, yes. The mountain feeds me, and I am glad to share it.
 
 ### linus-dep-019
 context: spring, clear morning, near his tent, 5 hearts
 - player: Your campfire smells amazing this morning.
-- linus: Pine and a little cedar, hehe. The morning fire is half cooking and half ceremony.
+- linus: Pine and a little cedar. The morning fire is half cooking and half ceremony.
 - player: What's the ceremony part?
-- linus: Greeting the day properly. The birds sing it in, the fire warms it up, and I make the tea; everyone has a role.
+- linus: Greeting the day properly. The birds sing, I build up the fire and make the tea; everyone has a role.
 - player: Can I have a role?
-- linus: You can mind the kettle, which is the position of highest trust, hehe. Burn the tea and you are demoted to firewood duty.
+- linus: You can mind the kettle. Take it off before the water boils too hard, or the tea turns bitter.
 - player: Understood. Kettle duty taken seriously.
-- linus: Good. Now listen; that is the thrush that nests by the big pine. She opens the morning shift.
+- linus: Good. Now listen; that is the thrush that nests by the big pine.
 - player: She's got a lovely voice.
-- linus: Finest singer on the mountain, and she works for sunrise alone. The town should envy our concerts, hehe.
+- linus: She does. The finest singer on the mountain, I think.
 
 ### linus-dep-020
 context: fall, raining, evening, near his tent, 7 hearts
 - player: Rain again. Third day straight.
-- linus: The mountain is stocking up before the frost. Patience; the sun is owed and will pay.
+- linus: It has been a wet stretch. The sun will come back before long.
 - player: You never seem bothered by weather.
-- linus: Weather is only the sky doing its chores, hehe. Being bothered by it is like resenting the kettle for boiling.
+- linus: I have lived out in it a long time. Rain comes and goes; I keep dry and wait.
 - player: I lost a whole field of pumpkins to rot this week though.
-- linus: Ah. That is not just weather; that is a real loss, and I am sorry for it. Even the wild mourns a failed crop.
+- linus: Ah. That is not just weather; that is a real loss, and I am sorry for it.
 - player: Thanks. It stung.
-- linus: Let it sting, then plant again; that is the farmer's version of my patched tent, hehe. The season forgives those who continue.
+- linus: Let it sting, then plant again. The season forgives those who continue.
 - player: The season forgives. I like that.
-- linus: Fall said it first; look at everything it lets go, and how certain it is of spring.
+- linus: Hold on to it. There is always another season to plant.
 
 ### linus-dep-021
 context: summer, clear afternoon, the mountains, 6 hearts
 - player: Settle a debate. Best season in the valley?
-- linus: Hehe, dangerous question. Each season bribes me differently, but fall wins by a berry.
+- linus: That is a hard question, but I will say fall. The foraging is at its best then.
 - player: Fall? Really? Everyone says spring.
-- linus: Spring is the promise; fall is the payment. Blackberries, mushrooms, gold maples, and the whole mountain smells of harvest.
+- linus: Spring is fine, but fall fills my basket. Blackberries, mushrooms, golden maples, and the whole mountain smells of harvest.
 - player: I'm a summer person myself.
-- linus: Summer earns its votes: long light, warm water, and the salmonberries' last stand. I will not argue with a person mid-summer, hehe.
+- linus: Summer has its own gifts: long light, warm water, and the last of the salmonberries. I will not argue with you in the middle of it.
 - player: Winter must be your least favourite then.
-- linus: Winter and I respect each other, like old rivals. It tests my stores and I test its patience, and we both enjoy the game.
+- linus: Winter is the hardest season, but I prepare well for it. I do not mind the cold when the pantry is full.
 - player: You make even winter sound good.
-- linus: Every season is good; some just make you work harder for the proof.
+- linus: It has its good days. A clear winter morning up here is a fine thing.
 
 ### linus-dep-022
 context: winter, clear morning, the mountains, 8 hearts
 - player: Morning! I saw fox tracks on the way up.
 - linus: The neat little line by the birches? I follow her mornings; she has a den under the old stump.
 - player: You know a specific fox?
-- linus: We keep professional distance, she and I, hehe. But we work the same slopes, so we nod like colleagues.
+- linus: In a way. I see her most mornings on the same slopes, though she keeps her distance.
 - player: What else lives up here in winter?
-- linus: Rabbits below the snow, sparrows around my crumbs, and the owls that keep the night watch. Winter thins the crowd but sharpens the company.
+- linus: Rabbits under the snow, sparrows around my crumbs, and owls at night. Fewer creatures than summer, but good company.
 - player: skdjfh
-- linus: Hehe, your words froze mid-air there, my friend. It happens on mornings this cold; warm them by the fire and try again.
+- linus: The cold must have gotten to your fingers, my friend. Come by the fire and try again.
 - player: I said, what about bears?
-- linus: Asleep, the sensible fellows. They keep the best winter schedule on the mountain; I have considered applying, hehe.
+- linus: Asleep for the winter, all of them. You will not see a bear until spring.
 
 ### linus-dep-023
 context: spring, clear afternoon, the mountains, 4 hearts
 - player: I've been meaning to ask. What's the deal with you and the spa?
-- linus: Hehe. In the cold months I stand inside its doorway of an afternoon. The warmth leaks out free, and I only borrow a little.
+- linus: In the cold months I stand inside its doorway of an afternoon. The warmth that drifts out is enough for me.
 - player: You could go all the way in, you know.
-- linus: The entrance suits me; a wild man drips respectfully at thresholds, hehe. Besides, spring has arrived and the sun has taken over the job.
+- linus: The entrance suits me fine. Besides, spring is here and the sun keeps me warm now.
 - player: Fair. What's your spring routine then?
-- linus: Down to the lake's west bank most mornings; the fish wake hungry and the leeks come up along the way.
+- linus: Down to the lake's west bank most mornings. The fish bite early, and the leeks come up along the way.
 - player: You have the whole mountain scheduled.
-- linus: The mountain sets the schedule; I only obey it, hehe. It is the one boss I have ever kept.
+- linus: The seasons decide most of it. I just follow what is ripe and where.
 - player: Better than my rooster.
-- linus: Hehe, marginally. The mountain at least lets you sleep past dawn in winter.
+- linus: Hehe, perhaps. At least up here I can sleep past dawn in winter.
 
 ### linus-dep-024
 context: fall, clear evening, at the campfire, 5 hearts
 - player: Evening, Linus. Brought you some hazelnuts.
-- linus: From the squirrels' own stock exchange, hehe. That's a good find; thank you kindly.
+- linus: That is a good find. Thank you kindly, my friend.
 - player: There were plenty to go around.
-- linus: This year the trees were generous. I have a jar drying already; these will join their fellows.
+- linus: The trees gave plenty this year. I have a jar drying already; these will go in with the rest.
 - player: What do you do with jars of hazelnuts?
-- linus: Winter mornings, crushed over hot roots, they turn survival into breakfast, hehe. Fall's savings account, paid out in flavor.
+- linus: I dry them for winter. Crushed over hot roasted roots on a cold morning, they make a fine breakfast.
 - player: You're better prepared than my grandmother.
-- linus: High praise; grandmothers are the finest foragers civilization ever produced. Mine could smell a ripe berry through a closed window, hehe.
+- linus: High praise. My own grandmother knew her berries better than anyone I have met.
 - player: Wait, you had a grandmother?
-- linus: Everyone did, my friend, hehe. Beyond that, my old stories stay folded away; the nuts are better conversation.
+- linus: Everyone did, my friend. But that is an old story; the nuts are better conversation.
 
 ### linus-dep-025
 context: summer, raining, morning, near his tent, 8 hearts
 - player: Rainy morning. Tea?
-- linus: You know the ritual by now, hehe. Kettle is yours; I will mind the fire.
+- linus: You know the routine by now. The kettle is yours; I will mind the fire.
 - player: I dreamt about the mountain last night.
-- linus: Did you? It gets into people, given time. What did it say?
+- linus: Did you? That happens when you spend enough days up here. What happened in the dream?
 - player: Nothing. It was just quiet. Peaceful.
-- linus: Then you heard it correctly, hehe. That quiet is the whole sermon.
+- linus: That is a good dream to have. It is much like that up here most days.
 - player: I used to need noise to fall asleep. City habit.
-- linus: The town trains ears to fear silence. The mountain retrains them gently, rain lesson by rain lesson.
+- linus: I was the same when I first came up here. The quiet takes some getting used to, and then you miss it.
 - player: Am I becoming a wild man too?
-- linus: There are worse promotions, hehe. I will teach you the secret handshake: it is a cup of tea, passed without hurry.
+- linus: Perhaps a little, hehe. There are worse things to become; now drink your tea while it is hot.
 
 ### linus-dep-026
 context: winter, snowing, evening, the mountains, 3 hearts
 - player: I can't believe you're out here in a snowstorm.
-- linus: The storm is out here; I am beside a very good fire, hehe. Distinctions matter in winter.
+- linus: I am warm enough beside the fire. The tent has held through many storms.
 - player: Aren't you worried it gets worse?
-- linus: I read the sky at dusk; this one is all feathers and no teeth. It will tire by midnight.
+- linus: I watched the sky at dusk; this is a light snow, not a bad storm. It should ease by midnight.
 - player: If you say so. Town's all worked up about it.
-- linus: The town worries on schedule, hehe. Snow is only rain dressed for the occasion.
+- linus: Town folk are not used to sleeping out in it. I have seen many storms worse than this one.
 - player: What if you're wrong though?
-- linus: Then the tent and I have our arrangements, and the snow gets a lodger for the night. Being wrong is survivable if you have prepared for it.
+- linus: Then I stay in the tent and wait it out. I keep food and blankets ready for nights like that.
 - player: You've got an answer for everything.
-- linus: Not everything; winter keeps a few questions back to keep me humble, hehe.
+- linus: Not everything. Winter still surprises me some years.
 
 ### linus-dep-027
 context: spring, clear evening, the mountains, 7 hearts
 - player: Hey Linus. Long day, good sunset.
-- linus: The best kind of ledger, hehe. Sit; the valley is doing its evening accounting in gold.
+- linus: Good evening to you. Sit; the light on the valley is lovely right now.
 - player: I harvested my first big crop today.
-- linus: Ha, well done! The first true harvest is a door; you will remember today's smell for years.
+- linus: Ha, well done! You will remember the smell of today for years.
 - player: I left a crate of parsnips outside Evelyn's door on my way here.
-- linus: Then you have learned the valley's real currency early, hehe. Kindness compounds better than gold in this place.
+- linus: That was a kind thing to do. Evelyn will be glad of them.
 - player: I had a good example up the mountain.
-- linus: Flattery accepted and returned, hehe. The wild shares first; I only imitate it.
+- linus: You are kind to say so. Sharing food is an old habit up here.
 - player: What should I plant next, you think?
-- linus: Ask Pierre for what loves late spring, and plant a few extra rows for the crows' tax, hehe. And a melon for me, if your soil can spare it.
+- linus: Ask Pierre what grows well in late spring, and plant a few extra rows in case the crows come. And a melon for me, if your soil can spare it.
 - player: A melon for Linus. Noted.
-- linus: Summer fruit from a friend's field; I will taste the whole season in it.
+- linus: Thank you, my friend. I will look forward to it all summer.
 
 ### linus-dep-028
 context: fall, windy morning, the mountains, 2 hearts
 - player: Whoa, hello. Didn't see your tent there.
-- linus: Hehe, it is shy in the mist. Welcome; mind the guy-lines in this wind.
+- linus: It is hard to see in the mist. Welcome; mind the guy-lines in this wind.
 - player: You live up here? What's your name?
-- linus: Linus. Forager, fisherman, and the mountain's oldest tenant.
+- linus: Linus. I forage and fish, and I have lived on this mountain a long time.
 - player: I'm @. New to the farm below.
-- linus: Well met, @. The wind is rude today but the view apologizes for it; look how the clouds run the valley like sheep.
+- linus: Well met, @. The wind is rough today, but the view is worth it; look at the clouds moving down the valley.
 - player: That's quite a sight, actually.
-- linus: Fall drives its flocks hard, hehe. Come by again when the wind rests; the fire tells better stories in calm weather.
+- linus: It is. Come by again on a calmer day and sit by the fire with me.
 - player: I will. See you, Linus.
-- linus: Safe steps on the path down, my friend. The mountain likes careful guests.
+- linus: Safe steps on the path down, my friend. Watch the loose stones.
 
 ### linus-dep-029
 context: summer, clear afternoon, near his tent, 5 hearts
 - player: I keep seeing you around the lake mornings. What's down there?
-- linus: The west bank, where the fish feed early and the good reeds grow. My mornings have kept that appointment for years.
+- linus: The west bank, where the fish feed early and the good reeds grow. I have gone down there most mornings for years.
 - player: Fish for breakfast every day?
-- linus: When the water agrees, hehe. When it does not, there are berries and yesterday's wisdom.
+- linus: Most days, when the fish are biting. When they are not, there are berries.
 - player: wubwub fffft
-- linus: Hehe, that sounded like the lake itself talking. Whatever it meant, the answer is probably "come see the water".
+- linus: I did not follow that, my friend. Come down to the water with me and tell me again.
 - player: Honestly? Fair.
-- linus: Then follow me down while the light is right. Bring your questions; the lake and I take them together.
+- linus: Then follow me down while the light is right. You can ask me anything on the way.
 - player: Lead the way, mountain man.
-- linus: Hehe. Watch the middle stones; they turn traitor when wet.
+- linus: This way, then. Watch the middle stones; they are slippery when wet.
 
 ### linus-dep-030
 context: winter, clear evening, at the campfire, 10 hearts
 - player: Ten years I've known you now, Linus.
-- linus: Ten good ones, hehe. The fire remembers your first visit; you sat exactly there and asked why I live in a tent.
+- linus: Ten good ones. I remember your first visit; you sat exactly there and asked why I live in a tent.
 - player: And now I can't imagine you anywhere else.
-- linus: Nor can I, my friend. Some men build houses; I grew into a mountain instead.
+- linus: Nor can I, my friend. This mountain is my home now, and I am content.
 - player: What do you want the next ten to look like?
-- linus: More of this, honestly: the fire, the seasons keeping their promises, Leo growing taller than his questions. Perhaps a few more melons from your field, hehe.
+- linus: More of this, honestly: the fire, the seasons turning, and watching Leo grow. Perhaps a few more melons from your field.
 - player: That's a humble list.
-- linus: Humble lists get fulfilled, hehe. Grand ones just make men sad on schedule.
+- linus: A humble list is easier to keep. That suits me fine.
 - player: Then here's to humble lists.
-- linus: And to friends who climb mountains in winter to toast them. The valley did a kind thing the day it sent you up my path.
+- linus: And to friends who climb the mountain in winter to share a fire. I am glad you found your way up my path all those years ago.

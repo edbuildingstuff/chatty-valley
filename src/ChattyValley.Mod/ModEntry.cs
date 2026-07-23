@@ -24,8 +24,10 @@ namespace ChattyValley.Mod;
 /// proceeds vanilla. This is how "the mod cannot affect canonical gameplay" is guaranteed by construction.
 ///
 /// STATUS: working end-to-end in-game. Press the chat key near Linus (when the vanilla dialogue is
-/// closed and nothing scripted is happening) -> read live game state -> open a typed, multi-turn chat
-/// window (ChatMenu) backed by the on-device model. Inference runs out-of-process in ChattyValley.Sidecar
+/// closed and nothing scripted is happening) -> read live game state -> a multi-turn conversation
+/// through the game's OWN dialogue UI: replies in the vanilla DialogueBox (portrait, typewriter,
+/// click to dismiss), typing in a slim ChatInputBar between them (see ChatSession for the flow).
+/// Inference runs out-of-process in ChattyValley.Sidecar
 /// (LLamaSharp 0.27.0 pins .NET 10 deps that cannot load in the .NET 6 game), reached over a named pipe.
 /// Friendship-from-chat is deferred (open-ended in-game mechanic; decision locked later) and is a clean
 /// no-op seam in OpenChat.
@@ -37,6 +39,7 @@ public sealed class ModEntry : StardewModdingAPI.Mod
     private Character? _linus;
     private PromptBuilder? _prompt;
     private ChatLogger? _chatLog;
+    private ChatSession? _activeSession;
     private string _baseModelFile = "";
     private string _adapterFile = "";
 
@@ -105,6 +108,7 @@ public sealed class ModEntry : StardewModdingAPI.Mod
     {
         if (e.Button != _config.ChatKey) return;
         if (_sidecar is not { Ready: true }) return;
+        if (_activeSession is { IsAlive: true }) return;   // mid-conversation menu swaps leave no gap for a second session
         if (!TryGetChattableVillager(out NPC villager)) return;
 
         // Suppress this key so it can't also trigger a vanilla bound action this frame.
@@ -112,10 +116,14 @@ public sealed class ModEntry : StardewModdingAPI.Mod
         OpenChat(villager);
     }
 
-    // After any conversation closes, if the player is still by a chattable Linus, nudge that free-chat
-    // is available. Pure UI hint; touches no game state.
+    // Menu transitions drive the conversation flow: a live session is told about every change so it
+    // can chain vanilla DialogueBox -> input bar -> DialogueBox. Afterwards (no live session), a
+    // closing menu near a chattable Linus surfaces the "keep talking" hint. Pure UI; no game state.
     private void OnMenuChanged(object? sender, MenuChangedEventArgs e)
     {
+        _activeSession?.OnMenuChanged(e.OldMenu, e.NewMenu);
+        if (_activeSession is { IsAlive: true }) return;
+
         if (!_config.ShowContinuationHint || e.NewMenu != null) return;
         if (_sidecar is not { Ready: true }) return;
         if (!TryGetChattableVillager(out NPC linus)) return;
@@ -154,9 +162,9 @@ public sealed class ModEntry : StardewModdingAPI.Mod
         return true;
     }
 
-    // Open the typed, multi-turn chat. A self-contained mod menu that reads no further game state and
-    // writes nothing back; closing it (Esc) ends the conversation. The game context is snapshotted now,
-    // so the whole conversation is grounded in the moment it began.
+    // Open the typed, multi-turn conversation (ChatSession: vanilla DialogueBox replies + input bar).
+    // Reads no further game state and writes nothing back; Esc from the input bar ends it. The game
+    // context is snapshotted now, so the whole conversation is grounded in the moment it began.
     // TODO(friendship, deferred): a later stage may award a little friendship for chatting (open-ended
     // in-game mechanic; decision locked later). Intentionally a no-op now so this stays read-only.
     private void OpenChat(NPC villager)
@@ -197,19 +205,23 @@ public sealed class ModEntry : StardewModdingAPI.Mod
             });
             return reply;
         };
-        Game1.activeClickableMenu = new ChatMenu(villager, ask,
-            onClose: () => _chatLog?.Write(new { evt = "end", ts = ChatLogger.Timestamp(), convo }));
+        _activeSession = new ChatSession(villager, ask,
+            autoCloseOnFarewell: _config.AutoCloseOnFarewell,
+            onEnd: reason =>
+            {
+                _chatLog?.Write(new { evt = "end", ts = ChatLogger.Timestamp(), convo, reason });
+                _activeSession = null;
+            });
+        _activeSession.Start();
     }
 
     // Sliding window over the conversation: only the most recent messages go to the model (see
-    // ModConfig.MaxHistoryMessages). Trimmed from the front so the window always ends on the
-    // player's latest message.
-    private IReadOnlyList<ChatTurn> Window(IReadOnlyList<ChatTurn> history)
-    {
-        int max = Math.Max(2, _config.MaxHistoryMessages);
-        if (history.Count <= max) return history;
-        return history.Skip(history.Count - max).ToArray();
-    }
+    // ModConfig.MaxHistoryMessages). ConversationWindow keeps the window user-first: a naive
+    // even-sized slice off a history that ends on the player's message opened every post-slide
+    // prompt with an orphaned assistant turn, which the adapter never saw in training and which
+    // produced the detached replies in the 2026-07-23 play-test.
+    private IReadOnlyList<ChatTurn> Window(IReadOnlyList<ChatTurn> history) =>
+        ConversationWindow.Apply(history, _config.MaxHistoryMessages);
 
     // ---- live game state -> GameContext (READ ONLY) ---------------------------------------------
 

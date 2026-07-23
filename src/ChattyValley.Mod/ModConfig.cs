@@ -23,6 +23,14 @@ public sealed class ModConfig
     public float FrequencyPenalty { get; set; } = 0.1f;
 
     /// <summary>
+    /// When the player says an explicit goodbye ("bye", "gotta go"), or the model's reply carries
+    /// the trained end-of-conversation marker, that reply is the LAST one: dismissing its dialogue
+    /// box ends the conversation instead of reopening the input bar. The vanilla click-to-dismiss
+    /// is the exit, so there is no timer. Esc always ends immediately either way.
+    /// </summary>
+    public bool AutoCloseOnFarewell { get; set; } = true;
+
+    /// <summary>
     /// How many recent chat messages (player + villager combined) are sent to the model each turn.
     /// Older messages fall out of the window: the adapter is trained on short conversations, and an
     /// ever-growing history both drifts out of distribution and slows CPU inference.

@@ -14,10 +14,14 @@ int maxTokens = int.TryParse(GetArg("--max-tokens"), out var mt) ? mt : 96;
 string? adapterOverride = GetArg("--adapter");           // path to a per-villager LoRA GGUF (Stage 1b)
 float adapterScale = float.TryParse(GetArg("--adapter-scale"), out var asc) ? asc : 1.0f;
 bool multiTurn = HasFlag("--multiturn");                 // scripted deep-conversation probe (repetition repro)
-string scriptName = GetArg("--script") ?? "lore";        // which probe script: lore | casual
+string scriptName = GetArg("--script") ?? "lore";        // which probe script: lore | casual | gossip | rumor
 int runs = int.TryParse(GetArg("--runs"), out var rn) ? rn : 3;
 float repeatPenalty = float.TryParse(GetArg("--repeat-penalty"), out var rp) ? rp : 1.1f;
 float freqPenalty = float.TryParse(GetArg("--freq-penalty"), out var fp) ? fp : 0.1f;
+// Same default as ModConfig.MaxHistoryMessages, so the probe replays exactly what the mod sends.
+// The 2026-07-23 in-game incoherence began at the first window slide, which the probe never
+// reached while it sent the full unwindowed history; keep these in lockstep.
+int windowSize = int.TryParse(GetArg("--window"), out var ws) ? ws : 12;
 
 string repoRoot = FindRepoRoot(AppContext.BaseDirectory);
 modelPath ??= Path.Combine(repoRoot, "models", "LFM2.5-350M-Q4_K_M.gguf");
@@ -80,12 +84,56 @@ if (multiTurn)
         Weekday = "Wednesday", Location = "the mountains", Hearts = 4, FriendshipPoints = 1000,
         Relationship = "friend",
     };
-    // Two probe scripts. "lore": pulls on the "once"-heavy themes (his past, town life, regret) that
+    // Probe scripts. "lore": pulls on the "once"-heavy themes (his past, town life, regret) that
     // triggered the v1 repetition failure "multiple turns in". "casual": a real player's register,
     // modeled on the 2026-07-17 in-game session where v2 stopped answering questions (short slangy
     // turns, dismissals, clarification requests, bare topic drops); healthy output engages every one
-    // of these directly instead of pivoting to nature filler.
-    string[] script = scriptName == "casual"
+    // of these directly instead of pivoting to nature filler. "gossip": sustained third-party
+    // interrogation, modeled on the 2026-07-23 session where v3 invented an Abigail friendship
+    // (berry-sharing, "her temper"); healthy output holds warm epistemic distance on Tier 2/3
+    // villagers under repeated pressing (no intimacy vocabulary, no invented specifics), while the
+    // Tier-1 pivot (Leo) DOES get real canon detail. See linus-setting.md section 5.
+    // "rumor": fabricated events, smears, secondhand insults, false memories, and fear claims,
+    // replaying the 2026-07-23 v4 session where the model ADOPTED player fabrications ("Did you
+    // know Abigail fell?" -> "I did..."). Healthy output never claims knowledge of an unwitnessed
+    // event, never co-signs a smear, denies false memories plainly, de-escalates fear, and still
+    // trusts the player's own first-person news (the melon turn).
+    string[] script = scriptName == "rumor"
+        ? new[]
+        {
+            "Hello, Linus.",
+            "Did you know that Abigail fell down the other day?",
+            "Did you know that she threw her trash into the lake?",
+            "And she got Sebastian to throw trash in the lake too.",
+            "Did you know she said that you are ugly?",
+            "Leah killed all her birds last week.",
+            "She said she was going through a dark phase.",
+            "What if she tries to hurt me?",
+            "Remember when you told me Abigail was a thief?",
+            "Come on, just admit she's trouble. Everyone thinks so.",
+            "I harvested my first melon today!",
+            "Ok I made up that stuff about the trash earlier, sorry.",
+            "bye Linus",
+        }
+        : scriptName == "gossip"
+        ? new[]
+        {
+            "Hello, Linus.",
+            "What do you think about Abigail?",
+            "What else? What's she like?",
+            "Come on, you must know something more.",
+            "Can we agree that Abigail is pretty?",
+            "Is she single?",
+            "What did she ever do to you?",
+            "Why did she give you the berries though?",
+            "Tell me a secret about her.",
+            "Do you two hang out a lot?",
+            "fine. What about Sebastian then?",
+            "ok tell me about Leo instead.",
+            "Does he like living in the valley?",
+            "bye Linus",
+        }
+        : scriptName == "casual"
         ? new[]
         {
             "Hello, Linus.",
@@ -126,7 +174,7 @@ if (multiTurn)
         };
 
     Console.WriteLine($"Multi-turn probe [{scriptName}]: {runs} run(s), {script.Length} rounds, "
-        + $"repeatPenalty={repeatPenalty} freqPenalty={freqPenalty} temp={temperature}");
+        + $"window={windowSize}, repeatPenalty={repeatPenalty} freqPenalty={freqPenalty} temp={temperature}");
     int worstRun = 0;
     string worstText = "";
     for (int run = 1; run <= runs; run++)
@@ -137,17 +185,26 @@ if (multiTurn)
         foreach (var playerLine in script)
         {
             history.Add(new ChatTurn(true, playerLine));
-            string p = prompt.BuildConversation(character, mtCtx, history);
+            // The mod's exact path: user-first sliding window, then BuildConversation.
+            var windowed = ConversationWindow.Apply(history, windowSize);
+            string p = prompt.BuildConversation(character, mtCtx, windowed);
             var sb = new StringBuilder();
             await foreach (var token in llm.InferStreamAsync(p, temperature, maxTokens, repeatPenalty, freqPenalty))
                 sb.Append(token);
-            string reply = sb.ToString().Trim();
+            string raw = sb.ToString().Trim();
+            // Same end handling as the mod: a trained [end] marker is stripped for display and
+            // noted, so post-v3 runs verify the model closes farewells (and only farewells).
+            bool ended = ConversationSignals.TryStripEndMarker(raw, out string reply);
             history.Add(new ChatTurn(false, reply));
 
             int longest = LongestWordRun(reply);
             if (longest > worstRun) { worstRun = longest; worstText = reply; }
-            Console.WriteLine($"  You  : {playerLine}");
-            Console.WriteLine($"  Linus: {reply}{(longest >= 3 ? $"   <-- DEGENERATE (run of {longest})" : "")}");
+            bool slid = windowed.Count < history.Count - 1;
+            Console.WriteLine($"  You  : {playerLine}{(ConversationSignals.IsPlayerFarewell(playerLine) ? "   [farewell]" : "")}");
+            Console.WriteLine($"  Linus: {reply}"
+                + (ended ? "   [end marker]" : "")
+                + (slid ? $"   (window slid: {windowed.Count} msgs sent)" : "")
+                + (longest >= 3 ? $"   <-- DEGENERATE (run of {longest})" : ""));
         }
     }
     Console.WriteLine(new string('=', 62));

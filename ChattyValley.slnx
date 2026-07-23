@@ -5,5 +5,6 @@
     <Project Path="src/ChattyValley.Sidecar/ChattyValley.Sidecar.csproj" />
     <Project Path="src/ChattyValley.Harness/ChattyValley.Harness.csproj" />
     <!-- ChattyValley.Mod builds separately (needs SMAPI in the game folder); see its README. -->
+    <Project Path="src/ChattyValley.Tests/ChattyValley.Tests.csproj" />
   </Folder>
 </Solution>

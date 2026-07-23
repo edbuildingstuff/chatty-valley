@@ -59,7 +59,10 @@ public sealed class PromptBuilder
                 "dislike" => " (he dislikes it)", "hate" => " (he hates it)",
                 "neutral" => " (he is indifferent to it)", _ => "",
             };
-            sb.Append($", {ctx.PlayerName} offering a {ctx.Gift}{taste}");
+            // "@" is the player-name placeholder, exactly as in the training data (Stardew's own
+            // dialogue convention). Never render the real name into the prompt: training format
+            // equals inference format, and the mod substitutes "@" at display time instead.
+            sb.Append($", @ offering a {ctx.Gift}{taste}");
         }
         return sb.ToString();
     }

@@ -87,10 +87,32 @@ template: he defends his way of life against judgment (the trash-can `$y` branch
 the model deflects hostile or out-of-world prompts by staying Linus, never by reciting a prompt or breaking
 the fourth wall.
 
+## v3 additions (2026-07-23: end-of-conversation + play-test repairs)
+
+The 2026-07-23 play-test of the deployed 1.2B v2.1 surfaced three gaps; v3 adds one batch and
+repairs (chat trace: the mod's `chat-logs/chatlog-2026-07-23.jsonl`):
+
+| Change | Rows | What it fixes |
+|---|---|---|
+| **farewell** (new batch) | 42 | The conversation could not end from the player's side (the trace's "no / no / Nah" ladder got endless fire invitations). Farewell replies end with the trained `[end]` marker; the runtime (`ConversationSignals`) strips it and closes the chat. Three shapes: explicit goodbyes, messy end intent (slang, dismissals, a SECOND consecutive refusal), and negative contrast rows where "no" or leaving-talk is NOT the end. Hybrid with a conservative runtime keyword heuristic for explicit goodbyes, live since the same date |
+| **casual repairs** | +12 | Third-party affection ("I love Leah") answered "And I you"; "I love you" at 0 hearts got romantic reciprocation (he is not romanceable; deflect with warm dignity, friendship at high hearts); "Ew" pulled guilt monologues; plus mid-stream openers (no greeting), because the sliding window means prompts routinely begin mid-conversation |
+
+Runtime fixes shipped alongside (not data): the sliding window now always opens on a user turn
+(`ConversationWindow`; the even-sized slice was opening every post-slide prompt with an orphaned
+assistant turn, the main incoherence source in the trace), and "@" is now substituted with the
+player's real name at display time (it had been reaching the screen literally).
+
+**The `[end]` marker contract:** `[end]` only ever ends the final assistant turn of an end row. It
+is runtime control text, never player-facing; inference strips it. Do not use it in any other
+batch, and never mid-conversation.
+
 ## Guardrails
 
 - No invented lore. If the canon does not say it, he is vague ("that is a story for another time"), not fabricating.
 - Keep replies 1 to 3 sentences. Short reads as more in-character and records better.
-- Preserve `@` as the player placeholder; render a real-ish name at generation time, vary it.
+- Preserve `@` as the player placeholder (Stardew's own dialogue convention) in every role,
+  including the gift clause of the system line. Never bake a real name into the data: the runtime
+  substitutes `@` with the actual player name at display time only, and the rendered prompt keeps
+  `@` so training format equals inference format.
 - Distribute game state realistically (Linus is almost always at the mountains / tent; weather and season vary).
 - Jailbreak-resistance is an internal robustness property, never a public claim.

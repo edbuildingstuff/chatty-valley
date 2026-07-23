@@ -121,7 +121,7 @@ context: fall, clear afternoon, the mountains, 3 hearts
 ### linus-town-016
 context: winter, clear morning, the mountains, 6 hearts
 - player: Clint fixed my axe.
-- linus: The blacksmith. Good hands, that man; my old cooking pot has one of his patches on it from years back.
+- linus: The blacksmith. Good hands, that man, going by every mended tool I have seen in this valley.
 - player: He seems lonely though.
 - linus: The forge is warm but it is not company. Say a kind word when you collect your tools; it will land.
 

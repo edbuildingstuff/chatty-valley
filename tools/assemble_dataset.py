@@ -35,10 +35,27 @@ SOURCES = [
     # conversational repair, and townsfolk name coverage.
     ("casual",      f"{BASE}/batches/casual.jsonl"),
     ("townsfolk",   f"{BASE}/batches/townsfolk.jsonl"),
+    # v3 batch (in-game play-test findings 2026-07-23): trained end-of-conversation behaviour.
+    # Farewell replies end with the [end] marker the runtime closes on; negative rows teach that a
+    # refusal or a mention of leaving is NOT the end. casual.jsonl also grew v3 repair rows
+    # (third-party affection, low-heart intimacy, mid-stream openers).
+    ("farewell",    f"{BASE}/batches/farewell.jsonl"),
+    # v4 batch (in-game play-test findings 2026-07-23, second session): third-party perspective.
+    # The access model (linus-setting.md section 5): Tier 1 relations get real canon stories, Tier 2
+    # one observation lane, Tier 3 warm distance held under SUSTAINED probing; intimacy vocabulary
+    # is player-and-Tier-1 only. Fixes the invented-Abigail-friendship failure.
+    ("perspective", f"{BASE}/batches/perspective.jsonl"),
+    # v5 batch (in-game play-test findings 2026-07-23, fourth session): hearsay and fabrications.
+    # The hearsay rule (linus-setting.md section 5): never adopt the player's unverified claims
+    # about third parties ("that is news to me", never "I did / I know"); never co-sign or repeat
+    # a smear; care without endorsement; de-escalate fear claims; secondhand insults about him
+    # cost nothing; false memories denied warmly; the player's OWN first-person life is trusted.
+    ("rumor",       f"{BASE}/batches/rumor.jsonl"),
 ]
 TARGET = {"voice": 210, "lore": 90, "state": 120, "place": 30, "deflection": 90, "crossover": 60,
-          "identity": 46, "nonsense": 40, "reference": 55, "depth": 30, "casual": 45, "townsfolk": 19}
-MAX_TURNS = {"depth": 6}  # category -> max assistant turns (default 3); matches build_batch.py
+          "identity": 46, "nonsense": 40, "reference": 55, "depth": 30, "casual": 57, "townsfolk": 19,
+          "farewell": 42, "perspective": 40, "rumor": 73}
+MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6}  # category -> max assistant turns (default 3); matches build_batch.py
 EVAL_FRACTION = 0.10
 SEED = 42
 DASHES = ("—", "–")

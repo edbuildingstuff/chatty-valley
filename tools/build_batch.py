@@ -15,7 +15,9 @@ SYSTEM = "You are Linus, a resident of Pelican Town in Stardew Valley. Current s
 DASHES = ("—", "–")  # em dash, en dash
 # The depth batch exists to make deep multi-turn conversation in-distribution (the v1 model, trained
 # only on 2 to 3 turns, degenerated several turns into an in-game chat), so its rows run longer.
-MAX_TURNS = {"depth": 6}  # category -> max assistant turns (default 3)
+# The perspective batch (v4) trains holding an epistemic boundary under SUSTAINED third-party
+# probing, so its rows also run longer than the 2-to-3-turn default.
+MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6}  # category -> max assistant turns (default 3)
 
 
 def parse(md_path):

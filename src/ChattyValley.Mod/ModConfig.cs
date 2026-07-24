@@ -1,3 +1,4 @@
+using ChattyValley.Core;
 using StardewModdingAPI;
 
 namespace ChattyValley.Mod;
@@ -36,6 +37,16 @@ public sealed class ModConfig
     /// ever-growing history both drifts out of distribution and slows CPU inference.
     /// </summary>
     public int MaxHistoryMessages { get; set; } = 12;
+
+    /// <summary>
+    /// False-premise guard. When the player's message presupposes a fabricated event, gift, or shared
+    /// past ("when Leah visited your tent, what did you talk about?"), append <see cref="FalsePremiseGuardClause"/>
+    /// to the system turn so the model is reminded to say plainly if it does not remember, instead of
+    /// playing along. Fires only on those presupposition shapes (never on ordinary chat or relationship
+    /// questions), so normal conversation is untouched.
+    /// </summary>
+    public bool FalsePremiseGuard { get; set; } = true;
+    public string FalsePremiseGuardClause { get; set; } = ConversationSignals.DefaultFalsePremiseGuard;
 
     /// <summary>
     /// Development transcript logging: every free-chat conversation is appended as JSONL (context,

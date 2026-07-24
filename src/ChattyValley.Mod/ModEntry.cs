@@ -185,7 +185,10 @@ public sealed class ModEntry : StardewModdingAPI.Mod
         Func<IReadOnlyList<ChatTurn>, Task<string?>> ask = async history =>
         {
             IReadOnlyList<ChatTurn> windowed = Window(history);
-            string prompt = _prompt!.BuildConversation(_linus!, ctx, windowed);
+            string? guard = _config.FalsePremiseGuard ? _config.FalsePremiseGuardClause : null;
+            string prompt = _prompt!.BuildConversation(_linus!, ctx, windowed, guard);
+            bool guardFired = guard is not null && history.Count > 0
+                && ConversationSignals.LooksLikeFalsePremise(history[history.Count - 1].Content);
             var sw = System.Diagnostics.Stopwatch.StartNew();
             var (reply, raw) = await _sidecar!.AskDetailedAsync(prompt,
                 _config.Temperature, _config.MaxTokens,
@@ -201,6 +204,8 @@ public sealed class ModEntry : StardewModdingAPI.Mod
                 raw = raw is not null && raw != reply ? raw : null,
                 ms = (int)sw.ElapsedMilliseconds,
                 historyLen = history.Count, sentToModel = windowed.Count,
+                // present only when the false-premise guard clause was injected this turn
+                guard = guardFired ? true : (bool?)null,
                 prompt = _config.ChatLogPrompts ? prompt : null,
             });
             return reply;

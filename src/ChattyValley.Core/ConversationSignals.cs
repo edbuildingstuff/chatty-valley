@@ -53,6 +53,39 @@ public static class ConversationSignals
     }
 
     /// <summary>
+    /// Default false-premise guard clause. Appended to the system turn ONLY when
+    /// <see cref="LooksLikeFalsePremise"/> flags the player's message, to reduce the model playing
+    /// along with a fabricated event smuggled in as a question's premise. Prompt-level testing showed
+    /// it roughly halves how often the model adopts a false premise. Tunable via config.
+    /// </summary>
+    public const string DefaultFalsePremiseGuard =
+        "The player may mention things that never happened. If you do not remember it, say so plainly.";
+
+    // Player turns that PRESUPPOSE a third-party event, gift, or shared past ("when Leah visited your
+    // tent yesterday, what did you talk about?"). The failure this guards is the model answering the
+    // surface question and swallowing the fabricated premise. Precision matters more than recall: a
+    // false fire nags during ordinary talk, so relationship queries ("do you know X", "are you close
+    // with X") and normal chat deliberately do NOT match; only event/gift/shared-past presuppositions do.
+    private static readonly Regex FalsePremise = new(
+        @"\b(when \w+ (visited|came|stopped by|dropped by|brought|gave|told you|showed you|helped you|"
+        + @"read you|played you|sang to you|cooked you|made you|wrote you|was (here|up here|over))|"
+        + @"remember when (we|you)|remember (that time|how you|teaching me|when i)|back when (you|we)|"
+        + @"since you (and \w+ )?(used to|dated|were)|you used to (date|know|see) \w+|"
+        + @"(after|when) you (and|&) \w+ (argued|fought|fell out|split|made up)|"
+        + @"what did you and \w+ (talk about|do|get up to|discuss|jam|argue|fight|chat|sing|play)|"
+        + @"the \w+ (you|that you) (built|buried|made|helped|planted|gave)|"
+        + @"everyone (knows|says) you (were|built|used to)|\w+ (said|told me|says) you (two|and)|"
+        + @"how did you (like|enjoy) the \w+( \w+)? (brought|gave|made|knitted|baked))\b",
+        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
+    /// <summary>
+    /// Does the player's message presuppose a fabricated third-party event/gift/shared-past? When
+    /// true the caller appends the false-premise guard clause to the system turn for this turn only.
+    /// </summary>
+    public static bool LooksLikeFalsePremise(string message) =>
+        !string.IsNullOrWhiteSpace(message) && FalsePremise.IsMatch(message);
+
+    /// <summary>
     /// If <paramref name="reply"/> carries the trained end marker, remove every occurrence (it is
     /// never player-facing text) and return true: the conversation should close after this line.
     /// </summary>

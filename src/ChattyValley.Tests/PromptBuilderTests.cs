@@ -39,4 +39,57 @@ public class PromptBuilderTests
         Assert.StartsWith("You are Linus, a resident of Pelican Town in Stardew Valley. Current situation: ", system);
         Assert.Contains("fall, clear afternoon, the mountains, 4 hearts", system);
     }
+
+    // ---- false-premise guard injection (conditional; see ConversationSignals.LooksLikeFalsePremise) --
+
+    private static GameContext PlainContext => new()
+    {
+        Season = "spring", Weather = "clear", TimeOfDay = "morning", Location = "the mountains", Hearts = 4,
+    };
+
+    private const string Guard = ConversationSignals.DefaultFalsePremiseGuard;
+
+    private static List<ChatTurn> History(string playerTurn) => new() { new ChatTurn(true, playerTurn) };
+
+    [Fact]
+    public void GuardInjectedWhenLatestTurnIsFalsePremise()
+    {
+        var prompt = new PromptBuilder(ChatTemplate.Lfm2);
+        string p = prompt.BuildConversation(Adapter, PlainContext,
+            History("So when Leah came up to your tent yesterday, what did you talk about?"), Guard);
+        Assert.Contains("say so plainly", p);
+    }
+
+    [Fact]
+    public void GuardNotInjectedOnOrdinaryTurn()
+    {
+        var prompt = new PromptBuilder(ChatTemplate.Lfm2);
+        string p = prompt.BuildConversation(Adapter, PlainContext,
+            History("Do you know Leah, the artist?"), Guard);
+        Assert.DoesNotContain("say so plainly", p);
+    }
+
+    [Fact]
+    public void GuardNotInjectedWhenDisabled()
+    {
+        var prompt = new PromptBuilder(ChatTemplate.Lfm2);
+        string p = prompt.BuildConversation(Adapter, PlainContext,
+            History("So when Leah came up to your tent yesterday, what did you talk about?"), falsePremiseGuard: null);
+        Assert.DoesNotContain("say so plainly", p);
+    }
+
+    [Fact]
+    public void GuardChecksLatestTurnNotEarlierOnes()
+    {
+        // A false premise earlier in the history must not keep re-firing the guard on later, ordinary turns.
+        var prompt = new PromptBuilder(ChatTemplate.Lfm2);
+        var history = new List<ChatTurn>
+        {
+            new(true, "So when Leah came up to your tent yesterday, what did you talk about?"),
+            new(false, "Leah has not been up here, friend."),
+            new(true, "Fair enough. What is the weather like up here in winter?"),
+        };
+        string p = prompt.BuildConversation(Adapter, PlainContext, history, Guard);
+        Assert.DoesNotContain("say so plainly", p);
+    }
 }

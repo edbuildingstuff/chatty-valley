@@ -79,16 +79,35 @@ public sealed class PromptBuilder
     /// Build a full multi-turn prompt: the system message (identity + game state), then the whole
     /// conversation history, then the marker to generate the next villager reply. The model was trained
     /// on 2 to 3 turn conversations, so it holds voice and context across the exchange.
+    ///
+    /// When <paramref name="falsePremiseGuard"/> is non-empty AND the latest player turn presupposes a
+    /// fabricated event (<see cref="ConversationSignals.LooksLikeFalsePremise"/>), the guard clause is
+    /// appended to the system turn for THIS turn only. Injected conditionally so ordinary chat and
+    /// relationship questions keep the exact training-shaped system prompt.
     /// </summary>
-    public string BuildConversation(Character c, GameContext ctx, IReadOnlyList<ChatTurn> history)
+    public string BuildConversation(Character c, GameContext ctx, IReadOnlyList<ChatTurn> history,
+                                    string? falsePremiseGuard = null)
     {
+        string system = BuildSystem(c, ctx);
+        if (!string.IsNullOrEmpty(falsePremiseGuard) && LatestUserTurn(history) is { } latest
+            && ConversationSignals.LooksLikeFalsePremise(latest))
+            system += " " + falsePremiseGuard;
+
         var sb = new StringBuilder();
-        sb.Append(_template.System.Replace("{system}", BuildSystem(c, ctx)));
+        sb.Append(_template.System.Replace("{system}", system));
         foreach (var turn in history)
             sb.Append(turn.IsUser
                 ? _template.Prompt.Replace("{prompt}", turn.Content)
                 : _template.AssistantTurn.Replace("{response}", turn.Content));
         sb.Append(_template.ResponseStart);
         return sb.ToString();
+    }
+
+    // The message we are about to answer: the last player turn in the (already windowed) history.
+    private static string? LatestUserTurn(IReadOnlyList<ChatTurn> history)
+    {
+        for (int i = history.Count - 1; i >= 0; i--)
+            if (history[i].IsUser) return history[i].Content;
+        return null;
     }
 }

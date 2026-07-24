@@ -88,4 +88,43 @@ public class ConversationSignalsTests
         Assert.True(ConversationSignals.TryStripEndMarker("Rest well. [end] The stars are out.", out string cleaned));
         Assert.DoesNotContain("[end]", cleaned, StringComparison.OrdinalIgnoreCase);
     }
+
+    // ---- false-premise detector -------------------------------------------------------------
+    // Fires only on turns that PRESUPPOSE a third-party event/gift/shared past (the guard's target).
+    // Precision matters more than recall: a false fire nags ordinary talk, so relationship queries
+    // and normal chat must NOT match.
+
+    [Theory]
+    [InlineData("So when Leah came up to your tent yesterday, what did you two talk about?")]
+    [InlineData("when Sebastian stopped by your fire last night, did he seem alright?")]
+    [InlineData("Since you and Caroline used to be sweet on each other, do you still talk?")]
+    [InlineData("How did you like the scarf Emily knitted you for the Winter Star?")]
+    [InlineData("Remember when you taught me to forage that first spring I got here?")]
+    [InlineData("So when Elliott read you his new chapter up here, what did you make of it?")]
+    [InlineData("Everyone knows you built the old community center. What was that like?")]
+    [InlineData("What did you and Sam jam on when he brought his guitar up the mountain?")]
+    [InlineData("What did you and Shane argue about outside the ranch?")]
+    [InlineData("So the treasure you buried by the lake, is it still there?")]
+    [InlineData("Abigail told me you two are close.")]
+    public void FalsePremisesAreDetected(string message) =>
+        Assert.True(ConversationSignals.LooksLikeFalsePremise(message));
+
+    [Theory]
+    [InlineData("You know your neighbour Robin pretty well, I would guess?")]  // relationship query, TRUE
+    [InlineData("Are you and the Wizard on good terms?")]
+    [InlineData("Do you know George and Evelyn in town?")]
+    [InlineData("You must know Gus down at the saloon.")]
+    [InlineData("Do you know Leah, the artist?")]
+    [InlineData("Hello, Linus.")]
+    [InlineData("Are you AI?")]
+    [InlineData("What do you think about data centres?")]
+    [InlineData("Have you been to the town at all?")]
+    [InlineData("Do you get lonely up here?")]
+    [InlineData("What is your favourite food?")]
+    [InlineData("Did you ever go to town?")]
+    [InlineData("When do you forage in the spring?")]
+    [InlineData("bye Linus")]
+    [InlineData("")]
+    public void OrdinaryTurnsAreNotFalsePremises(string message) =>
+        Assert.False(ConversationSignals.LooksLikeFalsePremise(message));
 }

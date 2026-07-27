@@ -16,24 +16,41 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 
-# $PSScriptRoot is empty when referenced directly in a [CmdletBinding()] param block's default
-# value expressions under Windows PowerShell 5.1, so those defaults are resolved here instead.
-if (-not $ModelsDir) { $ModelsDir = Join-Path $PSScriptRoot '../models' }
-if (-not $OutDir)    { $OutDir    = Join-Path $PSScriptRoot '../dist' }
+# $repo is resolved first (Resolve-Path requires the path to exist, which the repo root always
+# does), and $ModelsDir / $OutDir default from $repo rather than from $PSScriptRoot + '..', so an
+# unresolved ".." segment never enters $OutDir/$stage in the first place. This closes the path
+# class of bug at its source instead of patching it only where it last bit (the zip-entry-naming
+# Substring math), so no future path operation on $OutDir/$stage can reintroduce it.
+#
+# $PSScriptRoot is also empty when referenced directly in a [CmdletBinding()] param block's default
+# value expressions under Windows PowerShell 5.1, so none of these defaults can live in param().
+$repo = Resolve-Path (Join-Path $PSScriptRoot '..')
+if (-not $ModelsDir) { $ModelsDir = Join-Path $repo 'models' }
+if (-not $OutDir)    { $OutDir    = Join-Path $repo 'dist' }
 
-$repo    = Resolve-Path (Join-Path $PSScriptRoot '..')
-$stage   = Join-Path $OutDir 'ChattyValley'
+$stage       = Join-Path $OutDir 'ChattyValley'
+$zip         = Join-Path $OutDir "ChattyValley-$Version.zip"
 $baseGguf    = 'LFM2.5-1.2B-Instruct-Q4_K_M.gguf'
 $adapterGguf = 'linus-12b-v8dpo2-lora-f16.gguf'
 
-# 1. clean stage
+# 1. clean stage and any stale zip from a previous, possibly-failed run. A run that dies between
+# staging and the zip write would otherwise leave a same-named zip from an earlier run sitting in
+# dist/ with nothing to mark it as stale.
 if (Test-Path $stage) { Remove-Item -Recurse -Force $stage }
+if (Test-Path $zip)   { Remove-Item -Force $zip }
 New-Item -ItemType Directory -Force -Path $stage, "$stage/assets", "$stage/characters" | Out-Null
 
 # 2. build the mod without deploying into the local game folder
 $modProj = Join-Path $repo 'src/ChattyValley.Mod/ChattyValley.Mod.csproj'
 $modOut  = Join-Path $OutDir '_mod-build'
+
+# Purge stale build output BEFORE building, and check the exit code after (as in
+# publish-sidecar.ps1: $ErrorActionPreference does not govern a native command's exit code).
+# Without both of these, a regressed mod build leaves last-run DLLs sitting in $modOut, Copy-Item
+# below picks them up without error, and the zip reports success while shipping outdated mod code.
+if (Test-Path $modOut) { Remove-Item -Recurse -Force $modOut }
 dotnet build $modProj -c Release -p:EnableModDeploy=false -p:EnableModZip=false -o $modOut
+if ($LASTEXITCODE -ne 0) { throw "dotnet build failed with exit code $LASTEXITCODE" }
 
 foreach ($f in 'ChattyValley.Mod.dll', 'ChattyValley.Core.dll') {
     Copy-Item (Join-Path $modOut $f) $stage
@@ -72,8 +89,9 @@ foreach ($g in $baseGguf, $adapterGguf) {
 # CreateFromDirectory; write every entry by hand and normalise the separator instead.
 Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
-$zip = Join-Path $OutDir "ChattyValley-$Version.zip"
-if (Test-Path $zip) { Remove-Item -Force $zip }
+# $zip was already computed and any stale copy already cleared at the top of the script (step 1),
+# alongside the stage cleanup, so a run that dies before reaching this point cannot leave a
+# same-named zip from an earlier run behind with nothing marking it stale.
 
 $archive = [System.IO.Compression.ZipFile]::Open($zip, 'Create')
 try {
@@ -92,16 +110,20 @@ try {
     }
 } finally { $archive.Dispose() }
 
-# A truncated zip, and a zip with backslash-separated entries, both look like success unless
-# checked. Prove both are absent before reporting success.
+# A truncated zip, a zip with backslash-separated entries, and a zip whose entries lost their
+# ChattyValley/ prefix (the exact "y/manifest.json" corruption this script shipped once already,
+# which was forward-slashed and had the correct entry count, so checking only those two properties
+# passed a broken archive) all look like success unless checked. Prove all three are absent.
 $probe = [System.IO.Compression.ZipFile]::OpenRead($zip)
 try {
     $entryCount  = $probe.Entries.Count
     $backslashed = @($probe.Entries.FullName | Where-Object { $_ -match '\\' }).Count
+    $misprefixed = @($probe.Entries.FullName | Where-Object { $_ -notlike "$stageLeaf/*" }).Count
 } finally { $probe.Dispose() }
-if ($entryCount -lt 1) { throw "packaged zip opened but contains no entries" }
+if ($entryCount -lt 1)  { throw "packaged zip opened but contains no entries" }
 if ($backslashed -gt 0) { throw "$backslashed zip entries use backslash separators; the ZIP spec requires forward slashes" }
-Write-Host "zip verified readable: $entryCount entries, all forward-slash separated"
+if ($misprefixed -gt 0) { throw "$misprefixed zip entries do not start with '$stageLeaf/'; entry names are being built wrong" }
+Write-Host "zip verified readable: $entryCount entries, all under $stageLeaf/ with forward slashes"
 
 Remove-Item -Recurse -Force $modOut
 $mb = [math]::Round((Get-Item $zip).Length / 1MB, 1)

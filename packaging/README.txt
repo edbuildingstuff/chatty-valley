@@ -32,5 +32,6 @@ true writes conversation transcripts to chat-logs/ for bug reports.
 CREDITS
 ConcernedApe for Stardew Valley. Pathoschild and the SMAPI project. The
 llama.cpp and LLamaSharp projects. Liquid AI for the LFM2.5 base model, used
-under the LFM Open License v1.0 (see LICENSE-LFM.txt). Built by Ertas.
+under the LFM Open License v1.0 (see LICENSE-LFM.txt).
+Built by Edward Xi Yang (edbuildingstuff), Ertas AI. https://www.ertas.ai
 Not affiliated with or endorsed by ConcernedApe.

@@ -124,4 +124,4 @@ cold and checks it the way a player's unzip would.
 
 Free and non-commercial. Not affiliated with or endorsed by ConcernedApe. Credit to ConcernedApe
 (Eric Barone) for Stardew Valley, Pathoschild and the SMAPI project, and the llama.cpp / LLamaSharp
-projects. Built by the team at Ertas: https://www.ertas.ai
+projects. Built by Edward Xi Yang (edbuildingstuff), Ertas AI: https://www.ertas.ai

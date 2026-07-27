@@ -24,6 +24,11 @@ dotnet publish $proj `
     -p:PublishTrimmed=false `
     -o $OutDir
 
+# $ErrorActionPreference does NOT govern a native command's exit code, so check it
+# explicitly. Without this, a failed publish into a directory holding a stale exe
+# would pass the Test-Path check below and report success into the packaging pipeline.
+if ($LASTEXITCODE -ne 0) { throw "dotnet publish failed with exit code $LASTEXITCODE" }
+
 $exe = Join-Path $OutDir 'ChattyValley.Sidecar.exe'
 if (-not (Test-Path $exe)) { throw "sidecar publish produced no exe at $exe" }
 

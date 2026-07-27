@@ -15,10 +15,27 @@ param(
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-$zip = [System.IO.Compression.ZipFile]::OpenRead((Resolve-Path $ZipPath))
+$resolvedZipPath = (Resolve-Path $ZipPath).Path
+$zip = [System.IO.Compression.ZipFile]::OpenRead($resolvedZipPath)
 try {
     $names = $zip.Entries.FullName
     $fail  = @()
+
+    # The two shipping GGUF basenames, defined once here so the required-file list, the size
+    # thresholds, and the DLL cross-check below all agree with each other and cannot silently
+    # drift apart the way the DLL, package-release.ps1, and this script's required list once could.
+    $baseGguf    = 'LFM2.5-1.2B-Instruct-Q4_K_M.gguf'
+    $adapterGguf = 'linus-12b-v8dpo2-lora-f16.gguf'
+
+    # The zip filename's version must agree with the manifest inside it (checked once $man is
+    # parsed below). Extracted here from the resolved path so a relative -ZipPath still works.
+    $zipLeaf = Split-Path $resolvedZipPath -Leaf
+    $zipVersion = $null
+    if ($zipLeaf -cmatch '^ChattyValley-(.+)\.zip$') {
+        $zipVersion = $Matches[1]
+    } else {
+        $fail += "zip filename '$zipLeaf' does not match the expected ChattyValley-<version>.zip pattern, so its version cannot be checked against the manifest"
+    }
 
     # Every comparison below against an entry FullName uses the -c (case-sensitive) operator
     # variant deliberately. PowerShell's default -notcontains / -notlike / -match are
@@ -36,11 +53,24 @@ try {
         'ChattyValley/README.txt'
         'ChattyValley/LICENSE-LFM.txt'
         'ChattyValley/characters/linus.json'
-        'ChattyValley/assets/LFM2.5-1.2B-Instruct-Q4_K_M.gguf'
-        'ChattyValley/assets/linus-12b-v8dpo2-lora-f16.gguf'
+        "ChattyValley/assets/$baseGguf"
+        "ChattyValley/assets/$adapterGguf"
         'ChattyValley/sidecar/ChattyValley.Sidecar.exe'
+        # These two are the actual sidecar entry assembly and the runtime glue that loads the
+        # native llama.cpp backend. Neither was previously asserted: a LLamaSharp bump or RID
+        # change could drop either one, pass every other check, and die on model load at runtime.
+        'ChattyValley/sidecar/ChattyValley.Sidecar.dll'
+        'ChattyValley/sidecar/ChattyValley.Runtime.dll'
     )
     foreach ($r in $required) { if ($names -cnotcontains $r) { $fail += "missing: $r" } }
+
+    # At least one win-x64 native llama.dll backend (avx / avx2 / avx512 / noavx) must ship under
+    # the sidecar. This is the actual inference engine; its absence was previously unchecked and
+    # would pass every other assertion while dying on model load for every player.
+    $llamaNative = @($names | Where-Object { $_ -cmatch '^ChattyValley/sidecar/runtimes/win-x64/native/[^/]+/llama\.dll$' })
+    if ($llamaNative.Count -eq 0) {
+        $fail += 'sidecar ships no runtimes/win-x64/native/*/llama.dll backend; it will die on model load for every player'
+    }
 
     # the 350M pair must never ship
     foreach ($n in $names) { if ($n -cmatch '350[Mm]') { $fail += "stale 350M artifact shipped: $n" } }
@@ -66,14 +96,52 @@ try {
         if ($n -cmatch '^ChattyValley/LLama.*\.dll$') { $fail += "LLamaSharp leaked into the mod root: $n" }
     }
 
+    # The shipping GGUF filenames live in six places (ModEntry.cs, package-release.ps1, this
+    # script, and three docs/tests) with nothing that ties them together: a model retrain that
+    # renames the GGUFs, with the two obvious "release" scripts updated but ModEntry.cs missed
+    # (or vice versa), builds a zip, passes every check above, and then File.Exists is false for
+    # every player and free-chat silently disables itself forever. Close that gap here by reading
+    # the actual compiled ChattyValley.Mod.dll and asserting the basenames it resolves are the
+    # ones the zip ships.
+    #
+    # The filenames are embedded as UTF-16LE string literals in the #US metadata heap, but a
+    # heap entry's byte OFFSET within the file is not guaranteed to be even (it follows a
+    # variable-length compressed length prefix), so decoding the whole DLL as one Unicode string
+    # from byte 0 and searching for the literal can silently mis-pair every byte from that offset
+    # onward and never find it, a false FAIL that would make this gate permanently red. Confirmed
+    # against the real build: the base GGUF literal here starts at file offset 34641, which is
+    # odd. Search instead via ISO-8859-1 (Latin-1), a single-byte-to-single-char encoding with no
+    # pairing/alignment concept at all, so the exact UTF-16LE byte sequence of the search term is
+    # found as a substring regardless of where it falls.
+    $modDllEntry = $zip.GetEntry('ChattyValley/ChattyValley.Mod.dll')
+    if ($modDllEntry) {
+        $ms = New-Object System.IO.MemoryStream
+        $s = $modDllEntry.Open()
+        try { $s.CopyTo($ms) } finally { $s.Dispose() }
+        $latin1 = [System.Text.Encoding]::GetEncoding('ISO-8859-1')
+        $modDllBytes = $latin1.GetString($ms.ToArray())
+        $ms.Dispose()
+
+        $baseNeedle    = $latin1.GetString([System.Text.Encoding]::Unicode.GetBytes($baseGguf))
+        $adapterNeedle = $latin1.GetString([System.Text.Encoding]::Unicode.GetBytes($adapterGguf))
+
+        if ($modDllBytes.IndexOf($baseNeedle, [System.StringComparison]::Ordinal) -lt 0) {
+            $fail += "ChattyValley.Mod.dll does not reference base GGUF basename '$baseGguf'; the DLL and the shipped asset have drifted, so File.Exists will be false for every player"
+        }
+        if ($modDllBytes.IndexOf($adapterNeedle, [System.StringComparison]::Ordinal) -lt 0) {
+            $fail += "ChattyValley.Mod.dll does not reference adapter GGUF basename '$adapterGguf'; the DLL and the shipped asset have drifted, so File.Exists will be false for every player"
+        }
+    }
+    # else: already reported by the $required check above; no need to fail twice.
+
     # Minimum payload sizes. Presence-by-name alone lets a zero-byte or truncated GGUF, a stub
     # DLL, or a sidecar exe missing its bundled runtime all pass silently, and every defect on
     # this plan so far has produced an artifact of plausible shape. Thresholds are set well
     # below the real payload sizes (base GGUF 697.0 MB, adapter 21.2 MB, sidecar exe 162,816
     # bytes) so a legitimate model swap does not trip them.
     $minBytes = @{
-        'ChattyValley/assets/LFM2.5-1.2B-Instruct-Q4_K_M.gguf' = 600MB
-        'ChattyValley/assets/linus-12b-v8dpo2-lora-f16.gguf'   = 15MB
+        "ChattyValley/assets/$baseGguf"                        = 600MB
+        "ChattyValley/assets/$adapterGguf"                     = 15MB
         'ChattyValley/sidecar/ChattyValley.Sidecar.exe'        = 50KB
         'ChattyValley/ChattyValley.Mod.dll'                    = 8KB
         'ChattyValley/ChattyValley.Core.dll'                   = 4KB
@@ -132,6 +200,14 @@ try {
         $fail += "cannot parse manifest: $manErr"
     } else {
         if (-not $man.UpdateKeys -or $man.UpdateKeys.Count -eq 0) { $fail += 'manifest has no UpdateKeys' }
+
+        # A hotfix that bumps manifest.json's Version without the zip filename following (or
+        # vice versa) previously passed every check: the gate never read manifest.Version at all.
+        # The Nexus filename is what a player downloads and what SMAPI's own toolbox reports back;
+        # they must agree.
+        if ($zipVersion -and $man.Version -ne $zipVersion) {
+            $fail += "manifest version '$($man.Version)' does not match the zip filename version '$zipVersion' (from '$zipLeaf')"
+        }
     }
 
     $linusErr = $null

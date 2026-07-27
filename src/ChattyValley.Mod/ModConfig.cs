@@ -67,8 +67,10 @@ public sealed class ModConfig
     public string ChatLogDir { get; set; } = "";
 
     /// <summary>
-    /// Absolute paths to the GGUF files. Left blank = resolve from the repo's models/ folder (dev) and
-    /// the trained adapter. Set explicitly for a deployed install. The adapter path can point anywhere.
+    /// Absolute paths to the GGUF files. Left blank = resolve to the mod folder's own `assets/`
+    /// subfolder (see <c>ModEntry.Resolve</c>), which is where <c>scripts/package-release.ps1</c>
+    /// stages the shipping GGUFs and where a dev build can drop them too. Set explicitly for a
+    /// deployed install. The adapter path can point anywhere.
     /// </summary>
     public string BaseModelPath { get; set; } = "";
     public string LinusAdapterPath { get; set; } = "";

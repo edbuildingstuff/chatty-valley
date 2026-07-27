@@ -39,8 +39,10 @@ dotnet build src/ChattyValley.Mod/ChattyValley.Mod.csproj -c Debug
 # 4. Launch the game through SMAPI, load a save, walk up to Linus, press C.
 ```
 
-The base GGUF + the Linus LoRA GGUF are large and live outside the repo (models/ and the gtm training
-artifacts). Bundle them under `assets/` before any public release.
+The base GGUF + the Linus LoRA GGUF are large and live outside the repo, downloaded on demand into
+`models/` (see `scripts/download-model.ps1`). Do not hand-copy them into `assets/`: run
+`scripts/package-release.ps1` to stage them there and build the release zip, then
+`scripts/verify-release.ps1` to gate the result before any public release.
 
 ## Development chat logging
 

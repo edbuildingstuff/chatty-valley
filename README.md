@@ -94,7 +94,7 @@ directly).
 
 ```powershell
 # 1. Download the base model (~0.75 GB, into ./models)
-pwsh scripts/download-model.ps1
+powershell -NoProfile -File scripts/download-model.ps1
 
 # 2. Build
 dotnet build ChattyValley.slnx -c Release
@@ -112,8 +112,8 @@ fast path for iterating on a character's voice and sampling settings before touc
 ## Build the release zip
 
 ```powershell
-pwsh scripts/package-release.ps1
-pwsh scripts/verify-release.ps1 -ZipPath ./dist/ChattyValley-0.2.0.zip
+powershell -NoProfile -File scripts/package-release.ps1
+powershell -NoProfile -File scripts/verify-release.ps1 -ZipPath ./dist/ChattyValley-0.2.0.zip
 ```
 
 Requires Stardew Valley installed locally (ModBuildConfig resolves the game assemblies at compile

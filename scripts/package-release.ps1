@@ -10,7 +10,7 @@
 #>
 [CmdletBinding()]
 param(
-    [string] $Version    = '0.2.0',
+    [string] $Version,
     [string] $ModelsDir,
     [string] $OutDir
 )
@@ -27,6 +27,18 @@ $ErrorActionPreference = 'Stop'
 $repo = Resolve-Path (Join-Path $PSScriptRoot '..')
 if (-not $ModelsDir) { $ModelsDir = Join-Path $repo 'models' }
 if (-not $OutDir)    { $OutDir    = Join-Path $repo 'dist' }
+
+# $Version defaults from manifest.json, the single source of truth for the shipped version, rather
+# than a literal default. A literal default here is exactly how a manifest version bump (e.g. a
+# hotfix to 0.2.1) can ship a zip named and gated against the previous version while the manifest
+# inside it disagrees. -Version remains available as an explicit override for a caller that wants
+# to force a specific value.
+if (-not $PSBoundParameters.ContainsKey('Version')) {
+    $manifestPath = Join-Path $repo 'src/ChattyValley.Mod/manifest.json'
+    $manifest = Get-Content $manifestPath -Raw | ConvertFrom-Json
+    $Version = $manifest.Version
+    if (-not $Version) { throw "could not read a Version from $manifestPath" }
+}
 
 $stage       = Join-Path $OutDir 'ChattyValley'
 $zip         = Join-Path $OutDir "ChattyValley-$Version.zip"
@@ -117,8 +129,11 @@ try {
 $probe = [System.IO.Compression.ZipFile]::OpenRead($zip)
 try {
     $entryCount  = $probe.Entries.Count
-    $backslashed = @($probe.Entries.FullName | Where-Object { $_ -match '\\' }).Count
-    $misprefixed = @($probe.Entries.FullName | Where-Object { $_ -notlike "$stageLeaf/*" }).Count
+    # -cmatch / -cnotlike deliberately, matching verify-release.ps1: PowerShell's bare -match /
+    # -notlike are case-INSENSITIVE, but zip entry names are case-SENSITIVE on the macOS and Linux
+    # filesystems this probe exists to protect (e.g. "Manifest.json" vs "manifest.json").
+    $backslashed = @($probe.Entries.FullName | Where-Object { $_ -cmatch '\\' }).Count
+    $misprefixed = @($probe.Entries.FullName | Where-Object { $_ -cnotlike "$stageLeaf/*" }).Count
 } finally { $probe.Dispose() }
 if ($entryCount -lt 1)  { throw "packaged zip opened but contains no entries" }
 if ($backslashed -gt 0) { throw "$backslashed zip entries use backslash separators; the ZIP spec requires forward slashes" }
@@ -128,3 +143,10 @@ Write-Host "zip verified readable: $entryCount entries, all under $stageLeaf/ wi
 Remove-Item -Recurse -Force $modOut
 $mb = [math]::Round((Get-Item $zip).Length / 1MB, 1)
 Write-Host "packaged: $zip ($mb MB)"
+
+# Deliberately does NOT auto-invoke verify-release.ps1: today, before the mod has a Nexus mod ID,
+# verify-release.ps1 is EXPECTED to fail on "manifest has no UpdateKeys". Wiring it in as a hard
+# gate here would make ordinary packaging throw on every run until that ID exists, which would
+# just get "worked around" rather than fixed. Printing the explicit next step instead keeps
+# packaging usable while still making it impossible to mistake this line for a verified release.
+Write-Host "NOT YET VERIFIED. Run: powershell -NoProfile -File scripts/verify-release.ps1 -ZipPath `"$zip`""

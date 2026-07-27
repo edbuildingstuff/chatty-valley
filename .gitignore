@@ -10,3 +10,6 @@ models/
 # Trained adapters (Stage 1b artifacts) live outside git
 adapters/
 *.safetensors
+
+# Packaged release output
+dist/

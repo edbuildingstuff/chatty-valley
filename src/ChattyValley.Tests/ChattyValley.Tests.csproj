@@ -22,4 +22,11 @@
     <ProjectReference Include="..\ChattyValley.Core\ChattyValley.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="..\..\packaging\config.release.json" Link="packaging\config.release.json"
+             CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\ChattyValley.Mod\manifest.json" Link="packaging\manifest.json"
+             CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>

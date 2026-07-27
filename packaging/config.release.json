@@ -1,0 +1,17 @@
+{
+  "ChatKey": "C",
+  "ShowContinuationHint": true,
+  "Temperature": 0.35,
+  "MaxTokens": 96,
+  "RepeatPenalty": 1.1,
+  "FrequencyPenalty": 0.1,
+  "AutoCloseOnFarewell": true,
+  "MaxHistoryMessages": 12,
+  "FalsePremiseGuard": true,
+  "ChatLogEnabled": false,
+  "ChatLogPrompts": false,
+  "ChatLogDir": "",
+  "BaseModelPath": "",
+  "LinusAdapterPath": "",
+  "GpuLayers": 0
+}

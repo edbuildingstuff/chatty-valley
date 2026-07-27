@@ -9,7 +9,7 @@ question lines ($y / $q) are kept whole and flagged, since they are natural mult
 """
 import json, re, os
 
-base = r"C:/Users/edwar/Documents/ertas_dev/chatty-valley/data/linus"
+base = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "linus"))
 raw = os.path.join(base, "raw")
 
 def load(n):

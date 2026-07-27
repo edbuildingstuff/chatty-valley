@@ -1,8 +1,7 @@
 # Linus adapter: dataset authoring plan
 
 How we turn the collected canon into a fine-tuning set for the Linus LoRA on LFM2.5-350M. Grounded in
-the canon (`linus-canon.md`, `canon-clean.jsonl`) and the dataset spec in the GTM plan
-(`ertas-gtm/research/stardew-valley-mod/06-tier2-adapter-architecture.md` section 3).
+the canon (`linus-canon.md`, `canon-clean.jsonl`) and the internal dataset spec (doc 06 section 3).
 
 ## Decisions (Edward, 2026-07-13)
 

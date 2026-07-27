@@ -5,7 +5,7 @@ minimal (identity + the game-state context line), because the voice lives in the
 """
 import json, re, os
 
-base = r"C:/Users/edwar/Documents/ertas_dev/chatty-valley/data/linus"
+base = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "linus"))
 md = os.path.join(base, "linus-exemplars.md")
 out = os.path.join(base, "exemplars.jsonl")
 

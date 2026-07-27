@@ -152,7 +152,12 @@ if ($SkipPackage) {
     Write-Host "packaging $Version ..."
     $packageArgs = @()
     if ($PSBoundParameters.ContainsKey('Version')) { $packageArgs += @('-Version', $Version) }
-    powershell.exe -NoProfile -File (Join-Path $PSScriptRoot 'package-release.ps1') @packageArgs
+    # package-release.ps1 throws (hence writes to stderr) on a failed dotnet build or a missing
+    # model file, which would otherwise trip the same Invoke-NativeCommand-documented
+    # stderr-under-Stop landmine as every other native call in this script. Not redirecting stderr
+    # here on purpose: packaging output should stream live to the console as it happens (a dotnet
+    # build takes a while), only the termination behavior needs neutralizing, not the display.
+    Invoke-NativeCommand { powershell.exe -NoProfile -File (Join-Path $PSScriptRoot 'package-release.ps1') @packageArgs }
     if ($LASTEXITCODE -ne 0) { throw "package-release.ps1 failed with exit code $LASTEXITCODE" }
     if (-not (Test-Path $zip)) { throw "package-release.ps1 reported success but $zip does not exist" }
 }
@@ -165,6 +170,15 @@ if ($SkipPackage) {
 #    each stderr line in a NativeCommandError record, and mixing plain strings with ErrorRecord
 #    objects in the same array would corrupt the plain-string FAIL-line matching in
 #    Get-VerifyFailLines above. Confirmed empirically before relying on it.
+#
+# verify-release.ps1 throws (hence writes to stderr) on EVERY failing run, and a failing run is
+# exactly the case -PreNexus exists to handle, so this call cannot skip Invoke-NativeCommand: a
+# 2> file redirect alone does not stop Windows PowerShell 5.1 from raising a native command's
+# stderr write as a terminating NativeCommandError under $ErrorActionPreference = 'Stop' (that
+# redirect-alone assumption was wrong; confirmed by a real failing run dying right here before
+# this comment was corrected). $ErrorActionPreference must be 'Continue' for the actual native
+# call, restored immediately after; do not "simplify" this back to Stop for consistency with the
+# rest of the script, since Stop is exactly what breaks this call.
 # ===========================================================================================
 
 Write-Host "verifying $zip ..."
@@ -174,7 +188,7 @@ try {
     # ",$result": a verify run that emits zero lines of stdout (e.g. it dies before printing
     # anything) would otherwise collapse to $null instead of an empty array, and $null is not a
     # valid [string[]] to hand to Get-VerifyFailLines below.
-    $verifyStdout = @(& powershell.exe -NoProfile -File (Join-Path $PSScriptRoot 'verify-release.ps1') -ZipPath $zip 2>$verifyStderrPath)
+    $verifyStdout = @(Invoke-NativeCommand { & powershell.exe -NoProfile -File (Join-Path $PSScriptRoot 'verify-release.ps1') -ZipPath $zip 2>$verifyStderrPath })
     $verifyExitCode = $LASTEXITCODE
     $verifyStderr = if (Test-Path $verifyStderrPath) { Get-Content $verifyStderrPath -Raw } else { '' }
 } finally {

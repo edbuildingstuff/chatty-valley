@@ -68,8 +68,8 @@ public sealed class ModEntry : StardewModdingAPI.Mod
     {
         try
         {
-            string basePath = Resolve(_config.BaseModelPath, "LFM2.5-350M-Q4_K_M.gguf");
-            string adapterPath = Resolve(_config.LinusAdapterPath, "linus-350m-v1-lora-f16.gguf");
+            string basePath = Resolve(_config.BaseModelPath, "LFM2.5-1.2B-Instruct-Q4_K_M.gguf");
+            string adapterPath = Resolve(_config.LinusAdapterPath, "linus-12b-v8dpo2-lora-f16.gguf");
             string sidecarExe = Path.Combine(Helper.DirectoryPath, "sidecar", "ChattyValley.Sidecar.exe");
             if (!File.Exists(basePath) || !File.Exists(adapterPath) || !File.Exists(sidecarExe))
             {

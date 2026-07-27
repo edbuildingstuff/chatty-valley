@@ -27,6 +27,10 @@
              CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\ChattyValley.Mod\manifest.json" Link="packaging\manifest.json"
              CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\ChattyValley.Mod\ModConfig.cs" Link="packaging\ModConfig.cs"
+             CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\ChattyValley.Mod\ModEntry.cs" Link="packaging\ModEntry.cs"
+             CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

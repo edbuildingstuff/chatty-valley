@@ -12,8 +12,11 @@ public sealed class ModConfig
     /// <summary>After a villager's canonical dialogue closes, surface a small "keep talking" hint.</summary>
     public bool ShowContinuationHint { get; set; } = true;
 
-    /// <summary>Sampling temperature and reply cap for the local model.</summary>
-    public float Temperature { get; set; } = 0.6f;
+    /// <summary>
+    /// 0.35 is the validated decode regime for the shipping adapter. Raising it measurably increases
+    /// the model's tendency to play along with false premises.
+    /// </summary>
+    public float Temperature { get; set; } = 0.35f;
     public int MaxTokens { get; set; } = 96;
 
     /// <summary>
@@ -49,12 +52,13 @@ public sealed class ModConfig
     public string FalsePremiseGuardClause { get; set; } = ConversationSignals.DefaultFalsePremiseGuard;
 
     /// <summary>
-    /// Development transcript logging: every free-chat conversation is appended as JSONL (context,
+    /// Development transcript logging, off by default in shipped builds. When enabled, every free-chat
+    /// conversation is appended as JSONL (context,
     /// model + sampling settings, each player turn and reply, pre-guard raw output, latency) so
     /// test sessions can be reviewed after a play-through. Written under ChatLogDir (blank = the
     /// mod folder's chat-logs/); pretty-print with tools/read_chatlog.py from the repo.
     /// </summary>
-    public bool ChatLogEnabled { get; set; } = true;
+    public bool ChatLogEnabled { get; set; } = false;
 
     /// <summary>Also log the full rendered prompt each turn (verbose; deep prompt-debugging only).</summary>
     public bool ChatLogPrompts { get; set; } = false;

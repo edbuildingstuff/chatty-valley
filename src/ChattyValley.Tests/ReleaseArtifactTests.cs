@@ -53,4 +53,28 @@ public class ReleaseArtifactTests
     {
         Assert.Equal("0.2.0", Load("manifest.json").GetProperty("Version").GetString());
     }
+
+    [Fact]
+    public void ModConfigDefaults_AgreeWithTheReleaseConfig()
+    {
+        // ModConfig cannot be referenced here (it depends on SMAPI), but a drifted default still
+        // reaches any player who deletes config.json, so assert against the source text.
+        string modConfig = File.ReadAllText(
+            Path.Combine(AppContext.BaseDirectory, "packaging", "ModConfig.cs"));
+
+        Assert.Contains("Temperature { get; set; } = 0.35f;", modConfig);
+        Assert.Contains("ChatLogEnabled { get; set; } = false;", modConfig);
+    }
+
+    [Fact]
+    public void ModEntryFallbacks_PointAtTheShippingModelPair()
+    {
+        string modEntry = File.ReadAllText(
+            Path.Combine(AppContext.BaseDirectory, "packaging", "ModEntry.cs"));
+
+        Assert.Contains("LFM2.5-1.2B-Instruct-Q4_K_M.gguf", modEntry);
+        Assert.Contains("linus-12b-v8dpo2-lora-f16.gguf", modEntry);
+        Assert.DoesNotContain("350M", modEntry);
+        Assert.DoesNotContain("350m", modEntry);
+    }
 }

@@ -1,4 +1,4 @@
-#requires -Version 7
+#requires -Version 5.1
 <#
   .SYNOPSIS
   Publishes ChattyValley.Sidecar as a self-contained win-x64 build.

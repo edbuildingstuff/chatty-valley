@@ -1,13 +1,25 @@
 # Chatty Valley
 
-On-device AI villagers for Stardew Valley. Talk to the residents of Pelican Town and they answer
-in their own voice, from a small model running entirely on your own machine. No cloud, no API key,
-no per-message cost. It is a public showcase of what Ertas and on-device custom models make possible.
+**Talk to a Stardew Valley villager and he talks back, from an AI model running entirely on your own CPU.**
 
-The wedge (see the plan): every other AI dialogue mod either calls a cloud API or makes the player
-stand up their own model server, and wears each character as a prompt on a generic model. Chatty
-Valley ships a bundled, zero-setup, purpose-built model whose character identity lives in fine-tuned
-weights. It just works, and the characters stay themselves.
+<!-- HERO GIF. The full loop: walk up to Linus, press C, type, reply lands in the vanilla dialogue
+     box. Do NOT trim the generation latency out; real-time reads as credible, instant reads as faked.
+     Target 640px wide, 12 to 15 fps, 8 to 12 seconds, under 5 MB. -->
+![Talking to Linus in the vanilla Stardew dialogue box](docs/media/hero-conversation.gif)
+
+| | |
+|---|---|
+| **Runs on** | Your CPU. No GPU, no cloud, no API key, no account. |
+| **Model** | LFM2.5-1.2B-Instruct Q4_K_M (697 MB) + a 21 MB LoRA carrying the character's voice |
+| **Memory** | About 1 GB beyond the game |
+| **Speed** | A second or two per reply on a modern CPU |
+| **Download** | 744 MB, everything included, nothing fetched on first run |
+| **Platform** | Windows, Stardew 1.6, SMAPI 4.0+ |
+
+Every other AI dialogue mod either calls a cloud API or makes the player stand up their own model
+server, and then wears each character as a prompt on a generic model. Chatty Valley ships a bundled,
+zero-setup, purpose-built model whose character identity lives in fine-tuned weights. It just works,
+and the characters stay themselves.
 
 This repo is the code, the training data, and the packaging scripts. The wider design rationale and
 build plan are tracked internally at Ertas and are not part of this repo.
@@ -29,6 +41,11 @@ Stardew dialogue box. Windows only, for now.
   watches for player messages that presuppose an event, gift, or shared past that never happened
   ("remember when you gave me...") and reminds the model to say so plainly instead of playing along;
   prompt-level testing showed it roughly halves how often the model adopts a false premise.
+
+  <!-- GUARD GIF. The differentiator, and the one no competing mod can show. Script it: player asserts
+       an event that never happened ("what did you and Leah talk about when she visited your tent last
+       week?"), Linus declines to play along. Shorter than the hero, 5 to 8 seconds is enough. -->
+  ![Linus declining to play along with an event that never happened](docs/media/false-premise-guard.gif)
 - **Inference runs out-of-process**, in a separate program, `ChattyValley.Sidecar`, reached over a
   named pipe. LLamaSharp 0.27.0 transitively pins .NET 10 packages that cannot load in the .NET 6
   Stardew process, so the mod itself (`ChattyValley.Mod`) carries no LLamaSharp dependency at all: it
@@ -56,8 +73,12 @@ Stardew Valley (MonoGame, .NET 6)  ──►  SMAPI  ──►  ChattyValley.Mod
                             one base GGUF + per-villager LoRA adapters (hot-swapped)
 ```
 
-- **Base model:** LFM2.5-1.2B-Instruct (LiquidAI), Q4_K_M quantization, the on-brand family Ertas
-  fine-tunes (same lineage as Canvas Copilot).
+<!-- SMAPI CONSOLE STILL. Proves the offline claim quietly, which beats asserting it: the console
+     line showing the local model and adapter loading, with no network call involved. -->
+![SMAPI console showing the model and adapter loading locally](docs/media/smapi-console-load.png)
+
+- **Base model:** LFM2.5-1.2B-Instruct (LiquidAI), Q4_K_M quantization, the base family this
+  project fine-tunes.
 - **Per-villager LoRA adapters** carry each character's voice, hot-swapped at runtime by
   `ChattyValley.Runtime.LlmRuntime`. A single multi-character model is trained only as an eval
   baseline.

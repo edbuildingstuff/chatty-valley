@@ -22,7 +22,7 @@ public sealed class ChatTemplate
     };
 
     /// <summary>
-    /// LFM2 / LFM2.5 (LiquidAI), the on-brand base family (same lineage as Canvas Copilot).
+    /// LFM2 / LFM2.5 (LiquidAI), the base family this project fine-tunes.
     /// It shares ChatML control tokens (im_start / im_end) and a system role; the BOS token
     /// &lt;|startoftext|&gt; is added automatically by llama.cpp (add_bos_token = true), so it must
     /// NOT be written here or it would be duplicated.

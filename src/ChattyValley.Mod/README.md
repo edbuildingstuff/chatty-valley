@@ -33,7 +33,8 @@ project does not resolve its references and is intentionally kept out of `Chatty
 ```bash
 # 1. Install SMAPI 4.x into "Stardew Valley/" (run its installer once).
 # 2. Point config at the GGUFs (or drop them in the mod's assets/ folder):
-#    config.json -> BaseModelPath, LinusAdapterPath  (base LFM2.5-350M Q4_K_M + the Linus LoRA GGUF)
+#    config.json -> BaseModelPath, LinusAdapterPath  (base LFM2.5-1.2B-Instruct Q4_K_M + the Linus
+#    LoRA GGUF). Leave both blank to resolve from the mod's own assets/ folder, which is what ships.
 # 3. Build; ModBuildConfig auto-deploys into Stardew Valley/Mods/ChattyValley/:
 dotnet build src/ChattyValley.Mod/ChattyValley.Mod.csproj -c Debug
 # 4. Launch the game through SMAPI, load a save, walk up to Linus, press C.

@@ -24,7 +24,10 @@ float freqPenalty = float.TryParse(GetArg("--freq-penalty"), out var fp) ? fp : 
 int windowSize = int.TryParse(GetArg("--window"), out var ws) ? ws : 12;
 
 string repoRoot = FindRepoRoot(AppContext.BaseDirectory);
-modelPath ??= Path.Combine(repoRoot, "models", "LFM2.5-350M-Q4_K_M.gguf");
+// Must stay in lockstep with the default output of scripts/download-model.ps1, or the README
+// quickstart downloads one base and the harness then looks for another. This is the SHIPPING base;
+// the 350M arm is opt-in via --model.
+modelPath ??= Path.Combine(repoRoot, "models", "LFM2.5-1.2B-Instruct-Q4_K_M.gguf");
 charPath ??= Path.Combine(AppContext.BaseDirectory, "characters", "linus.json");
 
 if (!File.Exists(modelPath))

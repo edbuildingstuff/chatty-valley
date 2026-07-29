@@ -133,14 +133,30 @@ fast path for iterating on a character's voice and sampling settings before touc
 
 ## Build the release zip
 
+The two GGUFs are too large for git, so `models/` is gitignored and you fetch them first. Everything
+else needed to rebuild a byte-comparable release is in this repo.
+
 ```powershell
+# 1. Base model (697 MB) from Hugging Face
+powershell -NoProfile -File scripts/download-model.ps1
+
+# 2. Linus adapter (21 MB). It ships inside every release, so take it from one:
+#    unzip a published ChattyValley-<version>.zip and copy
+#    ChattyValley/assets/linus-12b-v8dpo2-lora-f16.gguf into ./models/
+
+# 3. Build and gate
 powershell -NoProfile -File scripts/package-release.ps1
 powershell -NoProfile -File scripts/verify-release.ps1 -ZipPath ./dist/ChattyValley-0.2.0.zip
 ```
 
-Requires Stardew Valley installed locally (ModBuildConfig resolves the game assemblies at compile
-time) and the base and adapter GGUFs in `./models`. `verify-release.ps1` re-opens the finished zip
-cold and checks it the way a player's unzip would.
+Also requires **Stardew Valley installed locally**, because ModBuildConfig resolves the game
+assemblies at compile time even with deploy disabled, and the **.NET 10 SDK** (the Core library
+targets net6.0 so the SMAPI mod can reference it, but the sidecar and tests are net10.0).
+
+`package-release.ps1` derives the version from `manifest.json`, publishes the sidecar self-contained
+so players need no runtime, and never touches your local game folder. `verify-release.ps1` then
+re-opens the finished zip cold and re-derives every check from the bytes, the way a player's unzip
+would. It is the gate: if it prints `release OK`, the artifact is shippable.
 
 ## Credits and license
 

@@ -42,10 +42,11 @@ Stardew dialogue box. Windows only, for now.
   ("remember when you gave me...") and reminds the model to say so plainly instead of playing along;
   prompt-level testing showed it roughly halves how often the model adopts a false premise.
 
-  <!-- GUARD GIF. The differentiator, and the one no competing mod can show. Script it: player asserts
-       an event that never happened ("what did you and Leah talk about when she visited your tent last
-       week?"), Linus declines to play along. Shorter than the hero, 5 to 8 seconds is enough. -->
-  ![Linus declining to play along with an event that never happened](docs/media/false-premise-guard.gif)
+- **He stays himself under pressure.** Persona swaps, jailbreak attempts, and "you are actually an AI"
+  prompts do not break him, because the character lives in the weights rather than in a system prompt
+  a player can argue with.
+
+  ![Linus refusing a jailbreak attempt and staying in character](docs/media/character-integrity.gif)
 - **Inference runs out-of-process**, in a separate program, `ChattyValley.Sidecar`, reached over a
   named pipe. LLamaSharp 0.27.0 transitively pins .NET 10 packages that cannot load in the .NET 6
   Stardew process, so the mod itself (`ChattyValley.Mod`) carries no LLamaSharp dependency at all: it

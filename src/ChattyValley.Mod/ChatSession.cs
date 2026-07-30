@@ -6,7 +6,7 @@ namespace ChattyValley.Mod;
 
 /// <summary>
 /// One free-chat conversation, displayed through the game's own conversation UI so it reads like
-/// any other villager dialogue (Edward's direction, 2026-07-23): the villager's replies appear in
+/// any other villager dialogue: the villager's replies appear in
 /// the VANILLA <see cref="DialogueBox"/> (portrait, typewriter reveal, click to dismiss), and a
 /// slim <see cref="ChatInputBar"/> opens between replies for the player's next line.
 ///

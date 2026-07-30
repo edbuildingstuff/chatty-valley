@@ -3,7 +3,7 @@ using System.Text;
 namespace ChattyValley.Core;
 
 /// <summary>
-/// Builds the villager prompt stable-context-first (plan doc 04 section 5): identity, bio, and
+/// Builds the villager prompt stable-context-first: identity, bio, and
 /// world context form the stable, cacheable prefix; the volatile player turn goes last, so a KV
 /// prefix cache only recomputes the tail each turn.
 /// </summary>

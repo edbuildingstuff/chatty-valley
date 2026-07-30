@@ -1,15 +1,14 @@
 # Linus adapter: dataset authoring plan
 
 How we turn the collected canon into a fine-tuning set for the Linus LoRA on LFM2.5-350M. Grounded in
-the canon (`linus-canon.md`, `canon-clean.jsonl`) and the internal dataset spec (doc 06 section 3).
+the canon (`linus-canon.md`, `canon-clean.jsonl`).
 
-## Decisions (Edward, 2026-07-13)
+## Decisions (2026-07-13)
 
 - **Split multi-box lines** into separate short segments (done in step 1; 157 clean segments).
 - **Target 600 rows.**
 - **Multi-turn:** each row is a short **2 to 3 turn conversation**, not a single input/output pair. The
-  demo is conversational, so the model trains on holding voice and context across turns (and on multi-turn
-  chat mode, doc 04 section 2).
+  demo is conversational, so the model trains on holding voice and context across turns.
 
 ## Pipeline
 
@@ -22,7 +21,7 @@ the canon (`linus-canon.md`, `canon-clean.jsonl`) and the internal dataset spec 
    prompt templates; generate the bulk through an AI chat (Claude / GPT), batched per category, grounded in
    the canon (stay in voice, no invented lore, vary game state). Ingest, dedupe, length-check.
 5. **Hold out ~10%** (60 rows) as the voice + jailbreak eval set (never trained on).
-6. **Train** QLoRA on LFM2.5-350M (rank 16 to 32, doc 06 section 4); convert the adapter to GGUF; load via
+6. **Train** QLoRA on LFM2.5-350M (rank 16 to 32); convert the adapter to GGUF; load via
    the harness adapter hooks; **eval** on the 3 axes (voice fidelity, jailbreak / crossover resistance, latency)
    versus stock-350M and stock-1.2B.
 

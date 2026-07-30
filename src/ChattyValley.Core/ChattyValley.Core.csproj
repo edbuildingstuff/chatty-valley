@@ -2,7 +2,9 @@
 
   <!--
     net6.0 on purpose: this is the code the SMAPI mod will reuse verbatim, and SMAPI mods target
-    net6.0. No external dependencies here, so it stays mod-safe. LLamaSharp lives in the Harness.
+    net6.0. No external dependencies here, so it stays mod-safe. LLamaSharp lives in
+    ChattyValley.Runtime (net8.0), which the sidecar and the harness consume; nothing in this project
+    references it. net6.0 rolls forward, so the net8 and net10 projects can take this one as-is.
   -->
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>

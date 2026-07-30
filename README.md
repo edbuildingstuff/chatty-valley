@@ -2,9 +2,6 @@
 
 **Talk to a Stardew Valley villager and he talks back, from an AI model running entirely on your own CPU.**
 
-<!-- HERO GIF. The full loop: walk up to Linus, press C, type, reply lands in the vanilla dialogue
-     box. Do NOT trim the generation latency out; real-time reads as credible, instant reads as faked.
-     Target 640px wide, 12 to 15 fps, 8 to 12 seconds, under 5 MB. -->
 ![Talking to Linus in the vanilla Stardew dialogue box](docs/media/hero-conversation.gif)
 
 | | |
@@ -74,8 +71,6 @@ Stardew Valley (MonoGame, .NET 6)  ──►  SMAPI  ──►  ChattyValley.Mod
                             one base GGUF + per-villager LoRA adapters (hot-swapped)
 ```
 
-<!-- SMAPI CONSOLE STILL. Proves the offline claim quietly, which beats asserting it: the console
-     line showing the local model and adapter loading, with no network call involved. -->
 ![SMAPI console showing the model and adapter loading locally](docs/media/smapi-console-load.png)
 
 - **Base model:** LFM2.5-1.2B-Instruct (LiquidAI), Q4_K_M quantization, the base family this
@@ -85,6 +80,11 @@ Stardew Valley (MonoGame, .NET 6)  ──►  SMAPI  ──►  ChattyValley.Mod
   baseline.
 - **On-device, GGUF, llama.cpp/LLamaSharp.** Not cloud, and not a local server the player has to run
   themselves: the mod starts and stops the sidecar process for them.
+
+Why there are three target frameworks and a second process, and why that is a dependency constraint
+rather than a preference, is written up in [docs/build-story.md](docs/build-story.md) along with the
+rest of the build: the eval that chose the model size, the windowing bug that only appeared after
+twelve messages, and the DPO round that did nothing.
 
 ## Repo layout
 

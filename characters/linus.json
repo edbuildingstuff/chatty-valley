@@ -10,5 +10,5 @@
     "Have you tried foraging? The land is generous, if you know where to look."
   ],
   "adapterPath": null,
-  "_note": "fewShot lines here are voice approximations for the plumbing probe. For the real dataset, extract exact canon from the game's Content/Characters/Dialogue/Linus and the wiki (plan doc 06 section 3)."
+  "_note": "fewShot lines here are voice approximations for the plumbing probe. The real dataset uses exact canon extracted from the game's Content/Characters/Dialogue/Linus, via tools/DialogueDump; see data/README.md."
 }

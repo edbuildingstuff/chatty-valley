@@ -1,8 +1,8 @@
 namespace ChattyValley.Core;
 
 /// <summary>
-/// Externalised chat template (plan doc 04 section 5, adopted from the ValleyTalk teardown): swap
-/// base models by swapping this template string, not the code. Placeholders: {system}, {prompt}.
+/// Externalised chat template, an idea taken from reading ValleyTalk: swap base models by swapping
+/// this template string, not the code. Placeholders: {system}, {prompt}.
 /// </summary>
 public sealed class ChatTemplate
 {

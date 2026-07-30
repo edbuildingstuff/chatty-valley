@@ -8,10 +8,13 @@ namespace ChattyValley.Runtime;
 
 /// <summary>
 /// Thin LLamaSharp wrapper: load a base GGUF in-process and stream a reply, optionally with a
-/// per-villager LoRA applied (the shared-base + per-villager adapter design, plan doc 06). One base
-/// serves every character; <see cref="SetActiveAdapter"/> is how you swap villagers.
+/// per-villager LoRA applied. One base serves every character; <see cref="SetActiveAdapter"/> is how
+/// you swap villagers.
 ///
-/// Shared by both the standalone harness (net10.0) and the SMAPI mod (net6.0). LLamaSharp 0.27.0 has
+/// This assembly targets net8.0 and is the only place LLamaSharp is referenced. It is consumed by the
+/// sidecar and the standalone harness, both net10.0. The SMAPI mod never loads it: the game runs on
+/// net6.0, which cannot load LLamaSharp's transitive net10 dependencies, so the mod talks to the
+/// sidecar over a named pipe instead. LLamaSharp 0.27.0 has
 /// no load-time LoRA on ModelParams, and StatelessExecutor builds a fresh context per call, so the
 /// adapter is applied to that fresh context (llama_set_adapter_lora, via SetLoraAdapters) before the
 /// prompt is decoded. The GGUF adapter is loaded once against the model and reused across turns.

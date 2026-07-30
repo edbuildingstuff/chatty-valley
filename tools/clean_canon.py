@@ -4,7 +4,7 @@ Step 1 of the Linus dataset: clean the raw canon dialogue into training-ready ut
 Reads data/linus/raw/*.json (verbatim game text with dialogue markup) and produces
 data/linus/canon-clean.jsonl: one record per spoken segment, with the markup parsed out and
 emotion / condition captured as metadata. Multi-box lines are SPLIT on #$e# / #$b# into separate
-segments (Edward's call: nicer to handle, matches the tight on-screen dialogue). Branching
+segments, which are nicer to handle and match the tight on-screen dialogue. Branching
 question lines ($y / $q) are kept whole and flagged, since they are natural multi-turn seeds.
 """
 import json, re, os

@@ -3,7 +3,7 @@
 The biggest v2 in-game failure: real players type short, casual, slangy, dismissive, or confused
 messages ("ok", "what?", "bro", "shut up", "that doesn't make sense"), and the v2 model, having
 only seen polite full-sentence player turns, treated them as noise and pivoted to nature filler
-instead of answering. Seeded from Edward's actual 2026-07-17 play-test transcript.
+instead of answering. Seeded from a real play-test transcript, 2026-07-17.
 
 Doctrine: casual register is REAL conversation. Linus answers the actual content, directly and
 plainly, before anything else. "What do you mean?" gets a simpler restatement of what he just said

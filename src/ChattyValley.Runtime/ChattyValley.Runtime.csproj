@@ -1,11 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <!--
-    net8.0 to match the LLamaSharp target that the net10 consumers (harness + sidecar) actually load at
-    runtime. Compiling against a lower TFM (net6.0 -> LLamaSharp netstandard2.0) produced IL that called
-    DefaultSamplingPipeline APIs which differ from the net8.0 assembly loaded at runtime ("Method not
-    found: set_Temperature"). The SMAPI mod is a thin client and does NOT reference this project, so it
-    stays free of LLamaSharp's .NET 10 dependency chain.
+    net8.0 so this library and its net10 consumers (sidecar + harness) bind to the SAME LLamaSharp
+    assembly. LLamaSharp 0.27.0 ships exactly two builds, lib/netstandard2.0 and lib/net8.0. A net6.0
+    target here resolves netstandard2.0 (net6.0 cannot consume a net8.0 assembly), while a net10 host
+    resolves net8.0 as the closest usable build. So on net6.0 the assembly compiled against and the
+    assembly loaded at runtime are two different files. That configuration failed with
+    "Method not found: set_Temperature" the first time a sampling temperature was set.
+
+    Caveat, so nobody re-derives a wrong cause from this note: the member-level reason for that
+    specific exception was never established. Inspected via MetadataLoadContext, DefaultSamplingPipeline
+    .Temperature is declared identically in both builds (same declaring type, System.Single, getter and
+    setter present). Treat the compile-vs-runtime resolution split as the cause and the exception as a
+    symptom. Verify with `obj/project.assets.json`, which should show lib/net8.0 for both compile and
+    runtime here and in ChattyValley.Sidecar.
+
+    The SMAPI mod is a thin client and does NOT reference this project, so it stays free of LLamaSharp's
+    .NET 10 dependency chain.
   -->
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>

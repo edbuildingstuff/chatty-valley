@@ -8,7 +8,7 @@ I have put a genuinely embarrassing number of hours into Stardew Valley. Late ni
 
 I love this game. I am not trying to fix it. Nothing here is a complaint about the writing, which is better than it has any need to be.
 
-But somewhere past the two hundredth hour you realise you have the whole town memorised. You walk up to Linus, you already know what he is going to say about the wilderness, and you press through the text box without reading it. That is not the game failing. That is just what happens when a fixed number of lines meets an unreasonable amount of playtime.
+But somewhere past the two hundredth hour you realise you have the whole town memorised. You walk up to Linus, you already know what he is going to say about the wilderness, and you press through the text box without reading it. A fixed number of lines was always going to lose to an unreasonable amount of playtime.
 
 So this was my attempt at making the valley a bit more alive. And Pelican Town happens to be an almost perfect target for a small language model: a fixed cast, a huge body of canon dialogue to learn a voice from, and a player who is already standing still reading a text box anyway.
 
@@ -43,7 +43,7 @@ Here is a constraint I did not see coming and could not engineer around.
 
 Stardew Valley runs on .NET 6. LLamaSharp 0.27.0, the .NET binding for llama.cpp, transitively pins .NET 10 packages, and it does this even in its netstandard2.0 dependency group. System.Text.Json 10, System.Numerics.Tensors 10, several of the Microsoft.Extensions abstractions. Those assemblies will not load in the .NET 6 runtime the game is using.
 
-So in-process managed inference inside Stardew is not merely awkward, it is impossible with this binding. I spent a while confirming that before accepting it.
+So in-process managed inference inside Stardew is flatly impossible with this binding. I spent a while confirming that before I accepted it.
 
 The fix is a sidecar. `ChattyValley.Sidecar` is a separate .NET 10 process that owns the model and serves one request and response per line over a named pipe. The mod itself is a thin .NET 6 client with zero LLamaSharp references. It starts the sidecar, waits for the pipe, and shuts it down on exit.
 
@@ -63,7 +63,7 @@ This is my favourite one, because the fix is two lines and finding it took hours
 
 Conversations would be going fine, and then abruptly not be. Replies drifted off from whatever the player had just said, which is a very specific kind of eerie when you are mid-conversation with someone you were starting to like. It never reproduced in my test harness, which sent the full conversation history every time.
 
-The mod, however, sends a sliding window of the last 12 messages, to keep the prompt near the distribution the model was trained on. Every training example starts with a user turn. That is not incidental, it is how chat data is shaped.
+The mod, however, sends a sliding window of the last 12 messages, to keep the prompt near the distribution the model was trained on. Every training example starts with a user turn. That is just how chat data is shaped.
 
 Now count. The history at generation time always ends on the player's message, so it always has an odd number of entries. Take the last **12**, an even number, off an odd-length list, and you start one position further in. Every prompt after the first slide opened like this:
 
@@ -187,7 +187,7 @@ The whole thing is open source, including the training scripts, the evaluation a
 
 ## What Part 2 is chasing
 
-Three things are open, and they are the reason this is a Part 1 rather than a writeup.
+Three things are open, which is why this is a Part 1.
 
 **The false-premise ceiling.** 10 out of 64 is a large improvement and still not zero. Forty preference pairs was a small experiment; the obvious next move is a much larger preference set, and being honest about whether that is a data-volume problem or a 1.2B problem.
 

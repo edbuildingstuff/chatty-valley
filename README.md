@@ -158,8 +158,31 @@ so players need no runtime, and never touches your local game folder. `verify-re
 re-opens the finished zip cold and re-derives every check from the bytes, the way a player's unzip
 would. It is the gate: if it prints `release OK`, the artifact is shippable.
 
-## Credits and license
+## License
 
-Free and non-commercial. Not affiliated with or endorsed by ConcernedApe. Credit to ConcernedApe
-(Eric Barone) for Stardew Valley, Pathoschild and the SMAPI project, and the llama.cpp / LLamaSharp
-projects. Built by Edward Xi Yang (edbuildingstuff), Ertas AI: https://www.ertas.ai
+**[CC BY-NC 4.0](LICENSE)** (Creative Commons Attribution-NonCommercial 4.0 International). The full
+text is in [`LICENSE`](LICENSE). In short:
+
+- **Read, fork, learn from, and build on any of it.** The mod code, the 889-conversation training
+  dataset, the generation and QC tooling, the eval axes and the probe harnesses are all covered.
+- **Credit is required, including on anything derived from it.** Name the project and the author, link
+  back here, and say what you changed. If you train your own villager on this dataset or on this
+  pipeline, that is a derived work and the attribution applies.
+- **No commercial use.** Nothing here may be used primarily for commercial advantage. That covers
+  selling it, bundling it into a paid product, and putting it behind a paywall. If you want to use it
+  commercially, ask: hello@ertas.ai.
+
+Two things sit outside this licence:
+
+- **The model weights.** The base model is LFM2.5-1.2B-Instruct, under the LFM Open License v1.0
+  ([`packaging/LICENSE-LFM.txt`](packaging/LICENSE-LFM.txt), shipped with every release). This repo
+  tracks no weights; they are downloaded or extracted from a release.
+- **Stardew Valley itself**, including Linus, all canon dialogue, and the game's assets. Those are
+  ConcernedApe's. The training data is derived from the game's own dialogue files for the purpose of
+  making a mod of that game, and the mod is free.
+
+## Credits
+
+Not affiliated with or endorsed by ConcernedApe. Credit to ConcernedApe (Eric Barone) for Stardew
+Valley, Pathoschild and the SMAPI project, and the llama.cpp / LLamaSharp projects. Built by Edward Xi
+Yang (edbuildingstuff), Ertas AI: https://www.ertas.ai

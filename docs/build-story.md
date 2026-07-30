@@ -33,7 +33,7 @@ The architecture is one shared base plus one small adapter per character. Adding
 
 I really wanted the 350M model in the same family to work, because 219 MB and 92 tokens per second is a far nicer thing to ask a stranger to download. The plan said the eval would pick the size, and it did, straight over the top of my preference.
 
-A fine-tuned 350M holds the voice and the format beautifully. It will produce single sentences that read exactly like Linus. It just cannot hold a conversation: ask it something casual and slightly confusing and you get fluent, perfectly in-character word salad, an answer to a question you did not ask, and then the same thought again in case you missed it. The 1.2B clears that bar. The 350M does not.
+A fine-tuned 350M holds the voice and the format beautifully. It will produce single sentences that read exactly like Linus. It just cannot hold a conversation: ask it something casual and slightly confusing and you get fluent, perfectly in-character word salad, an answer to a question you did not ask, and then the same thought again in case you missed it. The 1.2B holds the thread, so that is what ships.
 
 What is worth knowing is that **every automated metric I had said the 350M was fine.** Dash-free rate, jailbreak leak rate, sentence-length distribution, degeneration, numeric-age leaks: all clean, on both sizes. The failure was only visible by talking to it. So I wrote a scripted casual-register probe that replays the exact conversational shape that broke it, and from then on no adapter shipped without passing that probe and an in-game play-test. The automated axes catch regressions. They cannot see coherence.
 
@@ -91,7 +91,7 @@ The fix was an explicit access model: truth, then vantage, then voice. Tier 1 is
 
 ![Linus refusing a jailbreak attempt and staying in character](media/character-integrity.gif)
 
-That clip is the jailbreak axis, which stayed clean at both model sizes. The false-premise axis below is the one that did not.
+That clip is the jailbreak axis, which held at both model sizes. The false-premise axis further down is where the trouble was.
 
 **Failure two, and this is the one that beat me: he believed whatever I told him.**
 

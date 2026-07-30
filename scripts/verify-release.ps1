@@ -51,6 +51,11 @@ try {
         'ChattyValley/ChattyValley.Mod.dll'
         'ChattyValley/ChattyValley.Core.dll'
         'ChattyValley/README.txt'
+        # Apache 2.0 section 4 requires the licence and the NOTICE attributions to travel with any
+        # distribution of the work, so a release missing either is out of compliance with our own
+        # terms. LICENSE-LFM.txt is separate and covers the bundled model weights.
+        'ChattyValley/LICENSE'
+        'ChattyValley/NOTICE'
         'ChattyValley/LICENSE-LFM.txt'
         'ChattyValley/characters/linus.json'
         "ChattyValley/assets/$baseGguf"

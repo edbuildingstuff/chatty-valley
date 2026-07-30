@@ -54,6 +54,12 @@ parsing and cleaning it is a step in the dataset-authoring plan, not the collect
 
 ## Note on game text and licensing
 
-This is ConcernedApe's copyrighted dialogue, used to train a derived model for a free, non-commercial mod
-(the same basis every AI-dialogue Stardew mod stands on). We do not redistribute the raw game files; the
-trained adapter is the derived artifact. Keep it free and clearly not canon.
+This is ConcernedApe's copyrighted dialogue, used to train a derived model for a mod of his game that
+is distributed free and not as canon. That is the same basis every AI-dialogue Stardew mod stands on.
+The raw game files are not redistributed here; the trained adapter is the derived artifact.
+
+**This is where the repo's Apache 2.0 licence stops.** Apache 2.0 covers what was authored for this
+project: the schemas, the tooling, the authored conversations and the eval sets. It cannot grant you
+any right in ConcernedApe's underlying writing, so if you take this dataset somewhere commercial, the
+game text inside it is still his and that is your problem to resolve, not something this licence
+resolves for you. See [`../NOTICE`](../NOTICE).

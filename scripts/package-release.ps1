@@ -73,8 +73,14 @@ Copy-Item (Join-Path $repo 'characters/*.json') "$stage/characters"
 # 3. the release config, renamed to what SMAPI reads
 Copy-Item (Join-Path $repo 'packaging/config.release.json') (Join-Path $stage 'config.json')
 
-# 4. docs and license
+# 4. docs and licences
+# LICENSE and NOTICE are the mod's own (Apache 2.0). Section 4 of that licence requires both to
+# travel with any distribution of the work, so a release that shipped only LICENSE-LFM.txt would
+# be out of compliance with our own terms. LICENSE-LFM.txt covers the bundled model weights, which
+# are under different terms entirely (see NOTICE).
 Copy-Item (Join-Path $repo 'packaging/README.txt') $stage
+Copy-Item (Join-Path $repo 'LICENSE') $stage
+Copy-Item (Join-Path $repo 'NOTICE') $stage
 Copy-Item (Join-Path $repo 'packaging/LICENSE-LFM.txt') $stage
 
 # 5. models

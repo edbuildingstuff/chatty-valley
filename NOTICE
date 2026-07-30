@@ -1,0 +1,48 @@
+Chatty Valley
+Copyright 2026 Edward Xi Yang (edbuildingstuff), Ertas AI
+
+This product includes software developed by Edward Xi Yang for Ertas AI
+(https://www.ertas.ai), licensed under the Apache License, Version 2.0.
+
+--------------------------------------------------------------------------------
+Content in this repository that is NOT covered by the Apache License
+--------------------------------------------------------------------------------
+
+Stardew Valley, its characters including Linus, and all of its canon dialogue
+and assets are the property of ConcernedApe (Eric Barone). This project is a
+mod of that game, is not affiliated with or endorsed by ConcernedApe, and
+claims no rights in the game's content.
+
+The training data under data/linus/ is derived from Stardew Valley's own
+dialogue files for the purpose of modding that game. The Apache License applies
+to the parts authored for this project (the schemas, the tooling, the authored
+conversations and the evaluation sets). It cannot and does not grant any rights
+in ConcernedApe's underlying writing.
+
+--------------------------------------------------------------------------------
+Third-party components used at runtime or bundled in a release
+--------------------------------------------------------------------------------
+
+Model weights are NOT tracked in this repository. A packaged release bundles
+them, and they carry their own licence:
+
+  LFM2.5-1.2B-Instruct, by Liquid AI
+  LFM Open License v1.0 (see packaging/LICENSE-LFM.txt)
+
+  Note for anyone reusing a release zip commercially: that licence permits
+  commercial use only while the using entity's annual revenue is under
+  10 million United States dollars. The Apache License on this repository's
+  own code does not lift that condition on the bundled weights.
+
+Other components, used under their own terms. Licences below were read from the
+package metadata in the local NuGet cache rather than assumed:
+
+  LLamaSharp (SciSharp)                              MIT
+  LLamaSharp.Backend.Cpu (SciSharp)                  MIT
+    bundles the native llama.cpp library             MIT
+  Pathoschild.Stardew.ModBuildConfig                 MIT
+    the SMAPI modding framework it targets           MIT
+
+The .NET runtime and base class libraries are Microsoft's, under the MIT
+License. Stardew Valley itself is not redistributed by this project in any
+form; players supply their own copy.

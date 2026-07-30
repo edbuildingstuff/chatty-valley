@@ -29,9 +29,14 @@ Edit config.json in this folder. ChatKey changes the chat button. Temperature
 is tuned to 0.35 and we recommend leaving it there. Setting ChatLogEnabled to
 true writes conversation transcripts to chat-logs/ for bug reports.
 
+LICENCE
+The mod is Apache 2.0 (see LICENSE and NOTICE). Free to use, fork and ship.
+The bundled model weights are separate: LFM2.5-1.2B-Instruct under the LFM Open
+License v1.0 (see LICENSE-LFM.txt), which limits commercial use to entities
+under 10 million USD annual revenue.
+
 CREDITS
 ConcernedApe for Stardew Valley. Pathoschild and the SMAPI project. The
-llama.cpp and LLamaSharp projects. Liquid AI for the LFM2.5 base model, used
-under the LFM Open License v1.0 (see LICENSE-LFM.txt).
+llama.cpp and LLamaSharp projects. Liquid AI for the LFM2.5 base model.
 Built by Edward Xi Yang (edbuildingstuff), Ertas AI. https://www.ertas.ai
 Not affiliated with or endorsed by ConcernedApe.

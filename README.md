@@ -160,26 +160,25 @@ would. It is the gate: if it prints `release OK`, the artifact is shippable.
 
 ## License
 
-**[CC BY-NC 4.0](LICENSE)** (Creative Commons Attribution-NonCommercial 4.0 International). The full
-text is in [`LICENSE`](LICENSE). In short:
+**[Apache 2.0](LICENSE).** Use it, fork it, ship it, commercially or otherwise. No revenue cap, no
+non-commercial rider, no permission to ask for. That covers the mod, the sidecar, the 889-conversation
+training dataset, the generation and QC tooling, the eval axes and the probe harnesses.
 
-- **Read, fork, learn from, and build on any of it.** The mod code, the 889-conversation training
-  dataset, the generation and QC tooling, the eval axes and the probe harnesses are all covered.
-- **Credit is required, including on anything derived from it.** Name the project and the author, link
-  back here, and say what you changed. If you train your own villager on this dataset or on this
-  pipeline, that is a derived work and the attribution applies.
-- **No commercial use.** Nothing here may be used primarily for commercial advantage. That covers
-  selling it, bundling it into a paid product, and putting it behind a paywall. If you want to use it
-  commercially, ask: hello@ertas.ai.
+Keep the `LICENSE` and [`NOTICE`](NOTICE) files with any redistribution and state what you changed,
+which is all Apache 2.0 asks of you.
 
-Two things sit outside this licence:
+Two things are outside my gift to license, and `NOTICE` says so in full:
 
-- **The model weights.** The base model is LFM2.5-1.2B-Instruct, under the LFM Open License v1.0
-  ([`packaging/LICENSE-LFM.txt`](packaging/LICENSE-LFM.txt), shipped with every release). This repo
-  tracks no weights; they are downloaded or extracted from a release.
-- **Stardew Valley itself**, including Linus, all canon dialogue, and the game's assets. Those are
-  ConcernedApe's. The training data is derived from the game's own dialogue files for the purpose of
-  making a mod of that game, and the mod is free.
+- **Stardew Valley**, including Linus, all canon dialogue, and the game's assets. Those are
+  ConcernedApe's. `data/linus/` is derived from the game's own dialogue files in order to mod that
+  game; Apache 2.0 covers the parts authored here and cannot grant you rights in his writing. The game
+  is not redistributed in any form. Players supply their own copy.
+- **The model weights.** LFM2.5-1.2B-Instruct is under the LFM Open License v1.0
+  ([`packaging/LICENSE-LFM.txt`](packaging/LICENSE-LFM.txt)). No weights are tracked in this repo, but
+  a release zip bundles them, and **that licence caps commercial use at 10 million USD of annual
+  revenue.** Apache 2.0 on this code does not lift that condition. Above the cap, either take it up
+  with Liquid AI or swap in a base model whose terms suit you; the runtime does not care which GGUF it
+  loads.
 
 ## Credits
 

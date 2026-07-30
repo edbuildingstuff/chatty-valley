@@ -57,8 +57,6 @@ So yes, .NET 8 is genuinely in there, and the reason is the interesting part. LL
 
 So with `Runtime` on .NET 6, the assembly I compiled against and the assembly the host actually loaded were two different files. What surfaced was `Method not found: set_Temperature`, at the moment of setting a sampling temperature. Targeting .NET 8 makes both ends resolve `lib/net8.0`, which is what the project does today.
 
-![Which LLamaSharp build Runtime binds to: on .NET 6 it compiles against lib/netstandard2.0 while the .NET 10 host loads lib/net8.0, two different files; on .NET 8 both resolve lib/net8.0](media/binding.png)
-
 I will be straight with you about the limit of that explanation: I never established why *that particular member* was the one to break. Inspect the metadata and `DefaultSamplingPipeline.Temperature` looks identical in both builds, same declaring type, same signature, getter and setter present. The alignment fixed it, so I stopped digging. The transferable lesson is the resolution rule rather than the exception: with a multi-targeted package, your TFM decides which build you compile against, and a newer host can quietly resolve a different one.
 
 ![The process split: the mod on .NET 6, the sidecar on .NET 10, and a named pipe as the only thing crossing the boundary](media/runtimes.png)

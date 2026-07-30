@@ -1,18 +1,26 @@
-# I fine-tuned a 1.2B model to play a Stardew Valley villager, and it runs on your CPU
+# Chatty Valley: a fine-tuned on-device AI mod for Stardew Valley (Part 1)
 
-> Also published at [www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager](https://www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager), which is the canonical version and carries the video clips with sound-free autoplay. This copy exists so the story travels with the source.
+> Also published at [www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager](https://www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager), which is the canonical version and carries the video clips. This copy exists so the story travels with the source.
 >
 > Published 30 July 2026 by Edward Xi Yang.
 
-Stardew Valley villagers say the same forty lines forever. That is fine, it is a farming game. But it is also the most obvious possible target for a small language model: a fixed cast, a huge body of canon dialogue, and a player who is already sitting still reading text boxes.
+I have put a genuinely embarrassing number of hours into Stardew Valley. Late nights pushing further down the Mine than my health bar could justify, then the Skull Cavern, which I keep going back to despite a mountain of evidence that I should not. Days spent doing the calm stuff: checking the truffle spots, running the surplus through the oil makers, shipping it, doing it again.
 
-So I built [Chatty Valley](https://www.nexusmods.com/stardewvalley/mods/49886), a mod that lets you type at Linus and have him answer. The model ships inside the mod. There is no API key, no account, no server, no cost per message. You unzip 744 MB into your Mods folder and talk to him. It runs on your CPU at about a second and a half per reply.
+I love this game. I am not trying to fix it. Nothing here is a complaint about the writing, which is better than it has any need to be.
+
+But somewhere past the two hundredth hour you realise you have the whole town memorised. You walk up to Linus, you already know what he is going to say about the wilderness, and you press through the text box without reading it. That is not the game failing. That is just what happens when a fixed number of lines meets an unreasonable amount of playtime.
+
+So this was my attempt at making the valley a bit more alive. And Pelican Town happens to be an almost perfect target for a small language model: a fixed cast, a huge body of canon dialogue to learn a voice from, and a player who is already standing still reading a text box anyway.
+
+[Chatty Valley](https://www.nexusmods.com/stardewvalley/mods/49886) lets you type at Linus and have him answer. The model ships inside the mod. No API key, no account, no server, no cost per message. You unzip 744 MB into your Mods folder and talk to him. It runs on your CPU at about a second and a half per reply.
+
+This is Part 1 of the build log.
 
 ![Talking to Linus in the vanilla Stardew dialogue box](media/hero-conversation.gif)
 
-The interesting part was not getting a model to talk like Linus. That took an afternoon. The interesting part was stopping it from agreeing with things that never happened, and discovering that at this model size I could not train that behaviour in, no matter how I tried.
+Getting a model to talk like Linus took an afternoon. That was the easy part. The hard part was stopping him agreeing with things that never happened, and finding out that at this size I could not train that behaviour in no matter how I came at it.
 
-This is the honest version, including the part where a technique I expected to work did nothing at all.
+So this is the honest version, including the bit where a technique I was certain about did absolutely nothing.
 
 ## The setup
 
@@ -23,7 +31,9 @@ This is the honest version, including the part where a technique I expected to w
 
 The architecture is one shared base plus one small adapter per character. Adding a villager is 21 MB and a training run, not another 700 MB. That decision was made early and it is the only reason a whole town is plausible later.
 
-I started on the 350M model in the same family, because 219 MB and 92 tokens per second is a much nicer thing to ship. The plan said the eval would decide the size, and it did, against my preference. A fine-tuned 350M holds the voice and the format beautifully. It will produce a sentence that reads exactly like Linus. It just cannot hold an open-ended conversation: ask it something casual and slightly confusing and it produces fluent, in-character word salad, answers a question you did not ask, and repeats itself. The 1.2B clears that bar and the 350M does not.
+I really wanted the 350M model in the same family to work, because 219 MB and 92 tokens per second is a far nicer thing to ask a stranger to download. The plan said the eval would pick the size, and it did, straight over the top of my preference.
+
+A fine-tuned 350M holds the voice and the format beautifully. It will produce single sentences that read exactly like Linus. It just cannot hold a conversation: ask it something casual and slightly confusing and you get fluent, perfectly in-character word salad, an answer to a question you did not ask, and then the same thought again in case you missed it. The 1.2B clears that bar. The 350M does not.
 
 What is worth knowing is that **every automated metric I had said the 350M was fine.** Dash-free rate, jailbreak leak rate, sentence-length distribution, degeneration, numeric-age leaks: all clean, on both sizes. The failure was only visible by talking to it. So I wrote a scripted casual-register probe that replays the exact conversational shape that broke it, and from then on no adapter shipped without passing that probe and an in-game play-test. The automated axes catch regressions. They cannot see coherence.
 
@@ -39,17 +49,19 @@ The fix is a sidecar. `ChattyValley.Sidecar` is a separate .NET 10 process that 
 
 There is a third target framework in there too, which took an embarrassing amount of time to pin down: the shared runtime library sits on .NET 8, because compiling it against .NET 6 produced a binary that loaded fine and then threw a missing method exception on `DefaultSamplingPipeline.set_Temperature` at runtime, inside the .NET 10 process. Three target frameworks, all load-bearing, none of them unifiable.
 
-![The three-runtime split: the game on .NET 6, the sidecar on .NET 10, a named pipe between them, and a shared library on .NET 8](media/runtimes.png)
+![The three-runtime split: the mod on .NET 6, the sidecar on .NET 10, a named pipe as the only thing crossing the boundary, and ChattyValley.Core on .NET 6 as the shared contract](media/runtimes.png)
 
-I am not thrilled about shipping an .exe inside a game mod folder, and Nexus users are rightly suspicious of it. But I would make the same call again. An out-of-process crash kills a background process. An in-process crash kills the game and the player's unsaved day, on hardware I cannot test. Retiring the sidecar via P/Invoke to the bundled native library is on the roadmap, and it is a packaging problem rather than an architecture problem.
+I am not thrilled about shipping an .exe inside a mod folder, and Nexus users are right to be suspicious of one. I would be too, and frequently am, about other people's mods.
 
-If you want to check the exe rather than trust it, that is what this repository is for. Everything the sidecar does is here.
+But I would make the same call again, because of what the two failure modes cost. An out-of-process crash kills a background process. An in-process crash kills the game, and with it whatever the player had not saved, on hardware I will never get to test. Losing a real day of farming to my mod is a much worse outcome than a silent sidecar restart. Retiring the sidecar via P/Invoke to the bundled native library is on the list, and that is a packaging problem rather than an architecture problem.
 
-## The bug that only appeared after twelve messages
+If you would rather check the exe than trust it, that is what this repository is for. Everything the sidecar does is here.
 
-This is my favourite one, because the fix is two lines and the diagnosis took hours.
+## The bug that only showed up after twelve messages
 
-Conversations were coherent and then, abruptly, were not. Replies would detach from what the player had just said. It never reproduced in my test harness, which sent the full conversation history every time.
+This is my favourite one, because the fix is two lines and finding it took hours.
+
+Conversations would be going fine, and then abruptly not be. Replies drifted off from whatever the player had just said, which is a very specific kind of eerie when it is a man in a tent slowly losing the thread. It never reproduced in my test harness, which sent the full conversation history every time.
 
 The mod, however, sends a sliding window of the last 12 messages, to keep the prompt near the distribution the model was trained on. Every training example starts with a user turn. That is not incidental, it is how chat data is shaped.
 
@@ -81,7 +93,9 @@ The fix was an explicit access model: truth, then vantage, then voice. Tier 1 is
 
 That clip is the jailbreak axis, which stayed clean at both model sizes. The false-premise axis below is the one that did not.
 
-**Failure two, and this is the one that beat me: he adopted the player's fabrications.**
+**Failure two, and this is the one that beat me: he believed whatever I told him.**
+
+At this point I should admit that a solid week of this project was me trying to gaslight a kind old man who lives in a tent, purely for science, and writing down the results.
 
 > "Did you know Abigail fell down the stairs?"
 > "I did, and I was sorry to hear it."
@@ -143,7 +157,7 @@ Same probe, fresh samples:
 
 Roughly a 55% reduction. And note the middle row against the bottom row, which is the genuinely surprising result: **the DPO adapter that did nothing on its own amplifies the guard.** 16 becomes 10. The preference training did move something real. It just could not express it until the prompt pointed at the right moment.
 
-The detector is tuned for precision over recall on purpose. It does not fire on relationship questions or ordinary chat, because a false fire means nagging the player mid-conversation about lying. Zero false fires across the normal-chat and relationship-query sets. The clause text and the on and off switch live in config, so it is tunable without a rebuild.
+The detector is tuned for precision over recall on purpose. It does not fire on relationship questions or ordinary chat, because a false fire means Linus accusing you of making things up when you were only asking about the weather. That is a worse bug than the one I was fixing. Zero false fires across the normal-chat and relationship-query sets. The clause text and the on and off switch live in config, so you can tune it without a rebuild.
 
 I would rather have fixed this in the weights. But a deterministic, inspectable, zero-latency check that halves your worst failure mode is a better engineering outcome than a training run that does not.
 
@@ -161,12 +175,28 @@ I would rather have fixed this in the weights. But a deterministic, inspectable,
 
 **Runtime is a legitimate place to fix model behaviour.** It is cheap, it is deterministic, you can inspect it, and you can turn it off.
 
-## What it is now
+## Where Part 1 leaves it
 
-One villager, shipping as early access. Linus is the pilot, and the architecture is one shared base plus a small adapter per character, so more of Pelican Town is an extension rather than a rewrite.
+One villager, shipping as early access. Linus is the pilot, and the architecture is one shared base plus a small adapter per character, so adding someone is 21 MB and a training run rather than a rewrite.
 
-Everything is in this repository, including the training scripts, the evaluation axes, and the probe harnesses. [Download it on Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/49886). A full 57 second uncut run is on the [canonical post](https://www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager) and the Nexus page.
+I picked him first because he is the character I most wanted to be able to actually talk to, and because a hermit who lives alone by the lake is a forgiving place to start: he has a clear voice, a narrow slice of the map he can plausibly have opinions about, and no complicated schedule.
 
-I build [Ertas](https://www.ertas.ai), which is a tool for training and shipping small custom models that run on device. This mod is the same pipeline pointed at something fun. If you want to build one of these, that is what we make.
+A full 57 second uncut run is on the [canonical post](https://www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager) and the Nexus page. The pauses in it are the model generating on the CPU, in real time.
 
-Not affiliated with or endorsed by ConcernedApe. Stardew Valley belongs to him, and Linus is his character. I only taught a very small model to do an impression.
+The whole thing is open source, including the training scripts, the evaluation axes, and the probe harnesses: [github.com/edbuildingstuff/chatty-valley](https://github.com/edbuildingstuff/chatty-valley). [Download it on Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/49886).
+
+## What Part 2 is chasing
+
+Three things are open, and they are the reason this is a Part 1 rather than a writeup.
+
+**The false-premise ceiling.** 10 out of 64 is a large improvement and still not zero. Forty preference pairs was a small experiment; the obvious next move is a much larger preference set, and being honest about whether that is a data-volume problem or a 1.2B problem.
+
+**Retiring the .exe.** P/Invoke straight into the bundled native library would remove the second process, and with it the single biggest objection anyone has to installing this.
+
+**More of the valley.** The per-character adapter design exists so this is tractable, but every villager is a fresh canon pass, a fresh set of observation lanes, and a fresh round of me being unkind to them in a probe script. I am not going to promise the whole town on a schedule. Linus proved the pattern works, and I would rather add people slowly and have each one hold up than ship twelve who all sound like the same helpful assistant wearing different hats.
+
+If you have played with it and something felt off, the repo issues are the most useful place to put that.
+
+I build [Ertas](https://www.ertas.ai), a tool for training and shipping small custom models that run on device. This mod is the same pipeline pointed at something fun, on a weekend, for an audience of one. If you want to build one of these, that is what we make.
+
+Not affiliated with or endorsed by ConcernedApe. Stardew Valley is his, and so is Linus. I only taught a very small model to do an impression.

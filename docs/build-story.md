@@ -47,7 +47,19 @@ So in-process managed inference inside Stardew is flatly impossible with this bi
 
 The fix is a sidecar. `ChattyValley.Sidecar` is a separate .NET 10 process that owns the model and serves one request and response per line over a named pipe. The mod itself is a thin .NET 6 client with zero LLamaSharp references. It starts the sidecar, waits for the pipe, and shuts it down on exit.
 
-There is a third target framework in there too, which took an embarrassing amount of time to pin down: the shared runtime library sits on .NET 8, because compiling it against .NET 6 produced a binary that loaded fine and then threw a missing method exception on `DefaultSamplingPipeline.set_Temperature` at runtime, inside the .NET 10 process. Three target frameworks, all load-bearing, none of them unifiable.
+Three target frameworks end up load-bearing, which sounds ridiculous for a mod with two processes in it. The breakdown:
+
+- **`ChattyValley.Mod`, .NET 6.** The thin client. It has to match the game.
+- **`ChattyValley.Sidecar`, .NET 10.** The process that owns the model, on the version LLamaSharp's dependency chain demands.
+- **`ChattyValley.Runtime`, .NET 8.** The LLamaSharp wrapper that the sidecar loads. This is the one that took an embarrassing amount of time to pin down.
+
+So yes, .NET 8 is genuinely in there, and the reason is the interesting part. LLamaSharp 0.27.0 ships two builds, `netstandard2.0` and `net8.0`. Your target framework picks one. A .NET 6 library binds to `netstandard2.0`, because .NET 6 cannot consume a `net8.0` assembly at all. The .NET 10 sidecar resolves `net8.0`, because that is the closest build it can use.
+
+So with `Runtime` on .NET 6, the assembly I compiled against and the assembly the host actually loaded were two different files. What surfaced was `Method not found: set_Temperature`, at the moment of setting a sampling temperature. Targeting .NET 8 makes both ends resolve `lib/net8.0`, which is what the project does today.
+
+![Which LLamaSharp build Runtime binds to: on .NET 6 it compiles against lib/netstandard2.0 while the .NET 10 host loads lib/net8.0, two different files; on .NET 8 both resolve lib/net8.0](media/binding.png)
+
+I will be straight with you about the limit of that explanation: I never established why *that particular member* was the one to break. Inspect the metadata and `DefaultSamplingPipeline.Temperature` looks identical in both builds, same declaring type, same signature, getter and setter present. The alignment fixed it, so I stopped digging. The transferable lesson is the resolution rule rather than the exception: with a multi-targeted package, your TFM decides which build you compile against, and a newer host can quietly resolve a different one.
 
 ![The process split: the mod on .NET 6, the sidecar on .NET 10, and a named pipe as the only thing crossing the boundary](media/runtimes.png)
 

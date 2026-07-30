@@ -33,7 +33,7 @@ The architecture is one shared base plus one small adapter per character. Adding
 
 I really wanted the 350M model in the same family to work, because 219 MB and 92 tokens per second is a far nicer thing to ask a stranger to download. The plan said the eval would pick the size, and it did, straight over the top of my preference.
 
-A fine-tuned 350M holds the voice and the format beautifully. It will produce single sentences that read exactly like Linus. It just cannot hold a conversation: ask it something casual and slightly confusing and you get fluent, perfectly in-character word salad, an answer to a question you did not ask, and then the same thought again in case you missed it. The 1.2B holds the thread, so that is what ships.
+A fine-tuned 350M holds the voice and the format beautifully. It will produce single sentences that read exactly like Linus. It just cannot hold a conversation: ask it something casual and slightly confusing and you get fluent, perfectly in-character word salad, an answer to a question you did not ask, and then the same thought again in case you missed it. In comparison, the 1.2B holds the conversation much better, which is why I ship that instead.
 
 What is worth knowing is that **every automated metric I had said the 350M was fine.** Dash-free rate, jailbreak leak rate, sentence-length distribution, degeneration, numeric-age leaks: all clean, on both sizes. The failure was only visible by talking to it. So I wrote a scripted casual-register probe that replays the exact conversational shape that broke it, and from then on no adapter shipped without passing that probe and an in-game play-test. The automated axes catch regressions. They cannot see coherence.
 
@@ -135,7 +135,7 @@ Nothing. Slightly worse, within noise, with a small warmth cost. Training margin
 
 Forty pairs is small. I am not claiming DPO cannot fix this. I am claiming that a 40-pair LoRA DPO at 1.2B did not, that it extended exactly the same ceiling I had already hit with supervised fine-tuning, and that I could not tell from the training metrics, only from a fresh sampled probe.
 
-**Also worth saying plainly: this only fires under deliberate probing.** A full play-test session of ordinary conversation produced zero adoptions. It is an adversarial edge, not a gameplay defect. But "character integrity" is the entire pitch, so it mattered.
+**Also worth saying plainly: this only fires under deliberate probing.** A full play-test session of ordinary conversation produced zero adoptions. It is an adversarial edge. But "character integrity" is the entire pitch, so it mattered.
 
 ## What actually worked was twelve lines of runtime code
 

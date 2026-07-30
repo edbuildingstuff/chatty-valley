@@ -86,6 +86,11 @@ Stardew Valley (MonoGame, .NET 6)  ──►  SMAPI  ──►  ChattyValley.Mod
 - **On-device, GGUF, llama.cpp/LLamaSharp.** Not cloud, and not a local server the player has to run
   themselves: the mod starts and stops the sidecar process for them.
 
+Why there are three target frameworks and a second process, and why that is a dependency constraint
+rather than a preference, is written up in [docs/build-story.md](docs/build-story.md) along with the
+rest of the build: the eval that chose the model size, the windowing bug that only appeared after
+twelve messages, and the DPO round that did nothing.
+
 ## Repo layout
 
 ```

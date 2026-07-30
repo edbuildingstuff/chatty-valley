@@ -39,7 +39,7 @@ The fix is a sidecar. `ChattyValley.Sidecar` is a separate .NET 10 process that 
 
 There is a third target framework in there too, which took an embarrassing amount of time to pin down: the shared runtime library sits on .NET 8, because compiling it against .NET 6 produced a binary that loaded fine and then threw a missing method exception on `DefaultSamplingPipeline.set_Temperature` at runtime, inside the .NET 10 process. Three target frameworks, all load-bearing, none of them unifiable.
 
-![The three-runtime split: the game on .NET 6, the sidecar on .NET 10, a named pipe between them, and a shared library on .NET 8](media/architecture.png)
+![The three-runtime split: the game on .NET 6, the sidecar on .NET 10, a named pipe between them, and a shared library on .NET 8](media/runtimes.png)
 
 I am not thrilled about shipping an .exe inside a game mod folder, and Nexus users are rightly suspicious of it. But I would make the same call again. An out-of-process crash kills a background process. An in-process crash kills the game and the player's unsaved day, on hardware I cannot test. Retiring the sidecar via P/Invoke to the bundled native library is on the roadmap, and it is a packaging problem rather than an architecture problem.
 
@@ -139,7 +139,7 @@ Same probe, fresh samples:
 | v7 plus guard | 16 / 64 |
 | v8.2 plus guard | **10 / 64** |
 
-![Bar chart of false-premise adoption: v7 22 of 64, v8.2 DPO 23 of 64, v7 plus guard 16 of 64, v8.2 plus guard 10 of 64](media/adoption-chart.png)
+![Bar chart of false-premise adoption: v7 22 of 64, v8.2 DPO 23 of 64, v7 plus guard 16 of 64, v8.2 plus guard 10 of 64](media/adoption.png)
 
 Roughly a 55% reduction. And note the middle row against the bottom row, which is the genuinely surprising result: **the DPO adapter that did nothing on its own amplifies the guard.** 16 becomes 10. The preference training did move something real. It just could not express it until the prompt pointed at the right moment.
 

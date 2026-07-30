@@ -49,7 +49,7 @@ The fix is a sidecar. `ChattyValley.Sidecar` is a separate .NET 10 process that 
 
 There is a third target framework in there too, which took an embarrassing amount of time to pin down: the shared runtime library sits on .NET 8, because compiling it against .NET 6 produced a binary that loaded fine and then threw a missing method exception on `DefaultSamplingPipeline.set_Temperature` at runtime, inside the .NET 10 process. Three target frameworks, all load-bearing, none of them unifiable.
 
-![The three-runtime split: the mod on .NET 6, the sidecar on .NET 10, a named pipe as the only thing crossing the boundary, and ChattyValley.Core on .NET 6 as the shared contract](media/runtimes.png)
+![The process split: the mod on .NET 6, the sidecar on .NET 10, and a named pipe as the only thing crossing the boundary](media/runtimes.png)
 
 I am not thrilled about shipping an .exe inside a mod folder, and Nexus users are right to be suspicious of one. I would be too, and frequently am, about other people's mods.
 

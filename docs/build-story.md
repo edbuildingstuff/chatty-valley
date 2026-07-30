@@ -61,7 +61,7 @@ If you would rather check the exe than trust it, that is what this repository is
 
 This is my favourite one, because the fix is two lines and finding it took hours.
 
-Conversations would be going fine, and then abruptly not be. Replies drifted off from whatever the player had just said, which is a very specific kind of eerie when it is a man in a tent slowly losing the thread. It never reproduced in my test harness, which sent the full conversation history every time.
+Conversations would be going fine, and then abruptly not be. Replies drifted off from whatever the player had just said, which is a very specific kind of eerie when you are mid-conversation with someone you were starting to like. It never reproduced in my test harness, which sent the full conversation history every time.
 
 The mod, however, sends a sliding window of the last 12 messages, to keep the prompt near the distribution the model was trained on. Every training example starts with a user turn. That is not incidental, it is how chat data is shaped.
 

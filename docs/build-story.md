@@ -1,6 +1,6 @@
-# Chatty Valley: a fine-tuned on-device AI mod for Stardew Valley (Part 1)
+# Chatty Valley: an on-device AI mod for Stardew Valley (Part 1)
 
-> Also published at [www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager](https://www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager), which is the canonical version and carries the video clips. This copy exists so the story travels with the source.
+> Also published at [www.ertas.ai/blog/chatty-valley-on-device-ai-mod-stardew-valley](https://www.ertas.ai/blog/chatty-valley-on-device-ai-mod-stardew-valley), which is the canonical version and carries the video clips. This copy exists so the story travels with the source.
 >
 > Published 30 July 2026 by Edward Xi Yang.
 
@@ -22,7 +22,7 @@ Getting a model to talk like Linus took an afternoon. That was the easy part. Th
 
 So this is the honest version, including the bit where a technique I was certain about did absolutely nothing.
 
-## The setup
+## The stack: a 1.2B model, a LoRA, and llama.cpp
 
 **Base model:** LFM2.5-1.2B-Instruct from Liquid AI, quantised to Q4_K_M. 697 MB.
 **Adapter:** a LoRA carrying Linus's voice. 21 MB.
@@ -37,7 +37,7 @@ A fine-tuned 350M holds the voice and the format beautifully. It will produce si
 
 What is worth knowing is that **every automated metric I had said the 350M was fine.** Dash-free rate, jailbreak leak rate, sentence-length distribution, degeneration, numeric-age leaks: all clean, on both sizes. The failure was only visible by talking to it. So I wrote a scripted casual-register probe that replays the exact conversational shape that broke it, and from then on no adapter shipped without passing that probe and an in-game play-test. The automated axes catch regressions. They cannot see coherence.
 
-## The .NET wall that forced a second process
+## The .NET wall that forced a sidecar process
 
 Here is a constraint I did not see coming and could not engineer around.
 
@@ -67,7 +67,7 @@ But I would make the same call again, because of what the two failure modes cost
 
 If you would rather check the exe than trust it, that is what this repository is for. Everything the sidecar does is here.
 
-## The bug that only showed up after twelve messages
+## The sliding-window bug that only showed up after twelve messages
 
 This is my favourite one, because the fix is two lines and finding it took hours.
 
@@ -89,7 +89,7 @@ The model was being handed a reply with no prompt, in a format it had never once
 
 The fix is a `ConversationWindow` that always opens the window on a user turn. The more useful lesson is the second half: **my probe harness could not reproduce the bug because it did not share the windowing code with the mod.** It sent full history. It was testing a code path no player would ever hit. The harness now applies the same window, and the failure reproduces on demand.
 
-## The actual hard problem: he agreed with things that never happened
+## He agreed with things that never happened
 
 Voice was solved early. Canon accuracy took one careful pass: I extracted Linus's real dialogue through the game's own content pipeline, built a setting sheet verified against the wiki, and swept the whole dataset against it.
 
@@ -147,7 +147,7 @@ Forty pairs is small. I am not claiming DPO cannot fix this. I am claiming that 
 
 **Also worth saying plainly: this only fires under deliberate probing.** A full play-test session of ordinary conversation produced zero adoptions. It is an adversarial edge. But "character integrity" is the entire pitch, so it mattered.
 
-## What actually worked was twelve lines of runtime code
+## The twelve-line runtime guard that worked
 
 If training will not remove the behaviour, do not let the prompt invite it.
 
@@ -171,7 +171,7 @@ The detector is tuned for precision over recall on purpose. It does not fire on 
 
 I would rather have fixed this in the weights. But a deterministic, inspectable, zero-latency check that halves your worst failure mode is a better engineering outcome than a training run that does not.
 
-## Things I would tell you if you are doing this
+## Six things I would tell you before you fine-tune a character
 
 **Your automated eval cannot see coherence.** Mine passed a model that produced fluent nonsense. Write a scripted probe that replays the conversational register that actually broke, and treat the play-test as the gate.
 
@@ -191,7 +191,7 @@ One villager, shipping as early access. Linus is the pilot, and the architecture
 
 I picked him first because he is the character I most wanted to be able to actually talk to, and because a hermit who lives alone by the lake is a forgiving place to start: he has a clear voice, a narrow slice of the map he can plausibly have opinions about, and no complicated schedule.
 
-A full 57 second uncut run is on the [canonical post](https://www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager) and the Nexus page. The pauses in it are the model generating on the CPU, in real time.
+A full 57 second uncut run is on the [canonical post](https://www.ertas.ai/blog/chatty-valley-on-device-ai-mod-stardew-valley) and the Nexus page. The pauses in it are the model generating on the CPU, in real time.
 
 The whole thing is open source, including the training scripts, the evaluation axes, and the probe harnesses: [github.com/edbuildingstuff/chatty-valley](https://github.com/edbuildingstuff/chatty-valley). [Download it on Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/49886).
 

@@ -12,7 +12,7 @@
 | **Speed** | A second or two per reply on a modern CPU |
 | **Download** | [Get it on Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/49886). 744 MB, everything included, nothing fetched on first run |
 | **Platform** | Windows, Stardew 1.6, SMAPI 4.0+ |
-| **Build story** | [How it was made, and where it still fails](https://www.ertas.ai/blog/chatty-valley-fine-tuned-stardew-valley-villager) |
+| **Build story** | [How it was made, and where it still fails](https://www.ertas.ai/blog/chatty-valley-on-device-ai-mod-stardew-valley) |
 
 Every other AI dialogue mod either calls a cloud API or makes the player stand up their own model
 server, and then wears each character as a prompt on a generic model. Chatty Valley ships a bundled,

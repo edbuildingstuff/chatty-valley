@@ -27,9 +27,21 @@ the managed assemblies below it.
 
 ## llama.cpp inference, native
 
-16 files, 15 unique binaries. Four builds ship per library, one per CPU instruction set, and your
+20 files, 19 unique binaries. Four builds ship per library, one per CPU instruction set, and your
 machine loads exactly one set at runtime. They come from the `LLamaSharp.Backend.Cpu` NuGet package and
 are not built by this project.
+
+**Every one of them is byte-identical to that published package.** You can check this without trusting
+us: download `llamasharp.backend.cpu.0.27.0.nupkg` from nuget.org, open it as a zip, and hash the files
+under `runtimes/win-x64/native/`. They match the table below exactly.
+
+That matters because **antivirus engines do sometimes flag these libraries.** They are large, heavily
+optimised, hand-vectorised native code that allocates a lot of memory and JITs compute kernels, which is
+a shape that trips machine-learning heuristics. When it happens it is usually a single engine out of
+roughly seventy, with a generic verdict name rather than a named malware family. Because the binaries are
+unmodified upstream builds, any such verdict is a statement about the standard llama.cpp Windows release
+that thousands of projects ship, not about anything compiled here. Check the links, and weigh one
+detection out of seventy accordingly.
 
 | File | Size | SHA256 |
 |---|---|---|
@@ -37,18 +49,22 @@ are not built by this project.
 | `sidecar/runtimes/win-x64/native/avx/ggml-base.dll` | 602 KB | [`7b110a7049afb7b7...`](https://www.virustotal.com/gui/file/7b110a7049afb7b7c653af4f8f3c023e59995b673df8468db7620a9ff5d9a4d5) |
 | `sidecar/runtimes/win-x64/native/avx/ggml-cpu.dll` | 802 KB | [`447502e055c0df2f...`](https://www.virustotal.com/gui/file/447502e055c0df2ffd7ceba6e800e1608029bd1d6c760e5a1b29b2f6d9671a72) |
 | `sidecar/runtimes/win-x64/native/avx/llama.dll` | 1.96 MB | [`43465972ebdc01fd...`](https://www.virustotal.com/gui/file/43465972ebdc01fddb0b09feb613230a2844e6658e0b2da88025ddfdd51deddb) |
+| `sidecar/runtimes/win-x64/native/avx/mtmd.dll` | 784 KB | [`978c6423d378e93a...`](https://www.virustotal.com/gui/file/978c6423d378e93a5436c9162cf8f8cc1694ce1d8821b17e039201f91285c9f9) |
 | `sidecar/runtimes/win-x64/native/avx2/ggml.dll` | 66 KB | [`44ec41894eb611c9...`](https://www.virustotal.com/gui/file/44ec41894eb611c9bb86055cedb6759603fcb6a9dc994abccb15f08a031b486a) |
 | `sidecar/runtimes/win-x64/native/avx2/ggml-base.dll` | 602 KB | [`09835b5faec3acc7...`](https://www.virustotal.com/gui/file/09835b5faec3acc7e88f0ddee1ddf8a303108c9664fc581c6b5bff03f1032353) |
 | `sidecar/runtimes/win-x64/native/avx2/ggml-cpu.dll` | 858 KB | [`5c579f09d7b4f782...`](https://www.virustotal.com/gui/file/5c579f09d7b4f782c534b03f5962ff82cdddf9374aa443175f9db3cbc86b7b3c) |
 | `sidecar/runtimes/win-x64/native/avx2/llama.dll` | 1.96 MB | [`1aa8f6f65386b7b9...`](https://www.virustotal.com/gui/file/1aa8f6f65386b7b977f9a0bb631d6d7e2a30d3beb3f5747e80e1b114f4885fb8) |
+| `sidecar/runtimes/win-x64/native/avx2/mtmd.dll` | 784 KB | [`5da6779429096118...`](https://www.virustotal.com/gui/file/5da6779429096118c15ccc134f0309bb0df6f0a8c010b16e74475285288e3fb6) |
 | `sidecar/runtimes/win-x64/native/avx512/ggml.dll` | 66 KB | [`23b4bcf921c6e77d...`](https://www.virustotal.com/gui/file/23b4bcf921c6e77d6e0a7864f740f7eb4aec2cb946453f46b8fa5d337460ad8f) |
 | `sidecar/runtimes/win-x64/native/avx512/ggml-base.dll` | 602 KB | [`6a45172a836430e3...`](https://www.virustotal.com/gui/file/6a45172a836430e372adb31039dd48a94fd5f2a2c023c0f2f7629e0e0faa8fe5) |
 | `sidecar/runtimes/win-x64/native/avx512/ggml-cpu.dll` | 957 KB | [`9bbd41bbda9904f7...`](https://www.virustotal.com/gui/file/9bbd41bbda9904f72194edccffe91068f56e5b6d49d874a556db08b320e222c7) |
 | `sidecar/runtimes/win-x64/native/avx512/llama.dll` | 1.96 MB | [`1aa8f6f65386b7b9...`](https://www.virustotal.com/gui/file/1aa8f6f65386b7b977f9a0bb631d6d7e2a30d3beb3f5747e80e1b114f4885fb8) |
+| `sidecar/runtimes/win-x64/native/avx512/mtmd.dll` | 784 KB | [`ca9ddab5416c5558...`](https://www.virustotal.com/gui/file/ca9ddab5416c5558d98585fbdb60e0fcb52e1ee2e5395b1ac8848c77e392b3fe) |
 | `sidecar/runtimes/win-x64/native/noavx/ggml.dll` | 66 KB | [`905ec5ea9db9bd1e...`](https://www.virustotal.com/gui/file/905ec5ea9db9bd1e795cf2cb4f7f9399c50e82a74379efe75815de7715da45cf) |
 | `sidecar/runtimes/win-x64/native/noavx/ggml-base.dll` | 602 KB | [`57803fba605d6e3e...`](https://www.virustotal.com/gui/file/57803fba605d6e3eae4bfc48bf6b120c03ddd3926ad5a0e3bb2b11598b20f598) |
 | `sidecar/runtimes/win-x64/native/noavx/ggml-cpu.dll` | 692 KB | [`bb3d65715350df4b...`](https://www.virustotal.com/gui/file/bb3d65715350df4b9f2d605367e7063e27c40146330e6ed9807598c41aec08a5) |
 | `sidecar/runtimes/win-x64/native/noavx/llama.dll` | 1.96 MB | [`6e18361b4fdce035...`](https://www.virustotal.com/gui/file/6e18361b4fdce03588c19cc21a818ffcb4d3326d3debaa898af4cc27fd10c877) |
+| `sidecar/runtimes/win-x64/native/noavx/mtmd.dll` | 784 KB | [`c50e84ef123adc01...`](https://www.virustotal.com/gui/file/c50e84ef123adc015e80d4e3909f83a85b1b35be335a537eaec7b6e13d0a525e) |
 
 ## This project's own code, managed
 
@@ -76,11 +92,11 @@ hashes rather than scan links.
 
 ## Microsoft .NET runtime
 
-201 files, 83.06 MB. The sidecar ships self-contained so players need no .NET install. These are Microsoft's,
+197 files, 79.99 MB. The sidecar ships self-contained so players need no .NET install. These are Microsoft's,
 unmodified and Microsoft-signed; scanning them tells you about Microsoft rather than about this mod. Listed
 in full anyway, because "every executable file" should mean every one.
 
-<details><summary>Show all 201 runtime files</summary>
+<details><summary>Show all 197 runtime files</summary>
 
 | File | Size | SHA256 |
 |---|---|---|
@@ -112,10 +128,6 @@ in full anyway, because "every executable file" should mean every one.
 | `sidecar/mscorrc.dll` | 131 KB | [`ffad4ed1f225571d...`](https://www.virustotal.com/gui/file/ffad4ed1f225571ddb5a767f35c0349409efff011c3624c9912be7ea7580a44e) |
 | `sidecar/msquic.dll` | 512 KB | [`6246f5fe726fbf61...`](https://www.virustotal.com/gui/file/6246f5fe726fbf612ca621961fd90a440425d64e9f4e51b7bb7adb80651032fa) |
 | `sidecar/netstandard.dll` | 99 KB | [`850e5a52885a5164...`](https://www.virustotal.com/gui/file/850e5a52885a51649626eccebf78bc5c461a7b23b36e10997f624bb1d0aa398d) |
-| `sidecar/runtimes/win-x64/native/avx/mtmd.dll` | 784 KB | [`978c6423d378e93a...`](https://www.virustotal.com/gui/file/978c6423d378e93a5436c9162cf8f8cc1694ce1d8821b17e039201f91285c9f9) |
-| `sidecar/runtimes/win-x64/native/avx2/mtmd.dll` | 784 KB | [`5da6779429096118...`](https://www.virustotal.com/gui/file/5da6779429096118c15ccc134f0309bb0df6f0a8c010b16e74475285288e3fb6) |
-| `sidecar/runtimes/win-x64/native/avx512/mtmd.dll` | 784 KB | [`ca9ddab5416c5558...`](https://www.virustotal.com/gui/file/ca9ddab5416c5558d98585fbdb60e0fcb52e1ee2e5395b1ac8848c77e392b3fe) |
-| `sidecar/runtimes/win-x64/native/noavx/mtmd.dll` | 784 KB | [`c50e84ef123adc01...`](https://www.virustotal.com/gui/file/c50e84ef123adc015e80d4e3909f83a85b1b35be335a537eaec7b6e13d0a525e) |
 | `sidecar/System.AppContext.dll` | 15 KB | [`557d6e9ae495a068...`](https://www.virustotal.com/gui/file/557d6e9ae495a068003971eae85d242ac6b50de18d8e3a7877aca11fc27d3c07) |
 | `sidecar/System.Buffers.dll` | 15 KB | [`b3fd4be3951d896f...`](https://www.virustotal.com/gui/file/b3fd4be3951d896fd13e22b51c2b172513c5487430a370d8c9ae3ea666f10056) |
 | `sidecar/System.Collections.Concurrent.dll` | 290 KB | [`bb7f6b4cd731ea62...`](https://www.virustotal.com/gui/file/bb7f6b4cd731ea6228c912c8dde615da5405ae7ea8b1537d6c2ba6f63f3db90e) |

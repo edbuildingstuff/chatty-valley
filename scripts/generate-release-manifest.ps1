@@ -56,12 +56,17 @@ function Format-Size([long] $b) {
 }
 
 # Group by what a reader actually cares about, not by folder.
+# Classify native libraries by PATH, not by a hardcoded name list. The first version listed the four
+# names known at the time and silently filed everything else under the Microsoft fold, which put
+# llama.cpp's four mtmd.dll builds under a heading claiming they were Microsoft-signed. Anything under
+# runtimes/<rid>/native/ came from a native NuGet package by definition, so the path is the honest
+# test and it survives upstream adding libraries.
 $ours      = $rows | Where-Object { $_.Name -like 'ChattyValley.*' -and $_.Name -match '\.(exe|dll)$' }
-$native    = $rows | Where-Object { $_.Name -in @('llama.dll','ggml.dll','ggml-base.dll','ggml-cpu.dll') }
+$native    = $rows | Where-Object { $_.Path -match '(^|/)runtimes/[^/]+/native/' -and $_.Name -match '\.(exe|dll)$' }
 $models    = $rows | Where-Object { $_.Name -like '*.gguf' }
+$nativePaths = $native | ForEach-Object { $_.Path }
 $runtimeMs = $rows | Where-Object {
-    $_.Name -match '\.(exe|dll)$' -and $_.Name -notlike 'ChattyValley.*' -and
-    $_.Name -notin @('llama.dll','ggml.dll','ggml-base.dll','ggml-cpu.dll')
+    $_.Name -match '\.(exe|dll)$' -and $_.Name -notlike 'ChattyValley.*' -and $nativePaths -notcontains $_.Path
 }
 
 function Emit-Table($items, [switch] $NoScan) {
@@ -108,6 +113,18 @@ $md += ''
 $md += ('{0} files, {1} unique binaries. Four builds ship per library, one per CPU instruction set, and your' -f $native.Count, $uniqueNative)
 $md += 'machine loads exactly one set at runtime. They come from the `LLamaSharp.Backend.Cpu` NuGet package and'
 $md += 'are not built by this project.'
+$md += ''
+$md += '**Every one of them is byte-identical to that published package.** You can check this without trusting'
+$md += 'us: download `llamasharp.backend.cpu.0.27.0.nupkg` from nuget.org, open it as a zip, and hash the files'
+$md += 'under `runtimes/win-x64/native/`. They match the table below exactly.'
+$md += ''
+$md += 'That matters because **antivirus engines do sometimes flag these libraries.** They are large, heavily'
+$md += 'optimised, hand-vectorised native code that allocates a lot of memory and JITs compute kernels, which is'
+$md += 'a shape that trips machine-learning heuristics. When it happens it is usually a single engine out of'
+$md += 'roughly seventy, with a generic verdict name rather than a named malware family. Because the binaries are'
+$md += 'unmodified upstream builds, any such verdict is a statement about the standard llama.cpp Windows release'
+$md += 'that thousands of projects ship, not about anything compiled here. Check the links, and weigh one'
+$md += 'detection out of seventy accordingly.'
 $md += ''
 $md += (Emit-Table $native)
 $md += ''

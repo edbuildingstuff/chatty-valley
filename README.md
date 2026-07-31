@@ -58,9 +58,10 @@ Stardew dialogue box. Windows only, for now.
   `scripts/verify-release.ps1` gates it: required files present, no stale model artifacts, correct zip
   entry format, sane payload sizes, and no developer paths leaked into the shipped text files.
 - **Every shipped file is accounted for.** [`docs/release-integrity.md`](docs/release-integrity.md)
-  lists all 237 entries in the release with their SHA256 and a VirusTotal link, generated from the
-  zip's own bytes by `scripts/generate-release-manifest.ps1`. If you want to know what the bundled
-  `.exe` is before you run it, start there and verify any file yourself with `Get-FileHash`.
+  lists every entry in the release with its SHA256 and a VirusTotal link, generated from the zip's
+  own bytes by `scripts/generate-release-manifest.ps1`. If you want to know what the bundled `.exe`
+  is before you run it, start there and verify any file yourself with `Get-FileHash`. Release builds
+  carry no debug symbols and no build-machine paths, which `verify-release.ps1` enforces.
 
 ## Architecture
 

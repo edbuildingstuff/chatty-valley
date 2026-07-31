@@ -223,10 +223,42 @@ try {
         $fail += 'ChattyValley/characters/linus.json has no Name field'
     }
 
+    # Matches both the raw path (C:\Users\name) and the JSON-escaped form (C:\\Users\\name). The
+    # escaped form is not hypothetical: a portable PDB carries a SourceLink map that is literally
+    # JSON, so a pattern anchored on a single backslash walks straight past the biggest leak in the
+    # package.
+    $devPathPattern = '[A-Za-z]:\\{1,2}Users\\{1,2}'
+
     # no absolute developer paths anywhere in the shipped text files
     foreach ($t in 'ChattyValley/config.json', 'ChattyValley/manifest.json', 'ChattyValley/README.txt') {
         $body = Read-Entry $t
-        if ($body -cmatch '[A-Za-z]:\\Users\\') { $fail += "absolute developer path leaked in $t" }
+        if ($body -cmatch $devPathPattern) { $fail += "absolute developer path leaked in $t" }
+    }
+
+    # Same rule, applied to our compiled output, which is where it actually leaked. A default Release
+    # build writes the build machine's absolute paths into both the .pdb (source documents) and the
+    # assembly itself (the RSDS debug-directory entry naming that .pdb), so shipping them published a
+    # username and a folder layout to every player. Directory.Build.props sets Deterministic + PathMap
+    # to normalise those; this asserts it, because a settings file is easy to lose in a merge and the
+    # leak is invisible unless something looks. Only our own binaries are checked: the Microsoft
+    # runtime and the llama.cpp natives are third-party, unmodified, and not ours to rebuild.
+    $ourBinaries = $zip.Entries | Where-Object {
+        $_.Name -like 'ChattyValley.*' -and ($_.Name -match '\.(dll|exe|pdb)$')
+    }
+    foreach ($e in $ourBinaries) {
+        $stream = $e.Open()
+        try {
+            $ms = New-Object System.IO.MemoryStream
+            $stream.CopyTo($ms)
+            # Latin1 maps every byte to one char, so a binary can be regex-scanned without decoding
+            # it as UTF-8 and losing or mangling bytes along the way.
+            $text = [System.Text.Encoding]::GetEncoding('iso-8859-1').GetString($ms.ToArray())
+            $ms.Dispose()
+        }
+        finally { $stream.Dispose() }
+        if ($text -cmatch $devPathPattern) {
+            $fail += "absolute developer path leaked in $($e.FullName)"
+        }
     }
 
     if ($fail.Count) {

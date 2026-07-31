@@ -1,0 +1,22 @@
+<Project>
+
+  <!--
+    Release builds must not carry the build machine's absolute paths.
+
+    A default Release build embeds them twice: the .pdb records the source file paths, and the
+    assembly itself carries an RSDS debug-directory entry holding the full path to that .pdb. Both
+    come out as C:\Users\<name>\... which publishes a username and a folder layout to every player.
+    verify-release.ps1 already fails the build if a shipped *text* file contains an absolute user
+    path, so the intent was there; the binaries were simply outside the check. They are now inside
+    it, and this file is what makes them pass.
+
+    Deterministic + PathMap normalises the source paths that end up in the symbols, so a build is
+    reproducible and carries no machine identity. Debug builds are untouched: local debugging keeps
+    full fidelity, and nothing about Debug is ever shipped.
+  -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildThisFileDirectory)=/_/</PathMap>
+  </PropertyGroup>
+
+</Project>

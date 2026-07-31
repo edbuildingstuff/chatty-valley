@@ -93,6 +93,23 @@ foreach ($g in $baseGguf, $adapterGguf) {
 # 6. self-contained sidecar
 & (Join-Path $PSScriptRoot 'publish-sidecar.ps1') -OutDir (Join-Path $stage 'sidecar')
 
+# 6b. Debug symbols never ship.
+#
+# Two reasons, and the second is the one that matters. They are worth nothing to a player: no stack
+# trace a player can send us is improved by symbols they have but we cannot read without the matching
+# source anyway. And a portable PDB embeds a SourceLink map that is literally
+# {"documents":{"C:\\Users\\<name>\\...\\chatty-valley\\*": "https://raw.githubusercontent.com/..."}},
+# which publishes a username and a folder layout to everyone who downloads the mod.
+#
+# Directory.Build.props sets PathMap, which cleans the absolute paths out of the assemblies, but it
+# deliberately does not touch the SourceLink map: that map's whole job is to point at the real repo
+# root so a debugger can fetch matching sources. The right answer for a shipped artifact is to keep
+# the symbols locally and leave them out of the zip. verify-release.ps1 fails the build if any of
+# our binaries still carries an absolute user path, so this cannot silently regress.
+$pdbs = @(Get-ChildItem -Path $stage -Recurse -Filter '*.pdb' -File -ErrorAction SilentlyContinue)
+foreach ($p in $pdbs) { Remove-Item $p.FullName -Force }
+Write-Host ("stripped {0} debug symbol file(s) from the staged tree" -f $pdbs.Count)
+
 # 7. zip
 # Compress-Archive under PowerShell 5.1 is banned for this artifact: it cannot reliably handle an
 # ~800 MB stage with a single 698 MB entry and was observed to die mid-write, leaving a truncated

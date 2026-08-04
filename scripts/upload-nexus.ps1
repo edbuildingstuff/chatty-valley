@@ -299,6 +299,7 @@ if ($NewFile) {
         file_category                = 'main'
         primary_mod_manager_download = [bool]$PrimaryModManagerDownload
         update_mod_version           = [bool]$UpdateModVersion
+        show_requirements_pop_up     = [bool]$ShowRequirementsPopup
     }
     if ($Description) { $body.description = $Description }
     $result = (Invoke-NexusJson -Method POST -Path '/mod-files' -Body $body).data

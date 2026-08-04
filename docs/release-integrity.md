@@ -1,10 +1,10 @@
 # Release integrity
 
-Generated from `ChattyValley-0.2.0.zip` by `scripts/generate-release-manifest.ps1`. Every hash below comes from that
+Generated from `ChattyValley-0.2.1.zip` by `scripts/generate-release-manifest.ps1`. Every hash below comes from that
 artifact's own bytes, so this document is only true for that build. It is regenerated with each release.
 
-- **Archive:** `ChattyValley-0.2.0.zip`, 744.35 MB (780,505,290 bytes)
-- **SHA256:** `cd1453c70f0e4aa88008f69ceea5115774bf77a1be49ffa55f6983aef658ba2b`
+- **Archive:** `ChattyValley-0.2.1.zip`, 744.31 MB (780,470,601 bytes)
+- **SHA256:** `2ccbd2bd6aac01262286433757fd7d1791110bf7744177ea2fcb4a534d56e3ef`
 
 Check any file yourself after unzipping. Hashes are of the extracted file, so this matches what you have on disk:
 
@@ -23,7 +23,7 @@ the managed assemblies below it.
 
 | File | Size | SHA256 |
 |---|---|---|
-| `sidecar/ChattyValley.Sidecar.exe` | 159 KB | [`b8f41bef51bc5e26...`](https://www.virustotal.com/gui/file/b8f41bef51bc5e26e10d6c697d16f82f538e0ccb26c82a3c34ad7872e91b28ac) |
+| `sidecar/ChattyValley.Sidecar.exe` | 159 KB | [`1379fdd35824d4c2...`](https://www.virustotal.com/gui/file/1379fdd35824d4c223bd70eecea16211a74181af6940b580ff5cdfe807aefe21) |
 
 ## llama.cpp inference, native
 
@@ -73,11 +73,11 @@ assemblies, so a clean result here proves less than reading the source, which is
 
 | File | Size | SHA256 |
 |---|---|---|
-| `ChattyValley.Core.dll` | 20 KB | [`83185749fc06d66e...`](https://www.virustotal.com/gui/file/83185749fc06d66e3e303be12bcdf8b09c8fe9b7f4a21943415b9ac3e610f4a1) |
-| `ChattyValley.Mod.dll` | 51 KB | [`41501896c7832b6f...`](https://www.virustotal.com/gui/file/41501896c7832b6f6bc2ab28fb5ce46020caea5d352e27b6607db8f518a6e131) |
-| `sidecar/ChattyValley.Core.dll` | 20 KB | [`83185749fc06d66e...`](https://www.virustotal.com/gui/file/83185749fc06d66e3e303be12bcdf8b09c8fe9b7f4a21943415b9ac3e610f4a1) |
-| `sidecar/ChattyValley.Runtime.dll` | 14 KB | [`312f420f3b82f42d...`](https://www.virustotal.com/gui/file/312f420f3b82f42d0360299ca769ce259b6fd49b182deabeb2d7163c8d6d25da) |
-| `sidecar/ChattyValley.Sidecar.dll` | 16 KB | [`33b92cf53bd31f7a...`](https://www.virustotal.com/gui/file/33b92cf53bd31f7ac1b985021ce822b61f3de5c7fddcecf462ad1a0996223067) |
+| `ChattyValley.Core.dll` | 20 KB | [`9ee99a31086efdb6...`](https://www.virustotal.com/gui/file/9ee99a31086efdb63f9180a30be21b8b73dbcad55ad1c45826162d28ffccc492) |
+| `ChattyValley.Mod.dll` | 51 KB | [`e7ea3ac611fed7bc...`](https://www.virustotal.com/gui/file/e7ea3ac611fed7bc8604abaeb3bb1e2898add7a28969ab5d25c5d1696d0a8371) |
+| `sidecar/ChattyValley.Core.dll` | 20 KB | [`9ee99a31086efdb6...`](https://www.virustotal.com/gui/file/9ee99a31086efdb63f9180a30be21b8b73dbcad55ad1c45826162d28ffccc492) |
+| `sidecar/ChattyValley.Runtime.dll` | 14 KB | [`2b012465f29291fc...`](https://www.virustotal.com/gui/file/2b012465f29291fc5c33f51e6fe324a1aa47c28afbea4731f87825d77ef9c23a) |
+| `sidecar/ChattyValley.Sidecar.dll` | 16 KB | [`bee5d38dd891c483...`](https://www.virustotal.com/gui/file/bee5d38dd891c483c11da0ddfb5ae9bd012f849f49bae39d49b428d3f5795985) |
 
 ## Model weights
 
@@ -92,11 +92,11 @@ hashes rather than scan links.
 
 ## Microsoft .NET runtime
 
-197 files, 79.99 MB. The sidecar ships self-contained so players need no .NET install. These are Microsoft's,
+196 files, 79.93 MB. The sidecar ships self-contained so players need no .NET install. These are Microsoft's,
 unmodified and Microsoft-signed; scanning them tells you about Microsoft rather than about this mod. Listed
 in full anyway, because "every executable file" should mean every one.
 
-<details><summary>Show all 197 runtime files</summary>
+<details><summary>Show all 196 runtime files</summary>
 
 | File | Size | SHA256 |
 |---|---|---|
@@ -106,7 +106,6 @@ in full anyway, because "every executable file" should mean every one.
 | `sidecar/clrjit.dll` | 2.10 MB | [`b99554ea472b27b4...`](https://www.virustotal.com/gui/file/b99554ea472b27b4a93ec232e793d81e444051dfdbaf0552f8262c58723a64f2) |
 | `sidecar/CommunityToolkit.HighPerformance.dll` | 150 KB | [`196607c6d4d704b5...`](https://www.virustotal.com/gui/file/196607c6d4d704b5ee95c80f8e3cd799595b7d8a08108701894c211b138d2839) |
 | `sidecar/coreclr.dll` | 4.52 MB | [`ae97f4a37d0dbd78...`](https://www.virustotal.com/gui/file/ae97f4a37d0dbd781639c69bf0960f48b53b8a81ba71076460d8f80388334ff8) |
-| `sidecar/createdump.exe` | 70 KB | [`642774df8d4d375e...`](https://www.virustotal.com/gui/file/642774df8d4d375e6b5303362739d839947fcbb5b6eb90024e2937ff58cd89a5) |
 | `sidecar/hostfxr.dll` | 371 KB | [`1b12d4a43921951b...`](https://www.virustotal.com/gui/file/1b12d4a43921951b03927da4cf68dbb59069da5d7da08a200dfb8c5a8888f758) |
 | `sidecar/hostpolicy.dll` | 370 KB | [`6bd7f6420ced2454...`](https://www.virustotal.com/gui/file/6bd7f6420ced2454a407add25c424de0d76e66c727a95b45d047342d39a72e87) |
 | `sidecar/LLamaSharp.dll` | 283 KB | [`559fd41e6a9757cc...`](https://www.virustotal.com/gui/file/559fd41e6a9757ccd7aaec61255ecde33bc0294894510e10b94d095e02ad7c10) |
@@ -302,7 +301,7 @@ in full anyway, because "every executable file" should mean every one.
 
 ## Nothing else ships
 
-The archive holds 234 files. The tables above cover 225 of them: every executable, every native library,
+The archive holds 233 files. The tables above cover 224 of them: every executable, every native library,
 and both model files. The remaining 9 carry no code and are listed here so the accounting is complete.
 
 | File | Size | SHA256 |
@@ -311,7 +310,7 @@ and both model files. The remaining 9 carry no code and are listed here so the a
 | `config.json` | 392 B | `9766d45e85c647aeb6f490a14a0f00c9763e3e449c15a297bd59d1e6127a60a9` |
 | `LICENSE` | 11 KB | `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` |
 | `LICENSE-LFM.txt` | 11 KB | `622215e455bf5452a7edd091324c49195c119ed8b901238fbf331a0675dd9dc5` |
-| `manifest.json` | 457 B | `62c22575e38041296900cafe68340b64b590e8a6fe58fa9ea682c1b953f47881` |
+| `manifest.json` | 457 B | `0d170dafc40a90baa6189731e731f14f14c5ac78bd9858be34f7b570447c3af9` |
 | `NOTICE` | 2 KB | `7ab8b1454d60fa117372769b323a6bb5080600d8954e21686ef68d9f7a2d4f50` |
 | `README.txt` | 2 KB | `ded7e6f168dc9d417d7e9eaa41ff36a74033582eb63a78d36e11285a74b357b3` |
 | `sidecar/ChattyValley.Sidecar.deps.json` | 35 KB | `958e580603d1f15311e1dc53c3192212bd1499dede54d6030b04a65a2417a3ea` |

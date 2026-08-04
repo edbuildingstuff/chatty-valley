@@ -56,6 +56,8 @@ param(
     [switch] $UpdateModVersion,
     [Parameter(ParameterSetName = 'Upload')]
     [switch] $PrimaryModManagerDownload,
+    [Parameter(ParameterSetName = 'Upload')]
+    [switch] $ShowRequirementsPopup,
 
     [string] $ApiKey,
     [string] $GameDomain = 'stardewvalley',
@@ -312,6 +314,7 @@ if ($NewFile) {
     }
     if ($Description) { $body.description = $Description }
     if ($PrimaryModManagerDownload) { $body.primary_mod_manager_download = $true }
+    if ($ShowRequirementsPopup) { $body.show_requirements_pop_up = $true }
     $result = (Invoke-NexusJson -Method POST -Path "/mod-files/$FileId/versions" -Body $body).data
     Write-Host "new version created on file ${FileId}: version id $($result.version.id)"
 }

@@ -80,6 +80,13 @@ try {
     # the 350M pair must never ship
     foreach ($n in $names) { if ($n -cmatch '350[Mm]') { $fail += "stale 350M artifact shipped: $n" } }
 
+    # createdump.exe must never ship. Microsoft's self-contained publish adds it, its
+    # process-memory-dump behaviour is heuristic-scanner bait (prime suspect in the 2026-07-31
+    # Nexus auto-quarantine), and it does nothing on a player machine. package-release.ps1 strips
+    # it; this catches the strip being lost in a refactor. Case-insensitive match on purpose:
+    # NTFS would serve "CreateDump.exe" to the scanner just the same.
+    foreach ($n in $names) { if ($n -imatch '/createdump\.exe$') { $fail += "createdump.exe shipped: $n" } }
+
     # Entry paths must use forward slashes. .NET Framework's CreateFromDirectory writes
     # backslashes, which extract as one literally-named file on macOS and Linux.
     $backslashed = @($names | Where-Object { $_ -cmatch '\\' })

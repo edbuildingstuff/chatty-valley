@@ -110,6 +110,20 @@ $pdbs = @(Get-ChildItem -Path $stage -Recurse -Filter '*.pdb' -File -ErrorAction
 foreach ($p in $pdbs) { Remove-Item $p.FullName -Force }
 Write-Host ("stripped {0} debug symbol file(s) from the staged tree" -f $pdbs.Count)
 
+# 6c. createdump.exe never ships.
+#
+# Microsoft's self-contained publish drops it in automatically. Its job is attaching to a running
+# process and writing that process's memory to disk, which is the same behavioural fingerprint
+# heuristic antivirus engines use for credential-dumping hacktools, and a mod archive is exactly
+# where a scanner is primed to see one (prime suspect in the 2026-07-31 Nexus auto-quarantine of
+# 0.2.0). It is also dead weight for a player: it only activates when DOTNET_DbgEnableMiniDump is
+# set in the environment, which never happens on a player machine. Stripped here next to the PDBs
+# for the same reason they are: zero player value, real cost to leaving it in.
+# verify-release.ps1 fails the build if it ships, so this cannot silently regress.
+$dumps = @(Get-ChildItem -Path $stage -Recurse -Filter 'createdump.exe' -File -ErrorAction SilentlyContinue)
+foreach ($d in $dumps) { Remove-Item $d.FullName -Force }
+Write-Host ("stripped {0} createdump.exe from the staged tree" -f $dumps.Count)
+
 # 7. zip
 # Compress-Archive under PowerShell 5.1 is banned for this artifact: it cannot reliably handle an
 # ~800 MB stage with a single 698 MB entry and was observed to die mid-write, leaving a truncated

@@ -164,6 +164,33 @@ so players need no runtime, and never touches your local game folder. `verify-re
 re-opens the finished zip cold and re-derives every check from the bytes, the way a player's unzip
 would. It is the gate: if it prints `release OK`, the artifact is shippable.
 
+## Troubleshooting
+
+### "Free chat is OFF: the AI helper program could not start"
+
+The mod runs its AI in a separate helper program (`sidecar/ChattyValley.Sidecar.exe` inside the
+mod folder). If that helper cannot start, the mod turns free chat off and leaves the rest of the
+game untouched. The SMAPI console (and `SMAPI-latest.txt`) will show the lines above, including a
+Details line saying what actually happened.
+
+The helper is an unsigned program, so the usual cause is Windows or an antivirus blocking it:
+
+1. **Check Windows Security.** Open Windows Security > Virus & threat protection > Protection
+   history. If the helper was blocked or quarantined, restore it and add an exclusion for your
+   `Mods/ChattyValley` folder.
+2. **Check Smart App Control** (Windows 11: Windows Security > App & browser control). In
+   evaluation or enforce mode it can silently block unsigned programs. There is no per-app
+   exception; if it is blocking the helper, the practical options are listed on the Nexus page.
+3. **Check the file is really there.** `Mods/ChattyValley/sidecar/ChattyValley.Sidecar.exe`
+   should exist. If it does not, re-extract the zip into `Mods/`.
+4. **Antivirus other than Defender:** restore the file from quarantine and allow-list the mod
+   folder. You can verify the download against the release hashes in `docs/release-integrity.md`.
+
+If a specific villager stops responding while others still chat, the console will name that
+villager and the reason; the fix is the same re-extract, and the rest of the mod keeps working.
+
+If none of that matches what you see, open an issue with your `SMAPI-latest.txt` attached.
+
 ## License
 
 **[Apache 2.0](LICENSE).** Use it, fork it, ship it, commercially or otherwise. No revenue cap, no

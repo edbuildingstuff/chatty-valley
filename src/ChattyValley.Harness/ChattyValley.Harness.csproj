@@ -27,6 +27,8 @@
        native CPU backend deployed alongside it. -->
   <ItemGroup>
     <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.27.0" />
+    <!-- DAT-703 GPU feasibility experiment: dev-tool only, never shipped. -->
+    <PackageReference Include="LLamaSharp.Backend.Vulkan" Version="0.27.0" />
   </ItemGroup>
 
 </Project>

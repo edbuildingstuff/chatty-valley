@@ -3,8 +3,15 @@ using System.Text;
 using System.Text.Json;
 using ChattyValley.Core;
 using ChattyValley.Runtime;
+using LLama.Native;
 
 Console.OutputEncoding = Encoding.UTF8;
+
+// DAT-703: the forced-fallback arm. Must run before the first native load; with Backend.Vulkan
+// installed side-by-side, LLamaSharp auto-selects the GPU build unless told otherwise.
+bool forceCpu = Environment.GetCommandLineArgs().Contains("--force-cpu");
+if (forceCpu)
+    NativeLibraryConfig.All.WithVulkan(false);
 
 string? modelPath = GetArg("--model");
 string? charPath = GetArg("--character");
@@ -74,7 +81,7 @@ Console.WriteLine("Chatty Valley - on-device inference harness");
 Console.WriteLine(new string('=', 62));
 Console.WriteLine($"Model     : {Path.GetFileName(modelPath)} ({modelSizeMb:F0} MB)");
 Console.WriteLine($"Character : {character.Name}  (mode: {(character.AdapterPath is null ? "prompted stock base, Stage 1a" : "LoRA adapter, Stage 1b")})");
-Console.WriteLine($"Backend   : CPU, {gpuLayers} GPU layers | temp={temperature} maxTokens={maxTokens}");
+Console.WriteLine($"Backend   : {(forceCpu ? "CPU (Vulkan disabled)" : "auto-select")}, {gpuLayers} GPU layers | temp={temperature} maxTokens={maxTokens}");
 Console.WriteLine();
 
 await using var llm = new LlmRuntime();
@@ -194,6 +201,8 @@ if (multiTurn)
         + $"window={windowSize}, repeatPenalty={repeatPenalty} freqPenalty={freqPenalty} temp={temperature}");
     int worstRun = 0;
     string worstText = "";
+    // DAT-703: per-reply timing so the GPU-vs-CPU gate can be measured on the multiturn average.
+    var mtRows = new List<(double FirstMs, double TotalMs, int Tokens)>();
     for (int run = 1; run <= runs; run++)
     {
         Console.WriteLine(new string('-', 62));
@@ -206,8 +215,17 @@ if (multiTurn)
             var windowed = ConversationWindow.Apply(history, windowSize);
             string p = prompt.BuildConversation(character, mtCtx, windowed);
             var sb = new StringBuilder();
+            var mtSw = Stopwatch.StartNew();
+            double mtFirstMs = -1;
+            int mtTokens = 0;
             await foreach (var token in llm.InferStreamAsync(p, temperature, maxTokens, repeatPenalty, freqPenalty))
+            {
+                if (mtFirstMs < 0) mtFirstMs = mtSw.Elapsed.TotalMilliseconds;
+                mtTokens++;
                 sb.Append(token);
+            }
+            mtSw.Stop();
+            mtRows.Add((mtFirstMs, mtSw.Elapsed.TotalMilliseconds, mtTokens));
             string raw = sb.ToString().Trim();
             // Same end handling as the mod: a trained [end] marker is stripped for display and
             // noted, so post-v3 runs verify the model closes farewells (and only farewells).
@@ -221,10 +239,15 @@ if (multiTurn)
             Console.WriteLine($"  Linus: {reply}"
                 + (ended ? "   [end marker]" : "")
                 + (slid ? $"   (window slid: {windowed.Count} msgs sent)" : "")
-                + (longest >= 3 ? $"   <-- DEGENERATE (run of {longest})" : ""));
+                + (longest >= 3 ? $"   <-- DEGENERATE (run of {longest})" : "")
+                + $"   [{mtSw.Elapsed.TotalMilliseconds:F0} ms, {mtTokens} tok, {mtTokens / mtSw.Elapsed.TotalSeconds:F1} tok/s]");
         }
     }
     Console.WriteLine(new string('=', 62));
+    Console.WriteLine($"Multiturn timing: first-token (avg) {mtRows.Average(r => r.FirstMs):F0} ms | "
+        + $"full-reply (avg) {mtRows.Average(r => r.TotalMs):F0} ms | "
+        + $"throughput (avg) {mtRows.Sum(r => r.Tokens) / mtRows.Sum(r => r.TotalMs) * 1000:F1} tok/s | "
+        + $"model load {loadTime.TotalSeconds:F1} s");
     Console.WriteLine($"Longest same-word run across all replies: {worstRun}"
         + (worstRun >= 3 ? $"  FAIL\n  worst reply: {worstText}" : "  OK"));
     return worstRun >= 3 ? 2 : 0;

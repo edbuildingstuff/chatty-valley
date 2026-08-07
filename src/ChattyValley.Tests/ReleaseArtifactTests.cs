@@ -51,7 +51,7 @@ public class ReleaseArtifactTests
     [Fact]
     public void Manifest_DeclaresTheEarlyAccessReleaseVersion()
     {
-        Assert.Equal("0.2.1", Load("manifest.json").GetProperty("Version").GetString());
+        Assert.Equal("0.3.0", Load("manifest.json").GetProperty("Version").GetString());
     }
 
     /// <summary>

@@ -156,8 +156,16 @@ powershell -NoProfile -File scripts/download-model.ps1
 
 # 3. Build and gate
 powershell -NoProfile -File scripts/package-release.ps1
-powershell -NoProfile -File scripts/verify-release.ps1 -ZipPath ./dist/ChattyValley-0.2.0.zip
+powershell -NoProfile -File scripts/verify-release.ps1 -ZipPath ./dist/ChattyValley-<version>.zip
 ```
+
+**Cutting a new version is a two-site bump, on purpose.** Set `Version` in
+`src/ChattyValley.Mod/manifest.json`, and update the release-gate assertion in
+`src/ChattyValley.Tests/ReleaseArtifactTests.cs` (`Manifest_DeclaresTheEarlyAccessReleaseVersion`)
+to match. The duplication is deliberate: deriving the test's expected value from the manifest would
+make it compare the manifest to itself and never fail, and the hardcoded assertion is what forces a
+conscious bump at release time. Everything downstream single-sources from the manifest (the zip
+filename, and `verify-release.ps1`'s filename-vs-manifest cross-check).
 
 Also requires **Stardew Valley installed locally**, because ModBuildConfig resolves the game
 assemblies at compile time even with deploy disabled, and the **.NET 10 SDK** (the Core library

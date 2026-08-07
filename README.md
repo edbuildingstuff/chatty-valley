@@ -203,6 +203,26 @@ villager and the reason; the fix is the same re-extract, and the rest of the mod
 
 If none of that matches what you see, open an issue with your `SMAPI-latest.txt` attached.
 
+### GPU acceleration
+
+The SMAPI console prints one line telling you where replies are running:
+`AI replies: GPU (<your card>)` or `AI replies: CPU`.
+
+By default (`"Gpu": "auto"` in `config.json`) the mod uses a dedicated NVIDIA or
+AMD graphics card with at least 2 GB of memory if it finds one. Integrated
+graphics run slower than CPU for this model, so those stay on CPU
+automatically; that is expected, not a bug.
+
+To override the default, set `"Gpu"` in `config.json` to `"off"` to force CPU,
+or `"on"` to force GPU. If a forced or auto-detected GPU fails to start, the
+mod falls back to CPU on its own and the console line becomes a warning:
+`AI replies: CPU (GPU failed to start and was skipped: <reason>)`. Chat keeps
+working either way.
+
+The first GPU reply after install, or after a graphics driver update, can be
+slower once while the driver compiles its shaders. Replies after that are back
+to normal speed.
+
 ## License
 
 **[Apache 2.0](LICENSE).** Use it, fork it, ship it, commercially or otherwise. No revenue cap, no

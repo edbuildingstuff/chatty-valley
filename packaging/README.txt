@@ -29,6 +29,10 @@ Edit config.json in this folder. ChatKey changes the chat button. Temperature
 is tuned to 0.35 and we recommend leaving it there. Setting ChatLogEnabled to
 true writes conversation transcripts to chat-logs/ for bug reports.
 
+Gpu controls where replies run: "auto" (default) uses a dedicated NVIDIA or
+AMD graphics card with at least 2 GB of memory if one is found, "off" forces
+CPU, and "on" forces GPU. The SMAPI console tells you which one is active.
+
 LICENCE
 The mod is Apache 2.0 (see LICENSE and NOTICE). Free to use, fork and ship.
 The bundled model weights are separate: LFM2.5-1.2B-Instruct under the LFM Open

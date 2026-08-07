@@ -2,7 +2,7 @@ namespace ChattyValley.Core;
 
 /// <summary>
 /// Cheap startup validation of an adapter GGUF: the file exists, is readable, and starts with the
-/// GGUF magic. Deliberately NOT a full load (the lazy-load decision in the 2026-08-07 spec): this
+/// GGUF magic. Deliberately NOT a full load (lazy-load design): this
 /// catches missing and truncated-to-garbage files at launch so the handshake can report them,
 /// while a file that passes here can still fail its real llama.cpp load on first use, which the
 /// sidecar reports as adapter_load_failed.

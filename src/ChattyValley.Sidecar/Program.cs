@@ -1,4 +1,3 @@
-// src/ChattyValley.Sidecar/Program.cs
 using System.IO.Pipes;
 using System.Text;
 using System.Text.Json;
@@ -8,7 +7,7 @@ using ChattyValley.Runtime;
 // Chatty Valley inference sidecar. Loads the base GGUF, validates and registers one LoRA per
 // villager, then serves one request/response per line over a named pipe. On client connect it
 // first sends a handshake line reporting per-adapter validation status; adapters load lazily on
-// first use (spec 2026-08-07: validate at startup, load on demand, remember load failures).
+// first use: validated at startup, loaded on demand, load failures remembered.
 //
 //   handshake (sidecar -> mod):  {"ready":true,"base":"<file>","adapters":[{"name","status","detail"}]}
 //   request   (mod -> sidecar):  {"prompt":"<chatml>","character":"Linus","temp":0.35,"maxTokens":96,

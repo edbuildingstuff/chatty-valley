@@ -22,7 +22,7 @@ namespace ChattyValley.Mod;
 /// byte-identical to if it had never opened. If the model errors or lags, we do nothing and the game
 /// proceeds vanilla. This is how "the mod cannot affect canonical gameplay" is guaranteed by construction.
 ///
-/// STATUS: working end-to-end in-game. Press the chat key near Linus (when the vanilla dialogue is
+/// STATUS: working end-to-end in-game. Press the chat key near a roster villager (when the vanilla dialogue is
 /// closed and nothing scripted is happening) -> read live game state -> a multi-turn conversation
 /// through the game's OWN dialogue UI: replies in the vanilla DialogueBox (portrait, typewriter,
 /// click to dismiss), typing in a slim ChatInputBar between them (see ChatSession for the flow).
@@ -106,7 +106,7 @@ public sealed class ModEntry : StardewModdingAPI.Mod
             await _sidecar.StartAsync(sidecarExe, basePath, _roster.Entries.Values.ToList(), _config.GpuLayers);
 
             // The handshake says which adapters validated. A broken one disables ONLY that
-            // villager; everyone else chats normally (spec 2026-08-07, error class 2).
+            // villager; everyone else chats normally.
             foreach (var status in _sidecar.AdapterStatuses)
             {
                 if (status.Status == AdapterStatuses.Ok) continue;
@@ -155,7 +155,7 @@ public sealed class ModEntry : StardewModdingAPI.Mod
 
     // Menu transitions drive the conversation flow: a live session is told about every change so it
     // can chain vanilla DialogueBox -> input bar -> DialogueBox. Afterwards (no live session), a
-    // closing menu near a chattable Linus surfaces the "keep talking" hint. Pure UI; no game state.
+    // closing menu near a chattable villager surfaces the "keep talking" hint. Pure UI; no game state.
     private void OnMenuChanged(object? sender, MenuChangedEventArgs e)
     {
         _activeSession?.OnMenuChanged(e.OldMenu, e.NewMenu);

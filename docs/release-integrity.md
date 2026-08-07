@@ -27,21 +27,29 @@ the managed assemblies below it.
 
 ## llama.cpp inference, native
 
-25 files, 24 unique binaries. Four builds ship per library, one per CPU instruction set, and your
-machine loads exactly one set at runtime. They come from the `LLamaSharp.Backend.Cpu` NuGet package and
-are not built by this project.
+25 files, 24 unique binaries: four builds per library for CPU, one per x86 instruction set (avx,
+avx2, avx512, noavx), plus one GPU build set using Vulkan. Your machine loads exactly one set at
+runtime, whichever the sidecar selects for your hardware.
 
-**Every one of them is byte-identical to that published package.** You can check this without trusting
-us: download `llamasharp.backend.cpu.0.27.0.nupkg` from nuget.org, open it as a zip, and hash the files
-under `runtimes/win-x64/native/`. They match the table below exactly.
+The CPU sets come from the `LLamaSharp.Backend.Cpu` NuGet package. The Vulkan set comes from
+`LLamaSharp.Backend.Vulkan`, a small package of MSBuild props that pulls in the actual win-x64
+binaries from its `LLamaSharp.Backend.Vulkan.Windows` dependency. Neither is built by this project.
+
+**Every one of them is byte-identical to its published package.** You can check this without trusting
+us. For the CPU sets: download `llamasharp.backend.cpu.0.27.0.nupkg` from nuget.org, open it as a zip,
+and hash the files under `LLamaSharpRuntimes/win-x64/native/`. For the Vulkan set: download
+`llamasharp.backend.vulkan.windows.0.27.0.nupkg` (not the `llamasharp.backend.vulkan` package itself,
+which carries the props but not the binaries), open it as a zip, and hash the files under
+`LLamaSharpRuntimes/win-x64/native/vulkan/`. Both match the table below exactly.
 
 That matters because **antivirus engines do sometimes flag these libraries.** They are large, heavily
-optimised, hand-vectorised native code that allocates a lot of memory and JITs compute kernels, which is
-a shape that trips machine-learning heuristics. When it happens it is usually a single engine out of
-roughly seventy, with a generic verdict name rather than a named malware family. Because the binaries are
-unmodified upstream builds, any such verdict is a statement about the standard llama.cpp Windows release
-that thousands of projects ship, not about anything compiled here. Check the links, and weigh one
-detection out of seventy accordingly.
+optimised native code, hand-vectorised for the CPU sets and GPU-compute for the Vulkan set, that
+allocates a lot of memory and JITs compute kernels, which is a shape that trips machine-learning
+heuristics. When it happens it is usually a single engine out of roughly seventy, with a generic
+verdict name rather than a named malware family. Because the binaries are unmodified upstream builds,
+any such verdict is a statement about the standard llama.cpp Windows release that thousands of
+projects ship, not about anything compiled here. Check the links, and weigh one detection out of
+seventy accordingly.
 
 | File | Size | SHA256 |
 |---|---|---|

@@ -27,3 +27,20 @@ public static class GpuEligibility
     public static GpuAdapterInfo? PickEligible(IEnumerable<GpuAdapterInfo> adapters)
         => adapters.FirstOrDefault(IsEligible);
 }
+
+/// <summary>
+/// The one SMAPI console line reporting where replies run, built from the handshake's gpu object
+/// (DAT-681 pattern: message text in Core so it is testable without SMAPI). A fallback after an
+/// attempted GPU load is a warning; everything else is informational.
+/// </summary>
+public static class GpuStatusMessages
+{
+    public static (string Text, bool IsWarning) Build(GpuStatus? gpu)
+    {
+        if (gpu is null || (!gpu.Active && gpu.FallbackReason is null))
+            return ("AI replies: CPU", false);
+        if (gpu.Active)
+            return ($"AI replies: GPU ({gpu.Device})", false);
+        return ($"AI replies: CPU (GPU failed to start and was skipped: {gpu.FallbackReason})", true);
+    }
+}

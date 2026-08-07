@@ -103,7 +103,30 @@ public sealed class ModEntry : StardewModdingAPI.Mod
             }
 
             _sidecar = new SidecarClient(Monitor);
-            await _sidecar.StartAsync(sidecarExe, basePath, _roster.Entries.Values.ToList(), _config.GpuLayers);
+
+            // Normalize the player's config value; anything unrecognised means "auto".
+            string gpuMode = (_config.Gpu ?? "").Trim().ToLowerInvariant();
+            if (gpuMode is not (GpuModes.Auto or GpuModes.On or GpuModes.Off)) gpuMode = GpuModes.Auto;
+
+            try
+            {
+                await _sidecar.StartAsync(sidecarExe, basePath, _roster.Entries.Values.ToList(), gpuMode);
+            }
+            catch (SidecarStartException ex) when (gpuMode != GpuModes.Off &&
+                ex.Kind is SidecarFailureKind.ExitedEarly or SidecarFailureKind.ConnectTimeout)
+            {
+                // A native GPU-driver crash kills the process before managed code can catch it, so
+                // the sidecar's own CPU fallback never runs. One retry with the GPU off keeps the
+                // "GPU failure never costs the player chat" promise under hard crashes too.
+                Monitor.Log($"AI helper failed to start with GPU enabled ({ex.Message}); retrying on CPU.",
+                    LogLevel.Warn);
+                _sidecar.Dispose();
+                _sidecar = new SidecarClient(Monitor);
+                await _sidecar.StartAsync(sidecarExe, basePath, _roster.Entries.Values.ToList(), GpuModes.Off);
+            }
+
+            var (gpuText, gpuWarn) = GpuStatusMessages.Build(_sidecar.Gpu);
+            Monitor.Log(gpuText, gpuWarn ? LogLevel.Warn : LogLevel.Info);
 
             // The handshake says which adapters validated. A broken one disables ONLY that
             // villager; everyone else chats normally.

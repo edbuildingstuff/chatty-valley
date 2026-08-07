@@ -1,7 +1,7 @@
 {
   "Name": "Chatty Valley",
   "Author": "Edward Xi Yang (edbuildingstuff), Ertas AI",
-  "Version": "0.3.0",
+  "Version": "0.4.0",
   "Description": "On-device AI dialogue for Pelican Town. Additive free-chat with the villagers, running on a small local model. It never replaces, pre-empts, or writes to canonical game state.",
   "UniqueID": "Ertas.ChattyValley",
   "EntryDll": "ChattyValley.Mod.dll",

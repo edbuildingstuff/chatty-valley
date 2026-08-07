@@ -75,6 +75,11 @@ public sealed class ModConfig
     /// </summary>
     public string BaseModelPath { get; set; } = "";
 
-    /// <summary>GPU layers to offload (0 = CPU only, the shipping default so it runs on any machine).</summary>
-    public int GpuLayers { get; set; } = 0;
+    /// <summary>
+    /// GPU inference. "auto" (default) uses the GPU only when a dedicated NVIDIA/AMD graphics card
+    /// is detected; integrated graphics stay on CPU (measured slower than CPU on Intel iGPUs).
+    /// "on" forces GPU, "off" forces CPU. If the GPU fails to start, the mod always falls back to
+    /// CPU rather than breaking chat.
+    /// </summary>
+    public string Gpu { get; set; } = "auto";
 }

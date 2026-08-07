@@ -43,15 +43,17 @@ public class ReleaseArtifactTests
     }
 
     [Fact]
-    public void ReleaseConfig_RunsOnCpuByDefault()
+    public void ReleaseConfig_DefaultsGpuToAutoDetect()
     {
-        Assert.Equal(0, Load("config.release.json").GetProperty("GpuLayers").GetInt32());
+        // "auto" = GPU only on a detected dedicated NVIDIA/AMD card (DAT-704); iGPU-only and
+        // no-GPU machines keep the CPU path that every pre-0.4.0 player ran.
+        Assert.Equal("auto", Load("config.release.json").GetProperty("Gpu").GetString());
     }
 
     [Fact]
     public void Manifest_DeclaresTheEarlyAccessReleaseVersion()
     {
-        Assert.Equal("0.3.0", Load("manifest.json").GetProperty("Version").GetString());
+        Assert.Equal("0.4.0", Load("manifest.json").GetProperty("Version").GetString());
     }
 
     /// <summary>

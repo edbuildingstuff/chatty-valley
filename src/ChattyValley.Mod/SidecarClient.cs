@@ -49,6 +49,9 @@ public sealed class SidecarClient : IDisposable
     /// <summary>Per-adapter validation results from the handshake. Empty until started.</summary>
     public IReadOnlyList<AdapterStatus> AdapterStatuses { get; private set; } = Array.Empty<AdapterStatus>();
 
+    /// <summary>GPU outcome from the handshake; null until started (or from a pre-0.4.0 sidecar).</summary>
+    public GpuStatus? Gpu { get; private set; }
+
     public SidecarClient(IMonitor monitor) => _monitor = monitor;
 
     /// <summary>
@@ -56,7 +59,7 @@ public sealed class SidecarClient : IDisposable
     /// Throws <see cref="SidecarStartException"/> with the failure class on any failure.
     /// </summary>
     public async Task StartAsync(string sidecarExe, string basePath,
-        IReadOnlyCollection<RosterEntry> roster, int gpuLayers)
+        IReadOnlyCollection<RosterEntry> roster, string gpuMode)
     {
         string pipeName = "ChattyValley." + Guid.NewGuid().ToString("N");
         var psi = new ProcessStartInfo
@@ -69,7 +72,7 @@ public sealed class SidecarClient : IDisposable
         };
         psi.ArgumentList.Add("--base"); psi.ArgumentList.Add(basePath);
         psi.ArgumentList.Add("--pipe"); psi.ArgumentList.Add(pipeName);
-        psi.ArgumentList.Add("--gpu-layers"); psi.ArgumentList.Add(gpuLayers.ToString());
+        psi.ArgumentList.Add("--gpu"); psi.ArgumentList.Add(gpuMode);
         foreach (var entry in roster)
         {
             psi.ArgumentList.Add("--adapter");
@@ -125,6 +128,7 @@ public sealed class SidecarClient : IDisposable
             throw new SidecarStartException(SidecarFailureKind.ConnectTimeout,
                 "sidecar connected but sent no valid handshake", Tail());
         AdapterStatuses = hs.Adapters;
+        Gpu = hs.Gpu;
         Ready = true;
     }
 

@@ -219,9 +219,9 @@ mod falls back to CPU on its own and the console line becomes a warning:
 `AI replies: CPU (GPU failed to start and was skipped: <reason>)`. Chat keeps
 working either way.
 
-The first GPU reply after install, or after a graphics driver update, can be
-slower once while the driver compiles its shaders. Replies after that are back
-to normal speed.
+On GPU machines the model takes a few seconds longer to report ready at game
+launch. That is the graphics driver compiling its shaders, paid once per
+session in the background so your first chat turn runs at full speed.
 
 ## License
 

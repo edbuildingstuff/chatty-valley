@@ -108,6 +108,24 @@ foreach (var (name, path) in adapters)
 }
 var router = new AdapterRouter(statuses);
 
+// Warm-up generation, discarded. A process's first generation pays one-time costs that would
+// otherwise land on the player's first chat turn of the session: on the Vulkan path that is
+// compute-pipeline compilation, measured at ~6.3s on the RTX 2070 during the 0.4.0 smoke, and
+// on CPU it is JIT and cache warm-up at a few hundred ms. The pipe below is the mod's ready
+// signal, so paying the cost here keeps it inside the background startup the player never sees.
+// Same precedent as the harness's own warm-up. Guarded: a warm-up failure is logged and skipped,
+// leaving any real inference error to surface per-request exactly as it does today.
+try
+{
+    var warmSw = System.Diagnostics.Stopwatch.StartNew();
+    await foreach (var _ in llm.InferStreamAsync("Hello.", 0.35f, 8)) { }
+    Console.Error.WriteLine($"sidecar: warm-up generation done in {warmSw.ElapsedMilliseconds} ms");
+}
+catch (Exception ex)
+{
+    Console.Error.WriteLine("sidecar: warm-up generation failed (continuing): " + ex.Message);
+}
+
 using var server = new NamedPipeServerStream(pipeName, PipeDirection.InOut, 1,
     PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
 Console.Error.WriteLine($"sidecar: model ready, waiting for connection on pipe {pipeName}");

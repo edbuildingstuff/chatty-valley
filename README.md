@@ -1,12 +1,12 @@
 # Chatty Valley
 
-**Talk to a Stardew Valley villager and he talks back, from an AI model running entirely on your own CPU.**
+**Talk to a Stardew Valley villager and he talks back, from an AI model running entirely on your own machine.** Works on any PC, no graphics card needed, and automatically uses a dedicated NVIDIA or AMD graphics card for faster replies when you have one.
 
 ![Talking to Linus in the vanilla Stardew dialogue box](docs/media/hero-conversation.gif)
 
 | | |
 |---|---|
-| **Runs on** | Your CPU. No GPU, no cloud, no API key, no account. |
+| **Runs on** | Your own PC, no graphics card needed. No cloud, no API key, no account. Uses a dedicated NVIDIA or AMD graphics card automatically for faster replies if you have one. |
 | **Model** | LFM2.5-1.2B-Instruct Q4_K_M (697 MB) + a 21 MB LoRA carrying the character's voice |
 | **Memory** | About 1 GB beyond the game |
 | **Speed** | A second or two per reply on a modern CPU |

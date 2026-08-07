@@ -106,7 +106,7 @@ src/ChattyValley.Sidecar/    net10.0 console: the out-of-process inference serve
 src/ChattyValley.Harness/    net10.0 console: a standalone latency/voice probe against LlmRuntime
                               directly, no mod or sidecar involved
 src/ChattyValley.Tests/      xunit tests over the conversation-flow primitives and the release artifact
-characters/                  per-villager persona data (linus.json)
+characters/                  per-villager persona data; each *.json names a villager and its LoRA (the roster)
 data/                        canon extraction and training data for the Linus adapter
 packaging/                   files copied verbatim into the release zip (release config, player
                               facing README, LFM license)
@@ -136,6 +136,10 @@ src/ChattyValley.Harness/bin/Release/net10.0/ChattyValley.Harness.exe
 The harness prints each villager reply with first-token latency, full-reply latency, and tokens/sec,
 then a summary. It talks to `LlmRuntime` directly (no mod, no sidecar, no named pipe), so it is the
 fast path for iterating on a character's voice and sampling settings before touching the mod.
+
+`characters/linus.json` ships a relative `adapterPath` that only resolves inside an installed mod
+folder, so running the harness straight from this repo without `--adapter <path>` to a real LoRA
+GGUF falls back to prompt-only (Stage 1a).
 
 ## Build the release zip
 

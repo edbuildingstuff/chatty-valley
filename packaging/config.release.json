@@ -13,6 +13,5 @@
   "ChatLogPrompts": false,
   "ChatLogDir": "",
   "BaseModelPath": "",
-  "LinusAdapterPath": "",
   "GpuLayers": 0
 }

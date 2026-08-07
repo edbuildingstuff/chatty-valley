@@ -67,13 +67,13 @@ public sealed class ModConfig
     public string ChatLogDir { get; set; } = "";
 
     /// <summary>
-    /// Absolute paths to the GGUF files. Left blank = resolve to the mod folder's own `assets/`
-    /// subfolder (see <c>ModEntry.Resolve</c>), which is where <c>scripts/package-release.ps1</c>
-    /// stages the shipping GGUFs and where a dev build can drop them too. Set explicitly for a
-    /// deployed install. The adapter path can point anywhere.
+    /// Absolute path to the base model GGUF. Left blank = resolve to the mod folder's own
+    /// `assets/` subfolder (see <c>ModEntry.Resolve</c>), which is where
+    /// <c>scripts/package-release.ps1</c> stages the shipping GGUFs and where a dev build can drop
+    /// them too. Per-villager adapter paths live in each <c>characters/*.json</c> (adapterPath),
+    /// not here.
     /// </summary>
     public string BaseModelPath { get; set; } = "";
-    public string LinusAdapterPath { get; set; } = "";
 
     /// <summary>GPU layers to offload (0 = CPU only, the shipping default so it runs on any machine).</summary>
     public int GpuLayers { get; set; } = 0;

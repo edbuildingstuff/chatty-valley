@@ -55,6 +55,20 @@ if (adapterOverride is not null)
         FewShot = character.FewShot, AdapterPath = adapterOverride,
     };
 
+// linus.json now ships a RELATIVE adapterPath ("assets/...") that resolves inside the installed
+// mod folder, not from the harness's working directory. If the path does not resolve here, run
+// prompt-only (Stage 1a), which was this harness's default behaviour before 0.3.0.
+if (character.AdapterPath is not null && !File.Exists(character.AdapterPath))
+{
+    Console.Error.WriteLine($"Adapter not found at '{character.AdapterPath}'; running prompt-only " +
+                            "(Stage 1a). Pass --adapter <path> to use a trained LoRA.");
+    character = new Character
+    {
+        Name = character.Name, Bio = character.Bio,
+        FewShot = character.FewShot, AdapterPath = null,
+    };
+}
+
 double modelSizeMb = new FileInfo(modelPath).Length / (1024.0 * 1024.0);
 Console.WriteLine("Chatty Valley - on-device inference harness");
 Console.WriteLine(new string('=', 62));

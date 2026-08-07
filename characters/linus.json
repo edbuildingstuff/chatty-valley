@@ -9,6 +9,6 @@
     "Thank you for your kindness. Not everyone stops to talk to me.",
     "Have you tried foraging? The land is generous, if you know where to look."
   ],
-  "adapterPath": null,
-  "_note": "fewShot lines here are voice approximations for the plumbing probe. The real dataset uses exact canon extracted from the game's Content/Characters/Dialogue/Linus, via tools/DialogueDump; see data/README.md."
+  "adapterPath": "assets/linus-12b-v8dpo2-lora-f16.gguf",
+  "_note": "fewShot lines here are voice approximations kept for the harness's prompt-only mode. The real dataset uses exact canon extracted from the game's Content/Characters/Dialogue/Linus, via tools/DialogueDump; see data/README.md."
 }

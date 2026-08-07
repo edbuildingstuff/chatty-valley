@@ -1,5 +1,4 @@
 using System.Text;
-using System.Text.Json;
 using ChattyValley.Core;
 using Microsoft.Xna.Framework;
 using StardewModdingAPI;
@@ -36,14 +35,13 @@ public sealed class ModEntry : StardewModdingAPI.Mod
 {
     private ModConfig _config = new();
     private SidecarClient? _sidecar;
-    private Character? _linus;
+    private RosterLoadResult? _roster;
     private PromptBuilder? _prompt;
     private ChatLogger? _chatLog;
     private ChatSession? _activeSession;
     private string _baseModelFile = "";
-    private string _adapterFile = "";
-
-    private const string LinusName = "Linus";
+    // Villagers whose adapter failed after startup (lazy-load failure). Session-scoped.
+    private readonly HashSet<string> _unhealthy = new();
 
     public override void Entry(IModHelper helper)
     {
@@ -69,19 +67,31 @@ public sealed class ModEntry : StardewModdingAPI.Mod
         try
         {
             string basePath = Resolve(_config.BaseModelPath, "LFM2.5-1.2B-Instruct-Q4_K_M.gguf");
-            string adapterPath = Resolve(_config.LinusAdapterPath, "linus-12b-v8dpo2-lora-f16.gguf");
             string sidecarExe = Path.Combine(Helper.DirectoryPath, "sidecar", "ChattyValley.Sidecar.exe");
-            if (!File.Exists(basePath) || !File.Exists(adapterPath) || !File.Exists(sidecarExe))
+            string charactersDir = Path.Combine(Helper.DirectoryPath, "characters");
+
+            foreach ((string what, string path) in new[] { ("base model", basePath), ("sidecar", sidecarExe) })
             {
-                Monitor.Log("Missing files, free-chat disabled (game unaffected). " +
-                            $"base={basePath} adapter={adapterPath} sidecar={sidecarExe}", LogLevel.Warn);
+                if (!File.Exists(path))
+                {
+                    LogStartupFailure(SidecarFailureKind.MissingFile, $"{what} not found at {path}",
+                        Array.Empty<string>());
+                    return;
+                }
+            }
+
+            _roster = CharacterRoster.Load(charactersDir, Helper.DirectoryPath);
+            foreach (string warning in _roster.Warnings)
+                Monitor.Log($"characters/: {warning}", LogLevel.Warn);
+            if (_roster.Entries.Count == 0)
+            {
+                Monitor.Log("No usable villager files in characters/, free chat disabled (game unaffected).",
+                    LogLevel.Warn);
                 return;
             }
 
-            _linus = LoadCharacter("linus.json", adapterPath);
             _prompt = new PromptBuilder(ChatTemplate.Lfm2);
             _baseModelFile = Path.GetFileName(basePath);
-            _adapterFile = Path.GetFileName(adapterPath);
 
             if (_config.ChatLogEnabled)
             {
@@ -93,13 +103,40 @@ public sealed class ModEntry : StardewModdingAPI.Mod
             }
 
             _sidecar = new SidecarClient(Monitor);
-            await _sidecar.StartAsync(sidecarExe, basePath, adapterPath, _config.GpuLayers);
-            Monitor.Log("Local model + Linus adapter ready (via sidecar).", LogLevel.Info);
+            await _sidecar.StartAsync(sidecarExe, basePath, _roster.Entries.Values.ToList(), _config.GpuLayers);
+
+            // The handshake says which adapters validated. A broken one disables ONLY that
+            // villager; everyone else chats normally (spec 2026-08-07, error class 2).
+            foreach (var status in _sidecar.AdapterStatuses)
+            {
+                if (status.Status == AdapterStatuses.Ok) continue;
+                _unhealthy.Add(status.Name);
+                Monitor.Log($"{status.Name}'s voice files did not load ({status.Status}: {status.Detail}). " +
+                            $"Chat with {status.Name} is off; other villagers are unaffected. " +
+                            $"See {SidecarFailureMessages.TroubleshootingUrl}", LogLevel.Error);
+            }
+            var readyNames = _roster.Entries.Keys.Where(n => !_unhealthy.Contains(n)).ToList();
+            Monitor.Log($"Local model ready (via sidecar). Chattable villagers: " +
+                        $"{string.Join(", ", readyNames)}", LogLevel.Info);
+        }
+        catch (SidecarStartException ex)
+        {
+            LogStartupFailure(ex.Kind, ex.Message, ex.StderrTail);
         }
         catch (Exception ex)
         {
-            Monitor.Log($"Sidecar/model start failed; free-chat disabled (game unaffected): {ex.Message}", LogLevel.Error);
+            LogStartupFailure(SidecarFailureKind.LaunchFailed, ex.ToString(), Array.Empty<string>());
         }
+    }
+
+    // DAT-681: a startup failure is never silent. Three player-language lines at Error, then the
+    // sidecar's stderr tail for the players (and us) who can act on it.
+    private void LogStartupFailure(SidecarFailureKind kind, string detail, IReadOnlyList<string> stderrTail)
+    {
+        foreach (string line in SidecarFailureMessages.Build(kind, detail))
+            Monitor.Log(line, LogLevel.Error);
+        foreach (string line in stderrTail)
+            Monitor.Log($"sidecar: {line}", LogLevel.Error);
     }
 
     // ---- the chat key: the ONLY entry point, gated so canon is never touched ---------------------
@@ -126,13 +163,14 @@ public sealed class ModEntry : StardewModdingAPI.Mod
 
         if (!_config.ShowContinuationHint || e.NewMenu != null) return;
         if (_sidecar is not { Ready: true }) return;
-        if (!TryGetChattableVillager(out NPC linus)) return;
-        Game1.addHUDMessage(new HUDMessage($"Press {_config.ChatKey} to keep talking with {linus.Name}", 2));
+        if (!TryGetChattableVillager(out NPC villager)) return;
+        Game1.addHUDMessage(new HUDMessage($"Press {_config.ChatKey} to keep talking with {villager.Name}", 2));
     }
 
     /// <summary>
-    /// The safety gate. Returns a villager ONLY when free-chat is safe and the villager is normally
-    /// interactable right now. Any doubt -> false, and the mod does nothing.
+    /// The safety gate. Returns a villager ONLY when free-chat is safe and the villager is a healthy
+    /// roster character who is normally interactable right now. Any doubt -> false, and the mod does
+    /// nothing.
     /// </summary>
     private bool TryGetChattableVillager(out NPC villager)
     {
@@ -144,14 +182,17 @@ public sealed class ModEntry : StardewModdingAPI.Mod
         var loc = Game1.currentLocation;
         if (loc == null) return false;
 
-        // Find Linus standing near the player (forgiving: within ~2.5 tiles, no exact facing needed).
-        // Only when he is normally socialisable, so plot-gated / off-map states are respected.
+        // Find a roster villager standing near the player (forgiving: within ~2.5 tiles, no exact
+        // facing needed). Only when they are normally socialisable, so plot-gated / off-map states
+        // are respected, and only when their adapter is healthy.
         Vector2 p = Game1.player.Tile;
         NPC? nearest = null;
         float best = 2.5f;
         foreach (var npc in loc.characters)
         {
-            if (npc.IsVillager && npc.Name == LinusName && npc.CanSocialize)
+            if (npc.IsVillager && npc.CanSocialize
+                && _roster is not null && _roster.Entries.ContainsKey(npc.Name)
+                && !_unhealthy.Contains(npc.Name))
             {
                 float d = Vector2.Distance(npc.Tile, p);
                 if (d <= best) { best = d; nearest = npc; }
@@ -169,14 +210,17 @@ public sealed class ModEntry : StardewModdingAPI.Mod
     // in-game mechanic; decision locked later). Intentionally a no-op now so this stays read-only.
     private void OpenChat(NPC villager)
     {
+        if (_roster is null || !_roster.Entries.TryGetValue(villager.Name, out RosterEntry? entry)) return;
+        Character character = entry.Character;
+        string adapterFile = Path.GetFileName(entry.AdapterFullPath);
         GameContext ctx = ReadContext(villager);
         string convo = Guid.NewGuid().ToString("N").Substring(0, 8);
         _chatLog?.Write(new
         {
             evt = "start", ts = ChatLogger.Timestamp(), convo, npc = villager.Name,
             gameTime = $"{ctx.Season} {ctx.Day} year {ctx.Year}, {ctx.Weekday} {ctx.Clock}",
-            system = _prompt!.BuildSystem(_linus!, ctx),
-            baseModel = _baseModelFile, adapter = _adapterFile,
+            system = _prompt!.BuildSystem(character, ctx),
+            baseModel = _baseModelFile, adapter = adapterFile,
             temp = _config.Temperature, maxTokens = _config.MaxTokens,
             repeatPenalty = _config.RepeatPenalty, frequencyPenalty = _config.FrequencyPenalty,
             window = _config.MaxHistoryMessages,
@@ -186,14 +230,18 @@ public sealed class ModEntry : StardewModdingAPI.Mod
         {
             IReadOnlyList<ChatTurn> windowed = Window(history);
             string? guard = _config.FalsePremiseGuard ? _config.FalsePremiseGuardClause : null;
-            string prompt = _prompt!.BuildConversation(_linus!, ctx, windowed, guard);
+            string prompt = _prompt!.BuildConversation(character, ctx, windowed, guard);
             bool guardFired = guard is not null && history.Count > 0
                 && ConversationSignals.LooksLikeFalsePremise(history[history.Count - 1].Content);
             var sw = System.Diagnostics.Stopwatch.StartNew();
-            var (reply, raw) = await _sidecar!.AskDetailedAsync(prompt,
+            var (reply, raw, error) = await _sidecar!.AskDetailedAsync(prompt, character.Name,
                 _config.Temperature, _config.MaxTokens,
                 _config.RepeatPenalty, _config.FrequencyPenalty);
             sw.Stop();
+            if (error == SidecarErrors.AdapterLoadFailed && _unhealthy.Add(character.Name))
+                Monitor.Log($"{character.Name}'s voice files failed to load; chat with " +
+                            $"{character.Name} is off for this session. Other villagers are unaffected. " +
+                            $"See {SidecarFailureMessages.TroubleshootingUrl}", LogLevel.Error);
             _chatLog?.Write(new
             {
                 evt = "turn", ts = ChatLogger.Timestamp(), convo,
@@ -269,15 +317,6 @@ public sealed class ModEntry : StardewModdingAPI.Mod
         !string.IsNullOrWhiteSpace(configured)
             ? configured
             : Path.Combine(Helper.DirectoryPath, "assets", defaultFile);
-
-    private Character LoadCharacter(string file, string adapterPath)
-    {
-        string path = Path.Combine(Helper.DirectoryPath, "characters", file);
-        var c = JsonSerializer.Deserialize<Character>(File.ReadAllText(path),
-            new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
-        // Force adapter mode so PromptBuilder emits the minimal training-matched system prompt.
-        return new Character { Name = c.Name, Bio = c.Bio, FewShot = c.FewShot, AdapterPath = adapterPath };
-    }
 
     private static string FormatClock(int t)
     {

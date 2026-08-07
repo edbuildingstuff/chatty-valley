@@ -31,6 +31,8 @@
              CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\ChattyValley.Mod\ModEntry.cs" Link="packaging\ModEntry.cs"
              CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\characters\linus.json" Link="packaging\linus.json"
+             CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

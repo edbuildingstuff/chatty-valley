@@ -34,7 +34,6 @@ public class ReleaseArtifactTests
     {
         var cfg = Load("config.release.json");
         Assert.Equal("", cfg.GetProperty("BaseModelPath").GetString());
-        Assert.Equal("", cfg.GetProperty("LinusAdapterPath").GetString());
     }
 
     [Fact]
@@ -102,14 +101,27 @@ public class ReleaseArtifactTests
     }
 
     [Fact]
-    public void ModEntryFallbacks_PointAtTheShippingModelPair()
+    public void ModEntryFallback_PointsAtTheShippingBaseModel()
     {
         string modEntry = File.ReadAllText(
             Path.Combine(AppContext.BaseDirectory, "packaging", "ModEntry.cs"));
 
         Assert.Contains("LFM2.5-1.2B-Instruct-Q4_K_M.gguf", modEntry);
-        Assert.Contains("linus-12b-v8dpo2-lora-f16.gguf", modEntry);
         Assert.DoesNotContain("350M", modEntry);
         Assert.DoesNotContain("350m", modEntry);
+    }
+
+    /// <summary>
+    /// The adapter filename moved out of ModEntry when characters/*.json became the roster
+    /// (0.3.0): each character file now carries its own adapterPath. This is the ship-pair
+    /// drift check for the Linus half.
+    /// </summary>
+    [Fact]
+    public void LinusCharacter_PointsAtTheShippingAdapter()
+    {
+        var linus = Load("linus.json");
+        Assert.Equal("Linus", linus.GetProperty("name").GetString());
+        Assert.Equal("assets/linus-12b-v8dpo2-lora-f16.gguf",
+            linus.GetProperty("adapterPath").GetString());
     }
 }

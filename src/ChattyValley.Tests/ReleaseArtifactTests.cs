@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace ChattyValley.Tests;
 
@@ -51,7 +52,41 @@ public class ReleaseArtifactTests
     [Fact]
     public void Manifest_DeclaresTheEarlyAccessReleaseVersion()
     {
-        Assert.Equal("0.2.0", Load("manifest.json").GetProperty("Version").GetString());
+        Assert.Equal("0.2.1", Load("manifest.json").GetProperty("Version").GetString());
+    }
+
+    /// <summary>
+    /// Every ModConfig property must appear in the shipped config, and vice versa. The spot-check
+    /// below covers two values; it cannot catch a whole key going missing, which is how 0.2.1
+    /// shipped without FalsePremiseGuardClause. SMAPI heals that on first load, so the only player
+    /// who sees it is the one reading config.json before they have launched once, which is exactly
+    /// the player README.txt sends there.
+    /// </summary>
+    [Fact]
+    public void ReleaseConfig_CarriesEveryModConfigPropertyAndNoOthers()
+    {
+        string source = File.ReadAllText(
+            Path.Combine(AppContext.BaseDirectory, "packaging", "ModConfig.cs"));
+        string[] declared = Regex
+            .Matches(source, @"public\s+[\w<>?\[\]]+\s+(\w+)\s*\{\s*get;\s*set;\s*\}")
+            .Select(m => m.Groups[1].Value)
+            .ToArray();
+
+        // Guards the regex itself: a silently-matching-nothing pattern would make this test vacuous.
+        Assert.NotEmpty(declared);
+
+        JsonElement cfg = Load("config.release.json");
+        string[] shipped = cfg.EnumerateObject().Select(p => p.Name).ToArray();
+
+        string[] missing = declared.Except(shipped).ToArray();
+        string[] stale = shipped.Except(declared).ToArray();
+
+        Assert.True(
+            missing.Length == 0,
+            $"config.release.json is missing ModConfig properties: {string.Join(", ", missing)}");
+        Assert.True(
+            stale.Length == 0,
+            $"config.release.json carries keys ModConfig no longer declares: {string.Join(", ", stale)}");
     }
 
     [Fact]

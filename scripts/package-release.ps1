@@ -43,7 +43,14 @@ if (-not $PSBoundParameters.ContainsKey('Version')) {
 $stage       = Join-Path $OutDir 'ChattyValley'
 $zip         = Join-Path $OutDir "ChattyValley-$Version.zip"
 $baseGguf    = 'LFM2.5-1.2B-Instruct-Q4_K_M.gguf'
-$adapterGguf = 'linus-12b-v8dpo2-lora-f16.gguf'
+# Adapter GGUFs are derived from characters/*.json (each file's adapterPath), so the roster is
+# the single source of truth: adding a villager file automatically adds its adapter to the stage
+# and to verify-release.ps1's required list, and the two cannot drift.
+$adapterGgufs = @(Get-ChildItem (Join-Path $repo 'characters/*.json') | ForEach-Object {
+    $c = Get-Content $_.FullName -Raw | ConvertFrom-Json
+    if ($c.adapterPath) { Split-Path $c.adapterPath -Leaf }
+}) | Where-Object { $_ } | Sort-Object -Unique
+if ($adapterGgufs.Count -eq 0) { throw 'no characters/*.json declares an adapterPath; nothing to ship' }
 
 # 1. clean stage and any stale zip from a previous, possibly-failed run. A run that dies between
 # staging and the zip write would otherwise leave a same-named zip from an earlier run sitting in
@@ -84,7 +91,7 @@ Copy-Item (Join-Path $repo 'NOTICE') $stage
 Copy-Item (Join-Path $repo 'packaging/LICENSE-LFM.txt') $stage
 
 # 5. models
-foreach ($g in $baseGguf, $adapterGguf) {
+foreach ($g in @($baseGguf) + $adapterGgufs) {
     $src = Join-Path $ModelsDir $g
     if (-not (Test-Path $src)) { throw "missing model: $src" }
     Copy-Item $src "$stage/assets"

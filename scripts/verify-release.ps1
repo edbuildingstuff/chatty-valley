@@ -21,11 +21,11 @@ try {
     $names = $zip.Entries.FullName
     $fail  = @()
 
-    # The two shipping GGUF basenames, defined once here so the required-file list, the size
-    # thresholds, and the DLL cross-check below all agree with each other and cannot silently
-    # drift apart the way the DLL, package-release.ps1, and this script's required list once could.
+    # The base GGUF basename, defined once here so the required-file list, the size thresholds,
+    # and the DLL cross-check below all agree with each other and cannot silently drift apart the
+    # way the DLL, package-release.ps1, and this script's required list once could. Adapter
+    # basenames now live in characters/*.json and are checked by the character-file loop below.
     $baseGguf    = 'LFM2.5-1.2B-Instruct-Q4_K_M.gguf'
-    $adapterGguf = 'linus-12b-v8dpo2-lora-f16.gguf'
 
     # The zip filename's version must agree with the manifest inside it (checked once $man is
     # parsed below). Extracted here from the resolved path so a relative -ZipPath still works.
@@ -59,7 +59,6 @@ try {
         'ChattyValley/LICENSE-LFM.txt'
         'ChattyValley/characters/linus.json'
         "ChattyValley/assets/$baseGguf"
-        "ChattyValley/assets/$adapterGguf"
         'ChattyValley/sidecar/ChattyValley.Sidecar.exe'
         # These two are the actual sidecar entry assembly and the runtime glue that loads the
         # native llama.cpp backend. Neither was previously asserted: a LLamaSharp bump or RID
@@ -108,13 +107,15 @@ try {
         if ($n -cmatch '^ChattyValley/LLama.*\.dll$') { $fail += "LLamaSharp leaked into the mod root: $n" }
     }
 
-    # The shipping GGUF filenames live in six places (ModEntry.cs, package-release.ps1, this
+    # The shipping base GGUF filename lives in six places (ModEntry.cs, package-release.ps1, this
     # script, and three docs/tests) with nothing that ties them together: a model retrain that
-    # renames the GGUFs, with the two obvious "release" scripts updated but ModEntry.cs missed
+    # renames the GGUF, with the two obvious "release" scripts updated but ModEntry.cs missed
     # (or vice versa), builds a zip, passes every check above, and then File.Exists is false for
     # every player and free-chat silently disables itself forever. Close that gap here by reading
-    # the actual compiled ChattyValley.Mod.dll and asserting the basenames it resolves are the
-    # ones the zip ships.
+    # the actual compiled ChattyValley.Mod.dll and asserting the basename it resolves is the
+    # one the zip ships. Adapter basenames no longer live in this fixed list at all: they now
+    # live in characters/*.json and are checked against the shipped zip by the character-file
+    # loop above.
     #
     # The filenames are embedded as UTF-16LE string literals in the #US metadata heap, but a
     # heap entry's byte OFFSET within the file is not guaranteed to be even (it follows a
@@ -135,13 +136,9 @@ try {
         $ms.Dispose()
 
         $baseNeedle    = $latin1.GetString([System.Text.Encoding]::Unicode.GetBytes($baseGguf))
-        $adapterNeedle = $latin1.GetString([System.Text.Encoding]::Unicode.GetBytes($adapterGguf))
 
         if ($modDllBytes.IndexOf($baseNeedle, [System.StringComparison]::Ordinal) -lt 0) {
             $fail += "ChattyValley.Mod.dll does not reference base GGUF basename '$baseGguf'; the DLL and the shipped asset have drifted, so File.Exists will be false for every player"
-        }
-        if ($modDllBytes.IndexOf($adapterNeedle, [System.StringComparison]::Ordinal) -lt 0) {
-            $fail += "ChattyValley.Mod.dll does not reference adapter GGUF basename '$adapterGguf'; the DLL and the shipped asset have drifted, so File.Exists will be false for every player"
         }
     }
     # else: already reported by the $required check above; no need to fail twice.
@@ -149,11 +146,12 @@ try {
     # Minimum payload sizes. Presence-by-name alone lets a zero-byte or truncated GGUF, a stub
     # DLL, or a sidecar exe missing its bundled runtime all pass silently, and every defect on
     # this plan so far has produced an artifact of plausible shape. Thresholds are set well
-    # below the real payload sizes (base GGUF 697.0 MB, adapter 21.2 MB, sidecar exe 162,816
-    # bytes) so a legitimate model swap does not trip them.
+    # below the real payload sizes (base GGUF 697.0 MB, sidecar exe 162,816 bytes) so a legitimate
+    # model swap does not trip them. Adapter GGUFs are no longer a fixed-size entry here: each one
+    # is checked against a 1MB floor in the per-character loop above, since the roster of adapters
+    # (and each one's basename) is only known once the zip's characters/*.json files are read.
     $minBytes = @{
         "ChattyValley/assets/$baseGguf"                        = 600MB
-        "ChattyValley/assets/$adapterGguf"                     = 15MB
         'ChattyValley/sidecar/ChattyValley.Sidecar.exe'        = 50KB
         'ChattyValley/ChattyValley.Mod.dll'                    = 8KB
         'ChattyValley/ChattyValley.Core.dll'                   = 4KB
@@ -203,7 +201,6 @@ try {
         if ($cfg.ChatLogEnabled -ne $false) { $fail += 'config ChatLogEnabled is true, expected false' }
         if ($cfg.FalsePremiseGuard -ne $true) { $fail += 'config FalsePremiseGuard is false, expected true' }
         if ($cfg.BaseModelPath -ne '')    { $fail += "config BaseModelPath is not blank: $($cfg.BaseModelPath)" }
-        if ($cfg.LinusAdapterPath -ne '') { $fail += "config LinusAdapterPath is not blank: $($cfg.LinusAdapterPath)" }
     }
 
     $manErr = $null
@@ -222,12 +219,30 @@ try {
         }
     }
 
-    $linusErr = $null
-    $linus = Read-Json 'ChattyValley/characters/linus.json' ([ref]$linusErr)
-    if ($null -eq $linus) {
-        $fail += "cannot parse linus.json: $linusErr"
-    } elseif (-not $linus.Name) {
-        $fail += 'ChattyValley/characters/linus.json has no Name field'
+    # Every shipped character file must parse, name a character, and its adapterPath must ship in
+    # the zip with a plausible size. Derived from the zip's own characters/ entries, so a new
+    # villager is covered with no edit to this script.
+    $charEntries = @($names | Where-Object { $_ -cmatch '^ChattyValley/characters/[^/]+\.json$' })
+    if ($charEntries.Count -eq 0) { $fail += 'zip ships no characters/*.json' }
+    $shippedAdapterPaths = @()
+    foreach ($ce in $charEntries) {
+        $ceErr = $null
+        $char = Read-Json $ce ([ref]$ceErr)
+        if ($null -eq $char) { $fail += "cannot parse ${ce}: $ceErr"; continue }
+        if (-not $char.name) { $fail += "$ce has no name field"; continue }
+        if (-not $char.adapterPath) { $fail += "$ce has no adapterPath (0.3.0 ships adapter-backed villagers only)"; continue }
+        $adapterEntry = "ChattyValley/$($char.adapterPath -replace '\\','/')"
+        $shippedAdapterPaths += $adapterEntry
+        if ($names -cnotcontains $adapterEntry) {
+            $fail += "$ce points at '$($char.adapterPath)' but the zip does not ship $adapterEntry"
+            continue
+        }
+        # 1MB floor: catches zero-byte/truncated adapters while leaving room for smaller
+        # future adapters (a 350M-base LoRA is a fraction of the 1.2B's 21.2 MB).
+        $ae = $zip.GetEntry($adapterEntry)
+        if ($ae -and $ae.Length -lt 1MB) {
+            $fail += "$adapterEntry is only $([math]::Round($ae.Length/1KB,1)) KB, expected at least 1024 KB"
+        }
     }
 
     # Matches both the raw path (C:\Users\name) and the JSON-escaped form (C:\\Users\\name). The

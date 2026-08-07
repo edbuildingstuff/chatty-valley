@@ -65,6 +65,9 @@ try {
         # change could drop either one, pass every other check, and die on model load at runtime.
         'ChattyValley/sidecar/ChattyValley.Sidecar.dll'
         'ChattyValley/sidecar/ChattyValley.Runtime.dll'
+        # The Windows GPU backend (DAT-704). Absence means 0.4.0 shipped CPU-only by accident.
+        'ChattyValley/sidecar/runtimes/win-x64/native/vulkan/ggml-vulkan.dll'
+        'ChattyValley/sidecar/runtimes/win-x64/native/vulkan/llama.dll'
     )
     foreach ($r in $required) { if ($names -cnotcontains $r) { $fail += "missing: $r" } }
 
@@ -85,6 +88,12 @@ try {
     # it; this catches the strip being lost in a refactor. Case-insensitive match on purpose:
     # NTFS would serve "CreateDump.exe" to the scanner just the same.
     foreach ($n in $names) { if ($n -imatch '/createdump\.exe$') { $fail += "createdump.exe shipped: $n" } }
+
+    # Linux natives must never ship: the Vulkan package emits them even on a win-x64 publish and
+    # publish-sidecar.ps1 strips them; this catches the strip being lost in a refactor.
+    foreach ($n in $names) {
+        if ($n -imatch '\.so$' -or $n -cmatch '/runtimes/linux-') { $fail += "linux native shipped: $n" }
+    }
 
     # Entry paths must use forward slashes. .NET Framework's CreateFromDirectory writes
     # backslashes, which extract as one literally-named file on macOS and Linux.
@@ -155,6 +164,7 @@ try {
         'ChattyValley/sidecar/ChattyValley.Sidecar.exe'        = 50KB
         'ChattyValley/ChattyValley.Mod.dll'                    = 8KB
         'ChattyValley/ChattyValley.Core.dll'                   = 4KB
+        'ChattyValley/sidecar/runtimes/win-x64/native/vulkan/ggml-vulkan.dll' = 50MB
     }
     foreach ($k in $minBytes.Keys) {
         $e = $zip.GetEntry($k)
@@ -201,6 +211,7 @@ try {
         if ($cfg.ChatLogEnabled -ne $false) { $fail += 'config ChatLogEnabled is true, expected false' }
         if ($cfg.FalsePremiseGuard -ne $true) { $fail += 'config FalsePremiseGuard is false, expected true' }
         if ($cfg.BaseModelPath -ne '')    { $fail += "config BaseModelPath is not blank: $($cfg.BaseModelPath)" }
+        if ($cfg.Gpu -ne 'auto') { $fail += "config Gpu is '$($cfg.Gpu)', expected 'auto'" }
     }
 
     $manErr = $null

@@ -35,13 +35,29 @@ public static class AdapterStatuses
     public const string Unreadable = "unreadable";
 }
 
+/// <summary>Player intent for GPU inference, passed mod -> sidecar as --gpu.</summary>
+public static class GpuModes
+{
+    public const string Auto = "auto";
+    public const string On = "on";
+    public const string Off = "off";
+}
+
+/// <summary>
+/// GPU outcome reported in the handshake. Active=false with a null FallbackReason means the
+/// resolution chose CPU (no eligible device, or mode off); a non-null FallbackReason means a GPU
+/// load was attempted and fell back to CPU. Wording that reaches players says GPU, never Vulkan.
+/// </summary>
+public sealed record GpuStatus(string Requested, bool Active, string? Device = null, string? FallbackReason = null);
+
 public sealed record SidecarRequest(
     string? Prompt, string? Character, float Temp, int MaxTokens,
     float? RepeatPenalty, float? FrequencyPenalty);
 
 public sealed record AdapterStatus(string Name, string Status, string? Detail = null);
 
-public sealed record SidecarHandshake(bool Ready, string Base, IReadOnlyList<AdapterStatus> Adapters);
+public sealed record SidecarHandshake(bool Ready, string Base, IReadOnlyList<AdapterStatus> Adapters,
+    GpuStatus? Gpu = null);
 
 /// <summary>Parses one repeatable sidecar CLI argument of the form <c>name=path</c>.</summary>
 public static class AdapterArg

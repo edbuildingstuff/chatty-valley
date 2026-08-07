@@ -9,7 +9,8 @@ using ChattyValley.Runtime;
 // first sends a handshake line reporting per-adapter validation status; adapters load lazily on
 // first use: validated at startup, loaded on demand, load failures remembered.
 //
-//   handshake (sidecar -> mod):  {"ready":true,"base":"<file>","adapters":[{"name","status","detail"}]}
+//   handshake (sidecar -> mod):  {"ready":true,"base":"<file>","adapters":[{"name","status","detail"}],
+//                                 "gpu":{"requested","active","device","fallbackReason"}}
 //   request   (mod -> sidecar):  {"prompt":"<chatml>","character":"Linus","temp":0.35,"maxTokens":96,
 //                                 "repeatPenalty":1.1,"frequencyPenalty":0.1}   (penalties optional)
 //   response  (sidecar -> mod):  {"reply":"...","raw":"..."}
@@ -18,10 +19,31 @@ using ChattyValley.Runtime;
 // The pipe server is created only AFTER the base model loads, so a successful client connect =
 // base ready.
 //
-// Usage: ChattyValley.Sidecar --base <gguf> --pipe <name> [--gpu-layers N] --adapter <name>=<path> [--adapter <name>=<path> ...]
+// Usage: ChattyValley.Sidecar --base <gguf> --pipe <name> [--gpu auto|on|off] [--gpu-layers N] --adapter <name>=<path> [--adapter <name>=<path> ...]
 
 string? basePath = Arg("--base"), pipeName = Arg("--pipe");
-int gpuLayers = int.TryParse(Arg("--gpu-layers"), out var g) ? g : 0;
+// GPU resolution (DAT-704). Explicit --gpu-layers is a dev override that beats the mode; the mod
+// always passes --gpu. Default off preserves the pre-0.4.0 bare-CLI behaviour.
+int? explicitLayers = int.TryParse(Arg("--gpu-layers"), out var g) ? g : null;
+string gpuMode = (Arg("--gpu") ?? GpuModes.Off).ToLowerInvariant();
+if (gpuMode is not (GpuModes.Auto or GpuModes.On or GpuModes.Off)) gpuMode = GpuModes.Off;
+
+GpuAdapterInfo? chosenGpu = null;
+int gpuLayers;
+if (explicitLayers is int el) { gpuLayers = el; }
+else if (gpuMode == GpuModes.On) { gpuLayers = 99; }
+else if (gpuMode == GpuModes.Auto)
+{
+    chosenGpu = GpuEligibility.PickEligible(QueryVideoControllers());
+    gpuLayers = chosenGpu is null ? 0 : 99;
+}
+else { gpuLayers = 0; }
+
+// When resolution says CPU, load the CPU-only native build outright: a machine with a broken
+// Vulkan runtime then never initialises it at all. Must run before the first native load.
+if (gpuLayers == 0)
+    try { LLama.Native.NativeLibraryConfig.All.WithVulkan(false); } catch { }
+
 var adapterArgs = ArgAll("--adapter");
 var adapters = new List<(string Name, string Path)>();
 foreach (string a in adapterArgs)
@@ -35,23 +57,45 @@ foreach (string a in adapterArgs)
 }
 if (basePath is null || pipeName is null || adapters.Count == 0)
 {
-    Console.Error.WriteLine("usage: --base <gguf> --pipe <name> [--gpu-layers N] --adapter <name>=<path> [--adapter <name>=<path> ...]");
+    Console.Error.WriteLine("usage: --base <gguf> --pipe <name> [--gpu auto|on|off] [--gpu-layers N] --adapter <name>=<path> [--adapter <name>=<path> ...]");
     return 1;
 }
 
 // Keep llama.cpp's native chatter on stderr; the mod drains stdout/stderr and logs it at trace.
 try { LLama.Native.NativeLogConfig.llama_log_set((level, msg) => Console.Error.Write(msg)); } catch { }
 
-await using var llm = new LlmRuntime();
+var llm = new LlmRuntime();
+string? gpuFallbackReason = null;
 try
 {
     await llm.LoadBaseAsync(basePath, contextSize: 2048, gpuLayers: gpuLayers);
+}
+catch (Exception ex) when (gpuLayers > 0)
+{
+    // GPU load failed: self-heal on CPU (DAT-704). The Vulkan-build-at-0-layers path is the
+    // DAT-703 fallback arm, verified clean. Only a CPU failure after this is fatal (exit 2),
+    // which the mod's existing ExitedEarly handling covers.
+    Console.Error.WriteLine("sidecar: GPU model load failed, retrying on CPU: " + ex);
+    gpuFallbackReason = ex.Message.Split('\n')[0].Trim();
+    await llm.DisposeAsync();
+    llm = new LlmRuntime();
+    gpuLayers = 0;
+    try
+    {
+        await llm.LoadBaseAsync(basePath, contextSize: 2048, gpuLayers: 0);
+    }
+    catch (Exception cpuEx)
+    {
+        Console.Error.WriteLine("sidecar: model load failed: " + cpuEx);
+        return 2;
+    }
 }
 catch (Exception ex)
 {
     Console.Error.WriteLine("sidecar: model load failed: " + ex);
     return 2;
 }
+await using var _llm = llm;   // restore the await-using disposal the old declaration had
 
 // Validate every adapter file now (cheap), register only the ones that pass; the handshake
 // carries the full report so the mod can exclude broken villagers and say why.
@@ -71,8 +115,12 @@ await server.WaitForConnectionAsync();
 using var reader = new StreamReader(server, Encoding.UTF8);
 using var writer = new StreamWriter(server, new UTF8Encoding(false)) { AutoFlush = true };
 
+var gpuStatus = new GpuStatus(gpuMode, Active: gpuLayers > 0,
+    Device: gpuLayers > 0 ? (chosenGpu?.Name ?? "requested by config") : null,
+    FallbackReason: gpuFallbackReason);
+
 await writer.WriteLineAsync(JsonSerializer.Serialize(
-    new SidecarHandshake(true, Path.GetFileName(basePath), statuses), SidecarJson.Options));
+    new SidecarHandshake(true, Path.GetFileName(basePath), statuses, gpuStatus), SidecarJson.Options));
 
 string? line;
 while ((line = await reader.ReadLineAsync()) != null)
@@ -138,6 +186,28 @@ static List<string> ArgAll(string name)
     var values = new List<string>();
     for (int i = 1; i < a.Length - 1; i++) if (a[i] == name) values.Add(a[i + 1]);
     return values;
+}
+
+// WMI is the OS's own inventory; a machine where the query throws is treated as having no
+// eligible GPU, which lands on the proven CPU path.
+static List<ChattyValley.Core.GpuAdapterInfo> QueryVideoControllers()
+{
+    var found = new List<ChattyValley.Core.GpuAdapterInfo>();
+    try
+    {
+        using var searcher = new System.Management.ManagementObjectSearcher(
+            "SELECT PNPDeviceID, Name, AdapterRAM FROM Win32_VideoController");
+        foreach (var mo in searcher.Get())
+            found.Add(new ChattyValley.Core.GpuAdapterInfo(
+                mo["PNPDeviceID"] as string,
+                mo["Name"] as string,
+                mo["AdapterRAM"] is null ? 0L : Convert.ToInt64(mo["AdapterRAM"])));
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine("sidecar: WMI video controller query failed, staying on CPU: " + ex.Message);
+    }
+    return found;
 }
 
 // Last-line-of-defense degeneration guard: collapse the same word repeated 3+ times in a row

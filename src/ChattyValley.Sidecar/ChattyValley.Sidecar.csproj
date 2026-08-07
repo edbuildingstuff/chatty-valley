@@ -18,6 +18,13 @@
   <ItemGroup>
     <ProjectReference Include="..\ChattyValley.Runtime\ChattyValley.Runtime.csproj" />
     <PackageReference Include="LLamaSharp.Backend.Cpu" Version="0.27.0" />
+    <!-- Windows GPU backend (DAT-704). RID-conditioned twice over: it keeps a future non-Windows
+         publish clean, and this package's targets copy win AND linux natives regardless of publish
+         RID (observed dumping linux .so files into a win-x64 publish; publish-sidecar.ps1 strips
+         those as a second line of defence). -->
+    <PackageReference Include="LLamaSharp.Backend.Vulkan" Version="0.27.0" Condition="'$(RuntimeIdentifier)' == 'win-x64'" />
+    <!-- WMI, for the dedicated-GPU detection behind "Gpu": "auto". Self-contained publish ships it. -->
+    <PackageReference Include="System.Management" Version="8.0.0" />
   </ItemGroup>
 
 </Project>

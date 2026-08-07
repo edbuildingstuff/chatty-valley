@@ -3,8 +3,8 @@
 Generated from `ChattyValley-0.4.0.zip` by `scripts/generate-release-manifest.ps1`. Every hash below comes from that
 artifact's own bytes, so this document is only true for that build. It is regenerated with each release.
 
-- **Archive:** `ChattyValley-0.4.0.zip`, 763.52 MB (800,606,920 bytes)
-- **SHA256:** `1b2ea1c01ed2acfb5df9c61730147755bbbbde25ee8eae2ce84e2d9dbf7fd921`
+- **Archive:** `ChattyValley-0.4.0.zip`, 763.52 MB (800,607,280 bytes)
+- **SHA256:** `30b71e0ec65158e07c642b2c03db18a7294c8fc8b78db23fd56bfd86b72034a0`
 
 Check any file yourself after unzipping. Hashes are of the extracted file, so this matches what you have on disk:
 
@@ -23,7 +23,7 @@ the managed assemblies below it.
 
 | File | Size | SHA256 |
 |---|---|---|
-| `sidecar/ChattyValley.Sidecar.exe` | 159 KB | [`574b86f4fe53e581...`](https://www.virustotal.com/gui/file/574b86f4fe53e581a624e90ac1f1f7fc56ccaaf2821191a97a067b79eeb6d94d) |
+| `sidecar/ChattyValley.Sidecar.exe` | 159 KB | [`0fe167bbc6a40d46...`](https://www.virustotal.com/gui/file/0fe167bbc6a40d463750be2d77c0e58032761246f8752788bb9a365304889b09) |
 
 ## llama.cpp inference, native
 
@@ -86,11 +86,11 @@ assemblies, so a clean result here proves less than reading the source, which is
 
 | File | Size | SHA256 |
 |---|---|---|
-| `ChattyValley.Core.dll` | 39 KB | [`d3d878f93b33f262...`](https://www.virustotal.com/gui/file/d3d878f93b33f262eb5a0cb98fd55002f62ae6deac0f059913496b08213e1f99) |
-| `ChattyValley.Mod.dll` | 56 KB | [`d83d7e8d6fe4575c...`](https://www.virustotal.com/gui/file/d83d7e8d6fe4575c1110805cdc10c4600f38123f48a2bf9fa74dd4fc010e65cd) |
-| `sidecar/ChattyValley.Core.dll` | 39 KB | [`d3d878f93b33f262...`](https://www.virustotal.com/gui/file/d3d878f93b33f262eb5a0cb98fd55002f62ae6deac0f059913496b08213e1f99) |
-| `sidecar/ChattyValley.Runtime.dll` | 14 KB | [`42bcdd2cf5ec63ac...`](https://www.virustotal.com/gui/file/42bcdd2cf5ec63acb580401753341526e263a6f82c63162d5e37175337fa773e) |
-| `sidecar/ChattyValley.Sidecar.dll` | 19 KB | [`d613c35a7c97f6cd...`](https://www.virustotal.com/gui/file/d613c35a7c97f6cd27d2d901b8697dd7bfc84f3caacaf23ea9a7740c6289d692) |
+| `ChattyValley.Core.dll` | 39 KB | [`c591662acb1f3b5e...`](https://www.virustotal.com/gui/file/c591662acb1f3b5e5d61193014b8958a3c8433db5007c46cc0b252d000860d37) |
+| `ChattyValley.Mod.dll` | 56 KB | [`4af744f1b3287bf5...`](https://www.virustotal.com/gui/file/4af744f1b3287bf5c8e9dec65eede4fdb90b3364767cd819be026a2500415d04) |
+| `sidecar/ChattyValley.Core.dll` | 39 KB | [`c591662acb1f3b5e...`](https://www.virustotal.com/gui/file/c591662acb1f3b5e5d61193014b8958a3c8433db5007c46cc0b252d000860d37) |
+| `sidecar/ChattyValley.Runtime.dll` | 14 KB | [`18df10bea05ea820...`](https://www.virustotal.com/gui/file/18df10bea05ea820bd4d9be52ad0e83b519654673d2677b1f818c80086a2dd58) |
+| `sidecar/ChattyValley.Sidecar.dll` | 20 KB | [`a7c7acc31232be3a...`](https://www.virustotal.com/gui/file/a7c7acc31232be3a3e6741211454ed29eb0169f7363646eab498a227a7511289) |
 
 ## Model weights
 

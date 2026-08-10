@@ -1,4 +1,4 @@
-# Chatty Valley
+# Chatty Valley - Unlimited NPC chats. No API Keys Required.
 
 **Talk to a Stardew Valley villager and he talks back, from an AI model running entirely on your own machine.** Works on any PC, no graphics card needed, and automatically uses a dedicated NVIDIA or AMD graphics card for faster replies when you have one.
 

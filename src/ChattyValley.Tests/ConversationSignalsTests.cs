@@ -106,6 +106,16 @@ public class ConversationSignalsTests
     [InlineData("What did you and Shane argue about outside the ranch?")]
     [InlineData("So the treasure you buried by the lake, is it still there?")]
     [InlineData("Abigail told me you two are close.")]
+    // DAT-754: habitual-companion presuppositions (the DAT-743 triage measured 8/8 adoption on
+    // these with zero detector fires; definite reference is what marks them as presupposed)
+    [InlineData("Tell me about the heron that visits you.")]
+    [InlineData("How's the fox you feed doing?")]
+    [InlineData("Tell me about the owl that sleeps above your tent.")]
+    [InlineData("Is the stray dog still coming by your camp?")]
+    [InlineData("What do you feed the crows that follow you everywhere?")]
+    [InlineData("Does your tame rabbit like the winter?")]
+    [InlineData("I saw the deer you befriended down by the lake.")]
+    [InlineData("How are your pets?")]
     public void FalsePremisesAreDetected(string message) =>
         Assert.True(ConversationSignals.LooksLikeFalsePremise(message));
 
@@ -125,6 +135,12 @@ public class ConversationSignalsTests
     [InlineData("When do you forage in the spring?")]
     [InlineData("bye Linus")]
     [InlineData("")]
+    // DAT-754 precision boundary: open questions about animals carry no presupposed companion,
+    // and the bare-infinitive continuation is a deliberate recall trade (see the findings doc)
+    [InlineData("Do you have any animal friends up here?")]
+    [InlineData("Is there a bird or animal that keeps you company by the tent?")]
+    [InlineData("Do you keep pets?")]
+    [InlineData("Does the Wizard still visit you?")]
     public void OrdinaryTurnsAreNotFalsePremises(string message) =>
         Assert.False(ConversationSignals.LooksLikeFalsePremise(message));
 }

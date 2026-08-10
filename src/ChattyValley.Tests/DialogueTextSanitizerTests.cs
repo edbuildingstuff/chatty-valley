@@ -14,6 +14,14 @@ public class DialogueTextSanitizerTests
         Assert.Equal("And I you, Edward. Welcome back.",
             DialogueTextSanitizer.Sanitize("And I you, @. Welcome back.", "Edward"));
 
+    // The two placeholder positions the A/B-era harness transcripts actually produced (DAT-743):
+    // a greeting-opener "@" and a mid-sentence "@" in the same reply. Transcripts keep "@"
+    // canonical by design; this pins that the display path substitutes every occurrence.
+    [Fact]
+    public void EveryPlaceholderOccurrenceIsSubstituted() =>
+        Assert.Equal("Ah, hello Edward. Go well, Edward; the mountain keeps its quiet.",
+            DialogueTextSanitizer.Sanitize("Ah, hello @. Go well, @; the mountain keeps its quiet.", "Edward"));
+
     [Fact]
     public void BoxSplitHashBecomesPause() =>
         Assert.Equal("One thing, another thing.",

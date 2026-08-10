@@ -8,9 +8,10 @@ namespace ChattyValley.Mod;
 /// and debugged after a play-through (see tools/read_chatlog.py in the repo for a pretty-printer).
 ///
 /// Records are self-describing: the start event carries the game context, model files, and sampling
-/// settings that produced the conversation, and each turn carries the player line, the shown reply,
-/// the model's verbatim pre-guard output when it differed, and latency. Logging must never affect
-/// gameplay: every write is wrapped and a failure silently disables nothing but itself.
+/// settings that produced the conversation, and each turn carries the player line, the canonical
+/// model reply (training format: "@" placeholder and any [end] marker intact; the DialogueBox shows
+/// the sanitized form), the verbatim pre-guard output when it differed, and latency. Logging must
+/// never affect gameplay: every write is wrapped and a failure silently disables nothing but itself.
 /// </summary>
 internal sealed class ChatLogger
 {

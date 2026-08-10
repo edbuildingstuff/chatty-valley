@@ -108,17 +108,37 @@ foreach (var (name, path) in adapters)
 }
 var router = new AdapterRouter(statuses);
 
-// Warm-up generation, discarded. A process's first generation pays one-time costs that would
-// otherwise land on the player's first chat turn of the session: on the Vulkan path that is
-// compute-pipeline compilation, measured at ~6.3s on the RTX 2070 during the 0.4.0 smoke, and
-// on CPU it is JIT and cache warm-up at a few hundred ms. The pipe below is the mod's ready
-// signal, so paying the cost here keeps it inside the background startup the player never sees.
-// Same precedent as the harness's own warm-up. Guarded: a warm-up failure is logged and skipped,
-// leaving any real inference error to surface per-request exactly as it does today.
+// Warm-up generations, discarded. A process's first generations pay one-time costs that would
+// otherwise land on the player's first chat turns of the session: on CPU that is JIT and cache
+// warm-up at a few hundred ms; on the Vulkan path it is compute-pipeline compilation, and the
+// driver compiles PER KERNEL SHAPE, not once per process. A single tiny warm-up only compiles
+// the shapes its own prompt uses: on an RTX 5070 Ti (NV_coopmat2) it left the first three
+// realistic-length player turns paying 2-5 s each for the prompt-size buckets it never touched
+// (trainer-machine probe, 2026-08-10; the RTX 2070's ~6.3 s compile covered the shapes that
+// card uses, which is why one warm-up looked sufficient during the 0.4.0 smoke). So on GPU the
+// warm-up walks ascending prompt lengths to cross every size bucket a real conversation hits,
+// and it runs adapter-ACTIVE, because real requests infer with the LoRA applied on a fresh
+// context and the LoRA matmuls bring kernels of their own; activating it here also takes the
+// adapter's lazy first-load off the player's first turn. Compiled pipelines land in the
+// driver's on-disk shader cache, so the full cost is paid once per machine; later sessions
+// replay it from cache in well under a second. The pipe below is the mod's ready signal, so
+// all of it stays inside the background startup the player never sees (the mod's connect
+// timeout is 60 s; a cold-cache warm-up measures ~15 s on top of model load). Guarded: a
+// warm-up failure is logged and skipped, leaving any real inference error to surface
+// per-request exactly as it does today.
 try
 {
+    var warmAdapter = statuses.Find(s => s.Status == AdapterStatuses.Ok);
+    if (warmAdapter is not null) llm.SetActiveAdapter(warmAdapter.Name);
+    int[] warmSizes = gpuLayers > 0 ? new[] { 8, 48, 160, 384, 704 } : new[] { 8 };
     var warmSw = System.Diagnostics.Stopwatch.StartNew();
-    await foreach (var _ in llm.InferStreamAsync("Hello.", 0.35f, 8)) { }
+    foreach (int words in warmSizes)
+    {
+        var passSw = System.Diagnostics.Stopwatch.StartNew();
+        await foreach (var _ in llm.InferStreamAsync(WarmPrompt(words), 0.35f, 8)) { }
+        Console.Error.WriteLine($"sidecar: warm-up pass ({words} words) done in {passSw.ElapsedMilliseconds} ms");
+    }
+    llm.SetActiveAdapter(null);
     Console.Error.WriteLine($"sidecar: warm-up generation done in {warmSw.ElapsedMilliseconds} ms");
 }
 catch (Exception ex)
@@ -196,6 +216,16 @@ static string? Arg(string name)
     var a = Environment.GetCommandLineArgs();
     for (int i = 1; i < a.Length - 1; i++) if (a[i] == name) return a[i + 1];
     return null;
+}
+
+// Filler that tokenizes to roughly one token per word. The exact counts do not matter, only
+// that the ladder of lengths crosses every kernel-size bucket a real conversation can hit.
+static string WarmPrompt(int words)
+{
+    string[] filler = { "The", "seasons", "turn", "quietly", "in", "the", "valley." };
+    var sb = new StringBuilder();
+    for (int i = 0; i < words; i++) sb.Append(filler[i % filler.Length]).Append(' ');
+    return sb.ToString();
 }
 
 static List<string> ArgAll(string name)

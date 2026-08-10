@@ -8,8 +8,8 @@
 |---|---|
 | **Runs on** | Your own PC, no graphics card needed. No cloud, no API key, no account. Uses a dedicated NVIDIA or AMD graphics card automatically for faster replies if you have one. |
 | **Model** | LFM2.5-1.2B-Instruct Q4_K_M (697 MB) + a 21 MB LoRA carrying the character's voice |
-| **Memory** | About 1 GB beyond the game |
-| **Speed** | A second or two per reply on a modern CPU |
+| **Memory** | About 1 GB beyond the game (system RAM on CPU, video memory on GPU) |
+| **Speed** | A second or two per reply on a modern CPU; a few hundred milliseconds on a dedicated graphics card |
 | **Download** | [Get it on Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/49886). 763 MB, everything included, nothing fetched on first run |
 | **Platform** | Windows, Stardew 1.6, SMAPI 4.0+ |
 | **Build story** | [How it was made, and where it still fails](https://www.ertas.ai/blog/chatty-valley-on-device-ai-mod-stardew-valley) |
@@ -92,6 +92,32 @@ rather than a preference, is written up in [docs/build-story.md](docs/build-stor
 rest of the build: the eval that chose the model size, the windowing bug that only appeared after
 twelve messages, and the DPO round that did nothing.
 
+## GPU or CPU
+
+The SMAPI console prints one line telling you where replies are running:
+`AI replies: GPU (<your card>)` or `AI replies: CPU`.
+
+By default (`"Gpu": "auto"` in `config.json`) the mod uses a dedicated NVIDIA or
+AMD graphics card with at least 2 GB of memory if it finds one, for replies in a
+few hundred milliseconds. Integrated graphics run slower than CPU for this
+model, so those stay on CPU automatically; that is expected, not a bug.
+
+CPU is a fully supported way to run the mod, and the path everything was built,
+tuned, and play-tested on: the model is small and quantized precisely so a
+modern CPU serves a reply in a second or two. To choose for yourself, set
+`"Gpu"` in `config.json` to `"off"` to force CPU, or `"on"` to force GPU. If a
+forced or auto-detected GPU fails to start, the mod falls back to CPU on its
+own and the console line becomes a warning:
+`AI replies: CPU (GPU failed to start and was skipped: <reason>)`. Chat keeps
+working either way.
+
+The very first launch on a GPU machine is the slowest: the graphics driver
+compiles compute shaders for the model, which can add fifteen to twenty seconds
+before the model reports ready on newer cards. The driver keeps the compiled
+shaders on disk, so later launches are back to a few seconds. All of it happens
+in the background while the game loads, and your first chat turn runs at full
+speed either way.
+
 ## Repo layout
 
 ```
@@ -110,8 +136,9 @@ characters/                  per-villager persona data; each *.json names a vill
 data/                        canon extraction and training data for the Linus adapter
 packaging/                   files copied verbatim into the release zip (release config, player
                               facing README, LFM license)
-scripts/                     download-model.ps1, package-release.ps1, verify-release.ps1,
-                              publish-sidecar.ps1
+scripts/                     download-model.ps1, publish-sidecar.ps1, package-release.ps1,
+                              verify-release.ps1, generate-release-manifest.ps1, release.ps1,
+                              upload-nexus.ps1, probe-multi-adapter.ps1
 models/                      GGUF files (gitignored, downloaded on demand)
 ```
 
@@ -203,25 +230,10 @@ villager and the reason; the fix is the same re-extract, and the rest of the mod
 
 If none of that matches what you see, open an issue with your `SMAPI-latest.txt` attached.
 
-### GPU acceleration
+### GPU questions
 
-The SMAPI console prints one line telling you where replies are running:
-`AI replies: GPU (<your card>)` or `AI replies: CPU`.
-
-By default (`"Gpu": "auto"` in `config.json`) the mod uses a dedicated NVIDIA or
-AMD graphics card with at least 2 GB of memory if it finds one. Integrated
-graphics run slower than CPU for this model, so those stay on CPU
-automatically; that is expected, not a bug.
-
-To override the default, set `"Gpu"` in `config.json` to `"off"` to force CPU,
-or `"on"` to force GPU. If a forced or auto-detected GPU fails to start, the
-mod falls back to CPU on its own and the console line becomes a warning:
-`AI replies: CPU (GPU failed to start and was skipped: <reason>)`. Chat keeps
-working either way.
-
-On GPU machines the model takes a few seconds longer to report ready at game
-launch. That is the graphics driver compiling its shaders, paid once per
-session in the background so your first chat turn runs at full speed.
+Where replies run, the `"Gpu"` config setting, and why the first launch on a
+GPU machine is slower are all covered in [GPU or CPU](#gpu-or-cpu) above.
 
 ## License
 

@@ -1,4 +1,4 @@
-using ChattyValley.Core;
+﻿using ChattyValley.Core;
 
 namespace ChattyValley.Tests;
 
@@ -57,7 +57,7 @@ public class PromptBuilderTests
         var prompt = new PromptBuilder(ChatTemplate.Lfm2);
         string p = prompt.BuildConversation(Adapter, PlainContext,
             History("So when Leah came up to your tent yesterday, what did you talk about?"), Guard);
-        Assert.Contains("say so plainly", p);
+        Assert.Contains(Guard, p);
     }
 
     [Fact]
@@ -66,7 +66,7 @@ public class PromptBuilderTests
         var prompt = new PromptBuilder(ChatTemplate.Lfm2);
         string p = prompt.BuildConversation(Adapter, PlainContext,
             History("Do you know Leah, the artist?"), Guard);
-        Assert.DoesNotContain("say so plainly", p);
+        Assert.DoesNotContain(Guard, p);
     }
 
     [Fact]
@@ -75,7 +75,7 @@ public class PromptBuilderTests
         var prompt = new PromptBuilder(ChatTemplate.Lfm2);
         string p = prompt.BuildConversation(Adapter, PlainContext,
             History("So when Leah came up to your tent yesterday, what did you talk about?"), falsePremiseGuard: null);
-        Assert.DoesNotContain("say so plainly", p);
+        Assert.DoesNotContain(Guard, p);
     }
 
     [Fact]
@@ -90,6 +90,6 @@ public class PromptBuilderTests
             new(true, "Fair enough. What is the weather like up here in winter?"),
         };
         string p = prompt.BuildConversation(Adapter, PlainContext, history, Guard);
-        Assert.DoesNotContain("say so plainly", p);
+        Assert.DoesNotContain(Guard, p);
     }
 }

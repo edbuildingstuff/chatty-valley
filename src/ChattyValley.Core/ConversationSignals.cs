@@ -55,11 +55,13 @@ public static class ConversationSignals
     /// <summary>
     /// Default false-premise guard clause. Appended to the system turn ONLY when
     /// <see cref="LooksLikeFalsePremise"/> flags the player's message, to reduce the model playing
-    /// along with a fabricated event smuggled in as a question's premise. Prompt-level testing showed
-    /// it roughly halves how often the model adopts a false premise. Tunable via config.
+    /// along with a fabricated event smuggled in as a question's premise. The wording is swept per
+    /// model size (DAT-742): on the shipped 1.2B this clause measured 4/64 guarded adoption under
+    /// a seeded sampled probe, against 11/64 for the original wording it replaced. Tunable via
+    /// config.
     /// </summary>
     public const string DefaultFalsePremiseGuard =
-        "The player may mention things that never happened. If you do not remember it, say so plainly.";
+        "Do not agree with stories about things you have not seen. Say you do not remember them.";
 
     // Player turns that PRESUPPOSE a third-party event, gift, or shared past ("when Leah visited your
     // tent yesterday, what did you talk about?"). The failure this guards is the model answering the

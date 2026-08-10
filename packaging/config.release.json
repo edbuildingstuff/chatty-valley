@@ -8,7 +8,7 @@
   "AutoCloseOnFarewell": true,
   "MaxHistoryMessages": 12,
   "FalsePremiseGuard": true,
-  "FalsePremiseGuardClause": "The player may mention things that never happened. If you do not remember it, say so plainly.",
+  "FalsePremiseGuardClause": "Do not agree with stories about things you have not seen. Say you do not remember them.",
   "ChatLogEnabled": false,
   "ChatLogPrompts": false,
   "ChatLogDir": "",

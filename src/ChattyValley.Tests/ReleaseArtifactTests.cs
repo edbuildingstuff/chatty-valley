@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using ChattyValley.Core;
 
 namespace ChattyValley.Tests;
 
@@ -40,6 +41,17 @@ public class ReleaseArtifactTests
     public void ReleaseConfig_KeepsTheFalsePremiseGuardEnabled()
     {
         Assert.True(Load("config.release.json").GetProperty("FalsePremiseGuard").GetBoolean());
+    }
+
+    /// <summary>
+    /// The guard clause ships from two sites, the Core default and the release config, and the
+    /// wording is swept per model size (DAT-742), so a change must land in both or in neither.
+    /// </summary>
+    [Fact]
+    public void ReleaseConfig_GuardClauseMatchesTheCoreDefault()
+    {
+        Assert.Equal(ConversationSignals.DefaultFalsePremiseGuard,
+            Load("config.release.json").GetProperty("FalsePremiseGuardClause").GetString());
     }
 
     [Fact]

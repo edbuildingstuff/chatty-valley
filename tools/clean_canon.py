@@ -1,16 +1,39 @@
 """
-Step 1 of the Linus dataset: clean the raw canon dialogue into training-ready utterances.
+Clean a villager's raw canon dialogue into training-ready utterances.
 
-Reads data/linus/raw/*.json (verbatim game text with dialogue markup) and produces
-data/linus/canon-clean.jsonl: one record per spoken segment, with the markup parsed out and
+Usage: python tools/clean_canon.py <Villager>   (e.g. Linus, Elliott)
+
+Reads data/<villager>/raw/*.json (verbatim game text with dialogue markup) and produces
+data/<villager>/canon-clean.jsonl: one record per spoken segment, with the markup parsed out and
 emotion / condition captured as metadata. Multi-box lines are SPLIT on #$e# / #$b# into separate
 segments, which are nicer to handle and match the tight on-screen dialogue. Branching
 question lines ($y / $q) are kept whole and flagged, since they are natural multi-turn seeds.
-"""
-import json, re, os
 
-base = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "linus"))
+Recognised raw files (any subset may exist; marriage candidates have all six):
+    <Villager>.json                  -> source "main"
+    rainy_<Villager>.json            -> source "rainy"
+    festivals_<Villager>.json        -> source "festival"
+    events_<Villager>.json           -> source "event"      (values are lists of lines)
+    MarriageDialogue<Villager>.json  -> source "marriage"
+    engagement_<Villager>.json       -> source "engagement"
+"""
+import json, re, os, sys
+
+if len(sys.argv) != 2:
+    sys.exit("usage: python tools/clean_canon.py <Villager>")
+villager = sys.argv[1]
+
+base = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", villager.lower()))
 raw = os.path.join(base, "raw")
+
+SOURCES = [
+    (f"{villager}.json", "main"),
+    (f"rainy_{villager}.json", "rainy"),
+    (f"festivals_{villager}.json", "festival"),
+    (f"events_{villager}.json", "event"),
+    (f"MarriageDialogue{villager}.json", "marriage"),
+    (f"engagement_{villager}.json", "engagement"),
+]
 
 def load(n):
     with open(os.path.join(raw, n), encoding="utf-8") as f:
@@ -49,15 +72,16 @@ def add(source, key, line):
             records.append({"source": source, "key": key, "index": i, "type": "line",
                             "text": text, "emotion": emo, "condition": cond})
 
-for k, v in load("Linus.json").items():
-    add("main", k, v)
-for k, v in load("rainy_Linus.json").items():
-    add("rainy", k, v)
-for k, v in load("festivals_Linus.json").items():
-    add("festival", k, v)
-for ev, lines in load("events_Linus.json").items():
-    for j, l in enumerate(lines):
-        add("event", f"{ev}#{j}", l)
+for fname, source in SOURCES:
+    if not os.path.exists(os.path.join(raw, fname)):
+        continue
+    data = load(fname)
+    for k, v in data.items():
+        if isinstance(v, list):                # event files: key -> list of lines
+            for j, l in enumerate(v):
+                add(source, f"{k}#{j}", l)
+        else:
+            add(source, k, v)
 
 with open(os.path.join(base, "canon-clean.jsonl"), "w", encoding="utf-8") as f:
     for r in records:

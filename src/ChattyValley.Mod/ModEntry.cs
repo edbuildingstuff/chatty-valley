@@ -53,6 +53,12 @@ public sealed class ModEntry : StardewModdingAPI.Mod
         // pipe breaks on game close).
         AppDomain.CurrentDomain.ProcessExit += (_, _) => _sidecar?.Dispose();
         Monitor.Log("Chatty Valley loaded. Additive free-chat; canonical gameplay is never modified.", LogLevel.Info);
+        // "♥" (U+2665) rather than the emoji heart: the card-suit glyph renders in every console
+        // font down to classic conhost, where "❤️" plus its variation selector shows as a box.
+        Monitor.Log("Made with ♥ for truffle farming in Stardew Valley.", LogLevel.Info);
+        Monitor.Log("Enjoying it? Endorse the mod on Nexus and share your highlight chats there. "
+            + "Support the project with a star on GitHub: https://github.com/edbuildingstuff/chatty-valley",
+            LogLevel.Info);
     }
 
     // ---- start the out-of-process inference sidecar (once, at launch; off the game thread) -------

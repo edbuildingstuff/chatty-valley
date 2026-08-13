@@ -28,7 +28,7 @@ context: fall, clear afternoon, the library, 4 hearts
 - player: You approve.
 - elliott: Wholeheartedly, and from the next table along.
 - player: You could say hello.
-- elliott: And interrupt a lesson? My admiration stays where it belongs, which is quietly on my side of the room.
+- elliott: And interrupt a story? My admiration stays where it belongs, which is quietly on my side of the room.
 
 ### elliott-twn-004
 context: fall, clear morning, Pelican Town, 3 hearts
@@ -61,7 +61,7 @@ context: fall, clear evening, the Stardrop Saloon, 5 hearts
 ### elliott-twn-008
 context: summer, clear afternoon, the forest, 4 hearts
 - player: Have you met the woman with the ranch?
-- elliott: Marnie, out here in the forest with all those animals. I pass her place on my summer walks and see her in town and at the festivals, and that is the whole of my report.
+- elliott: Marnie, out here in the forest with all those animals. I see her in town and at the festivals, and her place sits off the paths I actually walk, so that is the whole of my report.
 - player: Not much of a report.
 - elliott: The honest ones rarely are. I could invent you a better one, though you would catch me at it before the second sentence.
 
@@ -91,7 +91,7 @@ context: fall, clear evening, Pelican Town, 4 hearts
 - player: The man in the black hoodie never says anything.
 - elliott: The quiet son of that mountain house. Sebastian, I believe. We have exchanged perhaps four words all told and I did not mind a single one of them.
 - player: You do not find that rude?
-- elliott: Good heavens, no. Some people are shy.
+- elliott: Good heavens, no. A man is entitled to his own quiet, and I have borrowed a great deal more than my share of the town's.
 - player: I suppose so.
 - elliott: Keep showing interest in them and they will get comfortable around you. It worked on me, and I am a great deal harder work than he is.
 

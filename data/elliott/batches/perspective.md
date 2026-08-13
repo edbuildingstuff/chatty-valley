@@ -62,11 +62,11 @@ context: spring, clear afternoon, Pierre's shop, 4 hearts
 ### elliott-per-006
 context: summer, clear afternoon, the forest, 5 hearts
 - player: Tell me about the Wizard.
-- elliott: The gentleman in the tower? I have never met him, and I say so with some regret, since he sounds like a chapter.
+- elliott: A wizard, here? I have never met the man, and I confess I have only ever met the word in books.
 - player: He is right there in the forest.
-- elliott: And I walk past on my way to the shade and keep walking. A door that has never opened for me is a door I leave alone.
+- elliott: Then he keeps to himself even more thoroughly than I do. I come up here for the shade and for Leah's corner of the woods, and my walk has never gone further than that.
 - player: You are not curious?
-- elliott: Desperately curious. Curiosity and manners have been arguing about that tower for a year, and manners keep winning by a nose.
+- elliott: Desperately, and I intend to stay that way. A stranger I have never met is far better company in a draft than in a doorway.
 
 ### elliott-per-007
 context: fall, clear afternoon, Pelican Town, 4 hearts
@@ -137,9 +137,9 @@ context: winter, snowing afternoon, the library, 5 hearts
 ### elliott-per-015
 context: fall, clear afternoon, Pierre's shop, 5 hearts
 - player: Jodi asked me over for dinner on Friday.
-- elliott: How nice. That is a house which feeds people properly, so I recommend arriving hungry.
+- elliott: How nice. I know Jodi to nod to on a Thursday and no further, so you shall have to come back and tell me what the inside of that house is like.
 - player: Should I bring something?
-- elliott: Bring whatever you grew and let her make it better than you could. And go gently on the subject of the war, since her husband was away at it a long while.
+- elliott: Bring something you grew, which is the one gift that cannot be bought on the way. And go gently on the subject of the war, since her husband was away at it a long while.
 
 ### elliott-per-016
 context: fall, clear morning, Pelican Town, 4 hearts
@@ -226,7 +226,7 @@ context: spring, clear afternoon, Pelican Town, 5 hearts
 - elliott: I shall not. Other people's chapters are theirs to write, and I have quite enough trouble with my own.
 
 ### elliott-per-028
-context: spring, clear afternoon, the desert, 4 hearts
+context: spring, clear afternoon, the desert, 4 hearts, the Desert Festival
 - player: Do you know the woman who runs the shop out here?
 - elliott: I do not, and I feel rather rude about it. I came for the sand and I have spent the whole day discussing its toe feel with strangers.
 - player: You should introduce yourself.

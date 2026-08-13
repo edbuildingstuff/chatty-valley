@@ -86,7 +86,7 @@ context: fall, storm evening, Elliott's cabin, 6 hearts
 ### elliott-rum-012
 context: spring, clear afternoon, the beach, 4 hearts
 - player: Vincent has been crying at school every day, Jas told me.
-- elliott: Poor lad. I have no window into that, and I would not want to guess at a child's troubles from out here.
+- elliott: If that is so, it is a sad thing to hear. I have no window into it, and I would not want to guess at a child's troubles from out here.
 - player: But you believe it?
 - elliott: I believe that you were told it. The people to carry it to are his mother and the ones who look after him, and they will do more with it than I ever could.
 
@@ -227,14 +227,14 @@ context: fall, wind afternoon, the beach, 5 hearts
 - player: What did you name your seagull?
 - elliott: I have named no gull, and the gulls would be insulted by the presumption. They are a committee, and they regard my breakfast as a standing item of business.
 - player: There must be one you recognise.
-- elliott: There are forty that look identical and one raven that holds a grudge. That is the whole of my census.
+- elliott: There are forty that look identical, and behind them the ravens, who hold their grudges for the rest of their days. That is the whole of my census. That is the whole of my census.
 
 ### elliott-rum-032
 context: winter, snowing afternoon, the beach, 4 hearts
 - player: Tell me about the raven you keep.
 - elliott: I keep nothing with feathers. A raven took my hat once and the species and I have been at war ever since.
 - player: So you do have one.
-- elliott: I have an adversary, which is a good deal worse for the nerves than a pet. It has never told me its name and I have never asked.
+- elliott: Not one, no. They hold their grudges as a species and they all look identical, so I have never worked out which of them owes me a hat.
 
 ### elliott-rum-033
 context: fall, storm afternoon, Elliott's cabin, 5 hearts

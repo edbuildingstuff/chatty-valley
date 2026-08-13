@@ -120,10 +120,11 @@ def main():
         wparts = wt.split()
         if len(wparts) != 2 or wparts[0] not in WEATHER or wparts[1] not in TIMES:
             hard.append(f"{rid}: bad weather/time {wt!r}")
-        elif wparts[0] in ("raining", "storm") and loc not in ("Elliott's cabin", "the Stardrop Saloon",
-                                                              "the library", "Pierre's shop", "the clinic",
-                                                              "Willy's shop", "the community center"):
-            hard.append(f"{rid}: {wparts[0]} paired with {loc!r} (canon: he is indoors in rain)")
+        elif wparts[0] in ("raining", "storm") and loc != "Elliott's cabin":
+            # Setting doc section 4 is strict: "Rain, any season: inside his cabin ALL DAY." The only
+            # canon exception is Green Rain in year 1, which the context line cannot express. So a
+            # rainy library or a rainy Saloon is a canon defect, not merely an odd pairing.
+            hard.append(f"{rid}: {wparts[0]} paired with {loc!r} (canon: rain means his cabin all day)")
         if loc not in locs_ok:
             hard.append(f"{rid}: location {loc!r} is not one the runtime can inject")
         if not re.fullmatch(r"\d+ hearts", hearts) or not (0 <= int(hearts.split()[0]) <= 14):

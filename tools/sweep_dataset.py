@@ -178,6 +178,35 @@ def main():
     # Cross-file collisions are dropped by assemble_dataset (first wins), so they cost rows
     # rather than corrupting the set. Reported loudly, not fatal.
 
+    # ---- vantage notes (reported, never enforced) ----------------------------------------------
+    # Some locations the runtime CAN inject are places Elliott's canon barely reaches. These are
+    # judgement calls rather than defects, so they are surfaced with counts and left to a reviewer.
+    # Setting doc section 4: the clinic is one checkup a year (Summer 9); the desert is the bus trip
+    # to the Desert Festival; the community center appears in no schedule or vantage line at all.
+    notes = collections.defaultdict(list)
+    for r in rows:
+        parts = [p.strip() for p in (r.get("context") or "").split(",")]
+        if len(parts) < 4:
+            continue
+        season, loc, rest = parts[0], parts[2], " ".join(parts[4:])
+        if loc == "the community center":
+            notes["community center (no canon vantage)"].append(r["id"])
+        elif loc == "the clinic" and season != "summer":
+            notes["clinic outside summer (canon: Summer 9 checkup)"].append(r["id"])
+        elif loc == "the desert" and "festival" not in rest.lower():
+            notes["desert without a festival clause"].append(r["id"])
+        elif loc == "the forest" and season != "summer" and "festival" not in rest.lower():
+            notes["forest outside summer (canon: summer walk near Leah's)"].append(r["id"])
+        elif loc == "the library" and season in ("spring", "summer") and "festival" not in rest.lower():
+            notes["library in spring/summer (canon: fall and winter)"].append(r["id"])
+    print("\nvantage notes (judgement calls, not failures):")
+    if not notes:
+        print("  none")
+    for k in sorted(notes):
+        ids = notes[k]
+        print(f"  {len(ids):3}  {k}")
+        print(f"       {', '.join(ids[:8])}{' ...' if len(ids) > 8 else ''}")
+
     # ---- category mix --------------------------------------------------------------------------
     cat = collections.Counter(r["category"] for r in rows)
     print("\ncategory mix (have vs target):")

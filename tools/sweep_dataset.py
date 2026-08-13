@@ -191,16 +191,21 @@ def main():
         parts = [p.strip() for p in (r.get("context") or "").split(",")]
         if len(parts) < 4:
             continue
-        season, loc, rest = parts[0], parts[2], " ".join(parts[4:])
+        season, loc = parts[0], parts[2]
+        # Any 5th field is an event clause (a festival or a gift offer). "the Flower Dance" carries
+        # no literal "festival", so matching on the word alone mis-flagged rows the game actually
+        # holds in Cindersap Forest. Treat the presence of the field as the exemption.
+        rest = " ".join(parts[4:])
+        has_event = bool(parts[4:]) and "offering" not in rest
         if loc == "the community center":
             notes["community center (no canon vantage)"].append(r["id"])
         elif loc == "the clinic" and season != "summer":
             notes["clinic outside summer (canon: Summer 9 checkup)"].append(r["id"])
-        elif loc == "the desert" and "festival" not in rest.lower():
+        elif loc == "the desert" and not has_event:
             notes["desert without a festival clause"].append(r["id"])
-        elif loc == "the forest" and season != "summer" and "festival" not in rest.lower():
+        elif loc == "the forest" and season != "summer" and not has_event:
             notes["forest outside summer (canon: summer walk near Leah's)"].append(r["id"])
-        elif loc == "the library" and season in ("spring", "summer") and "festival" not in rest.lower():
+        elif loc == "the library" and season in ("spring", "summer") and not has_event:
             notes["library in spring/summer (canon: fall and winter)"].append(r["id"])
     print("\nvantage notes (judgement calls, not failures):")
     if not notes:

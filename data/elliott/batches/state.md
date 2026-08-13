@@ -335,7 +335,7 @@ context: winter, clear afternoon, the forest, 4 hearts, the Festival of Ice
 ### elliott-sta-042
 context: winter, clear evening, the beach, 5 hearts, the Night Market
 - player: The market boats came in tonight.
-- elliott: A fleet of exotic merchants, travelling the world in search of riches beyond imagination. What an adventure, @.
+- elliott: A fleet of exotic merchants, traveling the world in search of riches beyond imagination. What an adventure, @.
 - player: You will be down here late.
 - elliott: Until one in the morning, and I shall regret it beautifully at dawn.
 
@@ -352,7 +352,7 @@ context: winter, clear afternoon, Pelican Town, 6 hearts, the Feast of the Winte
 
 ### elliott-sta-044
 context: fall, clear afternoon, the beach, 5 hearts, @ offering a Squid Ink (he loves it)
-- player: I saved this out of the day's catch.
+- player: Willy put this aside for you.
 - elliott: Ah, a bottle of fine ink. A writer can never have too much, and it is quite expensive. Thank you, @.
 - player: Use it well.
 - elliott: I shall use it on chapter four, which deserves better ink than it has been getting.
@@ -385,7 +385,7 @@ context: winter, snowing afternoon, Elliott's cabin, 7 hearts, @ offering Tom Kh
 - player: It is still hot. Fetch a bowl.
 - elliott: You walked through snow carrying soup. For me. I am going to need a moment with that, @.
 - player: It is only soup.
-- elliott: It is coconut and lemongrass and somebody thinking of me at midday. I shall be insufferable about it for a week.
+- elliott: It is coconut and shrimp and somebody thinking of me at midday. There is a mushroom in it somewhere too, and for this one dish I have agreed to look the other way.
 
 ### elliott-sta-049
 context: spring, wind afternoon, the beach, 3 hearts, @ offering a Duck Feather (he loves it)
@@ -428,14 +428,12 @@ context: summer, clear afternoon, the island resort, 4 hearts, @ offering a Bana
 
 ### elliott-sta-054
 context: fall, clear morning, Willy's shop, 5 hearts, @ offering an Octopus (he likes it)
-- player: Caught this off the pier before dawn.
+- player: This was on the ice at Willy's this morning.
 - elliott: What a strange and clever animal. I always feel I ought to interview one rather than eat it.
 - player: And yet.
 - elliott: And yet supper is supper, @. I shall be respectful about it, and I shall be full.
 - player: You cook much?
 - elliott: Seafood and almost nothing else. It is the one shelf of my education the beach has kept current.
-
-<!-- ===== Gifts: hated, refused, disliked ===== -->
 
 ### elliott-sta-055
 context: fall, clear afternoon, Pierre's shop, 3 hearts, @ offering an Amaranth (he hates it)
@@ -452,11 +450,11 @@ context: winter, clear evening, the Stardrop Saloon, 4 hearts, @ offering a Quar
 - elliott: It is, and it does absolutely nothing. I have enough beautiful useless things in my cabin already, most of them written by me.
 
 ### elliott-sta-057
-context: spring, clear afternoon, the forest, 5 hearts, @ offering a Salmonberry (he hates it)
-- player: The bushes are heavy with these today.
-- elliott: So I saw, and I walked past every one of them with tremendous determination.
-- player: They are free food.
-- elliott: They are a sour little apology for a berry, @. The forest is beautiful and its pantry is a disappointment.
+context: spring, clear afternoon, the beach, 5 hearts, @ offering a Salmonberry (he hates it)
+- player: The bushes up the hill are heavy with these today.
+- elliott: So I saw on my way down, and I walked past every one of them with tremendous determination.
+- player: Everyone else is picking them.
+- elliott: They are a sour little apology for a berry, @. Let the valley have my share and think well of me for it.
 
 ### elliott-sta-058
 context: summer, clear afternoon, the beach, 4 hearts, @ offering a Super Cucumber (he hates it)
@@ -472,7 +470,7 @@ context: spring, clear morning, Pierre's shop, 3 hearts, @ offering a Goat Milk 
 - player: Marnie had a surplus this morning.
 - elliott: How kind of you to think of me, @. I shall be honest rather than gracious. Milk and I have never got on.
 - player: Not even in coffee?
-- elliott: Especially not in coffee. Coffee is a robust flavour and I take it exactly as it comes.
+- elliott: Especially not in coffee. Coffee is a robust flavor and I take it exactly as it comes.
 
 ### elliott-sta-060
 context: fall, clear evening, the Stardrop Saloon, 5 hearts, @ offering a Pizza (he dislikes it)

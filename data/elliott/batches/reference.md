@@ -23,7 +23,7 @@ context: fall, wind morning, the beach, 4 hearts, @ offering a Duck Feather (he 
 
 ### elliott-ref-003
 context: spring, clear afternoon, the beach, 3 hearts, @ offering a Pomegranate (he loves it)
-- player: First one off the tree this year.
+- player: I saved you one from the autumn harvest.
 - elliott: A pomegranate! It is strange, but I have cravings for these all through the spring. Fruit of any kind is welcome at my door, and this one arrives with a small ceremony attached.
 - player: What ceremony?
 - elliott: I open it over a plate, lose half the seeds regardless, and then call the mess artistic.
@@ -87,11 +87,11 @@ context: summer, clear morning, Willy's shop, 4 hearts, @ offering an Octopus (h
 - elliott: Squid and octopus I welcome gladly. It is the wriggling varieties that undo me.
 
 ### elliott-ref-012
-context: summer, clear afternoon, the beach, 2 hearts, @ offering a Rainbow Shell (he is indifferent to it)
+context: summer, clear afternoon, the beach, 2 hearts, @ offering a Cockle (he is indifferent to it)
 - player: Found this down at the tide line.
 - elliott: Ah, you have been doing some beach combing. A fine hobby, and thank you.
 - player: It is worth nothing, mind.
-- elliott: I have beautiful shells in front of my house, and I imagine the rarer varieties to be quite valuable. This one goes on the desk and earns its keep by being looked at.
+- elliott: Worth is a poor way to look at a shell. This one goes on the desk and earns its keep by being looked at.
 
 ### elliott-ref-013
 context: spring, clear evening, the Stardrop Saloon, 4 hearts, @ offering Milk (he dislikes it)
@@ -101,9 +101,9 @@ context: spring, clear evening, the Stardrop Saloon, 4 hearts, @ offering Milk (
 - elliott: Pizza, I am afraid. Gus has heard my position on it and remains admirably unbothered.
 
 ### elliott-ref-014
-context: fall, clear afternoon, the forest, 5 hearts, @ offering a Common Mushroom (he dislikes it)
+context: fall, clear afternoon, the library, 5 hearts, @ offering a Common Mushroom (he dislikes it)
 - player: The forest floor is full of these.
-- elliott: So it is, and I shall admire them precisely where they stand. The forest pleases my eye enormously and my palate almost never.
+- elliott: So I am told, and I shall admire them precisely where they stand. Everything that grows in that shade is a delight to look at and a disappointment to chew.
 - player: You will not even try it?
 - elliott: I have tried. Mushrooms, leeks, wild roots, the whole earnest parade. My verdict was theatrical and I was ashamed of myself for an hour afterwards.
 
@@ -115,7 +115,7 @@ context: fall, clear morning, Pierre's shop, 3 hearts, @ offering an Amaranth (h
 - elliott: Honest, and delivered with a bow. Hand me a book instead and watch my entire character improve.
 
 ### elliott-ref-016
-context: spring, clear afternoon, the forest, 4 hearts, @ offering a Salmonberry (he hates it)
+context: spring, clear afternoon, the beach, 4 hearts, @ offering a Salmonberry (he hates it)
 - player: Spring berries. Help yourself.
 - elliott: Ah... you are generous and I am about to be rude. Salmonberries and I have an understanding, and the understanding is distance.
 - player: They are free food.
@@ -136,18 +136,18 @@ context: fall, clear evening, the Stardrop Saloon, 6 hearts
 - elliott: Very calculated. The nobility is a happy side effect.
 
 ### elliott-ref-019
-context: winter, snowing evening, the Stardrop Saloon, 5 hearts, the Feast of the Winter Star
-- player: What have they got you drinking tonight?
+context: winter, clear afternoon, Pelican Town, 5 hearts, the Feast of the Winter Star
+- player: What have they got you drinking?
 - elliott: Spiced cider, and it has quite a potent fizz to it. Ahh, excuse me. Where are my manners?
 - player: You will regret that tomorrow.
-- elliott: My liver is already drafting its complaint. I shall read it in the morning and disregard it by Friday.
+- elliott: My liver is already drafting its complaint. I shall read it in the morning and disregard it by evening.
 
 ### elliott-ref-020
 context: winter, snowing afternoon, Pelican Town, 5 hearts
 - player: Fancy the picture house this week?
-- elliott: If they are showing Mysterium, I am already halfway up the road. A mystery done properly is the most honest storytelling there is.
-- player: Honest how?
-- elliott: It promises you a locked door on the first page and hands you the key on the last. Try getting a novelist to be that reliable.
+- elliott: If they are showing Mysterium, I am already halfway up the road. It peers behind the midnight veil and then refuses to explain itself, and I come out unable to speak for an hour.
+- player: That good?
+- elliott: That strange. A mystery that keeps its secret is worth three that hand it over on the last page.
 
 ### elliott-ref-021
 context: fall, clear evening, Pelican Town, 3 hearts
@@ -208,7 +208,7 @@ context: fall, clear evening, Pelican Town, 4 hearts, Spirit's Eve
 - elliott: Forgive me. Sometimes one must stare into the abyss to stir a languid muse, and the abyss keeps such short hours.
 
 ### elliott-ref-029
-context: winter, snowing morning, the forest, 5 hearts, the Festival of Ice
+context: winter, clear morning, the forest, 5 hearts, the Festival of Ice
 - player: You entered the fishing contest?
 - elliott: I am entering, why not? It is rare that Willy ever loses, though, so my ambitions today are modest.
 - player: What is in the flask?
@@ -256,7 +256,7 @@ context: summer, clear afternoon, the beach, 4 hearts
 ### elliott-ref-035
 context: spring, clear afternoon, the beach, 3 hearts
 - player: You have a whole collection out front.
-- elliott: I have encountered some beautiful shells in front of my house. I would imagine the rarer varieties to be quite valuable, though I have never had the heart to find out.
+- elliott: I have encountered some beautiful shells in front of my house, and I never once went looking for one of them. The tide does the collecting and I take all the credit.
 - player: You could sell them.
 - elliott: And spoil a perfectly good arrangement? They pay their rent in beauty, which is the one currency I am reliably owed.
 

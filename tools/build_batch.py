@@ -4,14 +4,22 @@ running the dataset-plan quality gates: dash-lint (no em/en dash), reply length 
 turn count (2 to 3 assistant turns; the depth category allows 2 to 6), context present, and duplicate
 detection.
 
+The villager is derived from the batch path (data/<villager>/batches/<name>.md), so the tool is
+villager-generic: it sets both the system line and the expected speaker tag from that name. Pass
+--villager to override when the path does not carry it.
+
 Usage:
     python tools/build_batch.py data/linus/batches/deflection.md
-    # -> writes data/linus/batches/deflection.jsonl and prints a report.
+    python tools/build_batch.py data/elliott/batches/romance.md
+    # -> writes <batch>.jsonl next to the markdown and prints a report.
 Exit code is non-zero if any hard gate fails (dash, turn count out of range, missing context, duplicate).
 """
 import json, re, os, sys, hashlib
 
-SYSTEM = "You are Linus, a resident of Pelican Town in Stardew Valley. Current situation: {ctx}"
+# The system line MUST match ChattyValley.Core PromptBuilder.BuildSystem in adapter mode, which
+# renders "You are {c.Name}, a resident of Pelican Town in Stardew Valley. Current situation: {ctx}".
+# Training format equals inference format, so this template is shared, not parallel.
+SYSTEM = "You are {name}, a resident of Pelican Town in Stardew Valley. Current situation: {ctx}"
 DASHES = ("—", "–")  # em dash, en dash
 # The depth batch exists to make deep multi-turn conversation in-distribution (the v1 model, trained
 # only on 2 to 3 turns, degenerated several turns into an in-game chat), so its rows run longer.
@@ -20,7 +28,19 @@ DASHES = ("—", "–")  # em dash, en dash
 MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6}  # category -> max assistant turns (default 3)
 
 
-def parse(md_path):
+def villager_from_path(md_path):
+    """data/elliott/batches/romance.md -> "elliott". Falls back to the parent-of-parent dir name."""
+    parts = os.path.normpath(md_path).split(os.sep)
+    if "batches" in parts:
+        i = parts.index("batches")
+        if i > 0:
+            return parts[i - 1]
+    return parts[-3] if len(parts) >= 3 else "linus"
+
+
+def parse(md_path, villager):
+    speaker_re = re.compile(rf"^-\s*{re.escape(villager)}:\s*(.*)", re.IGNORECASE)
+    system = SYSTEM.format(name=villager.capitalize(), ctx="{ctx}")
     rows, cur, cat = [], None, None
     with open(md_path, encoding="utf-8") as f:
         for line in f:
@@ -38,12 +58,12 @@ def parse(md_path):
             m = re.match(r"^context:\s*(.*)", s)
             if m:
                 cur["context"] = m.group(1).strip()
-                cur["messages"].append({"role": "system", "content": SYSTEM.format(ctx=cur["context"])})
+                cur["messages"].append({"role": "system", "content": system.format(ctx=cur["context"])})
                 continue
             m = re.match(r"^-\s*player:\s*(.*)", s)
             if m:
                 cur["messages"].append({"role": "user", "content": m.group(1).strip()}); continue
-            m = re.match(r"^-\s*linus:\s*(.*)", s)
+            m = speaker_re.match(s)
             if m:
                 cur["messages"].append({"role": "assistant", "content": m.group(1).strip()}); continue
     if cur:
@@ -96,9 +116,23 @@ def validate(rows):
 
 
 def main():
-    md_path = sys.argv[1] if len(sys.argv) > 1 else "data/linus/batches/deflection.md"
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    flags = {a.split("=")[0]: a.split("=", 1)[-1] for a in sys.argv[1:] if a.startswith("--")}
+    md_path = args[0] if args else "data/linus/batches/deflection.md"
+    villager = flags.get("--villager") or villager_from_path(md_path)
     out_path = os.path.splitext(md_path)[0] + ".jsonl"
-    rows = parse(md_path)
+    rows = parse(md_path, villager)
+
+    # A wrong speaker tag matches nothing, and every row then fails the turn-count gate as if the
+    # AUTHORING were broken. Name the real cause instead: this is how a Linus-hardcoded tool would
+    # have silently produced turnless rows for villager #2.
+    if rows and not any(m["role"] == "assistant" for r in rows for m in r["messages"]):
+        print(f"batch: {md_path}")
+        print(f"X no '{villager}:' speaker lines matched in {len(rows)} parsed rows.")
+        print(f"  Expected reply lines shaped '- {villager}: ...'. Pass --villager=<name> if the "
+              f"path does not carry the villager.")
+        sys.exit(1)
+
     hard, soft = validate(rows)
 
     turn_hist, sent_hist = {}, {}
@@ -111,13 +145,14 @@ def main():
                 sent_hist[n] = sent_hist.get(n, 0) + 1
 
     print(f"batch: {md_path}")
+    print(f"villager: {villager}")
     print(f"rows parsed: {len(rows)}")
     print(f"categories: {sorted({r['category'] for r in rows})}")
     print(f"assistant turns per row: {dict(sorted(turn_hist.items()))}")
     print(f"sentences per assistant reply: {dict(sorted(sent_hist.items()))}")
     subtypes = {}
     for r in rows:
-        st = "-".join(r["id"].split("-")[:3])  # linus-def-em, etc.
+        st = "-".join(r["id"].split("-")[:3])  # <villager>-def-em, etc.
         subtypes[st] = subtypes.get(st, 0) + 1
     print(f"sub-type counts: {subtypes}")
     print(f"soft flags (length): {len(soft)}")

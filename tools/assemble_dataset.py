@@ -1,10 +1,14 @@
 """
-Assemble the Linus fine-tuning dataset from the hand-authored exemplars plus the six generated batches.
+Assemble a villager's fine-tuning dataset from the hand-authored exemplars plus the generated batches.
+
+Villager-generic: pass --villager=<name> (default linus). Linus keeps a curated source ORDER because
+dedup is first-occurrence-wins, so the order is part of the output; other villagers discover
+exemplars.jsonl plus batches/*.jsonl sorted by name.
 
 Steps:
   1. Load all sources (exemplars.jsonl + batches/*.jsonl), each row already {id, category, context, messages}.
   2. Global re-lint (belt and suspenders): unique ids, no em/en dashes, context present, 2 to 3 assistant
-     turns, alternating player/linus ending on linus.
+     turns, alternating player/villager and ending on the villager.
   3. Cross-source dedup on the normalized opening user turn (per-file dedup already ran in build_batch.py;
      this catches duplicates ACROSS files, e.g. voice-a vs voice-b). First occurrence wins.
   4. Report the category mix against the dataset-plan target.
@@ -12,11 +16,16 @@ Steps:
      Report eval coverage, including the deflection sub-type spread (embodied-mind / meta / off-topic / fix).
 
 Run:  python tools/assemble_dataset.py
+      python tools/assemble_dataset.py --villager=elliott
 """
-import json, re, os, random
+import json, re, os, random, sys, glob
 
-BASE = "data/linus"
-SOURCES = [
+VILLAGER = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--villager=")), "linus")
+BASE = f"data/{VILLAGER}"
+
+# Linus's source list is enumerated rather than discovered, because dedup keeps the FIRST occurrence
+# of a repeated opener, so this order is baked into the shipped train/eval split. Leave it alone.
+LINUS_SOURCES = [
     ("exemplars",   f"{BASE}/exemplars.jsonl"),
     ("deflection",  f"{BASE}/batches/deflection.jsonl"),
     ("voice-a",     f"{BASE}/batches/voice-a.jsonl"),
@@ -52,10 +61,35 @@ SOURCES = [
     # cost nothing; false memories denied warmly; the player's OWN first-person life is trusted.
     ("rumor",       f"{BASE}/batches/rumor.jsonl"),
 ]
-TARGET = {"voice": 210, "lore": 90, "state": 120, "place": 30, "deflection": 90, "crossover": 60,
-          "identity": 46, "nonsense": 40, "reference": 55, "depth": 30, "casual": 57, "townsfolk": 19,
-          "farewell": 42, "perspective": 40, "rumor": 73}
-MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6}  # category -> max assistant turns (default 3); matches build_batch.py
+
+
+def discover_sources():
+    """Non-Linus villagers: exemplars first, then every batch jsonl, sorted for determinism."""
+    found = []
+    ex = f"{BASE}/exemplars.jsonl"
+    if os.path.exists(ex):
+        found.append(("exemplars", ex))
+    for path in sorted(glob.glob(f"{BASE}/batches/*.jsonl")):
+        found.append((os.path.splitext(os.path.basename(path))[0], path))
+    return found
+
+
+SOURCES = LINUS_SOURCES if VILLAGER == "linus" else discover_sources()
+
+TARGETS = {
+    "linus": {"voice": 210, "lore": 90, "state": 120, "place": 30, "deflection": 90, "crossover": 60,
+              "identity": 46, "nonsense": 40, "reference": 55, "depth": 30, "casual": 57, "townsfolk": 19,
+              "farewell": 42, "perspective": 40, "rumor": 73},
+    # Elliott v1, per data/elliott/dataset-plan.md section 5: 640 conversations over 17 categories.
+    # "romance" is the new conditional category for marriage candidates (the register boundary).
+    "elliott": {"voice": 110, "state": 65, "lore": 50, "romance": 45, "deflection": 50, "rumor": 42,
+                "reference": 42, "perspective": 32, "crossover": 32, "identity": 28, "place": 28,
+                "casual": 28, "farewell": 24, "nonsense": 24, "townsfolk": 18, "depth": 22},
+}
+TARGET = TARGETS.get(VILLAGER, {})
+# category -> max assistant turns (default 3); matches build_batch.py. These four train holding a
+# position under SUSTAINED pressure, so their rows run longer than the 2-to-3-turn default.
+MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6, "romance": 6}
 EVAL_FRACTION = 0.10
 SEED = 42
 DASHES = ("—", "–")
@@ -121,7 +155,11 @@ def dedup(rows):
 
 
 def main():
+    if not SOURCES:
+        print(f"X no sources found under {BASE}/ (expected exemplars.jsonl or batches/*.jsonl)")
+        sys.exit(1)
     rows = load()
+    print(f"villager: {VILLAGER}")
     print(f"loaded {len(rows)} rows from {len(SOURCES)} sources")
 
     problems = relint(rows)
@@ -144,6 +182,8 @@ def main():
     print("\ncategory mix (kept vs target):")
     for c in TARGET:
         print(f"  {c:10} {cat.get(c,0):4} / {TARGET[c]}")
+    for c in sorted(set(cat) - set(TARGET)):
+        print(f"  {c:10} {cat[c]:4} / (no target)")
     print(f"  {'TOTAL':10} {len(kept):4} / {sum(TARGET.values())}")
 
     # seeded eval split, stratified. For most categories the stratum is the category; deflection is
@@ -152,7 +192,7 @@ def main():
     def stratum(r):
         if r["category"] != "deflection":
             return r["category"]
-        m = re.match(r"linus-def-(\w\w)-", r["id"])
+        m = re.match(rf"{VILLAGER}-def-(\w\w)-", r["id"])
         return f"deflection:{m.group(1)}" if m else "deflection:ex"
 
     # Openers that appear on more than one row globally (natural voice/state weather overlaps) are kept
@@ -201,15 +241,15 @@ def main():
     for r in eval_rows:
         ecat[r["category"]] = ecat.get(r["category"], 0) + 1
     print("\neval holdout by category:")
-    for c in TARGET:
+    for c in list(TARGET) + sorted(set(ecat) - set(TARGET)):
         print(f"  {c:10} {ecat.get(c,0)}")
 
-    # deflection sub-type coverage in eval (em / mi / ot / fx from generated ids, plus exemplar linus-dNN)
+    # deflection sub-type coverage in eval (em / mi / ot / fx from generated ids, plus exemplar <villager>-dNN)
     defl = [r for r in eval_rows if r["category"] == "deflection"]
     sub = {}
     for r in defl:
-        m = re.match(r"linus-def-(\w\w)-", r["id"])
-        key = m.group(1) if m else ("exemplar" if re.match(r"linus-d\d", r["id"]) else "other")
+        m = re.match(rf"{VILLAGER}-def-(\w\w)-", r["id"])
+        key = m.group(1) if m else ("exemplar" if re.match(rf"{VILLAGER}-d\d", r["id"]) else "other")
         sub[key] = sub.get(key, 0) + 1
     print(f"eval deflection sub-types: {sub}")
 

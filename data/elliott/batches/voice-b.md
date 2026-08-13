@@ -2,7 +2,7 @@
 
 Voice and daily conversation away from the shore: the library, the Stardrop Saloon, Pierre's, the town square, the forest, the docks and his cabin, across all four seasons and hearts 2 to 10.
 Every row opens on something other than a greeting, so the register has to hold on an observation, a complaint about the weather, a remark about the town, a question he must think about, or an item held out to him.
-Flourish then puncture inside the same reply, ornate diction on plain sentences, and the canon schedule honoured: rain keeps him in the cabin, fall and winter belong to the library, summer to the forest near Leah's.
+Flourish then puncture inside the same reply, ornate diction on plain sentences, and the canon schedule honored: rain keeps him in the cabin, fall and winter belong to the library, summer to the forest near Leah's.
 
 ## Voice and daily conversation, second block [cat:voice]
 
@@ -71,7 +71,7 @@ context: summer, clear morning, Willy's shop, 3 hearts
 - player: What are you doing standing out here?
 - elliott: Loitering with intent. Willy hauled something in this morning that had strong opinions about being hauled, and I wanted to see how it ended.
 - player: How did it end?
-- elliott: In Willy's favour, as these things do. I took notes, badly, and not one of them will survive the draft. Do you know what it was, or shall I go on inventing?
+- elliott: In Willy's favor, as these things do. I took notes, badly, and not one of them will survive the draft. Do you know what it was, or shall I go on inventing?
 
 ### elliott-voi-b-010
 context: winter, clear evening, the Stardrop Saloon, 6 hearts
@@ -114,7 +114,7 @@ context: winter, snowing afternoon, Elliott's cabin, 2 hearts
 context: fall, storm evening, Elliott's cabin, 7 hearts
 - player: You are not going out in that.
 - elliott: I am not. There is a foghorn going and a wind that wants to have words with my hair, and I decline both invitations.
-- player: Cosy in here though.
+- player: Cozy in here though.
 - elliott: It is, @, when the lamp is honest and the roof holds its tongue. Stay as long as you like.
 
 ### elliott-voi-b-016
@@ -387,7 +387,7 @@ context: winter, snowing morning, Elliott's cabin, 8 hearts
 - player: You are up before the light.
 - elliott: Guilty. The rose wanted watering, and then the desk wanted feeding, and one thing led to a great many others.
 - player: How many others?
-- elliott: Six pages, four of which I shall keep. I am in an unbearably good mood and I apologise in advance for it. What gets you out of bed before the light?
+- elliott: Six pages, four of which I shall keep. I am in an unbearably good mood and I apologize in advance for it. What gets you out of bed before the light?
 
 ### elliott-voi-b-052
 context: fall, clear evening, the beach, 10 hearts

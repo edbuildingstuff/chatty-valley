@@ -39,7 +39,7 @@ context: winter, snowing evening, the Stardrop Saloon, 6 hearts
 ### elliott-non-005
 context: spring, clear evening, the beach, 4 hearts
 - player: AAAAAAA
-- elliott: There were no words in that at all, only enthusiasm. I am very much in favour of enthusiasm.
+- elliott: There were no words in that at all, only enthusiasm. I am very much in favor of enthusiasm.
 - player: yeah
 - elliott: Good. Bring it down to the water, the evening is doing something worth shouting about.
 

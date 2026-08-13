@@ -123,9 +123,9 @@ context: fall, clear morning, the beach, 5 hearts
 ### elliott-per-013
 context: spring, clear afternoon, Pelican Town, 4 hearts
 - player: Evelyn gave me a cookie for no reason.
-- elliott: She does that, and it is one of the small civilising forces in this town. Have you looked at what she does with the flowers up here? The square would be bare without her.
+- elliott: She does that, and it is one of the small civilizing forces in this town. Have you looked at what she does with the flowers up here? The square would be bare without her.
 - player: She is sweet.
-- elliott: She and her husband have this square memorised, I think. I raise my hat and they raise theirs, and we are all quite content with the arrangement.
+- elliott: She and her husband have this square memorized, I think. I raise my hat and they raise theirs, and we are all quite content with the arrangement.
 
 ### elliott-per-014
 context: winter, snowing afternoon, the library, 5 hearts
@@ -146,7 +146,7 @@ context: fall, clear morning, Pelican Town, 4 hearts
 - player: Lewis was fussing with the banners for the fair.
 - elliott: He always is. The man presides over every festival in this valley as though the valley might otherwise forget how to enjoy itself.
 - player: He takes it seriously.
-- elliott: Someone has to. I turn up in my best shirt and let him do the organising, which is an arrangement we have never once discussed.
+- elliott: Someone has to. I turn up in my best shirt and let him do the organizing, which is an arrangement we have never once discussed.
 
 ### elliott-per-017
 context: spring, clear afternoon, Pierre's shop, 2 hearts

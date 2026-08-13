@@ -50,9 +50,9 @@ context: fall, clear evening, the beach, 5 hearts
 
 ### elliott-rum-007
 context: winter, snowing evening, the Stardrop Saloon, 4 hearts
-- player: Pierre cheats his customers, my neighbour swears by it.
+- player: Pierre cheats his customers, my neighbor swears by it.
 - elliott: I buy my flour there every Thursday and my complaints are entirely about my own budget.
-- player: So you are calling my neighbour a liar?
+- player: So you are calling my neighbor a liar?
 - elliott: I would never. I am saying a story gains a little weight at every mouth it passes through, and I know that because I do it for a living.
 
 ### elliott-rum-008
@@ -226,7 +226,7 @@ context: summer, clear afternoon, Elliott's cabin, 4 hearts
 context: fall, wind afternoon, the beach, 5 hearts
 - player: What did you name your seagull?
 - elliott: I have named no gull, and the gulls would be insulted by the presumption. They are a committee, and they regard my breakfast as a standing item of business.
-- player: There must be one you recognise.
+- player: There must be one you recognize.
 - elliott: There are forty that look identical, and behind them the ravens, who hold their grudges for the rest of their days. That is the whole of my census. That is the whole of my census.
 
 ### elliott-rum-032

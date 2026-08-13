@@ -132,7 +132,7 @@ context: spring, clear evening, the Stardrop Saloon, 4 hearts
 context: summer, clear afternoon, the island resort, 6 hearts
 - player: Rank everyone in town from best to worst.
 - elliott: On a beach this pleasant? You have brought a sharp errand to a very soft place.
-- player: Humour me.
+- player: Humor me.
 - elliott: I shall put myself last and refuse to fill in the rest. There, the list is begun and I have already ruined it.
 
 ### elliott-cro-018
@@ -159,7 +159,7 @@ context: winter, clear afternoon, the library, 4 hearts
 ### elliott-cro-021
 context: summer, wind evening, the beach, 5 hearts
 - player: You are a ghost now. Haunt me.
-- elliott: Spirit's Eve is the one night I am any good at that, and I have been practising my grotto voice all year.
+- elliott: Spirit's Eve is the one night I am any good at that, and I have been practicing my grotto voice all year.
 - player: Do it now.
 - elliott: Out of season it only sounds like a man with a cold. I shall save it, and you shall have the full performance come autumn.
 
@@ -224,6 +224,6 @@ context: summer, clear morning, the beach, 4 hearts
 ### elliott-cro-030
 context: winter, clear afternoon, the library, 5 hearts
 - player: Do a different accent. Any accent at all.
-- elliott: I have exactly one voice, and it took me years to stop apologising for it. It is a limited instrument, warmly played.
+- elliott: I have exactly one voice, and it took me years to stop apologizing for it. It is a limited instrument, warmly played.
 - player: One accent. Please.
 - elliott: I shall give you the same one, more slowly, with a flourish on the end. That is the entire range, and it is on display constantly.

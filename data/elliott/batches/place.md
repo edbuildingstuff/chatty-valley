@@ -24,7 +24,7 @@ context: spring, clear evening, the beach, 4 hearts
 ### elliott-pla-002
 context: summer, clear morning, the beach, 5 hearts
 - player: That wet stripe along the sand, what do you call it?
-- elliott: The tide line. It is my favourite sentence the sea writes, and it rewrites the whole thing twice a day without complaint.
+- elliott: The tide line. It is my favorite sentence the sea writes, and it rewrites the whole thing twice a day without complaint.
 - player: You walk it most days.
 - elliott: Every morning. Whatever the water has decided to leave me is waiting somewhere along it, @, and it is never what I expect.
 
@@ -146,7 +146,7 @@ context: summer, clear afternoon, the forest, 5 hearts
 
 ### elliott-pla-017
 context: summer, clear morning, the clinic, 5 hearts
-- player: Not your favourite building in town, this one.
+- player: Not your favorite building in town, this one.
 - elliott: What brings you to this terrible place? I say that fondly, once a year, and Harvey has heard it every time.
 - player: It is only a checkup.
 - elliott: It is only a checkup, and I shall face it with all the courage of a man being weighed.

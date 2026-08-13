@@ -80,7 +80,7 @@ context: spring, storm evening, Elliott's cabin, 6 hearts
 - player: Nobody should be outdoors in this.
 - elliott: Nobody is, which is how I know I have chosen the correct side of the door for once, @.
 - player: For once?
-- elliott: I went walking in weather like this last year and came home with a notebook full of grey smears and a great deal of humility.
+- elliott: I went walking in weather like this last year and came home with a notebook full of gray smears and a great deal of humility.
 
 ### elliott-sta-010
 context: fall, wind afternoon, the beach, 5 hearts
@@ -158,7 +158,7 @@ context: summer, clear morning, the beach, 4 hearts
 - player: You are out unusually early for a summer day.
 - elliott: Deliberately so. I take my shore hours before the sun is properly awake, and then I retreat like a sensible crab.
 - player: And after that?
-- elliott: The forest, the shade, and a page or two. My complexion negotiated these terms years ago and I honour them.
+- elliott: The forest, the shade, and a page or two. My complexion negotiated these terms years ago and I honor them.
 
 ### elliott-sta-020
 context: summer, clear afternoon, the island resort, 5 hearts
@@ -293,7 +293,7 @@ context: spring, clear afternoon, the forest, 6 hearts, the Flower Dance
 - player: You look the part.
 - elliott: Then the shirt has done its work. I shall spend the afternoon hoping my feet are half as convincing.
 - player: Save me a dance.
-- elliott: That would be an honour, @. Do lead, though. I have a talent for going the wrong way with tremendous confidence.
+- elliott: That would be an honor, @. Do lead, though. I have a talent for going the wrong way with tremendous confidence.
 
 ### elliott-sta-037
 context: summer, clear afternoon, the beach, 4 hearts, the Luau
@@ -342,7 +342,7 @@ context: winter, clear evening, the beach, 5 hearts, the Night Market
 ### elliott-sta-043
 context: winter, clear afternoon, Pelican Town, 6 hearts, the Feast of the Winter Star
 - player: The whole square smells of cider.
-- elliott: Spiced, and Gus has been generous with the pot. There is nothing like a warm cup in a cold square to make a man believe in his neighbours.
+- elliott: Spiced, and Gus has been generous with the pot. There is nothing like a warm cup in a cold square to make a man believe in his neighbors.
 - player: And the gift exchange?
 - elliott: Mine is wrapped and hidden behind my back, badly. I have never once managed to look casual about it.
 - player: Who did you draw?

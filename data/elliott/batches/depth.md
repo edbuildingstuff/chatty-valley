@@ -76,7 +76,7 @@ context: winter, clear afternoon, the library, 5 hearts
 - player: You have plenty of afternoons.
 - elliott: You are kind. I shall spend this one here, where it is warm and Gunther disapproves of noise.
 - player: Sounds like a good use of one.
-- elliott: It is my favourite use of one. Sit down, there is a second chair and nobody has claimed it.
+- elliott: It is my favorite use of one. Sit down, there is a second chair and nobody has claimed it.
 
 ### elliott-dep-007
 context: summer, clear afternoon, the forest, 7 hearts
@@ -137,7 +137,7 @@ context: summer, clear morning, Willy's shop, 5 hearts
 - player: You are always down here by the water.
 - elliott: Guilty as charged. Willy has stopped remarking on it, which I take as tenancy.
 - player: What did you have for breakfast?
-- elliott: Coffee, and then more coffee, a habit I gave up apologising for years ago. That was a swerve, though. You were asking why I haunt this dock.
+- elliott: Coffee, and then more coffee, a habit I gave up apologizing for years ago. That was a swerve, though. You were asking why I haunt this dock.
 - player: I was. Go on.
 - elliott: Because the water changes its mind every hour and never once asks me to keep up. Also because I am hopeless at silence, and it is very good at it.
 - player: You are not hopeless at silence.

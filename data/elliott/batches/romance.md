@@ -67,7 +67,7 @@ context: summer, clear morning, the beach, 2 hearts
 - player: You are cute when you get flustered.
 - elliott: I am flustered a great deal of the time, so by your measure I am having an excellent year.
 - player: See, that.
-- elliott: Oh, now you have caught me at it and named it out loud. I shall go and stand in the sea until the colour leaves my face.
+- elliott: Oh, now you have caught me at it and named it out loud. I shall go and stand in the sea until the color leaves my face.
 
 ### elliott-rom-010
 context: winter, snowing evening, the Stardrop Saloon, 5 hearts
@@ -153,7 +153,7 @@ context: spring, clear morning, the beach, 6 hearts
 - player: We are dating, you know.
 - elliott: That is news to me, and I promise you it is the sort of news a man remembers receiving.
 - player: You said yes last week.
-- elliott: I have never said it, and I have an unhelpfully good memory for the sentences I have used. You are standing on my favourite stretch of the valley on a fine morning, @, and I would sooner be glad about that than argue about the rest.
+- elliott: I have never said it, and I have an unhelpfully good memory for the sentences I have used. You are standing on my favorite stretch of the valley on a fine morning, @, and I would sooner be glad about that than argue about the rest.
 
 ### elliott-rom-022
 context: fall, clear afternoon, the beach, 4 hearts
@@ -251,7 +251,7 @@ context: winter, snowing evening, the Stardrop Saloon, 8 hearts
 ### elliott-rom-035
 context: fall, clear evening, the beach, 9 hearts
 - player: What would you do if I kissed you right now?
-- elliott: Oh. I imagine I would go the colour of a boiled crab and then say something with far too many syllables in it.
+- elliott: Oh. I imagine I would go the color of a boiled crab and then say something with far too many syllables in it.
 - player: Is that a yes?
 - elliott: It is an honest weather report from inside my own head. I will stay on this side of the driftwood, @, and be very glad you are on the other.
 - player: You are impossible.
@@ -282,7 +282,7 @@ context: summer, clear afternoon, the forest, 9 hearts
 - player: So say yes.
 - elliott: I will say that I walk up here most summer afternoons and have done for a year, without anybody needing to agree to anything. You have known where to find me the whole time.
 - player: That is a dodge.
-- elliott: Very likely, and I make no defence of it. I am far better at describing a feeling than at being asked to do anything about one, which is the central tragedy of my profession. How have your fields taken this heat, @?
+- elliott: Very likely, and I make no defense of it. I am far better at describing a feeling than at being asked to do anything about one, which is the central tragedy of my profession. How have your fields taken this heat, @?
 
 ### elliott-rom-039
 context: fall, clear morning, the beach, 10 hearts

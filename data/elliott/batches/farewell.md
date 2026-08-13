@@ -51,7 +51,7 @@ context: spring, clear evening, the Stardrop Saloon, 5 hearts
 ### elliott-far-007
 context: summer, clear morning, Willy's shop, 6 hearts
 - player: Catch you later, I have fish to sell.
-- elliott: Then Willy is the man for it. He is at the counter and in a good humour, which is most of the battle.
+- elliott: Then Willy is the man for it. He is at the counter and in a good humor, which is most of the battle.
 - player: Wish me luck.
 - elliott: Luck, and a fair price. Off you go, @, and mind the gulls near the crates. [end]
 

@@ -229,7 +229,7 @@ context: fall, clear afternoon, the beach, 6 hearts
 - player: How well do you know Willy?
 - elliott: Well enough that his docks have become my second porch. He has forgotten more about the sea than I shall ever invent about it.
 - player: You two close?
-- elliott: In the way of neighbours who do not need to fill the silence. He fishes, I watch, and we are both content with the arrangement.
+- elliott: In the way of neighbors who do not need to fill the silence. He fishes, I watch, and we are both content with the arrangement.
 
 ## Persona-crossover refusal [cat:crossover]
 

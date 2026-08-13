@@ -9,7 +9,7 @@ Flourish then puncture inside the same reply, ornate diction carried on plain se
 ### elliott-voi-a-001
 context: spring, clear morning, the beach, 3 hearts
 - player: Hello there.
-- elliott: Why, hello! You have caught me at the hour when the light is still deciding what colour to be.
+- elliott: Why, hello! You have caught me at the hour when the light is still deciding what color to be.
 - player: It looks fine to me.
 - elliott: It is more than fine. I shall spend the morning trying to say so and produce one line worth keeping. What has you down here so early?
 
@@ -101,7 +101,7 @@ context: spring, clear evening, the beach, 6 hearts
 - player: You will find some.
 - elliott: I shall find twelve, discard eleven, and be insufferable about the survivor.
 - player: I will look forward to it.
-- elliott: You are very generous, @. Stay a moment, the colour lasts another ten minutes at most and it is better shared.
+- elliott: You are very generous, @. Stay a moment, the color lasts another ten minutes at most and it is better shared.
 
 ### elliott-voi-a-014
 context: spring, clear afternoon, the desert, 4 hearts, the Desert Festival
@@ -140,7 +140,7 @@ context: summer, clear afternoon, the forest, 6 hearts
 - player: You come up here most summer days.
 - elliott: Most of them. The shade is kinder, Leah is usually somewhere about with her hands full of clay, and the trees make a different sound to the water.
 - player: Better sound?
-- elliott: Different. The sea is a whole orchestra and the trees are one violinist practising. I appear to need both.
+- elliott: Different. The sea is a whole orchestra and the trees are one violinist practicing. I appear to need both.
 
 ### elliott-voi-a-019
 context: summer, clear evening, the beach, 3 hearts
@@ -161,7 +161,7 @@ context: summer, clear afternoon, the island resort, 6 hearts
 - player: Is that a drink in your hand?
 - elliott: It is, and it has a small paper parasol in it that I have grown unreasonably attached to.
 - player: It suits you.
-- elliott: I have decided that it does. There is seaweed in my hair and coconut oil on my collar, and I have stopped apologising for either.
+- elliott: I have decided that it does. There is seaweed in my hair and coconut oil on my collar, and I have stopped apologizing for either.
 - player: You should come more often.
 - elliott: On what income, @? Let us call this a research trip and never examine it too closely.
 
@@ -238,7 +238,7 @@ context: fall, clear morning, Pelican Town, 3 hearts
 - elliott: Ah, a book I have promised myself I shall return, and a second I have already decided to keep too long. I am walking them both up to the library.
 - player: Every day?
 - elliott: Most of them, once the mornings turn cool. The library and I have an understanding about the winter.
-- player: Sounds cosy.
+- player: Sounds cozy.
 - elliott: It is shamefully so. I go up there to work and spend the first hour watching the square through the glass. What takes you up this way in the mornings?
 
 ### elliott-voi-a-032
@@ -350,7 +350,7 @@ context: winter, clear afternoon, Pelican Town, 3 hearts
 ### elliott-voi-a-046
 context: winter, snowing afternoon, the beach, 2 hearts
 - player: Does the sea freeze?
-- elliott: Never quite, thank goodness. It goes grey and slow and faintly resentful, which is the nearest it comes.
+- elliott: Never quite, thank goodness. It goes gray and slow and faintly resentful, which is the nearest it comes.
 - player: It looks cold.
 - elliott: It is cold enough to be taken personally. I stand here for exactly as long as my admiration outlasts my toes.
 - player: How long is that?

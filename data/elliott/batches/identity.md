@@ -180,7 +180,7 @@ context: spring, clear afternoon, the bus stop, 5 hearts
 - player: Ballpark it. Thirty something? Forty something?
 - elliott: You conduct an interrogation with remarkable charm.
 - player: Answer the question.
-- elliott: I shall answer a neighbouring one. I am old enough to have been laughed at for my ambitions and young enough to be pursuing them still, @.
+- elliott: I shall answer a neighboring one. I am old enough to have been laughed at for my ambitions and young enough to be pursuing them still, @.
 
 ### elliott-idn-023
 context: winter, snowing morning, the beach, 4 hearts

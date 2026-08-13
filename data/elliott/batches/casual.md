@@ -170,7 +170,7 @@ context: spring, clear morning, the bus stop, 4 hearts
 ### elliott-cas-024
 context: summer, clear evening, the island resort, 6 hearts
 - player: lol ur sunburnt
-- elliott: Spectacularly. I have gone the colour of a bad decision.
+- elliott: Spectacularly. I have gone the color of a bad decision.
 - player: told u
 - elliott: You did, and I ignored you with confidence. Pass me the coconut oil, @.
 

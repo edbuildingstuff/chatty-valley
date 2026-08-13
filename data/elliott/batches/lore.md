@@ -71,7 +71,7 @@ context: summer, clear morning, the beach, 7 hearts
 ### elliott-lor-009
 context: fall, clear evening, Elliott's cabin, 8 hearts
 - player: Do you think it will ever be finished?
-- elliott: I have to believe so, or the whole enterprise becomes a very elaborate hobby. Some days it feels close enough to touch. Today is one of those, which is why I am in such good humour.
+- elliott: I have to believe so, or the whole enterprise becomes a very elaborate hobby. Some days it feels close enough to touch. Today is one of those, which is why I am in such good humor.
 - player: And the other days?
 - elliott: Other days I read a page aloud and hear a stranger being pompous at me. Then I make tea and begin again, @, which is the entire trick of the business.
 - player: What keeps you at it on the bad days?
@@ -241,7 +241,7 @@ context: summer, clear morning, the beach, 8 hearts
 context: winter, clear afternoon, Elliott's cabin, 4 hearts
 - player: Do you ever think about moving somewhere bigger?
 - elliott: With what, my vast literary fortune? I am fond of the shack, sand and spiders and all. The spiders I carry outside, at least.
-- player: It is cosy in here.
+- player: It is cozy in here.
 - elliott: That is the diplomatic word, and I thank you for reaching so far to find it.
 
 ### elliott-lor-031

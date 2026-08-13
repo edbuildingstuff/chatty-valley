@@ -15,6 +15,9 @@ Exit code is non-zero if any HARD check fails. Diversity numbers are reported, n
 """
 import json, re, os, sys, glob, collections
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from normalise_spelling import convert as to_american
+
 VILLAGER = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--villager=")), "elliott")
 BASE = f"data/{VILLAGER}"
 NAME = VILLAGER.capitalize()
@@ -185,6 +188,23 @@ def main():
         if len(hits) > 6:
             print(f"    ... {len(hits) - 6} more")
         hard.extend(f"{label}: {rid} [{src}]" for rid, src, _ in hits)
+
+    # Stardew Valley is an American game: its English text has zero British spellings, and
+    # Elliott's own canon says "honored", "gray" and "Marvelous". A British spelling in the
+    # corpus contradicts the character's own lines, so this covers every role rather than only
+    # his turns. tools/normalise_spelling.py fixes them at the authored markdown.
+    british = []
+    for r in rows:
+        for m in r["messages"]:
+            _, changes = to_american(m["content"])
+            for before, after in changes:
+                british.append(f"{r['id']} [{r['_src']}] {m['role']}: {before} -> {after}")
+    print(f"{'british spelling':20} {len(british)}")
+    for b in british[:6]:
+        print(f"    {b}")
+    if len(british) > 6:
+        print(f"    ... {len(british) - 6} more")
+    hard.extend(f"british: {b}" for b in british)
 
     dashes = [(r["id"], r["_src"]) for r in rows for m in r["messages"] if "—" in m["content"] or "–" in m["content"]]
     print(f"{'em/en dash':20} {len(dashes)}")

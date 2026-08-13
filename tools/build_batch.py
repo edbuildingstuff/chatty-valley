@@ -25,7 +25,9 @@ DASHES = ("—", "–")  # em dash, en dash
 # only on 2 to 3 turns, degenerated several turns into an in-game chat), so its rows run longer.
 # The perspective batch (v4) trains holding an epistemic boundary under SUSTAINED third-party
 # probing, so its rows also run longer than the 2-to-3-turn default.
-MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6}  # category -> max assistant turns (default 3)
+# The romance batch (Elliott, villager #2) trains holding the undated register while the player
+# presses, so like the three above its rows run longer than the 2-to-3-turn default.
+MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6, "romance": 6}  # category -> max assistant turns (default 3)
 
 
 def villager_from_path(md_path):

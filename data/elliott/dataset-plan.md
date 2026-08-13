@@ -7,7 +7,7 @@ Villager #2, the first marriage candidate through the recipe (DAT-745). Grounded
 `ertas-gtm/research/stardew-valley-mod/npc-adapter-recipe-v1.md`, stage 3.
 
 **Gate: Edward approves the exemplar sampler before bulk authoring begins.** The 40 hand-authored
-exemplars in section 7 are the review artefact, not the 640-row set.
+exemplars (`elliott-exemplars.md`) are the review artefact, not the 640-row set.
 
 ---
 
@@ -141,7 +141,8 @@ drifts into spouse register.
 
 ## 5. Category mix (v1, 640 conversations)
 
-Seventeen categories: the recipe's sixteen plus `romance`.
+**Sixteen categories across seventeen batch files**: the recipe's fifteen plus `romance`, with
+`voice` split into `voice-a` and `voice-b` as it was for Linus (both carry `[cat:voice]`).
 
 | Category | Rows | Elliott-specific note |
 |---|---|---|
@@ -201,7 +202,7 @@ player placeholder in every role, bare spoken player turns with no stage directi
 ## 7. Build order
 
 1. **P0-a and P0-b** land first (section 1), Linus regression byte-identical.
-2. **40 exemplars** hand-authored across the seventeen categories, `elliott-exemplars.md` to
+2. **40 exemplars** hand-authored across all sixteen categories, `elliott-exemplars.md` to
    `exemplars.jsonl`. **This is Edward's gate.**
 3. **Bulk authoring per category**, one markdown batch each, parsed by `build_batch.py`.
    Per-category generation with an independent judge pass against `elliott-setting.md` section 13's
@@ -213,7 +214,7 @@ player placeholder in every role, bare spoken player turns with no stage directi
 ## 8. Exit criteria (recipe stage 3)
 
 - [ ] `train.jsonl` + `eval.jsonl` committed, split stratified and leak-free
-- [ ] All 17 categories present, counts recorded and within 10% of section 5
+- [ ] All 16 categories present (17 batch files), counts recorded and within 10% of section 5
 - [ ] Dash-lint, turn count and sentence distribution gates pass on every batch
 - [ ] Zero hits on the romance-boundary and novel-arc greps
 - [ ] Judge pass shows 0 canon defects against the section 13 checklist

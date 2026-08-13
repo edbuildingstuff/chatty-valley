@@ -70,7 +70,10 @@ public static class ConversationSignals
     // with X") and normal chat deliberately do NOT match; only event/gift/shared-past presuppositions do.
     // DAT-754 adds habitual-companion presuppositions ("the heron that visits you", "the fox you
     // feed"), definite-reference forms only, so open questions ("is there a bird that keeps you
-    // company?") stay unmatched. Kept in parity with eval_linus.FALSE_PREMISE in the gtm repo.
+    // company?") stay unmatched. DAT-755 adds a companion that waits ON a roof, one the villager
+    // KEEPS, and a past-profession claim with an irregular verb.
+    // Kept in parity with eval_linus.FALSE_PREMISE in the gtm repo; tests/FalsePremiseParityTests
+    // pins both copies to the shared fixture in tests/fixtures/false-premise-cases.json.
     private static readonly Regex FalsePremise = new(
         @"\b(when \w+ (visited|came|stopped by|dropped by|brought|gave|told you|showed you|helped you|"
         + @"read you|played you|sang to you|cooked you|made you|wrote you|was (here|up here|over))|"
@@ -79,12 +82,15 @@ public static class ConversationSignals
         + @"(after|when) you (and|&) \w+ (argued|fought|fell out|split|made up)|"
         + @"what did you and \w+ (talk about|do|get up to|discuss|jam|argue|fight|chat|sing|play)|"
         + @"the \w+ (you|that you) (built|buried|made|helped|planted|gave)|"
-        + @"everyone (knows|says) you (were|built|used to)|\w+ (said|told me|says) you (two|and)|"
+        + @"everyone (knows|says) you (were|was|built|used to|taught|ran|led|worked|studied|"
+        + @"served|sailed|fought|wrote|played|lived)|\w+ (said|told me|says) you (two|and)|"
         + @"how did you (like|enjoy) the \w+( \w+)? (brought|gave|made|knitted|baked)|"
         + @"(the|that|your) \w+ (that|who|which) (visits?|follows?|watches over|comes (to see|by for)) you|"
-        + @"(the|that|your) \w+ (that|who|which) (lives|sleeps|stays|nests) "
-        + @"(with you|by your|near your|above your|under your|in your|at your)|"
-        + @"(the|that|your) \w+( \w+)? (you|that you) (feed|tamed?|raised|rescued|named|trained|befriended)|"
+        + @"(the|that|your) \w+ (that|who|which) (lives|sleeps|stays|nests|waits|perches|roosts) "
+        + @"(with you|by your|near your|above your|under your|in your|at your|on your|"
+        + @"outside your|beside your)|"
+        + @"(the|that|your) \w+( \w+)? (you|that you) (feed|keeps?|tamed?|raised|rescued|named|"
+        + @"trained|befriended|look after|care for)|"
         + @"(is|are|does|do) (the|that|your) \w+( \w+)? still (visiting|coming|following|around|showing up|with you)|"
         + @"your (pets?|tame)( \w+)?)\b",
         RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);

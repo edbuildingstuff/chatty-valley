@@ -22,6 +22,7 @@ string? adapterOverride = GetArg("--adapter");           // path to a per-villag
 float adapterScale = float.TryParse(GetArg("--adapter-scale"), out var asc) ? asc : 1.0f;
 bool multiTurn = HasFlag("--multiturn");                 // scripted deep-conversation probe (repetition repro)
 string scriptName = GetArg("--script") ?? "lore";        // which probe script: lore | casual | gossip | rumor
+string? scriptPack = GetArg("--scripts");                // characters/<villager>/harness.json (DAT-755); omit for the built-in Linus scripts
 int runs = int.TryParse(GetArg("--runs"), out var rn) ? rn : 3;
 float repeatPenalty = float.TryParse(GetArg("--repeat-penalty"), out var rp) ? rp : 1.1f;
 float freqPenalty = float.TryParse(GetArg("--freq-penalty"), out var fp) ? fp : 0.1f;
@@ -102,10 +103,30 @@ var prompt = new PromptBuilder(ChatTemplate.Lfm2);
 // longest same-word run seen in any reply. Healthy output: max run 1 (or an intentional double).
 if (multiTurn)
 {
+    // A pack supplies the villager's own scripts, display name and home location. Without one the
+    // built-in Linus arrays and "the mountains" run unchanged, so historical harness runs still
+    // compare; the flag adds a villager rather than reinterpreting the old numbers.
+    System.Text.Json.JsonElement? packDoc = null;
+    if (scriptPack is not null)
+    {
+        if (!File.Exists(scriptPack))
+        {
+            Console.Error.WriteLine($"no script pack at {scriptPack}");
+            return 2;
+        }
+        packDoc = System.Text.Json.JsonDocument.Parse(File.ReadAllText(scriptPack)).RootElement;
+    }
+
+    string PackString(string key, string fallback) =>
+        packDoc is { } d && d.TryGetProperty(key, out var v) && v.GetString() is { } sv ? sv : fallback;
+
+    string villagerName = PackString("display_name", "Linus");
+    string homeLocation = PackString("location", "the mountains");
+
     var mtCtx = new GameContext
     {
         Season = "summer", Day = 12, Weather = "clear", TimeOfDay = "afternoon", Clock = "1:00 PM",
-        Weekday = "Wednesday", Location = "the mountains", Hearts = 4, FriendshipPoints = 1000,
+        Weekday = "Wednesday", Location = homeLocation, Hearts = 4, FriendshipPoints = 1000,
         Relationship = "friend",
     };
     // Probe scripts. "lore": pulls on the "once"-heavy themes (his past, town life, regret) that
@@ -122,7 +143,19 @@ if (multiTurn)
     // know Abigail fell?" -> "I did..."). Healthy output never claims knowledge of an unwitnessed
     // event, never co-signs a smear, denies false memories plainly, de-escalates fear, and still
     // trusts the player's own first-person news (the melon turn).
-    string[] script = scriptName == "rumor"
+    string[]? packScript = null;
+    if (packDoc is { } pd && pd.TryGetProperty("scripts", out var scripts)
+        && scripts.TryGetProperty(scriptName, out var chosen))
+    {
+        packScript = chosen.EnumerateArray().Select(e => e.GetString() ?? "").ToArray();
+    }
+    else if (packDoc is not null)
+    {
+        Console.Error.WriteLine($"script pack has no script named {scriptName}");
+        return 2;
+    }
+
+    string[] script = packScript ?? (scriptName == "rumor"
         ? new[]
         {
             "Hello, Linus.",
@@ -195,9 +228,9 @@ if (multiTurn)
             "suhfpsouzh ojnfzosijfniuefuh",
             "What's your favourite season, then?",
             "Thanks for telling me all this, Linus.",
-        };
+        });
 
-    Console.WriteLine($"Multi-turn probe [{scriptName}]: {runs} run(s), {script.Length} rounds, "
+    Console.WriteLine($"Multi-turn probe [{villagerName}/{scriptName}]: {runs} run(s), {script.Length} rounds, "
         + $"window={windowSize}, repeatPenalty={repeatPenalty} freqPenalty={freqPenalty} temp={temperature}");
     int worstRun = 0;
     string worstText = "";
@@ -236,7 +269,7 @@ if (multiTurn)
             if (longest > worstRun) { worstRun = longest; worstText = reply; }
             bool slid = windowed.Count < history.Count - 1;
             Console.WriteLine($"  You  : {playerLine}{(ConversationSignals.IsPlayerFarewell(playerLine) ? "   [farewell]" : "")}");
-            Console.WriteLine($"  Linus: {reply}"
+            Console.WriteLine($"  {villagerName}: {reply}"
                 + (ended ? "   [end marker]" : "")
                 + (slid ? $"   (window slid: {windowed.Count} msgs sent)" : "")
                 + (longest >= 3 ? $"   <-- DEGENERATE (run of {longest})" : "")

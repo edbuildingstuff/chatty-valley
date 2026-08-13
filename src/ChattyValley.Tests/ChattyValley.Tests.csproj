@@ -33,6 +33,9 @@
              CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\..\characters\linus.json" Link="packaging\linus.json"
              CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="fixtures\false-premise-cases.json"
+             Link="fixtures\false-premise-cases.json"
+             CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

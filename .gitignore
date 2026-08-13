@@ -13,3 +13,4 @@ adapters/
 
 # Packaged release output
 dist/
+__pycache__/

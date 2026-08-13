@@ -45,7 +45,7 @@ ships:
 
 | Map name | Ships as |
 |---|---|
-| `ElliottHouse` | his cabin |
+| `ElliottHouse` | Elliott's cabin |
 | `ArchaeologyHouse` | the library |
 | `Saloon` | the Stardrop Saloon |
 | `SeedShop` | Pierre's shop |

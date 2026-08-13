@@ -357,13 +357,8 @@ public sealed class ModEntry : StardewModdingAPI.Mod
     private static string DayName(int dayOfMonth) => new[]
         { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }[(dayOfMonth - 1) % 7];
 
-    private static string FriendlyLocation(string? name) => name switch
-    {
-        "Mountain" => "the mountains",
-        "Forest" => "the forest",
-        "Town" => "Pelican Town",
-        "Beach" => "the beach",
-        null => "the valley",
-        _ => name,
-    };
+    // The map -> in-voice phrase table lives in Core (ChattyValley.Core.Locations) so it is unit
+    // testable: this project cannot be tested behind SMAPI. It also no longer falls through to the
+    // raw map name, which would have injected "ArchaeologyHouse" into Elliott's prompt.
+    private static string FriendlyLocation(string? name) => Locations.Friendly(name);
 }

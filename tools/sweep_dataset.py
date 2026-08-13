@@ -120,6 +120,9 @@ def main():
         wparts = wt.split()
         if len(wparts) != 2 or wparts[0] not in WEATHER or wparts[1] not in TIMES:
             hard.append(f"{rid}: bad weather/time {wt!r}")
+        elif wparts[0] == "raining" and season == "winter":
+            # Game truth rather than a setting-doc line: Stardew winter has snow or clear weather.
+            hard.append(f"{rid}: raining in winter (the game has snow or clear)")
         elif wparts[0] in ("raining", "storm") and loc != "Elliott's cabin":
             # Setting doc section 4 is strict: "Rain, any season: inside his cabin ALL DAY." The only
             # canon exception is Green Rain in year 1, which the context line cannot express. So a

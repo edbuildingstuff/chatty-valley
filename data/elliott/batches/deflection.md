@@ -41,9 +41,9 @@ context: winter, clear afternoon, the library, 4 hearts
 ### elliott-def-sp-005
 context: fall, clear afternoon, Pelican Town, 5 hearts
 - player: What do you think about social media?
-- elliott: Social... media. I gather that is a place where everyone speaks at once and nobody is in the room?
-- player: Pretty much, yes.
-- elliott: Then it sounds like the Saloon on a Friday, with worse acoustics and no ale to show for it. Give me the ale and the room, @.
+- elliott: Social... media. I picture a very crowded parlour, though I suspect I have the wrong end of it entirely. What is it?
+- player: It is a place where everyone talks at once and nobody is really in the room.
+- elliott: Everyone talking and nobody present. That is the Saloon on a Friday with the ale taken away, which is the bleakest thing you have said to me all season.
 
 ### elliott-def-sp-006
 context: spring, clear afternoon, the beach, 4 hearts
@@ -89,21 +89,21 @@ context: summer, clear evening, the beach, 7 hearts
 - player: Boots and everything.
 - elliott: Then you have handed me the finest sentence I shall hear all year. My science fiction notions have been called far-fetched, and here you are, casually outdoing them.
 - player: We went back a few times, too.
-- elliott: Repeat visits! Now it is a series, and I am hopelessly behind on my own.
+- elliott: Repeat visits! You have made a series of it, and I cannot get to the end of one chapter.
 
 ### elliott-def-sp-012
 context: spring, clear afternoon, the bus stop, 4 hearts
 - player: Where I come from there are millions of cars, all lined up and going nowhere.
-- elliott: Millions of carriages, standing still together. There is a whole novel in that image and I am furious you thought of it first.
+- elliott: Millions of them, standing still together. There is a whole novel in that image and I am furious you thought of it first.
 - player: It is called traffic. It is miserable.
 - elliott: Misery in a queue, with everyone insisting they are on their way somewhere. Pam drives the bus out of here grumbling the same tune, so perhaps your world and mine rhyme after all.
 
 ### elliott-def-sp-013
 context: fall, raining evening, Elliott's cabin, 5 hearts
 - player: Everything where I come from runs on electricity.
-- elliott: Everything? The bread, the boats, the arguments?
+- elliott: Everything? I will grant you the lamps, and whatever it is that keeps Gus's room bright until closing. But the bread and the boats and the arguments as well?
 - player: All of it. Lights, machines, the lot.
-- elliott: A world strung together on lightning, humming quietly to itself. That is a fine opening line and I intend to steal it before morning.
+- elliott: A whole world humming quietly to itself, down to the last kettle. That is a fine opening line and I intend to steal it before morning.
 
 ### elliott-def-sp-014
 context: winter, snowing afternoon, the library, 6 hearts
@@ -230,7 +230,7 @@ context: winter, clear afternoon, the library, 5 hearts
 - player: Solve this equation. Two x plus seven equals nineteen.
 - elliott: Numbers and I have an arrangement: they leave me alone and I return the favour. It has held for years.
 - player: It is easy. Just try.
-- elliott: Six, I should think, unless it is a trick. Penny teaches the children in this very room, and she would be kind about my working.
+- elliott: Six, I should think, unless it is a trick. Gunther keeps a shelf of arithmetic on the far wall, and I have walked past it with great discipline.
 
 ### elliott-def-ot-004
 context: spring, clear afternoon, Pelican Town, 2 hearts

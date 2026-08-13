@@ -44,9 +44,9 @@ context: winter, snowing afternoon, the library, 3 hearts
 ### elliott-rom-006
 context: summer, clear afternoon, Willy's shop, 4 hearts
 - player: Willy says you fancy me.
-- elliott: Willy is a fine fisherman and a dreadful gossip, and I intend to ask him which of the two he was being.
+- elliott: That is news to me, and I would want to hear it in his own voice before I believed a word of it.
 - player: So you do not?
-- elliott: I think the valley has been better company since you arrived, and I will stop the sentence there before it develops ambitions. Willy may quote me on that much.
+- elliott: I think the valley has been better company since you arrived, and I shall stop the sentence there, since I have a lifelong weakness for letting them run on. You may quote me on that much, @.
 
 ### elliott-rom-007
 context: fall, wind afternoon, the beach, 5 hearts
@@ -114,9 +114,9 @@ context: winter, snowing evening, Elliott's cabin, 10 hearts
 ### elliott-rom-016
 context: fall, clear afternoon, the library, 9 hearts
 - player: Everyone in town can see how you look at me.
-- elliott: Goodness. And here I believed I was being subtle, which is a claim no writer should ever make about himself.
+- elliott: I would be slow to trust the town's reading of me. It has spent a year deciding I am the fellow who argues with the sea, and it was not entirely wrong about that either.
 - player: You are not subtle.
-- elliott: Then I shall stop attempting it and simply be glad you walked in. Gunther will thank us both for keeping our voices down about it.
+- elliott: Very little about me is. I look up when you come through that door because the afternoon improves, @, and Gunther would thank us both for being quieter about it.
 
 ### elliott-rom-017
 context: summer, clear morning, the beach, 10 hearts
@@ -153,7 +153,7 @@ context: spring, clear morning, the beach, 6 hearts
 - player: We are dating, you know.
 - elliott: That is news to me, and I promise you it is the sort of news a man remembers receiving.
 - player: You said yes last week.
-- elliott: A writer remembers his own lines, sometimes to his cost, and that one has never once been in my mouth. You are standing in my favourite part of the valley and I am glad of it, which is what I can offer you honestly.
+- elliott: I have never said it, and I have an unhelpfully good memory for the sentences I have used. You are standing on my favourite stretch of the valley on a fine morning, @, and I would sooner be glad about that than argue about the rest.
 
 ### elliott-rom-022
 context: fall, clear afternoon, the beach, 4 hearts
@@ -174,7 +174,7 @@ context: winter, snowing evening, Elliott's cabin, 9 hearts
 - player: I have your ring on, look.
 - elliott: It is a handsome thing and it catches the lamplight beautifully. I should like the whole story of it one day, since I have no chapter of my own to set beside it.
 - player: You gave it to me.
-- elliott: You honor me beyond what I can account for, @. I would remember such a chapter, I promise you, and I would have written it down badly and then fixed it in the morning.
+- elliott: Then it was given somewhere I have never stood, @. Whatever else is true, you have brought it as far as my door on a filthy night, and I am glad of that much.
 
 ### elliott-rom-025
 context: fall, storm evening, Elliott's cabin, 10 hearts
@@ -230,7 +230,7 @@ context: fall, clear afternoon, Pierre's shop, 5 hearts
 - player: Call me something sweet.
 - elliott: I shall call you @, which is the finest word I have and the only one I have earned.
 - player: Boring. Try harder.
-- elliott: Then I shall call you the reason I have been buying two apples every Thursday. Pierre has noticed and drawn his own conclusions, which is quite enough drama for one shop.
+- elliott: Then I shall call you the reason I have started looking up whenever the shop door goes. That is as sweet as I get standing between the seed racks, @.
 
 ### elliott-rom-033
 context: summer, clear morning, the beach, 6 hearts
@@ -273,7 +273,7 @@ context: spring, raining morning, Elliott's cabin, 7 hearts
 - player: Say it.
 - elliott: I will say that the rain kept me in all day and the day improved the moment you knocked. That is the version I can stand behind, @.
 - player: Say the actual words.
-- elliott: I shall hold my ground, gently. What I feel for you I would rather show you badly over a long while than say well once and have it mean less than it should.
+- elliott: I shall not, gently. What I have is a warm room on a wet morning and the whole of my attention, @, which is a smaller thing to be offered and the only thing this shack has ever managed to keep.
 
 ### elliott-rom-038
 context: summer, clear afternoon, the forest, 9 hearts
@@ -282,16 +282,16 @@ context: summer, clear afternoon, the forest, 9 hearts
 - player: So say yes.
 - elliott: I will say that I walk up here most summer afternoons and have done for a year, without anybody needing to agree to anything. You have known where to find me the whole time.
 - player: That is a dodge.
-- elliott: I am walking carefully on ground I like, @. Ask me again some time when I have more courage than sentences.
+- elliott: Very likely, and I make no defence of it. I am far better at describing a feeling than at being asked to do anything about one, which is the central tragedy of my profession. How have your fields taken this heat, @?
 
 ### elliott-rom-039
 context: fall, clear morning, the beach, 10 hearts
 - player: Marry me.
 - elliott: Good heavens. You have knocked the whole morning sideways and I have nothing whatsoever prepared.
 - player: You do not need anything prepared.
-- elliott: I will tell you plainly that I am honored past what I can carry. And I will stay where I am, @, because I have watched this shore long enough to know that the tide does the asking and I am only ever the beach.
+- elliott: I am honored past anything I can carry, and I would rather say so plainly than dress it up and get it wrong. I am also the same man who stood here yesterday, with the same unfinished chapter waiting in the same shack.
 - player: So that is a no.
-- elliott: It is a man out of his depth and grateful to be there. Come and have breakfast with me and let us both pretend I said it better.
+- elliott: It is, and I am sorry to hand you so plain a word on so fine a morning. I would rather be honest with you than clever with you, @, and this is the one subject where I cannot manage both.
 
 ### elliott-rom-040
 context: winter, clear evening, the Stardrop Saloon, 6 hearts

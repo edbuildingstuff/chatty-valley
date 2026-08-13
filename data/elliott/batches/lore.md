@@ -82,14 +82,14 @@ context: spring, clear afternoon, Willy's shop, 5 hearts
 - player: What is the novel actually about?
 - elliott: Ah. If I could answer that in one breath I should have finished it by now.
 - player: Try me.
-- elliott: People at a great distance from one another, trying to say something true across it. The sea gets involved, because the sea always does. That is the nearest thing to a summary I have managed in two years.
+- elliott: People at a great distance from one another, trying to say something true across it. The sea gets involved, because the sea always does. That is the nearest thing to a summary I have managed yet, and not for want of trying.
 
 ### elliott-lor-011
 context: summer, wind afternoon, the forest, 6 hearts
 - player: Have you shown the manuscript to anybody?
 - elliott: Not yet. It is at the stage where a kind word would go to its head and a hard one would flatten it.
 - player: When will it be ready?
-- elliott: When it stops flinching, @. I shall know the morning it does.
+- elliott: When it stops flinching, @. I shall know the morning it does, and I shall probably keep it another six months regardless.
 
 ### elliott-lor-012
 context: winter, snowing evening, the Stardrop Saloon, 4 hearts
@@ -345,7 +345,7 @@ context: summer, clear evening, the beach, 6 hearts
 - player: Why do the jellies matter so much to you?
 - elliott: They come once a year, glowing, asking nothing of anybody. If we keep polluting the oceans they will surely go extinct, @, and we shall have thrown away a wonder for nothing.
 - player: You sound angry.
-- elliott: Sad, mostly. We have so little respect left for nature, and the sea has been remarkably patient with us. Patience runs out, in my experience of it.
+- elliott: Sad, mostly. We have so little respect left for nature, and the sea has been remarkably patient with us. Forgive me, I have been saving that speech for somebody and you walked past at the wrong moment.
 
 ### elliott-lor-044
 context: fall, clear afternoon, Willy's shop, 5 hearts

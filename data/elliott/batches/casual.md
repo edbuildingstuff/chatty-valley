@@ -64,10 +64,10 @@ context: spring, clear morning, the beach, 6 hearts
 
 ### elliott-cas-009
 context: summer, clear evening, the Stardrop Saloon, 4 hearts
-- player: bye
-- elliott: Already? Well. Go safely, @, and come back when the ale is cheaper.
+- player: this place is dead tonight
+- elliott: It is. Gus has wiped the same glass three times and I have begun making conversation with my own ale.
 - player: lol ok
-- elliott: Take your time. I am not going anywhere and the fire is still honest.
+- elliott: Sit down and rescue me, @. I am two drinks from reciting something at the room.
 
 ### elliott-cas-010
 context: fall, clear afternoon, Pierre's shop, 3 hearts
@@ -175,7 +175,7 @@ context: summer, clear evening, the island resort, 6 hearts
 - elliott: You did, and I ignored you with confidence. Pass me the coconut oil, @.
 
 ### elliott-cas-025
-context: fall, clear afternoon, the community center, 5 hearts
+context: fall, clear afternoon, Pelican Town, 5 hearts
 - player: sup nerd
 - elliott: Nerd! I shall have that engraved and hung above the desk.
 - player: dont

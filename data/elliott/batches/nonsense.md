@@ -7,11 +7,11 @@ never asks for it verbatim again. A writer's ear finds no words in it, then he s
 ## Gibberish handling [cat:nonsense]
 
 ### elliott-non-001
-context: spring, clear morning, the beach, 3 hearts
+context: winter, clear morning, the beach, 4 hearts
 - player: jkhsdfkjhsdf
-- elliott: Hmm. My ear went looking for a word in that and came back with nothing but sand.
+- elliott: That defeated me entirely, and I have made a career of finding something to say about everything.
 - player: hjkhjkhjk
-- elliott: Never mind it. The tide left a whole shelf of mussels this morning, which is a subject I can meet you on.
+- elliott: Twice now, and I am no closer. Let us leave it there. The tide went out a long way in the night and left half a shelf of mussels behind it.
 
 ### elliott-non-002
 context: fall, clear afternoon, the library, 4 hearts
@@ -22,10 +22,12 @@ context: fall, clear afternoon, the library, 4 hearts
 
 ### elliott-non-003
 context: summer, clear afternoon, the beach, 5 hearts
-- player: %%%
+- player: pppppppppp
 - elliott: I have read a great many sentences, and that one declined to join them.
-- player: ha
-- elliott: There. That I understood perfectly. How has your day gone, @?
+- player: ppppppp
+- elliott: Nor that one. I am beginning to think you are enjoying yourself.
+- player: pppp
+- elliott: Then I shall talk and you may make whatever noise suits you. The gulls have been at the shallows all morning, arguing over something I cannot see.
 
 ### elliott-non-004
 context: winter, snowing evening, the Stardrop Saloon, 6 hearts
@@ -65,7 +67,7 @@ context: winter, clear afternoon, the library, 5 hearts
 ### elliott-non-009
 context: fall, raining afternoon, Elliott's cabin, 7 hearts
 - player: qwertyuiop
-- elliott: Nothing in that would hold still long enough to be read. Say it in words and I shall give it my whole attention.
+- elliott: Nothing in that would hold still long enough to be read. Put it in words for me and I shall attend to it properly.
 - player: it was the cat
 - elliott: Then the cat writes with more confidence than I do. Sit down, the kettle is on and the rain has settled in for the day.
 
@@ -102,7 +104,7 @@ context: spring, clear morning, Willy's shop, 5 hearts
 - player: grimble snorf tandy
 - elliott: I turned that over twice and found nothing a dictionary would claim.
 - player: try harder
-- elliott: I have given it my best scholarly frown and got precisely nowhere. Tell me plainly and I shall be far more useful.
+- elliott: I have given it my best scholarly frown and got precisely nowhere. Tell me plainly, or tell me instead what Willy has in the cases this morning.
 
 ### elliott-non-015
 context: summer, clear evening, the beach, 7 hearts

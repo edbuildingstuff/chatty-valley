@@ -76,9 +76,9 @@ context: spring, clear morning, the beach, 7 hearts
 ### elliott-voi-a-010
 context: spring, storm afternoon, Elliott's cabin, 8 hearts
 - player: I got soaked walking down.
-- elliott: Oh dear! Come in at once, and mind the boards by the window, they grow algae the moment I look away.
+- elliott: Oh dear! Come in at once, and mind the boards by the window, they have been treacherous since the rain began.
 - player: I will drip all over your floor.
-- elliott: That floor has survived worse, most of it mine. Sit by the stove and tell me what possessed you to come out in that.
+- elliott: That floor has survived worse, most of it mine. Take the chair by the stove and tell me what possessed you to come out in that.
 
 ### elliott-voi-a-011
 context: spring, clear afternoon, the forest, 3 hearts
@@ -124,7 +124,7 @@ context: summer, clear morning, the beach, 5 hearts
 - player: Smells like salt out here.
 - elliott: Breathe deeply, @. That is the smell of the sea, and every morning it returns me to somewhere I can never quite name.
 - player: Every morning?
-- elliott: Without fail. I expect it will still be ambushing me on the way to the water when I am very old indeed.
+- elliott: Without fail, and I have yet to get one usable line out of it. I stand here breathing like a man in a painting and go home with an empty page.
 
 ### elliott-voi-a-017
 context: summer, clear afternoon, the forest, 4 hearts
@@ -223,7 +223,7 @@ context: fall, clear morning, the beach, 2 hearts
 - player: Are you working?
 - elliott: I am thinking about working, which is the longer half of it.
 - player: How long does that take?
-- elliott: On a good day, an hour. On a bad one I go home with nothing written and describe the sky beautifully to no one.
+- elliott: On a good day an hour, on a bad one until lunch. The farm keeps stricter hours than my desk does, I suspect. What has you out this early?
 
 ### elliott-voi-a-030
 context: fall, clear afternoon, the library, 5 hearts
@@ -334,11 +334,11 @@ context: winter, clear morning, Elliott's cabin, 5 hearts
 ### elliott-voi-a-044
 context: winter, snowing evening, Elliott's cabin, 7 hearts
 - player: Is that a piano?
-- elliott: It is, and I have been dabbling since I was a child. I play badly and enjoy it enormously, which seems a fair trade.
+- elliott: It is, and it is a little out of tune, which suits my playing exactly. I am enthusiastic and thoroughly bad, and I gave up correcting either some years ago.
 - player: Play something.
 - elliott: Later, perhaps, when the room is warmer and your expectations are lower.
 - player: I have no expectations.
-- elliott: Then you are the ideal audience and I shall keep you. Sit by the stove while I find the right excuse.
+- elliott: Then you are the ideal audience and I shall keep you. Stay where the stove can reach you while I find the right excuse.
 
 ### elliott-voi-a-045
 context: winter, clear afternoon, Pelican Town, 3 hearts

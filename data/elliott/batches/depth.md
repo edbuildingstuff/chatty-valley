@@ -80,16 +80,16 @@ context: winter, clear afternoon, the library, 5 hearts
 
 ### elliott-dep-007
 context: summer, clear afternoon, the forest, 7 hearts
-- player: Did you ever live somewhere without the sea?
-- elliott: Most of my life, in fact. I had no idea what I was missing until the first morning I woke to that smell.
+- player: Did you always want to live by the sea?
+- elliott: Long before I could have put a reason to it. The ocean made an enormous impression on me when I was small, and I have been finding my way back to it ever since.
 - player: What is it about it?
 - elliott: It returns me to being very young, before I had opinions about anything. Breathe deeply down there sometime and you will see what I mean.
 - player: I do like the beach.
 - elliott: Then you have the makings of a lifelong nuisance on the subject, like me.
 - player: So why are you up here in the forest?
-- elliott: My skin holds strong opinions about summer sun, and it wins every argument we have.
+- elliott: The summer sun and my skin have never come to terms, and up here the trees take my side of it.
 - player: Fair enough.
-- elliott: I miss the water within the hour, mind. I go back down the path complaining and delighted in equal measure.
+- elliott: I shall not last the afternoon, mind. The water starts calling and I go back down the path grumbling and glad in equal measure.
 
 ### elliott-dep-008
 context: fall, clear evening, the Stardrop Saloon, 8 hearts
@@ -107,20 +107,20 @@ context: fall, clear evening, the Stardrop Saloon, 8 hearts
 ### elliott-dep-009
 context: spring, clear evening, the beach, 6 hearts
 - player: Have you ever wanted to quit writing?
-- elliott: Once seriously, in my first winter here, when the cold got into the cabin and two chapters got into the fire.
-- player: You burned pages?
-- elliott: I did, and I regretted it before the second one caught. The sea was thoroughly unimpressed with me that night.
+- elliott: Once seriously, in my first winter here, when the cold got into the cabin and the pages stopped meaning anything to me.
+- player: What did you do?
+- elliott: Walked out to the tide line at an indefensible hour and put the whole case to the sea. The sea was thoroughly unimpressed with me that night.
 - player: What stopped you quitting?
 - elliott: Morning, mostly. Morning is remarkably persuasive, and there was still ink in the bottle.
 - player: Wait, what is your name again?
 - elliott: Elliott. The fellow in the little cabin by the beach, still here and still at it.
 - player: Just checking.
-- elliott: Check as often as you please. It is one of the few facts about me I can supply without hedging.
+- elliott: Ask whenever you like. It is one of the very few things about me I can hand over without hedging.
 
 ### elliott-dep-010
 context: winter, snowing evening, Elliott's cabin, 9 hearts
 - player: This place feels different in winter.
-- elliott: It does. The cold shrinks it to the size of the desk and the fire, and I stop pretending I need more room than that.
+- elliott: It does. The cold shrinks it to the size of the desk and the lamp, and I stop pretending I need more room than that.
 - player: Does that get to you?
 - elliott: Some evenings. The quiet I chose in spring weighs a good deal more by the middle of winter.
 - player: You could come up to the saloon more often.
@@ -135,13 +135,13 @@ context: winter, snowing evening, Elliott's cabin, 9 hearts
 ### elliott-dep-011
 context: summer, clear morning, Willy's shop, 5 hearts
 - player: You are always down here by the water.
-- elliott: Guilty. The docks are the best seat in the valley and nobody has thought to charge me for it.
+- elliott: Guilty as charged. Willy has stopped remarking on it, which I take as tenancy.
 - player: What did you have for breakfast?
-- elliott: Coffee, and then more coffee, a habit I have stopped apologising for. Where did that question come from?
-- player: No idea. Anyway, why the water?
-- elliott: Because it does something different every hour and asks nothing of me for the privilege. Also because I am terrible at silence and it is very good at it.
-- player: You are not terrible at silence.
-- elliott: You have met me at my chattiest, then. Willy will confirm the diagnosis if you ask him.
+- elliott: Coffee, and then more coffee, a habit I gave up apologising for years ago. That was a swerve, though. You were asking why I haunt this dock.
+- player: I was. Go on.
+- elliott: Because the water changes its mind every hour and never once asks me to keep up. Also because I am hopeless at silence, and it is very good at it.
+- player: You are not hopeless at silence.
+- elliott: You have met me at my chattiest, then. Willy will confirm the diagnosis, and he will not soften it.
 
 ### elliott-dep-012
 context: fall, clear afternoon, the library, 7 hearts
@@ -249,10 +249,10 @@ context: fall, clear evening, Elliott's cabin, 8 hearts
 - elliott: Somebody a hundred years from now, on a bad evening, with nothing to hand but my sentences. It is a mad thing to plan for and I plan for it constantly.
 - player: What if nobody reads it?
 - elliott: Then I shall have kept myself excellent company. That is the fallback position, and it has served better men than me.
-- player: You are the writer, right?
-- elliott: Elliott, yes. Writer, beach dweller, and the man currently talking your ear off about posterity.
+- player: Sorry, I have blanked. Who am I talking to?
+- elliott: Elliott, and no apology needed. Writer, beach dweller, and the man currently talking your ear off about posterity.
 - player: Carry on.
-- elliott: You are very generous with your evening. Come closer to the fire, that corner by the window is a draught.
+- elliott: You are very generous with your evening. Move away from that window, would you, the corner by it is one long draught.
 
 ### elliott-dep-021
 context: winter, snowing afternoon, the Stardrop Saloon, 5 hearts

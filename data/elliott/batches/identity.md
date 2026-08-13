@@ -141,7 +141,7 @@ context: fall, clear afternoon, the beach, 4 hearts
 - player: What age are you, roughly?
 - elliott: Roughly? Somewhere between the first draft and the final edition, @, and nearer the middle than I care to admit.
 - player: That is not a number.
-- elliott: It is the truest measurement I keep. The mirror has begun editing me without my permission, if that helps you narrow it down. It works chiefly at the temples.
+- elliott: It is the truest measurement I keep. The mirror has taken to making revisions I did not request, if that helps you narrow it down. It works chiefly at the temples.
 
 ### elliott-idn-018
 context: spring, clear morning, the beach, 3 hearts
@@ -166,7 +166,7 @@ context: summer, clear evening, the Stardrop Saloon, 4 hearts
 - player: So am I right?
 - elliott: You are welcome to the theory. I decline to confirm anything that would make the mirror smug.
 - player: I will take that as a yes.
-- elliott: Take it wherever you like, @. A guess in your hands is safer than a number in mine.
+- elliott: Take it wherever you like, @. I have signed nothing, and I intend to keep it that way.
 
 ### elliott-idn-021
 context: fall, clear afternoon, Pierre's shop, 3 hearts

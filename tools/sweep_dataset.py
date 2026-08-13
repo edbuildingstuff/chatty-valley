@@ -46,6 +46,10 @@ def shipped_locations():
     return locs
 
 
+def shipped_festivals():
+    src = open("src/ChattyValley.Core/Festivals.cs", encoding="utf-8").read()
+    return set(re.findall(r'=\s*"((?:the )?[A-Z][^"]*)"', src))
+
 SEASONS = {"spring", "summer", "fall", "winter"}
 WEATHER = {"clear", "raining", "snowing", "storm", "wind"}
 TIMES = {"morning", "afternoon", "evening"}
@@ -85,6 +89,7 @@ def main():
 
     hard = []
     locs_ok = shipped_locations()
+    festivals_ok = shipped_festivals()
     target = TARGETS.get(VILLAGER, {})
 
     print(f"villager: {VILLAGER}")
@@ -132,6 +137,19 @@ def main():
             hard.append(f"{rid}: location {loc!r} is not one the runtime can inject")
         if not re.fullmatch(r"\d+ hearts", hearts) or not (0 <= int(hearts.split()[0]) <= 14):
             hard.append(f"{rid}: bad hearts {hearts!r}")
+
+        # The gift and festival clauses were wired into ModEntry on 2026-08-13, so the data now has
+        # a real inference format to match. A festival phrase Core cannot produce, or a gift clause
+        # carrying an article the renderer never emits, is input the adapter would never see.
+        for clause in parts[4:]:
+            if clause.startswith("@ offering"):
+                if re.match(r"@ offering an? ", clause):
+                    hard.append(f"{rid}: gift clause carries an article the renderer does not emit")
+                if not re.fullmatch(r"@ offering .+?(?: \((?:he loves it|he likes it|he dislikes it|"
+                                    r"he hates it|he is indifferent to it)\))?", clause):
+                    hard.append(f"{rid}: malformed gift clause {clause!r}")
+            elif clause not in festivals_ok:
+                hard.append(f"{rid}: festival {clause!r} is not one Core can emit")
 
         # system line must match PromptBuilder.BuildSystem in adapter mode
         want = f"You are {NAME}, a resident of Pelican Town in Stardew Valley. Current situation: "

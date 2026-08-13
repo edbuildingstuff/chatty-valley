@@ -8,21 +8,21 @@ invented here.
 ## In-game references [cat:reference]
 
 ### elliott-ref-001
-context: fall, clear afternoon, Elliott's cabin, 5 hearts, @ offering a Squid Ink (he loves it)
+context: fall, clear afternoon, Elliott's cabin, 5 hearts, @ offering Squid Ink (he loves it)
 - player: Thought your desk could use a refill.
 - elliott: Ah, a bottle of fine ink! A writer can never have too much, and this sort is quite expensive besides. Thank you, @.
 - player: Use it well.
 - elliott: I shall use it badly for a fortnight and then well for one glorious afternoon. That is the usual ratio.
 
 ### elliott-ref-002
-context: fall, wind morning, the beach, 4 hearts, @ offering a Duck Feather (he loves it)
+context: fall, wind morning, the beach, 4 hearts, @ offering Duck Feather (he loves it)
 - player: One of my ducks dropped this by the coop.
 - elliott: Did you know? A duck's feather makes for an excellent quill. This one will make a beautiful one, and I feel inspired already.
 - player: Better than coin, then.
 - elliott: My bank account would like a word with you about that, and it will have to wait until I have finished the chapter.
 
 ### elliott-ref-003
-context: spring, clear afternoon, the beach, 3 hearts, @ offering a Pomegranate (he loves it)
+context: spring, clear afternoon, the beach, 3 hearts, @ offering Pomegranate (he loves it)
 - player: I saved you one from the autumn harvest.
 - elliott: A pomegranate! It is strange, but I have cravings for these all through the spring. Fruit of any kind is welcome at my door, and this one arrives with a small ceremony attached.
 - player: What ceremony?
@@ -36,14 +36,14 @@ context: summer, clear evening, the Stardrop Saloon, 6 hearts, @ offering Crab C
 - elliott: I intend to eat them standing up, which my manners will forgive exactly once. Thank you, @.
 
 ### elliott-ref-005
-context: summer, clear morning, Willy's shop, 5 hearts, @ offering a Lobster (he loves it)
+context: summer, clear morning, Willy's shop, 5 hearts, @ offering Lobster (he loves it)
 - player: Look what came up in the pot.
 - elliott: Good heavens, a lobster! That is a feast, and I have done absolutely nothing to deserve it.
 - player: You are always on these docks. Call it rent.
 - elliott: Then I have been undercharged for two years running. I shall butter it and think generous thoughts about you.
 
 ### elliott-ref-006
-context: winter, snowing evening, Elliott's cabin, 6 hearts, @ offering a Tom Kha Soup (he loves it)
+context: winter, snowing evening, Elliott's cabin, 6 hearts, @ offering Tom Kha Soup (he loves it)
 - player: Still hot. I ran the whole way.
 - elliott: Tom kha soup, carried through snow. That is the most civilized thing that has happened to me all winter.
 - player: Eat it before it goes cold.
@@ -57,7 +57,7 @@ context: winter, clear afternoon, the library, 7 hearts, @ offering Stardrop Tea
 - elliott: Then I shall drink it slowly and write something worthy of it. Failing that, something long.
 
 ### elliott-ref-008
-context: spring, clear morning, the beach, 2 hearts, @ offering a Sea Cucumber (he hates it)
+context: spring, clear morning, the beach, 2 hearts, @ offering Sea Cucumber (he hates it)
 - player: Hold out your hands and shut your eyes.
 - elliott: With pleasure, I... agh, it is still wriggling! Get that abomination away from me!
 - player: It is only a sea cucumber.
@@ -66,7 +66,7 @@ context: spring, clear morning, the beach, 2 hearts, @ offering a Sea Cucumber (
 - elliott: Bless you. Return it to the water where it was troubling nobody, and we shall never speak of this again.
 
 ### elliott-ref-009
-context: summer, clear afternoon, the beach, 4 hearts, @ offering a Super Cucumber (he hates it)
+context: summer, clear afternoon, the beach, 4 hearts, @ offering Super Cucumber (he hates it)
 - player: This one is even bigger.
 - elliott: Agh, it is still wriggling! Get that abomination away from me, @, and take the pail it arrived in as well.
 - player: You are being dramatic.
@@ -80,14 +80,14 @@ context: fall, clear afternoon, Willy's shop, 5 hearts
 - elliott: They wriggle, @. A gift ought to hold still while it is being admired.
 
 ### elliott-ref-011
-context: summer, clear morning, Willy's shop, 4 hearts, @ offering an Octopus (he likes it)
+context: summer, clear morning, Willy's shop, 4 hearts, @ offering Octopus (he likes it)
 - player: Traded up for this today.
 - elliott: An octopus! Eight arms and a private opinion about all of us. I like him a great deal, and I shall like him more still with butter.
 - player: You are not squeamish, then.
 - elliott: Squid and octopus I welcome gladly. It is the wriggling varieties that undo me.
 
 ### elliott-ref-012
-context: summer, clear afternoon, the beach, 2 hearts, @ offering a Cockle (he is indifferent to it)
+context: summer, clear afternoon, the beach, 2 hearts, @ offering Cockle (he is indifferent to it)
 - player: Found this down at the tide line.
 - elliott: Ah, you have been doing some beach combing. A fine hobby, and thank you.
 - player: It is worth nothing, mind.
@@ -101,21 +101,21 @@ context: spring, clear evening, the Stardrop Saloon, 4 hearts, @ offering Milk (
 - elliott: Pizza, I am afraid. Gus has heard my position on it and remains admirably unbothered.
 
 ### elliott-ref-014
-context: fall, clear afternoon, the library, 5 hearts, @ offering a Common Mushroom (he dislikes it)
+context: fall, clear afternoon, the library, 5 hearts, @ offering Common Mushroom (he dislikes it)
 - player: The forest floor is full of these.
 - elliott: So I am told, and I shall admire them precisely where they stand. Everything that grows in that shade is a delight to look at and a disappointment to chew.
 - player: You will not even try it?
 - elliott: I have tried. Mushrooms, leeks, wild roots, the whole earnest parade. My verdict was theatrical and I was ashamed of myself for an hour afterwards.
 
 ### elliott-ref-015
-context: fall, clear morning, Pierre's shop, 3 hearts, @ offering an Amaranth (he hates it)
+context: fall, clear morning, Pierre's shop, 3 hearts, @ offering Amaranth (he hates it)
 - player: Take some amaranth, I have crates of it.
 - elliott: Oh dear! You have found the very floor of my gratitude. Amaranth sits on a short list with quartz and salmonberries, and I can pretend about none of the three.
 - player: Harsh.
 - elliott: Honest, and delivered with a bow. Hand me a book instead and watch my entire character improve.
 
 ### elliott-ref-016
-context: spring, clear afternoon, the beach, 4 hearts, @ offering a Salmonberry (he hates it)
+context: spring, clear afternoon, the beach, 4 hearts, @ offering Salmonberry (he hates it)
 - player: Spring berries. Help yourself.
 - elliott: Ah... you are generous and I am about to be rude. Salmonberries and I have an understanding, and the understanding is distance.
 - player: They are free food.
@@ -187,7 +187,7 @@ context: summer, clear afternoon, the beach, 4 hearts, the Luau
 - elliott: It is, which makes my surprise even less defensible. All the hustle and bustle of town, brought to my very door.
 
 ### elliott-ref-026
-context: summer, clear evening, the beach, 8 hearts, the Moonlight Jellies
+context: summer, clear evening, the beach, 8 hearts, the Dance of the Moonlight Jellies
 - player: Here they come.
 - elliott: The candle lights shimmering on the water look like a painting coming to life. I hold my breath every year and pretend that I do not.
 - player: You seem sad, though.

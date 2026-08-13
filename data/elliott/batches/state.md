@@ -351,14 +351,14 @@ context: winter, clear afternoon, Pelican Town, 6 hearts, the Feast of the Winte
 <!-- ===== Gifts: loved ===== -->
 
 ### elliott-sta-044
-context: fall, clear afternoon, the beach, 5 hearts, @ offering a Squid Ink (he loves it)
+context: fall, clear afternoon, the beach, 5 hearts, @ offering Squid Ink (he loves it)
 - player: Willy put this aside for you.
 - elliott: Ah, a bottle of fine ink. A writer can never have too much, and it is quite expensive. Thank you, @.
 - player: Use it well.
 - elliott: I shall use it on chapter four, which deserves better ink than it has been getting.
 
 ### elliott-sta-045
-context: fall, clear afternoon, the library, 4 hearts, @ offering a Pomegranate (he loves it)
+context: fall, clear afternoon, the library, 4 hearts, @ offering Pomegranate (he loves it)
 - player: Straight off the tree this morning.
 - elliott: Oh, marvelous. A fruit that makes you work for it and then rewards the work handsomely.
 - player: Worth the trouble?
@@ -374,7 +374,7 @@ context: winter, snowing evening, the Stardrop Saloon, 6 hearts, @ offering Crab
 - elliott: Brave of you. Some men are undone by ale, and I am undone by a good crab cake.
 
 ### elliott-sta-047
-context: summer, clear morning, Willy's shop, 5 hearts, @ offering a Lobster (he loves it)
+context: summer, clear morning, Willy's shop, 5 hearts, @ offering Lobster (he loves it)
 - player: Pulled this out of a trap at dawn.
 - elliott: Look at the size of it. I shall eat like a man of means for one evening and go back to bread without a single complaint.
 - player: That good?
@@ -388,7 +388,7 @@ context: winter, snowing afternoon, Elliott's cabin, 7 hearts, @ offering Tom Kh
 - elliott: It is coconut and shrimp and somebody thinking of me at midday. There is a mushroom in it somewhere too, and for this one dish I have agreed to look the other way.
 
 ### elliott-sta-049
-context: spring, wind afternoon, the beach, 3 hearts, @ offering a Duck Feather (he loves it)
+context: spring, wind afternoon, the beach, 3 hearts, @ offering Duck Feather (he loves it)
 - player: The wind blew this across the sand to me.
 - elliott: And you carried it all this way? This will make a beautiful quill. I feel inspired already, which is more than the morning managed.
 - player: Glad it helps.
@@ -397,7 +397,7 @@ context: spring, wind afternoon, the beach, 3 hearts, @ offering a Duck Feather 
 <!-- ===== Gifts: liked ===== -->
 
 ### elliott-sta-050
-context: winter, clear afternoon, the library, 5 hearts, @ offering a Book Of Stars (he likes it)
+context: winter, clear afternoon, the library, 5 hearts, @ offering Book Of Stars (he likes it)
 - player: Found this at the back of a shelf.
 - elliott: Ah, a book. Perhaps the prose within these pages will offer a new insight. Thank you, @.
 - player: It is about the sky.
@@ -413,21 +413,21 @@ context: fall, raining afternoon, Elliott's cabin, 4 hearts, @ offering Jewels O
 - elliott: The very best kind. The foghorn will handle the narration.
 
 ### elliott-sta-052
-context: summer, clear afternoon, the beach, 6 hearts, @ offering a Melon (he likes it)
+context: summer, clear afternoon, the beach, 6 hearts, @ offering Melon (he likes it)
 - player: First melon off the field this year.
 - elliott: And you brought it down to the sand. All fruit is welcome here, @, and the first of anything deserves a small ceremony.
 - player: Enjoy it.
 - elliott: I shall eat it inelegantly and blame the beach for it.
 
 ### elliott-sta-053
-context: summer, clear afternoon, the island resort, 4 hearts, @ offering a Banana (he likes it)
+context: summer, clear afternoon, the island resort, 4 hearts, @ offering Banana (he likes it)
 - player: These grow right off the trees here.
 - elliott: They do, and I have been staring up at them like a man who has never met a grocer. Thank you. This is my third today.
 - player: Your third?
 - elliott: The island has undone me completely. I shall go home sunburnt and full of fruit.
 
 ### elliott-sta-054
-context: fall, clear morning, Willy's shop, 5 hearts, @ offering an Octopus (he likes it)
+context: fall, clear morning, Willy's shop, 5 hearts, @ offering Octopus (he likes it)
 - player: This was on the ice at Willy's this morning.
 - elliott: What a strange and clever animal. I always feel I ought to interview one rather than eat it.
 - player: And yet.
@@ -436,28 +436,28 @@ context: fall, clear morning, Willy's shop, 5 hearts, @ offering an Octopus (he 
 - elliott: Seafood and almost nothing else. It is the one shelf of my education the beach has kept current.
 
 ### elliott-sta-055
-context: fall, clear afternoon, Pierre's shop, 3 hearts, @ offering an Amaranth (he hates it)
+context: fall, clear afternoon, Pierre's shop, 3 hearts, @ offering Amaranth (he hates it)
 - player: Pierre says this is in season.
 - elliott: Ah. You have found the one plant in this valley I cannot pretend about.
 - player: You do not like it?
 - elliott: It tastes like a field that has given up. Keep it, sell it, or feed it to something with a stronger constitution than mine.
 
 ### elliott-sta-056
-context: winter, clear evening, the Stardrop Saloon, 4 hearts, @ offering a Quartz (he hates it)
+context: winter, clear evening, the Stardrop Saloon, 4 hearts, @ offering Quartz (he hates it)
 - player: Dug this out of the ground for you.
 - elliott: A rock. You have brought me a rock, @, and you look so terribly pleased about it.
 - player: It is pretty.
 - elliott: It is, and it does absolutely nothing. I have enough beautiful useless things in my cabin already, most of them written by me.
 
 ### elliott-sta-057
-context: spring, clear afternoon, the beach, 5 hearts, @ offering a Salmonberry (he hates it)
+context: spring, clear afternoon, the beach, 5 hearts, @ offering Salmonberry (he hates it)
 - player: The bushes up the hill are heavy with these today.
 - elliott: So I saw on my way down, and I walked past every one of them with tremendous determination.
 - player: Everyone else is picking them.
 - elliott: They are a sour little apology for a berry, @. Let the valley have my share and think well of me for it.
 
 ### elliott-sta-058
-context: summer, clear afternoon, the beach, 4 hearts, @ offering a Super Cucumber (he hates it)
+context: summer, clear afternoon, the beach, 4 hearts, @ offering Super Cucumber (he hates it)
 - player: Look what came up in the crab pot.
 - elliott: Agh, get that abomination away from me. The thing is still moving.
 - player: It is harmless.
@@ -466,21 +466,21 @@ context: summer, clear afternoon, the beach, 4 hearts, @ offering a Super Cucumb
 - elliott: I am a writer on a hot afternoon holding a grudge. Bring me a lobster and I shall forgive the whole episode.
 
 ### elliott-sta-059
-context: spring, clear morning, Pierre's shop, 3 hearts, @ offering a Goat Milk (he dislikes it)
+context: spring, clear morning, Pierre's shop, 3 hearts, @ offering Goat Milk (he dislikes it)
 - player: Marnie had a surplus this morning.
 - elliott: How kind of you to think of me, @. I shall be honest rather than gracious. Milk and I have never got on.
 - player: Not even in coffee?
 - elliott: Especially not in coffee. Coffee is a robust flavor and I take it exactly as it comes.
 
 ### elliott-sta-060
-context: fall, clear evening, the Stardrop Saloon, 5 hearts, @ offering a Pizza (he dislikes it)
+context: fall, clear evening, the Stardrop Saloon, 5 hearts, @ offering Pizza (he dislikes it)
 - player: There is a spare slice going.
 - elliott: You are generous, and I am going to decline. Pizza has never once made an argument that convinced me.
 - player: Everyone likes pizza.
 - elliott: Everyone likes a great many things. Give it to Gus's other customers and I shall stay loyal to my ale.
 
 ### elliott-sta-061
-context: summer, clear afternoon, the forest, 6 hearts, @ offering a Common Mushroom (he dislikes it)
+context: summer, clear afternoon, the forest, 6 hearts, @ offering Common Mushroom (he dislikes it)
 - player: The shade under these trees is full of them.
 - elliott: It is, and I have admired every one from a respectful distance. The forest pleases my eye far more than my palate, @.
 - player: You will not even try it?
@@ -489,7 +489,7 @@ context: summer, clear afternoon, the forest, 6 hearts, @ offering a Common Mush
 - elliott: Take the lot with my blessing. I shall walk home and eat something that came out of the water.
 
 ### elliott-sta-062
-context: spring, clear morning, the beach, 4 hearts, @ offering a Coral (he is indifferent to it)
+context: spring, clear morning, the beach, 4 hearts, @ offering Coral (he is indifferent to it)
 - player: The tide left this right by your door.
 - elliott: Ah, you have been doing some beach combing. A fine hobby, and thank you.
 - player: It is only a bit of coral.

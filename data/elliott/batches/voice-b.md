@@ -328,21 +328,21 @@ context: summer, clear morning, Willy's shop, 4 hearts
 - elliott: You say that with a rod in your hand and salt in your hair. I say it standing on dry boards in a very dry coat, @.
 
 ### elliott-voi-b-044
-context: winter, clear afternoon, the library, 6 hearts, @ offering a Squid Ink (he loves it)
+context: winter, clear afternoon, the library, 6 hearts, @ offering Squid Ink (he loves it)
 - player: Traded for this at the market.
 - elliott: Ah, a bottle of fine ink! A writer can never have too much, and this is the good sort. Thank you, @.
 - player: Thought of you.
 - elliott: That sentence is worth rather more than the bottle, and the bottle is worth a great deal.
 
 ### elliott-voi-b-045
-context: spring, clear afternoon, Pelican Town, 3 hearts, @ offering a Common Mushroom (he dislikes it)
+context: spring, clear afternoon, Pelican Town, 3 hearts, @ offering Common Mushroom (he dislikes it)
 - player: Brought you something from the forest.
 - elliott: Oh. A mushroom. You have been foraging, which I admire enormously, and I shall be honest with you about the rest.
 - player: You do not like them?
 - elliott: The forest pleases my eye and never once my plate. I shall keep it on the desk and describe it instead. Whereabouts in the forest did you find it?
 
 ### elliott-voi-b-046
-context: spring, clear afternoon, Willy's shop, 5 hearts, @ offering an Apricot (he likes it)
+context: spring, clear afternoon, Willy's shop, 5 hearts, @ offering Apricot (he likes it)
 - player: First one off the tree.
 - elliott: And you carried it all the way down here? How kind, @. I shall eat it slowly and pretend I have earned it.
 - player: You have.

@@ -317,6 +317,11 @@ public sealed class ModEntry : StardewModdingAPI.Mod
             loc.IsSnowingHere() ? "snow" :
             loc.IsLightningHere() ? "storm" :
             loc.IsDebrisWeatherHere() ? "wind" : "clear";
+        // The gift clause describes what the player is holding out, so the held item is the source.
+        // Taste comes from the game's own table for THIS villager, never from a hardcoded list.
+        var held = Game1.player.ActiveObject;
+        string? giftTaste = held is null ? null : GiftTastes.Describe(npc.getGiftTasteForThisItem(held));
+
         int hearts = Game1.player.getFriendshipHeartLevelForNPC(npc.Name);
         int points = Game1.player.friendshipData.TryGetValue(npc.Name, out var fd) ? fd.Points % 250 : 0;
         string rel = Game1.player.spouse == npc.Name ? "married"
@@ -333,6 +338,9 @@ public sealed class ModEntry : StardewModdingAPI.Mod
             Clock = FormatClock(t),
             Weekday = DayName(Game1.dayOfMonth),
             Location = FriendlyLocation(loc?.Name),
+            Event = Festivals.ForDay(Game1.currentSeason, Game1.dayOfMonth),
+            Gift = held?.DisplayName,
+            GiftTaste = giftTaste,
             Hearts = hearts,
             FriendshipPoints = points,
             Relationship = rel,

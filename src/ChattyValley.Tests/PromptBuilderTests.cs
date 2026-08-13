@@ -27,7 +27,7 @@ public class PromptBuilderTests
     {
         var prompt = new PromptBuilder(ChatTemplate.Lfm2);
         string system = prompt.BuildSystem(Adapter, GiftContext);
-        Assert.Contains("@ offering a blackberry", system);
+        Assert.Contains("@ offering blackberry", system);
         Assert.DoesNotContain("Edward", system);
     }
 

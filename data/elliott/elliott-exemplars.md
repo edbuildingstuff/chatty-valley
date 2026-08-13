@@ -115,7 +115,7 @@ context: winter, snowing morning, the library, 4 hearts
 - elliott: Some. Winter is generous with hours and stingy with inspiration. I take what it gives.
 
 ### elliott-s03
-context: fall, clear morning, the beach, 6 hearts, @ offering a Duck Feather (he loves it)
+context: fall, clear morning, the beach, 6 hearts, @ offering Duck Feather (he loves it)
 - player: Found this on the path.
 - elliott: A duck feather! This will make a beautiful quill, @. I feel inspired already.
 - player: Glad it is useful.
@@ -193,7 +193,7 @@ context: spring, clear evening, the Stardrop Saloon, 4 hearts
 ## In-game references [cat:reference]
 
 ### elliott-f01
-context: summer, clear afternoon, the beach, 3 hearts, @ offering a Sea Cucumber (he hates it)
+context: summer, clear afternoon, the beach, 3 hearts, @ offering Sea Cucumber (he hates it)
 - player: Here, caught this for you.
 - elliott: Agh, it is still wriggling! Get that abomination away from me!
 - player: It is a delicacy.

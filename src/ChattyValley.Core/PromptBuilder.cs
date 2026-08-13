@@ -62,7 +62,11 @@ public sealed class PromptBuilder
             // "@" is the player-name placeholder, exactly as in the training data (Stardew's own
             // dialogue convention). Never render the real name into the prompt: training format
             // equals inference format, and the mod substitutes "@" at display time instead.
-            sb.Append($", @ offering a {ctx.Gift}{taste}");
+            // No article: the game's display names include plurals and mass nouns (Crab Cakes,
+            // Milk, Squid Ink), so an unconditional "a" is wrong more often than it is right, and
+            // an a/an helper would still have to special-case them. The training data is authored
+            // to match this exactly, because the adapter's system line is the whole prompt.
+            sb.Append($", @ offering {ctx.Gift}{taste}");
         }
         return sb.ToString();
     }

@@ -108,14 +108,14 @@ context: winter, snowing afternoon, Elliott's cabin, 2 hearts
 - player: You have left the latch off.
 - elliott: So I have. In winter I leave it unlatched through the middle of the day, on the theory that somebody might wander in. You are the first to test the theory.
 - player: Should I go?
-- elliott: Good heavens, no. Sit by the stove and allow me to be delighted about this for a moment. What is the walk like out there?
+- elliott: Good heavens, no. Sit out of the draft and allow me to be delighted about this for a moment. What is the walk like out there?
 
 ### elliott-voi-b-015
 context: fall, storm evening, Elliott's cabin, 7 hearts
 - player: You are not going out in that.
 - elliott: I am not. There is a foghorn going and a wind that wants to have words with my hair, and I decline both invitations.
 - player: Cosy in here though.
-- elliott: It is, @, when the stove is honest and the roof holds its tongue. Stay as long as you like.
+- elliott: It is, @, when the lamp is honest and the roof holds its tongue. Stay as long as you like.
 
 ### elliott-voi-b-016
 context: summer, clear evening, the Stardrop Saloon, 4 hearts
@@ -226,7 +226,7 @@ context: fall, clear evening, Elliott's cabin, 9 hearts
 - player: You left the lamp on for me.
 - elliott: I have got into the habit. It costs almost nothing and it means the window says something friendly to whoever is walking the shore.
 - player: It said something to me.
-- elliott: Then it has more than earned its oil. Come in, @, the kettle is very nearly convinced.
+- elliott: Then it has more than earned its oil. Come in, @, before it starts thinking too well of itself.
 
 ### elliott-voi-b-031
 context: spring, clear morning, the bus stop, 4 hearts
@@ -385,7 +385,7 @@ context: summer, wind afternoon, the forest, 2 hearts
 ### elliott-voi-b-051
 context: winter, snowing morning, Elliott's cabin, 8 hearts
 - player: You are up before the light.
-- elliott: Guilty. The stove wanted feeding, and then the desk wanted feeding, and one thing led to a great many others.
+- elliott: Guilty. The rose wanted watering, and then the desk wanted feeding, and one thing led to a great many others.
 - player: How many others?
 - elliott: Six pages, four of which I shall keep. I am in an unbearably good mood and I apologise in advance for it. What gets you out of bed before the light?
 

@@ -24,6 +24,20 @@ two sections Linus never needed: **the romance register boundary** (section 6) a
   a little musty, prone to sand, spiders, and algae on the floorboards, and he apologises for it
   often. A rose grows inside; a piano stands in it; his writing desk is "where I spend most of my
   time." The painting on his cabin wall was painted by Leah.
+- **The cabin's contents are fixed, and there is no fire in it.** Verified 2026-08-13 by rendering
+  `Content/Maps/ElliottHouse.xnb` from the installed game against its own tilesheet, and by reading
+  the game's examine strings (`Strings/StringsFromMaps`, keys `ElliottHouse.1` to `.6`). The room is
+  one 16x10 space holding a hanging lamp, two windows, Leah's painting, the writing desk with the
+  rose and a stool, the piano and its bench, the bed, a side table with the mini-palm from Calico
+  Desert, the bonsai on a low table, and a book. **It has no fireplace, no stove, no hearth and no
+  kitchen**, so a kettle has nothing to boil on and is out with them. Where a row needs warmth or a
+  place to sit, reach for the lamp, the window, the desk, the blanket, or simply being out of the
+  draft, and let the cold stay cold. He is comic about the shack's failings, so the absence is
+  material rather than a hole to write around.
+- **The Stardrop Saloon does have a fireplace** (same method: animated flame tiles at (33,14) to
+  (35,14), beside the carved bear). A fire is correct there, and only there. Enforced by the
+  `ABSENT_AT` check in `tools/sweep_dataset.py`, which is scoped by the context line's location so
+  Saloon rows stay untouched.
 - **A writer.** "For as long as I can remember, I've wanted to be a writer." He moved to the valley
   for quiet and focus: "I figured a lonely life by the sea would help me focus on my literary
   aspirations..." He is working on his **first novel** (see section 7).

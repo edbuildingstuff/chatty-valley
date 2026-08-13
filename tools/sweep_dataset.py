@@ -50,6 +50,19 @@ def shipped_festivals():
     src = open("src/ChattyValley.Core/Festivals.cs", encoding="utf-8").read()
     return set(re.findall(r'=\s*"((?:the )?[A-Z][^"]*)"', src))
 
+# Objects a location provably does not contain, so a row set there may not lean on one. Verified by
+# rendering the game's own map (Content/Maps/<map>.xnb) against its tilesheet and reading the examine
+# strings in Strings/StringsFromMaps. Elliott's cabin (2026-08-13) is one 16x10 room holding a hanging
+# lamp, two windows, Leah's painting, the writing desk with the rose and a stool, the piano and bench,
+# the bed, a side table with the mini-palm, the bonsai on a low table, and a book. It has no fireplace,
+# no stove and no kitchen, so a kettle has nothing to boil on either. The Stardrop Saloon DOES have a
+# fireplace (animated flame tiles at (33,14) to (35,14)), which is why it is absent from this table.
+ABSENT_AT = {
+    "elliott": {
+        "Elliott's cabin": ("heat source", r"\b(?:the|a|my)\s+(?:fire|fireplace|hearth|stove|kettle|embers)\b"),
+    },
+}
+
 SEASONS = {"spring", "summer", "fall", "winter"}
 WEATHER = {"clear", "raining", "snowing", "storm", "wind"}
 TIMES = {"morning", "afternoon", "evening"}
@@ -135,6 +148,12 @@ def main():
             hard.append(f"{rid}: {wparts[0]} paired with {loc!r} (canon: rain means his cabin all day)")
         if loc not in locs_ok:
             hard.append(f"{rid}: location {loc!r} is not one the runtime can inject")
+        absent = ABSENT_AT.get(VILLAGER, {}).get(loc)
+        if absent:
+            label, apat = absent
+            for m in r["messages"]:
+                if m["role"] == "assistant" and re.search(apat, m["content"], re.I):
+                    hard.append(f"{rid}: {label} referenced in {loc} (the map has none) :: {m['content'][:80]}")
         if not re.fullmatch(r"\d+ hearts", hearts) or not (0 <= int(hearts.split()[0]) <= 14):
             hard.append(f"{rid}: bad hearts {hearts!r}")
 

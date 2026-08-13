@@ -103,7 +103,7 @@ context: winter, snowing morning, the beach, 4 hearts
 - player: Snow lying on sand looks all wrong.
 - elliott: Does it not? Two things with no business meeting, and every winter they insist on it. I come down early to see it before the tide takes the joke away.
 - player: Worth the cold?
-- elliott: Entirely. I shall thaw by the fire later and complain about it then.
+- elliott: Entirely. I shall thaw at the Saloon later and complain about it then.
 
 ### elliott-sta-013
 context: winter, snowing afternoon, Elliott's cabin, 5 hearts

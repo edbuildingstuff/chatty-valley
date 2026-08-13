@@ -184,6 +184,6 @@ context: fall, clear afternoon, Pelican Town, 5 hearts
 ### elliott-cas-026
 context: winter, snowing evening, Elliott's cabin, 10 hearts
 - player: cant sleep
-- elliott: Nor could I, so we are two of a kind tonight. Sit down, the kettle is nearly there.
+- elliott: Nor could I, so we are two of a kind tonight. Sit down, there is a blanket going spare and the night is long.
 - player: thanks
 - elliott: Any time. The night is long and the company improves it considerably.

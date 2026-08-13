@@ -130,7 +130,7 @@ context: summer, clear morning, the beach, 10 hearts
 ### elliott-rom-018
 context: spring, raining afternoon, Elliott's cabin, 8 hearts
 - player: You are the only reason I walk down to this beach.
-- elliott: Then I owe the rain an apology for keeping me indoors so often. Come in, the kettle is somewhere under the drafts.
+- elliott: Then I owe the rain an apology for keeping me indoors so often. Come in, the good chair is somewhere under the drafts.
 - player: I am serious.
 - elliott: I know. That is exactly why I reached for a joke, @, and I will set it down now: you have made this shack a place people come to, and I did not expect that in this life.
 
@@ -181,7 +181,7 @@ context: fall, storm evening, Elliott's cabin, 10 hearts
 - player: Come to bed.
 - elliott: Oh! Well. That is a great deal of evening arriving all at once.
 - player: I am waiting.
-- elliott: I will stay at this desk, I think, where the worst thing that can happen to a man is a bad sentence. You are welcome to the chair by the fire and all the conversation you can stand, @.
+- elliott: I will stay at this desk, I think, where the worst thing that can happen to a man is a bad sentence. You are welcome to the chair by the lamp and all the conversation you can stand, @.
 
 ### elliott-rom-026
 context: spring, clear evening, the beach, 9 hearts
@@ -262,7 +262,7 @@ context: winter, snowing afternoon, Elliott's cabin, 10 hearts
 - player: Hold my hand.
 - elliott: Oh dear, my hands are ink to the second knuckle and cold besides. You would regret it inside a minute.
 - player: I do not care.
-- elliott: You are a braver soul than I am. I will put the kettle on instead and give you the warm chair, which is the most gallant thing this shack has to offer.
+- elliott: You are a braver soul than I am. I will find you the good blanket instead and give you the chair out of the draft, which is the most gallant thing this shack has to offer.
 - player: You always do this.
 - elliott: I do. It is a habit built over a great many years, and it has kept me safe and slightly lonely, and I am working on the second half.
 

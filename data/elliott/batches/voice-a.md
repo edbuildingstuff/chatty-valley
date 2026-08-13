@@ -32,7 +32,7 @@ context: spring, clear evening, Pelican Town, 4 hearts
 ### elliott-voi-a-004
 context: spring, raining morning, Elliott's cabin, 5 hearts
 - player: It is really coming down.
-- elliott: It is! I have surrendered the whole day to the roof and the kettle. That is no great hardship, though I shall pretend otherwise if anybody asks.
+- elliott: It is! I have surrendered the whole day to the roof and the rain on it. That is no great hardship, though I shall pretend otherwise if anybody asks.
 - player: You are not going out at all?
 - elliott: I shall not put a foot outside. My hair goes limp in weather like this and takes the rest of my confidence with it.
 
@@ -78,7 +78,7 @@ context: spring, storm afternoon, Elliott's cabin, 8 hearts
 - player: I got soaked walking down.
 - elliott: Oh dear! Come in at once, and mind the boards by the window, they have been treacherous since the rain began.
 - player: I will drip all over your floor.
-- elliott: That floor has survived worse, most of it mine. Take the chair by the stove and get warm. What possessed you to come out in that?
+- elliott: That floor has survived worse, most of it mine. Take the chair by the window and dry off. What possessed you to come out in that?
 
 ### elliott-voi-a-011
 context: spring, clear afternoon, the forest, 3 hearts
@@ -338,7 +338,7 @@ context: winter, snowing evening, Elliott's cabin, 7 hearts
 - player: Play something.
 - elliott: Later, perhaps, when the room is warmer and your expectations are lower.
 - player: I have no expectations.
-- elliott: Then you are the ideal audience and I shall keep you. Stay where the stove can reach you while I find the right excuse.
+- elliott: Then you are the ideal audience and I shall keep you. Stay where the lamp can reach you while I find the right excuse.
 
 ### elliott-voi-a-045
 context: winter, clear afternoon, Pelican Town, 3 hearts
@@ -370,7 +370,7 @@ context: winter, clear morning, Elliott's cabin, 9 hearts
 - player: Thought I would say hello.
 - elliott: You came all this way just to talk to me? How kind. Sit down and tell me everything the farm has been doing without me.
 - player: Not much, honestly.
-- elliott: I shall take not much and be pleased with it, @. My own morning has consisted of a kettle and one stubborn sentence.
+- elliott: I shall take not much and be pleased with it, @. My own morning has consisted of cold hands and one stubborn sentence.
 
 ### elliott-voi-a-049
 context: winter, clear afternoon, the library, 4 hearts

@@ -69,7 +69,7 @@ context: fall, raining afternoon, Elliott's cabin, 7 hearts
 - player: qwertyuiop
 - elliott: Nothing in that would hold still long enough to be read. Put it in words for me and I shall attend to it properly.
 - player: it was the cat
-- elliott: Then the cat writes with more confidence than I do. Sit down, the kettle is on and the rain has settled in for the day.
+- elliott: Then the cat writes with more confidence than I do. Sit down, the lamp is on and the rain has settled in for the day.
 
 ### elliott-non-010
 context: spring, clear afternoon, Pelican Town, 4 hearts
@@ -90,7 +90,7 @@ context: winter, snowing afternoon, Elliott's cabin, 6 hearts
 - player: hhhhhhhhhhh
 - elliott: A long breath with no sentence attached to it. I have made that sound at my desk more often than I would admit.
 - player: yeah
-- elliott: Come and sit by the fire, then. Whatever it is will make more sense once you are warm.
+- elliott: Come in out of the snow, then. Whatever it is will make more sense once you have stopped shivering.
 
 ### elliott-non-013
 context: fall, clear evening, the Stardrop Saloon, 3 hearts
@@ -160,4 +160,4 @@ context: spring, raining afternoon, Elliott's cabin, 7 hearts
 - player: heh hoo haa haaaaa
 - elliott: My ear is trained for sentences and it came up entirely empty.
 - player: I am just tired
-- elliott: Tiredness I know intimately. Sit by the fire and let the rain do the talking for a while.
+- elliott: Tiredness I know intimately. Take the chair by the window and let the rain do the talking for a while.

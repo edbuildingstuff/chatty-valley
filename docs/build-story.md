@@ -2,7 +2,11 @@
 
 > Also published at [www.ertas.ai/blog/chatty-valley-on-device-ai-mod-stardew-valley](https://www.ertas.ai/blog/chatty-valley-on-device-ai-mod-stardew-valley), which is the canonical version and carries the video clips. This copy exists so the story travels with the source.
 >
-> Published 30 July 2026 by Edward Xi Yang.
+> Published 30 July 2026 by Edward Xi Yang. It describes version 0.2.0 and is kept as it was
+> published, so the download size, the CPU-only runtime line and the quoted guard clause all
+> describe that build rather than the current one. The [README](../README.md) carries the current
+> numbers. The headline change since: 0.4.0 uses a dedicated graphics card automatically when it
+> finds one.
 
 I have put a genuinely embarrassing number of hours into Stardew Valley. Late nights pushing further down the Mine than my health bar could justify, then the Skull Cavern, which I keep going back to despite a mountain of evidence that I should not. Days spent doing the calm stuff: checking the truffle spots, running the surplus through the oil makers, shipping it, doing it again.
 
@@ -193,7 +197,7 @@ I picked him first because he is the character I most wanted to be able to actua
 
 A full 57 second uncut run is on the [canonical post](https://www.ertas.ai/blog/chatty-valley-on-device-ai-mod-stardew-valley) and the Nexus page. The pauses in it are the model generating on the CPU, in real time.
 
-The whole thing is open source, including the training scripts, the evaluation axes, and the probe harnesses: [github.com/edbuildingstuff/chatty-valley](https://github.com/edbuildingstuff/chatty-valley). [Download it on Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/49886).
+The mod, the sidecar, the training dataset and the tooling that builds and checks it are open source: [github.com/edbuildingstuff/chatty-valley](https://github.com/edbuildingstuff/chatty-valley). [Download the latest release](https://github.com/edbuildingstuff/chatty-valley/releases/latest).
 
 ## What Part 2 is chasing
 

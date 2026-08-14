@@ -49,9 +49,13 @@ try {
 }
 finally { $zip.Dispose() }
 
+# Decimal MB/KB, deliberately. PowerShell's 1MB constant is 1,048,576, so dividing by it and
+# labelling the result "MB" reports mebibytes under a megabyte label: that is what made the archive
+# read as 763.72 MB against the 800 MB GitHub shows for the very same file. GitHub, the README and
+# this document now all quote the same number, and the byte count on the archive line is exact.
 function Format-Size([long] $b) {
-    if ($b -ge 1048576) { return ('{0:N2} MB' -f ($b / 1MB)) }
-    if ($b -ge 1024)    { return ('{0:N0} KB' -f ($b / 1KB)) }
+    if ($b -ge 1000000) { return ('{0:N2} MB' -f ($b / 1000000)) }
+    if ($b -ge 1000)    { return ('{0:N0} KB' -f ($b / 1000)) }
     return ("$b B")
 }
 

@@ -10,7 +10,7 @@
 | **Model** | LFM2.5-1.2B-Instruct Q4_K_M (697 MB) + a 21 MB LoRA carrying the character's voice |
 | **Memory** | About 1 GB beyond the game (system RAM on CPU, video memory on GPU) |
 | **Speed** | A second or two per reply on a modern CPU; a few hundred milliseconds on a dedicated graphics card |
-| **Download** | [Get it on Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/49886). 763 MB, everything included, nothing fetched on first run |
+| **Download** | [Latest release on GitHub](https://github.com/edbuildingstuff/chatty-valley/releases/latest). 800 MB, no account needed, everything included, nothing fetched on first run |
 | **Platform** | Windows, Stardew 1.6, SMAPI 4.0+ |
 | **Build story** | [How it was made, and where it still fails](https://www.ertas.ai/blog/chatty-valley-on-device-ai-mod-stardew-valley) |
 
@@ -219,7 +219,11 @@ The helper is an unsigned program, so the usual cause is Windows or an antivirus
    `Mods/ChattyValley` folder.
 2. **Check Smart App Control** (Windows 11: Windows Security > App & browser control). In
    evaluation or enforce mode it can silently block unsigned programs. There is no per-app
-   exception; if it is blocking the helper, the practical options are listed on the Nexus page.
+   exception, so the only way through is the Smart App Control switch in that same panel. Windows
+   treats turning it off as one-way and will not let you turn it back on without resetting the PC,
+   so it is a real decision rather than a toggle. Smart App Control ships off on upgraded machines
+   and turns itself off once it has seen enough varied unsigned software, so most players never
+   meet this.
 3. **Check the file is really there.** `Mods/ChattyValley/sidecar/ChattyValley.Sidecar.exe`
    should exist. If it does not, re-extract the zip into `Mods/`.
 4. **Antivirus other than Defender:** restore the file from quarantine and allow-list the mod
@@ -239,7 +243,7 @@ GPU machine is slower are all covered in [GPU or CPU](#gpu-or-cpu) above.
 
 **[Apache 2.0](LICENSE).** Use it, fork it, ship it, commercially or otherwise. No revenue cap, no
 non-commercial rider, no permission to ask for. That covers the mod, the sidecar, the 889-conversation
-training dataset, the generation and QC tooling, the eval axes and the probe harnesses.
+training dataset, and the dataset generation and QC tooling in `tools/`.
 
 Keep the `LICENSE` and [`NOTICE`](NOTICE) files with any redistribution and state what you changed,
 which is all Apache 2.0 asks of you.

@@ -239,6 +239,32 @@ If none of that matches what you see, open an issue with your `SMAPI-latest.txt`
 Where replies run, the `"Gpu"` config setting, and why the first launch on a
 GPU machine is slower are all covered in [GPU or CPU](#gpu-or-cpu) above.
 
+## Building your own
+
+The method here is ordinary: a small open base model, a few hundred conversations in one
+character's voice, a LoRA adapter, and a runtime that loads it on the machine the player already
+owns. The hyperparameters are in [the build story](docs/build-story.md), the dataset is in `data/`,
+and the tooling that builds and checks it is in `tools/`.
+
+I trained these on a 16 GB VRAM GPU, and Linus took nineteen runs across two model sizes before one
+was good enough to ship. A character is never right on the first attempt, so the loop matters more
+than any single run. That is what I work on: [Ertas](https://www.ertas.ai) gives you GPUs from 16 GB
+VRAM upwards with no infrastructure to configure, so you bring the conversations and keep iterating
+until the character sounds right.
+
+We also publish a set of agent skills for working with open models, free and Apache 2.0:
+
+```bash
+npx skills add ErtasAI/open-model-skills
+```
+
+[github.com/ErtasAI/open-model-skills](https://github.com/ErtasAI/open-model-skills), nine skills as
+of August 2026. Closest to this project: `scoping-a-custom-model`, then `evaluating-a-tuned-model`
+and `debugging-a-bad-fine-tune` for the part that took me longest here, and
+`costing-a-model-vs-an-api` for the arithmetic that makes on-device worth it in a game. The shipping
+skills target mobile apps, so a desktop mod like this one sits outside them, and dataset building is
+not covered yet.
+
 ## License
 
 **[Apache 2.0](LICENSE).** Use it, fork it, ship it, commercially or otherwise. No revenue cap, no

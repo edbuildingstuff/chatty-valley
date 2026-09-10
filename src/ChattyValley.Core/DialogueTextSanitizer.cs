@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ChattyValley.Core;
@@ -20,6 +21,15 @@ public static class DialogueTextSanitizer
         s = s.Replace("^", " ");            // gender switch -> space
         s = s.Replace("{", "").Replace("}", "");
         s = Regex.Replace(s, @"\$(?=\w)", "");   // "$h"-style codes -> bare text; lone "$" is safe
+        // Base-model bleed (DAT-745 stage 5): sampled replies occasionally end with a stray "**" or
+        // carry one unmatched double quote. Neither has a meaning in a villager's line, so asterisks go
+        // entirely and a quote is kept only when it has a partner.
+        s = s.Replace("*", "");
+        if (s.Count(ch => ch == '"') % 2 == 1)
+        {
+            int last = s.LastIndexOf('"');
+            s = s.Remove(last, 1);
+        }
         return Regex.Replace(s, @"[ ]{2,}", " ").Trim();
     }
 }

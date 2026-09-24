@@ -42,6 +42,17 @@ DODGE = (r"\bboth, badly\b|\ba different claim\b|\ba different kind of \w+|"
          r"\bif I could answer that\b|\bwhich half you ask\b|\bdepending on which half\b")
 BANS["dodge shape"] = DODGE
 
+# Invented game state (Edward, 2026-09-24). The context line carries season, weather, time,
+# location, hearts and an optional festival or gift, so how long he and the player have known each
+# other, when they met, or how often they have visited is state he cannot see. v1's gold said "I
+# have known you a season and a half", and the live model said "counting the days since you
+# arrived". His own life (his first winter, yesterday's chapter, his Friday Saloon) stays his.
+GAME_STATE = (r"\bknown (?:each other|you|me)\b|\ba season and a half\b|"
+              r"\b(?:counting )?(?:the )?(?:days|weeks|months|seasons|years) since you\b|"
+              r"\b(?:since|when) we (?:first )?met\b|\bwe first met\b|"
+              r"\byou have (?:visited|come by|stopped by|been here)\b[^.]{0,25}\b(?:times|twice)\b")
+BANS["invented game state"] = GAME_STATE
+
 GREETING = re.compile(r"^\W*(?:(?:ah|oh|well)[,.!]?\s+)?good (morning|afternoon|evening)\b", re.I)
 
 

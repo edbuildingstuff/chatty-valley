@@ -141,6 +141,28 @@ class NameTests(unittest.TestCase):
         self.assertEqual(S.unprompted_names(self.convo("hi", "Elliott, at your service."), "elliott"), [])
 
 
+class GameStateTests(unittest.TestCase):
+    """The context line carries season, weather, time, location, hearts and an optional festival or
+    gift. Anything else about the shared history is invented (Edward, 2026-09-24, on 'I have known
+    you a season and a half')."""
+
+    def test_relationship_duration_fails(self):
+        for bad in ["I think I have known you a season and a half.",
+                    "We have known each other only a little while.",
+                    "I have been counting the days since you arrived with that hat.",
+                    "Ever since we first met at the festival, I have wondered.",
+                    "You have visited me three times now."]:
+            self.assertRegex(bad, re.compile(S.GAME_STATE, re.I), bad)
+
+    def test_his_own_life_passes(self):
+        for ok in ["Once, during my first winter here.",
+                   "I gave up apologizing for it years ago.",
+                   "Today I read yesterday's chapter.",
+                   "I shall be at the Saloon on Friday.",
+                   "The valley has been better company since you arrived."]:
+            self.assertIsNone(re.search(S.GAME_STATE, ok, re.I), ok)
+
+
 class LongTests(unittest.TestCase):
     def test_long_count(self):
         rows = [row("a", "long", "x", turns=6), row("b", "long", "y", turns=10), row("c", "casual", "z", turns=2)]

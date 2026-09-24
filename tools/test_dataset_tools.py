@@ -91,5 +91,61 @@ class SplitTests(unittest.TestCase):
             A.split_rows(base, by_cat, always, pin=pin)
 
 
+import re
+import sweep_dataset as S
+
+
+class DodgeTests(unittest.TestCase):
+    def test_harvested_dodges_fail(self):
+        for bad in ["Both, badly, in alternation.",
+                    "I sit down every day, which is a different claim.",
+                    "Looking at the water, which is a different kind of looking.",
+                    "If I could answer that in one breath I should have finished it.",
+                    "It is about half done, depending on which half you ask."]:
+            self.assertRegex(bad, re.compile(S.DODGE, re.I), bad)
+
+    def test_ordinary_both_passes(self):
+        for ok in ["We both like the sea.", "I use both hands for the oars.", "Both of us were soaked."]:
+            self.assertIsNone(re.search(S.DODGE, ok, re.I), ok)
+
+
+class GreetingTests(unittest.TestCase):
+    CTX = "spring, clear afternoon, the beach, 0 hearts"
+
+    def test_wrong_time_greeting_fails(self):
+        self.assertIsNotNone(S.greeting_mismatch(self.CTX, "Good morning to you!"))
+        self.assertIsNotNone(S.greeting_mismatch(self.CTX, "Ah, good evening, @."))
+
+    def test_matching_or_absent_greeting_passes(self):
+        self.assertIsNone(S.greeting_mismatch(self.CTX, "Good afternoon, @. The tide is out."))
+        self.assertIsNone(S.greeting_mismatch(self.CTX, "Hello! The tide is out."))
+        self.assertIsNone(S.greeting_mismatch(self.CTX, "Good day to you."))
+
+    def test_good_night_is_not_a_greeting(self):
+        self.assertIsNone(S.greeting_mismatch(self.CTX, "Good night, @. [end]"))
+
+
+class NameTests(unittest.TestCase):
+    def convo(self, player, reply):
+        return {"messages": [{"role": "system", "content": "s"}, {"role": "user", "content": player},
+                             {"role": "assistant", "content": reply}]}
+
+    def test_unprompted_tier2_name_is_reported(self):
+        self.assertEqual(S.unprompted_names(self.convo("hi", "Haley walked her dog past."), "elliott"), ["Haley"])
+
+    def test_player_named_or_tier1_is_fine(self):
+        self.assertEqual(S.unprompted_names(self.convo("seen haley?", "Haley passed by."), "elliott"), [])
+        self.assertEqual(S.unprompted_names(self.convo("hi", "Willy is out on the pier."), "elliott"), [])
+
+    def test_self_is_not_reported(self):
+        self.assertEqual(S.unprompted_names(self.convo("hi", "Elliott, at your service."), "elliott"), [])
+
+
+class LongTests(unittest.TestCase):
+    def test_long_count(self):
+        rows = [row("a", "long", "x", turns=6), row("b", "long", "y", turns=10), row("c", "casual", "z", turns=2)]
+        self.assertEqual(S.long_count(rows), 2)
+
+
 if __name__ == "__main__":
     unittest.main()

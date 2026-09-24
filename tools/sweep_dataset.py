@@ -35,6 +35,61 @@ BANS = {
     "negate then assert": r"\b(?:is|was|are|were) not [^,.;]{1,45}, (?:it|they|that) (?:is|was|are|were)\b|\bnot merely\b|\bnot only [^,.;]{1,35} but\b|\bisn't [^,.;]{1,45}, it's\b",
 }
 
+# Dodge shapes harvested from v1's gold replies (2026-09-24 play-test): the model learned the shape
+# of a witty non-answer and produced it with no content ("A great deal of both..."). v2's register
+# rule is answer first, flourish second, so these shapes are banned outright in his turns.
+DODGE = (r"\bboth, badly\b|\ba different claim\b|\ba different kind of \w+|"
+         r"\bif I could answer that\b|\bwhich half you ask\b|\bdepending on which half\b")
+BANS["dodge shape"] = DODGE
+
+GREETING = re.compile(r"^\W*(?:(?:ah|oh|well)[,.!]?\s+)?good (morning|afternoon|evening)\b", re.I)
+
+
+def greeting_mismatch(context, first_reply):
+    """A first reply that greets by time of day must agree with the context's time."""
+    m = GREETING.search(first_reply)
+    if not m:
+        return None
+    parts = [p.strip() for p in (context or "").split(",")]
+    wt = parts[1].split() if len(parts) > 1 else []
+    time = wt[1] if len(wt) == 2 else None
+    said = m.group(1).lower()
+    if time is None or said == time:
+        return None
+    return f"greets 'good {said}' in the {time}"
+
+
+VILLAGERS = ["Abigail", "Alex", "Caroline", "Clint", "Demetrius", "Dwarf", "Elliott", "Emily", "Evelyn",
+             "George", "Gus", "Haley", "Harvey", "Jas", "Jodi", "Kent", "Krobus", "Leah", "Leo", "Lewis",
+             "Linus", "Marnie", "Maru", "Pam", "Penny", "Pierre", "Robin", "Sam", "Sandy", "Sebastian",
+             "Shane", "Vincent", "Willy", "Wizard"]
+# Tier 1 per each villager's setting doc: named freely because the relationship is canon.
+TIER1 = {"elliott": {"Leah", "Willy", "Gus"}, "linus": set()}
+
+
+def unprompted_names(row, villager):
+    """Villagers named in his turns that the player never named and that are not his Tier 1.
+    Reported for reviewers, never fatal: an unprompted Tier 2/3 name is where invented detail starts
+    (v1 gave Haley a dog), but a plain mention can be fine."""
+    said = " ".join(m["content"] for m in row["messages"] if m["role"] == "user")
+    found = set()
+    for m in row["messages"]:
+        if m["role"] != "assistant":
+            continue
+        for n in VILLAGERS:
+            if n.lower() == villager or n in TIER1.get(villager, set()):
+                continue
+            if re.search(rf"\b{n}\b", m["content"]) and not re.search(rf"\b{n}\b", said, re.I):
+                found.add(n)
+    return sorted(found)
+
+
+LONG_FLOOR = {"elliott": 80}
+
+
+def long_count(rows):
+    return sum(1 for r in rows if sum(m["role"] == "user" for m in r["messages"]) >= 6)
+
 # Every location the runtime can actually inject, from ChattyValley.Core.Locations.
 def shipped_locations():
     src = open("src/ChattyValley.Core/Locations.cs", encoding="utf-8").read()
@@ -215,6 +270,34 @@ def main():
     for b in bad_end:
         print(f"    {b}")
     hard.extend(f"[end]: {b}" for b in bad_end)
+
+    # ---- greeting agrees with the context time ------------------------------------------------
+    bad_greet = []
+    for r in rows:
+        asst = [m["content"] for m in r["messages"] if m["role"] == "assistant"]
+        why = greeting_mismatch(r.get("context"), asst[0]) if asst else None
+        if why:
+            bad_greet.append(f"{r['id']} [{r['_src']}] {why}")
+    print(f"{'greeting vs time':20} {len(bad_greet)}")
+    for b in bad_greet[:6]:
+        print(f"    {b}")
+    hard.extend(f"greeting: {b}" for b in bad_greet)
+
+    # ---- long-conversation floor (enforced with --final, once the new blocks exist) -----------
+    n_long = long_count(rows)
+    floor = LONG_FLOOR.get(VILLAGER, 0)
+    print(f"{'6+ turn convos':20} {n_long} (floor {floor}{', enforced' if '--final' in sys.argv else ', report only'})")
+    if "--final" in sys.argv and n_long < floor:
+        hard.append(f"only {n_long} conversations run 6+ player turns (floor {floor})")
+
+    # ---- unprompted third-party names (reported, never fatal) ---------------------------------
+    unprompted = [(r["id"], r["_src"], unprompted_names(r, VILLAGER)) for r in rows]
+    unprompted = [u for u in unprompted if u[2]]
+    print(f"\nunprompted names (reviewer check, not a failure): {len(unprompted)} rows")
+    for rid, src, names in unprompted[:15]:
+        print(f"    {rid} [{src}]: {', '.join(names)}")
+    if len(unprompted) > 15:
+        print(f"    ... {len(unprompted) - 15} more")
 
     # ---- cross-file opener collisions ----------------------------------------------------------
     openers = collections.defaultdict(list)

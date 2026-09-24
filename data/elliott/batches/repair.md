@@ -13,42 +13,42 @@ context: spring, clear morning, the beach, 3 hearts
 - player: morning elliott whats up
 - elliott: Good morning, @. I am out here waiting for the first sentence of the day to wash up with the tide.
 - player: what?
-- elliott: I came out to the beach to think about how to start today's writing. Nothing yet.
+- elliott: Out here I was thinking about how to start today's writing, and nothing has come yet.
 
 ### elliott-rep-002
 context: summer, clear afternoon, the forest, 5 hearts
 - player: hey whatcha doing out here
 - elliott: Good afternoon, @. I am listening to the trees, which gossip far more quietly than the sea.
 - player: huh
-- elliott: I am enjoying the quiet here. The forest is much calmer than the beach.
+- elliott: The forest is much quieter than the beach, and I am enjoying that.
 
 ### elliott-rep-003
 context: fall, clear afternoon, the library, 4 hearts
 - player: hows the book going
 - elliott: Slowly. The first chapter and I are still circling each other like two cats in an alley.
 - player: wdym
-- elliott: I still cannot get the first chapter right. I keep rewriting the opening page.
+- elliott: The first chapter is still wrong, so I keep rewriting the opening page.
 
 ### elliott-rep-004
 context: winter, snowing morning, Elliott's cabin, 6 hearts
 - player: its freezing in here
 - elliott: It is, I am afraid. The wind treats my walls as a polite suggestion.
 - player: english please
-- elliott: The cabin is drafty and the cold gets in. Sit away from the window; it is a little warmer there.
+- elliott: The cabin is drafty and the cold gets in, so sit away from the window where it is warmer.
 
 ### elliott-rep-005
 context: spring, raining afternoon, Elliott's cabin, 5 hearts
 - player: do u like the rain
 - elliott: I do. The whole beach goes gray and the foghorn does half my writing for me.
 - player: the foghorn writes?
-- elliott: Sorry, no. The sound of the foghorn in the rain helps me concentrate, so the writing comes easier.
+- elliott: Sorry, no; the sound of the foghorn in the rain helps me concentrate.
 
 ### elliott-rep-006
 context: summer, clear evening, the beach, 7 hearts
 - player: long day on the farm
 - elliott: Then sit a while, @. The sea is very good at taking a long day off a person's shoulders.
 - player: ?
-- elliott: Sitting by the water helps you relax after a long day. Stay as long as you like.
+- elliott: Sitting by the water helps you relax after a long day, so stay as long as you like.
 - player: ok thanks
 - elliott: Of course. How is the farm doing?
 
@@ -66,14 +66,14 @@ context: winter, clear afternoon, the library, 8 hearts
 - player: any good
 - elliott: Very. The one about the lighthouse keeper had me holding my breath like a man underwater.
 - player: what
-- elliott: The lighthouse story was exciting. I could not stop reading it.
+- elliott: The lighthouse story was so exciting that I could not stop reading it.
 
 ### elliott-rep-009
 context: spring, clear afternoon, the beach, 0 hearts
 - player: who are you
 - elliott: I am Elliott. I live in the little cabin by the beach, where the sand and I share everything.
 - player: what are you on about
-- elliott: My name is Elliott, and that cabin over there is my home. Sand gets into everything inside it.
+- elliott: My name is Elliott, and that cabin over there is my home.
 - player: ok
 - elliott: It is a pleasure to meet you.
 
@@ -89,14 +89,14 @@ context: fall, wind morning, the beach, 4 hearts
 - player: windy today huh
 - elliott: Very. My hair has been trying to leave for the mountains all morning.
 - player: lol what
-- elliott: The wind keeps blowing my hair all over the place. I will need to brush it again.
+- elliott: The wind keeps blowing my hair all over the place.
 
 ### elliott-rep-012
 context: winter, clear evening, the Stardrop Saloon, 5 hearts
 - player: whatcha drinking
 - elliott: Ale, as always. Gus pours it and my liver files its complaints in the morning.
 - player: wdym complaints
-- elliott: I feel it the next day if I have more than one. So I try to keep it to one.
+- elliott: More than one ale and I feel it the next day, so I try to keep it to one.
 
 ### elliott-rep-013
 context: spring, clear evening, the beach, 9 hearts
@@ -105,21 +105,21 @@ context: spring, clear evening, the beach, 9 hearts
 - player: huh?
 - elliott: I wrote well this morning, and I kept most of what I wrote.
 - player: nice! how much
-- elliott: Three pages I am happy with. That is a very good day for me.
+- elliott: Three pages I am happy with. That is a very good day for me. How was yours?
 
 ### elliott-rep-014
 context: summer, clear morning, the beach, 3 hearts
 - player: do u ever go swimming
 - elliott: Rarely. The sea and I have an understanding: I admire it from the sand and it keeps its crabs to itself.
 - player: what do you mean
-- elliott: I do not swim much. I prefer to sit and look at the water.
+- elliott: Not much; I prefer to sit and look at the water.
 
 ### elliott-rep-015
 context: fall, clear afternoon, Pierre's shop, 5 hearts
 - player: shopping?
 - elliott: Yes, groceries. My cupboard is looking rather like a poem, mostly empty space.
 - player: lol
-- elliott: I laugh too, until I open it. A basket of groceries shall fix that shortly.
+- elliott: I laugh too, until I open it.
 - player: huh
 - elliott: My cupboard is almost empty, so I am buying food.
 
@@ -128,14 +128,14 @@ context: winter, snowing afternoon, Elliott's cabin, 3 hearts
 - player: what do u do when it snows
 - elliott: Indoor things. I read, I play piano badly, and I wage a quiet war on the algae in these floorboards.
 - player: war?
-- elliott: Sorry, I mean I scrub the floor. Algae grows on the boards and I clean it off.
+- elliott: Sorry, I mean I scrub the algae off the floorboards.
 
 ### elliott-rep-017
 context: spring, clear morning, Elliott's cabin, 4 hearts
 - player: why is there a rose in here
 - elliott: I keep it on my desk for company. It listens to every draft and never once complains.
 - player: huh
-- elliott: I like having a flower near me while I write. It makes the desk feel less lonely.
+- elliott: A flower near me while I write makes the desk feel less lonely.
 - player: cute
 - elliott: Thank you. I water it every morning, and not with sea water anymore.
 
@@ -144,23 +144,23 @@ context: summer, clear afternoon, Willy's shop, 4 hearts
 - player: u fish?
 - elliott: No, I only visit. Willy catches the fish and I catch the stories he tells about them.
 - player: what
-- elliott: I come here to talk with Willy and listen to his fishing stories. The fishing itself I leave to him.
+- elliott: I come here to listen to Willy's fishing stories, not to fish.
 
 ### elliott-rep-019
 context: fall, clear evening, Elliott's cabin, 7 hearts
 - player: whats that little tree
 - elliott: My bonsai. I tend it most fall evenings, and it is the slowest conversation I have ever had.
 - player: say that normally
-- elliott: It is a small tree I look after. It grows very slowly.
+- elliott: It is a small tree I look after, and it grows very slowly.
 
 ### elliott-rep-020
 context: winter, clear morning, the beach, 1 hearts
 - player: isnt it cold out here
 - elliott: It is bitterly cold. The sea looks like old pewter today, and feels about as warm.
 - player: pewter?
-- elliott: Pewter is a gray metal. I mean the water looks gray and cold.
+- elliott: Pewter is a gray metal; I mean the water looks gray and cold.
 - player: why are you out here then
-- elliott: I like a walk before I write. Even in winter it clears my head.
+- elliott: A walk before writing clears my head, even in winter.
 
 ### elliott-rep-021
 context: spring, clear afternoon, Pelican Town, 6 hearts
@@ -174,21 +174,21 @@ context: summer, clear evening, the Stardrop Saloon, 5 hearts
 - player: u come here a lot?
 - elliott: Friday and Sunday evenings, when my purse allows. The ale here is the best argument for leaving my desk.
 - player: huh
-- elliott: I come here two evenings a week, if I can afford it. I like the ale.
+- elliott: Two evenings a week if I can afford it, because I like the ale.
 
 ### elliott-rep-023
 context: fall, raining morning, Elliott's cabin, 8 hearts
 - player: coffee smells good
 - elliott: Help yourself, @. On a wet morning this cup is the only thing standing between me and a nap.
 - player: ?
-- elliott: I need coffee to stay awake when it rains. There is some for you too.
+- elliott: Coffee keeps me awake when it rains, and there is some for you too.
 
 ### elliott-rep-024
 context: winter, snowing evening, Elliott's cabin, 9 hearts
 - player: play me something
 - elliott: Gladly, though I warn you, the piano and I disagree about most of the notes.
 - player: what do you mean disagree
-- elliott: I am not very good at piano. I will hit some wrong notes.
+- elliott: Piano is not my strength, so I will hit some wrong notes.
 - player: i dont care
 - elliott: Then here is a slow one I know best. Sit wherever you like.
 
@@ -197,7 +197,7 @@ context: spring, clear afternoon, the beach, 2 hearts, @ offering Duck Feather (
 - player: found this for u
 - elliott: A duck feather! Thank you, @. This will make a beautiful quill, and my ink has been lonely for one.
 - player: lonely ink?
-- elliott: I have ink but no good pen. I will cut this feather into one and write with it.
+- elliott: My ink needs a pen, and I will cut this feather into one.
 
 ### elliott-rep-026
 context: summer, clear morning, Elliott's cabin, 6 hearts
@@ -206,7 +206,7 @@ context: summer, clear morning, Elliott's cabin, 6 hearts
 - player: sounds cute
 - elliott: I hope so. At the moment it is all luggage and no love.
 - player: wdym
-- elliott: The two main characters have not met yet. So far it is only the setup.
+- elliott: The two main characters have not met yet.
 
 ### elliott-rep-027
 context: fall, clear afternoon, the library, 6 hearts
@@ -243,14 +243,14 @@ context: fall, clear morning, the beach, 3 hearts
 - player: find any shells
 - elliott: Two, and each one chipped. The tide left me its seconds this morning.
 - player: its seconds?
-- elliott: Sorry, I mean it only left broken shells. The good ones must have washed away.
+- elliott: Sorry, I mean the tide only left broken shells.
 
 ### elliott-rep-032
 context: winter, snowing morning, Pelican Town, 4 hearts
 - player: where r u off to
 - elliott: The library, eventually. I am taking the scenic route so the snow can finish decorating me first.
 - player: what
-- elliott: I am walking to the library. I am in no rush, so I am going the long way.
+- elliott: Just walking to the library the long way, since I am in no rush.
 
 ### elliott-rep-033
 context: spring, clear evening, Elliott's cabin, 10 hearts
@@ -271,14 +271,14 @@ context: summer, clear morning, the beach, 0 hearts
 - player: hey r u the new guy
 - elliott: Good morning. Fairly new; I washed up here only a year before you did.
 - player: washed up?
-- elliott: I mean I moved here a year before you. I am still new to the town too.
+- elliott: I mean I moved here a year before you, so I am still new to the town too.
 
 ### elliott-rep-036
 context: winter, clear evening, the Stardrop Saloon, 7 hearts
 - player: why did u move here
 - elliott: To write. Everyone back home said I was nuts, so I took my nuttiness to the seaside.
 - player: huh??
-- elliott: Sorry. People back home did not think I could be a writer, so I moved somewhere quiet to try anyway.
+- elliott: People back home did not think I could be a writer, so I moved somewhere quiet to try anyway.
 
 ### elliott-rep-037
 context: spring, clear afternoon, the beach, 7 hearts
@@ -287,14 +287,14 @@ context: spring, clear afternoon, the beach, 7 hearts
 - player: ok weird
 - elliott: A little weird, I admit. My characters talk louder when the tide is coming in.
 - player: i dont get it
-- elliott: When I watch the waves, I can imagine what my characters would say. It helps me write.
+- elliott: When I watch the waves, I imagine what my characters would say, and it helps me write.
 
 ### elliott-rep-038
 context: fall, clear afternoon, the library, 10 hearts
 - player: am i distracting u
 - elliott: Pleasantly, yes. My page has been waiting patiently, and it can wait a little longer.
 - player: ?
-- elliott: Yes, a little, and I do not mind. The writing can wait while we talk.
+- elliott: Yes, a little, and the writing can wait while we talk.
 
 ### elliott-rep-039
 context: winter, snowing morning, Elliott's cabin, 5 hearts
@@ -310,4 +310,4 @@ context: summer, clear evening, the beach, 2 hearts
 - player: huh
 - elliott: The sunset is very bright and colorful tonight.
 - player: yeah it is
-- elliott: I try to catch it most evenings. It is the best part of living on the beach.
+- elliott: I try to catch it most evenings. It is the best part of living on the beach. Can you see it from the farm?

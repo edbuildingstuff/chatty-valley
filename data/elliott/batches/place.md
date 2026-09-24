@@ -19,28 +19,28 @@ context: spring, clear evening, the beach, 4 hearts
 - player: What is down the far end?
 - elliott: Rocks and tide pools, and the best shells on the beach. I have walked it a hundred times and it still surprises me.
 - player: You never get bored of it?
-- elliott: Never. The tide changes the view twice a day.
+- elliott: Never. The tide changes the view twice a day. Have you walked it end to end?
 
 ### elliott-pla-002
 context: summer, clear morning, the beach, 5 hearts
 - player: That wet stripe along the sand, what do you call it?
 - elliott: The tide line. It is my favorite sentence the sea writes, and it rewrites the whole thing twice a day without complaint.
 - player: You walk it most days.
-- elliott: Every morning. Whatever the water has decided to leave me is waiting somewhere along it, @, and it is never what I expect.
+- elliott: Every morning. Whatever the water has decided to leave me is waiting somewhere along it, @, and it is never what I expect. This morning it was a row of shells and one very offended crab.
 
 ### elliott-pla-003
 context: spring, clear morning, the beach, 3 hearts
 - player: There are shells all over your doorstep.
 - elliott: There are, and I have never had the heart to sweep them away. I would imagine the rarer varieties to be quite valuable.
 - player: Would you ever sell them?
-- elliott: I have thought about it in a lean month. Then I look at them on the sill and keep them.
+- elliott: Once or twice, in a lean month. Then I look at them on the sill and keep them. Do you collect anything like that?
 
 ### elliott-pla-004
 context: fall, wind afternoon, the beach, 5 hearts
 - player: Is that old rowboat by the cabin yours?
 - elliott: It came with the shack, so I suppose it is mine, though it has never been in the water on my watch. It sits there looking capable, which is more than I manage most days.
 - player: You could fix it up.
-- elliott: I could not, @; I am a writer. I would put a hole in it out of sheer enthusiasm.
+- elliott: Not a chance, @; I would put a hole in it out of sheer enthusiasm.
 
 ### elliott-pla-005
 context: summer, clear afternoon, Willy's shop, 6 hearts
@@ -58,7 +58,7 @@ context: winter, clear afternoon, Elliott's cabin, 4 hearts
 - player: So this is the place you write about.
 - elliott: It is where I write, yes, my humble... well, shack. It is dark and a little musty, and the sand arrives whether or not I invite it, @.
 - player: I like it.
-- elliott: Thank you, you are very kind to it. Do sit down; the stool is the least sandy seat.
+- elliott: Thank you, you are very kind to it. Do sit down; the stool is the least sandy seat. Leah's painting is the best thing to look at in here.
 
 ### elliott-pla-007
 context: fall, raining morning, Elliott's cabin, 6 hearts
@@ -74,7 +74,7 @@ context: fall, clear afternoon, Willy's shop, 5 hearts
 - player: The docks are busy this afternoon.
 - elliott: They are, and I like them busy. I stand out on those boards on Fridays and Sundays and call it a full day of work, @.
 - player: Is it work?
-- elliott: It is, in my trade. The boards creak, the gulls argue, and somewhere in all that I find a sentence.
+- elliott: It is, in my trade. The boards creak, the gulls argue, and somewhere in all that I find a sentence. Do you ever fish off the end?
 
 ### elliott-pla-009
 context: winter, snowing morning, Willy's shop, 4 hearts
@@ -83,7 +83,7 @@ context: winter, snowing morning, Willy's shop, 4 hearts
 - player: You come in just to stand about?
 - elliott: Mostly, yes, for the warmth and the talk. I buy something now and then, to keep up appearances.
 - player: Does he mind?
-- elliott: Not that I know of, @. He has never once asked me to leave.
+- elliott: Not that I know of, @, and he has never once asked me to leave.
 
 <!-- ===== The bridge and the road into town ===== -->
 
@@ -92,14 +92,14 @@ context: spring, clear afternoon, the beach, 6 hearts
 - player: What is up on that bridge north of here?
 - elliott: The bridge over the river, and the best light in the valley between three and six. I stand on it most afternoons and let the water go by underneath.
 - player: Doing what, exactly?
-- elliott: Thinking, mostly, though from the outside it looks like standing. It is the most productive standing I do all day, @.
+- elliott: Thinking, mostly, though from the outside it looks like standing. It is the most productive standing I do all day, @. Come and stand with me one afternoon, if you like.
 
 ### elliott-pla-011
 context: fall, wind morning, Pelican Town, 3 hearts
 - player: That path up from the beach is steeper than it looks.
 - elliott: It is, and it takes me twenty minutes when I am honest about it. I use the climb to work out what I mean to say before I arrive.
 - player: Does that help?
-- elliott: Not much; I arrive with a plan and abandon it at the first hello. Still, the walk is pleasant.
+- elliott: Not much; I arrive with a plan and abandon it at the first hello. Still, the walk is pleasant. Where are you off to this morning?
 
 <!-- ===== The town rooms ===== -->
 
@@ -108,7 +108,7 @@ context: fall, clear afternoon, Pierre's shop, 4 hearts
 - player: Thursday again, and here you are.
 - elliott: Thursdays, eleven thirty to five thirty, as regular as the tide and considerably less romantic. I would starve without this shop, @.
 - player: All day though?
-- elliott: All day, yes; I browse slowly. It is warm, there are people in it, and nobody has yet asked me to leave.
+- elliott: All day, yes. I browse slowly, shelf by shelf. It is warm, there are people in it, and nobody has yet asked me to leave.
 
 ### elliott-pla-013
 context: winter, clear afternoon, the library, 5 hearts
@@ -117,7 +117,7 @@ context: winter, clear afternoon, the library, 5 hearts
 - player: Every single day?
 - elliott: Most days; Thursdays I am at Pierre's, and Fridays and Sundays on the docks. The rest belong to this corner by the window.
 - player: What do you actually get done in there?
-- elliott: Reading, and more writing than I manage at home. It is still less than I promise myself on the walk up.
+- elliott: Reading, and more writing than I manage at home. It is still less than I promise myself on the walk up. Today it was two pages and a chapter of somebody else's history.
 
 ### elliott-pla-014
 context: winter, clear evening, the Stardrop Saloon, 6 hearts
@@ -156,30 +156,30 @@ context: spring, clear morning, the bus stop, 4 hearts
 - player: I did not know you ever used the bus.
 - elliott: Only once a year, for the festival out in the desert. Pam drives and I hold on to my hat with both hands.
 - player: You do not travel much.
-- elliott: I do not, @; the valley is quite large enough for a man with one novel to finish. Ask me again when the thing is done.
+- elliott: Rarely, @; the valley is quite large enough for a man with one novel to finish. Ask me again when the thing is done.
 - player: Where would you go, if you did?
-- elliott: Somewhere with a coastline, knowing me. I have the imagination for a different page, @, and none at all for a different sea.
+- elliott: Somewhere with a coastline, knowing me. I have the imagination for a different page, @, and none at all for a different sea. Where would you go?
 
 ### elliott-pla-019
 context: fall, clear afternoon, Pelican Town, 3 hearts
 - player: Have you been up to the mountain lake?
 - elliott: No, I have never made the climb. I know it is up there the way I know the moon is up there.
 - player: You should go sometime.
-- elliott: I should. I say that about a great many places, @, and then the tide comes in and I forget.
+- elliott: Perhaps I should. I say that about a great many places, @, and then the tide comes in and I forget. Is it worth the climb?
 
 ### elliott-pla-020
 context: winter, snowing evening, the Stardrop Saloon, 5 hearts
 - player: Ever been down in the mines?
 - elliott: Not once, and I have no tales waiting for you down there. I gather it is dark, and I do my best work near a window.
 - player: Not curious at all?
-- elliott: Curious from here. You go down and come back with the story, and I shall buy the ale and take notes.
+- elliott: Curious from here. If you ever go down, come back with the story, and I shall buy the ale and take notes. Is it as dark as they say?
 
 ### elliott-pla-021
 context: summer, clear afternoon, the beach, 4 hearts
 - player: What is the desert like out past the bus stop?
 - elliott: Hot, bright, and full of sand with a completely different character to ours. I have seen the festival end of it and I was very glad to be handed a cold drink.
 - player: You did not explore?
-- elliott: No. I looked at the horizon, decided it was somebody else's chapter, and went back to the stalls, @.
+- elliott: No, I looked at the horizon, decided it was somebody else's chapter, and went back to the stalls, @.
 
 <!-- ===== The island resort ===== -->
 
@@ -220,4 +220,4 @@ context: summer, clear afternoon, the island resort, 5 hearts
 - player: You will go home though.
 - elliott: Of course. My desk faces a colder water entirely, and I miss it already.
 - player: What will you miss from here?
-- elliott: The warmth in the water, and the fact that nobody on this island expects a word out of me before lunch.
+- elliott: The warmth in the water, and the fact that nobody on this island expects a word out of me before lunch. Do you come over here often?

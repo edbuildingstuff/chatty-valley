@@ -37,7 +37,7 @@ context: winter, snowing morning, the library, 4 hearts
 ### elliott-far-005
 context: fall, clear afternoon, Pierre's shop, 3 hearts
 - player: Anyway, I will let you finish your shopping.
-- elliott: Kind of you. I have been holding this tin for ten minutes and calling it deliberation.
+- elliott: Kind of you. It is coffee, and the price is the problem. I have been holding this tin for ten minutes and calling it deliberation.
 - player: Good luck with that.
 - elliott: The tin will win. It always does. Good day to you, @. [end]
 
@@ -51,14 +51,14 @@ context: spring, clear evening, the Stardrop Saloon, 5 hearts
 ### elliott-far-007
 context: summer, clear morning, Willy's shop, 6 hearts
 - player: Catch you later, I have fish to sell.
-- elliott: Then Willy is the man for it. He is at the counter and in a good humor, which is most of the battle.
+- elliott: Then Willy is the man for it. He is at the counter, which is most of the battle.
 - player: Wish me luck.
 - elliott: Luck, and a fair price. Off you go, @, and mind the gulls near the crates. [end]
 
 ### elliott-far-008
 context: winter, clear afternoon, Pelican Town, 8 hearts
 - player: I want to get home before dark.
-- elliott: Wise. The light goes early this month and takes the warmth with it.
+- elliott: Wise; the light goes early this month and takes the warmth with it.
 - player: Take care, Elliott.
 - elliott: And you, @. Come by the cabin when the cold turns tedious, the door is open between ten and six. [end]
 
@@ -130,21 +130,21 @@ context: spring, clear afternoon, the beach, 4 hearts
 - player: Not today, thanks.
 - elliott: No matter. You know where to find me.
 - player: What are you working on anyway?
-- elliott: The first chapter of my novel, which I have rewritten more times than I will admit. I am hoping the next version is kinder.
+- elliott: The first chapter of my novel, which I have rewritten more times than I will admit. I am hoping the next version is kinder. Would you like to hear the opening line?
 
 ### elliott-far-019
 context: summer, clear morning, the beach, 5 hearts
 - player: I can only stay a minute, I am meeting Robin later.
 - elliott: Then let us spend it well; a minute is a generous unit. What shall we do with ours?
 - player: Tell me something good.
-- elliott: The gulls found an unattended picnic on the far rocks this morning and conducted themselves disgracefully. I took notes and called it research.
+- elliott: The gulls found an unattended picnic on the far rocks this morning and conducted themselves disgracefully. I took notes and called it research. Say hello to Robin for me.
 
 ### elliott-far-020
 context: fall, clear afternoon, the library, 6 hearts
 - player: I will pass on the book, I have too much to read already.
 - elliott: A fine complaint to have. It goes back on the shelf with my other rejected recommendations, where it has company.
 - player: What else is good in here?
-- elliott: The histories are good, and so are the mysteries on the shelf by the window. I have borrowed most of them at least once.
+- elliott: The histories are good, and so are the mysteries on the shelf by the window. I have borrowed most of them at least once. Do you prefer a history or a mystery?
 
 ### elliott-far-021
 context: winter, clear evening, the Stardrop Saloon, 7 hearts
@@ -158,4 +158,4 @@ context: summer, clear afternoon, the island resort, 6 hearts
 - player: The boat back leaves at six, so I have to be on it.
 - elliott: Six is hours away. Sit down and let the sun do its work on you.
 - player: Fine, a little longer.
-- elliott: Marvelous. I shall order a round I cannot afford and let Gus give me the look afterward.
+- elliott: Marvelous. I shall order a round I cannot afford and let Gus give me the look afterward. What will you have?

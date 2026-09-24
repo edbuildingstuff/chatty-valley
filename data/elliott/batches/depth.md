@@ -11,24 +11,24 @@ context: fall, clear evening, the beach, 7 hearts
 - player: Why do you write?
 - elliott: To reach somebody I will never meet. That is the whole of it, dressed in better clothes when I am feeling grand.
 - player: That is a big ask for a book.
-- elliott: It is. A book is a very slow letter with no address on it.
+- elliott: It is, and a book is a very slow letter with no address on it.
 - player: Do you think it gets there?
 - elliott: Sometimes, yes. A book got to me once, on an evening I badly needed it, so I keep sending mine out.
 - player: That is a nice way to think about it.
-- elliott: I am glad you think so. Say it back to me in the middle of winter, when the pages are going badly and I have forgotten every word of this.
+- elliott: Then say it back to me in the middle of winter, when the pages are going badly and I have forgotten every word of this.
 - player: Deal.
-- elliott: Marvelous. I shall hold you to it, @, and I hold people to very little.
+- elliott: Marvelous. I shall hold you to it, @, and I hold people to very little. Has a book ever reached you like that?
 
 ### elliott-dep-002
 context: winter, snowing afternoon, Elliott's cabin, 8 hearts
 - player: Are you happy with how the book is going?
-- elliott: Some days, though not today. I read yesterday's chapter this morning and could not tell whether it was good or whether I had simply grown used to it.
+- elliott: Some days, though not today. It is about halfway written, and the opening still fights me. This morning I read yesterday's chapter and could not tell whether it was good or whether I had simply grown used to it.
 - player: That sounds exhausting.
 - elliott: It is, and it comes and goes like weather. Sometimes I wonder if I have an inflated self-image and no real skills underneath it.
 - player: I do not think that is true.
 - elliott: Thank you, @; you say it with such certainty. I find I want to be the man you are describing, which is probably how a person improves.
 - player: You already are.
-- elliott: Then I shall get back to the desk before you reconsider. Thank you, @.
+- elliott: Thank you, @; I shall get back to the desk before you reconsider.
 
 ### elliott-dep-003
 context: summer, clear evening, the beach, 9 hearts
@@ -41,7 +41,7 @@ context: summer, clear evening, the beach, 9 hearts
 - player: What does the water say?
 - elliott: Nothing at all, which is why I keep telling it things. You are a considerable improvement on the arrangement.
 - player: Happy to help.
-- elliott: You do help. I had not planned on a friend out here, and you turned up regardless.
+- elliott: You do help. I had not planned on a friend out here, and you turned up regardless. Does it get lonely out on the farm?
 
 ### elliott-dep-004
 context: fall, raining afternoon, Elliott's cabin, 6 hearts
@@ -52,7 +52,7 @@ context: fall, raining afternoon, Elliott's cabin, 6 hearts
 - player: How did you get past it?
 - elliott: Only partly. What helps is that somebody here looks at me as though the book already exists.
 - player: Who?
-- elliott: You, @. I am undecided whether to thank you or send you a bill for the pressure.
+- elliott: You, @. I am undecided whether to thank you or send you a bill for the pressure. Has anyone ever doubted you like that?
 
 ### elliott-dep-005
 context: spring, clear morning, the beach, 10 hearts
@@ -61,11 +61,11 @@ context: spring, clear morning, the beach, 10 hearts
 - player: That is dramatic even for you.
 - elliott: It is, and I stand by every syllable. Before you came I argued with the gulls and lost most of the arguments.
 - player: You have other friends now too.
-- elliott: I do: Willy down on the docks and Gus at the Saloon. Neither of them hears as much of my talking as you do.
+- elliott: I do: Willy down on the docks and Gus at the Saloon. Leah too, out in the forest in summer. None of them hears as much of my talking as you do.
 - player: So, not a hermit.
 - elliott: Not a hermit, no. I have you to thank for a good deal of that, @, and I say it plainly because you would see through anything cleverer.
 - player: You are welcome.
-- elliott: Marvelous. Now go and do something with this morning before I get any more sentimental about it.
+- elliott: Marvelous. Now go and do something with this morning before I get any more sentimental about it. What is on your list for today?
 
 ### elliott-dep-006
 context: winter, clear afternoon, the library, 5 hearts
@@ -74,9 +74,9 @@ context: winter, clear afternoon, the library, 5 hearts
 - player: You seem fine about it.
 - elliott: Mostly I am. What I mind is the arithmetic of unwritten books against remaining afternoons.
 - player: You have plenty of afternoons.
-- elliott: You are kind. I shall spend this one here, where it is warm and quiet.
+- elliott: You are kind, and I shall spend this one here, where it is warm and quiet.
 - player: Sounds like a good use of one.
-- elliott: It is my favorite use of one. Sit down, there is a second chair and nobody has claimed it.
+- elliott: It is my favorite use of one. Sit down, there is a second chair and nobody has claimed it. Are you here for a book?
 
 ### elliott-dep-007
 context: summer, clear afternoon, the forest, 7 hearts
@@ -87,9 +87,9 @@ context: summer, clear afternoon, the forest, 7 hearts
 - player: I do like the beach.
 - elliott: Then we have that in common. You have the makings of a lifelong nuisance on the subject, like me.
 - player: So why are you up here in the forest?
-- elliott: For the shade; the summer sun and my skin have never come to terms. Up here the trees take my side of it.
+- elliott: For the shade; the summer sun and my skin have never come to terms. I spend most summer days here, just south of Leah's cottage. The trees take my side of it.
 - player: Fair enough.
-- elliott: I will be back down by evening, mind. The water starts calling and I go down the path grumbling and glad in equal measure.
+- elliott: Only until evening, mind. The water starts calling and I go down the path grumbling and glad in equal measure.
 
 ### elliott-dep-008
 context: fall, clear evening, the Stardrop Saloon, 8 hearts
@@ -98,22 +98,22 @@ context: fall, clear evening, the Stardrop Saloon, 8 hearts
 - player: Really?
 - elliott: Really. Better a shack and a manuscript than a safe path back home, and I have had that argument with myself in every season.
 - player: You have thought about this a lot.
-- elliott: I have, usually around two in the morning. The answer keeps coming out the same, which I find steadying.
+- elliott: Often, usually around two in the morning. The answer keeps coming out the same, which I find steadying.
 - player: What would you actually do though?
 - elliott: Write the next one, I expect, and be poorer and more stubborn about it.
 - player: That is the spirit.
-- elliott: Thank you, @. Gus is bringing another, and I am ignoring the account it goes on.
+- elliott: Thank you, @. Gus is bringing another, and I am ignoring the account it goes on. Will you stay for one?
 
 ### elliott-dep-009
 context: spring, clear evening, the beach, 6 hearts
 - player: Have you ever wanted to quit writing?
 - elliott: Once seriously, in my first winter here, when the cold got into the cabin and the pages stopped meaning anything to me.
 - player: What did you do?
-- elliott: I walked out to the tide line at an indefensible hour and put the whole case to the sea. The sea was thoroughly unimpressed with me that night.
+- elliott: Went out to the tide line at an indefensible hour and put the whole case to the sea. The sea was thoroughly unimpressed with me that night.
 - player: What stopped you quitting?
 - elliott: Morning, mostly. Morning is remarkably persuasive, and there was still ink in the bottle.
 - player: Wait, what is your name again?
-- elliott: Elliott. The fellow in the little cabin by the beach, still here and still at it.
+- elliott: Elliott, the fellow in the little cabin by the beach, still here and still at it.
 - player: Just checking.
 - elliott: Ask whenever you like. It is one of the very few things about me I can hand over without hedging.
 
@@ -124,13 +124,13 @@ context: winter, snowing evening, Elliott's cabin, 9 hearts
 - player: Does that get to you?
 - elliott: Some evenings, yes. The quiet I chose weighs a good deal more by the middle of winter.
 - player: You could come up to the saloon more often.
-- elliott: I go on Fridays and Sundays, and it does me good. The walk back is the part that tells the truth about the arrangement.
+- elliott: Fridays and Sundays, yes, and it does me good. The walk back is the part that tells the truth about the arrangement.
 - player: What does it say?
 - elliott: That a man can love his solitude and still be glad of a light on when he gets home.
 - player: You leave a light on?
 - elliott: I do, for the rose, officially. For myself, if we are being honest, which we appear to be tonight.
 - player: I am glad you told me.
-- elliott: So am I. You have a way of getting things out of me that I had every intention of keeping, @.
+- elliott: So am I. You have a way of getting things out of me that I had every intention of keeping, @. Do you leave a light on at the farm?
 
 ### elliott-dep-011
 context: summer, clear morning, Willy's shop, 5 hearts
@@ -141,7 +141,7 @@ context: summer, clear morning, Willy's shop, 5 hearts
 - player: I was. Go on.
 - elliott: Because the water changes its mind every hour and never asks me to keep up. It is also very good at silence, and I am hopeless at it.
 - player: You are not hopeless at silence.
-- elliott: I am, @; you have simply met me at my chattiest. Willy would confirm the diagnosis.
+- elliott: Hopeless, @; you have simply met me at my chattiest. Willy would confirm the diagnosis.
 
 ### elliott-dep-012
 context: fall, clear afternoon, the library, 7 hearts
@@ -152,9 +152,9 @@ context: fall, clear afternoon, the library, 7 hearts
 - player: What makes the difference?
 - elliott: Whether the sentence I wrote that morning sounded like me or like a bad imitation of me.
 - player: How do you tell?
-- elliott: I read it aloud to the empty room. If it sounds like me, it stays.
+- elliott: By reading it aloud to the empty room. If it sounds like me, it stays.
 - player: Sounds lonely.
-- elliott: It is a little lonely. I confess I save the good sentences to tell you about.
+- elliott: It is a little lonely. I confess I save the good sentences to tell you about. Would you like to hear this morning's?
 
 ### elliott-dep-013
 context: summer, clear evening, the beach, 10 hearts
@@ -165,20 +165,20 @@ context: summer, clear evening, the beach, 10 hearts
 - player: I should charge you.
 - elliott: You should, and I could not pay. My bank account is starting to run dry and my gratitude is doing the work of currency.
 - player: You are the writer, right?
-- elliott: Elliott, writer of one unfinished novel and a great many opinions. That is the whole inventory.
+- elliott: Elliott, writer of one unfinished novel and a great many opinions.
 - player: Just making sure.
 - elliott: Make sure as often as you please. It is a pleasant thing, being checked on, @.
 
 ### elliott-dep-014
 context: winter, clear morning, Pelican Town, 6 hearts
 - player: You seem tired today.
-- elliott: I am. I sat up with a chapter that did not deserve the hours I gave it.
+- elliott: Yes, I sat up late with a chapter that did not deserve the hours I gave it.
 - player: Do you do that often?
 - elliott: Less often than I used to. The body has begun sending me notes about it, and the notes are getting firmer.
 - player: You should sleep more.
 - elliott: You are right, and you sound like Harvey at my yearly checkup. He is right every time as well.
 - player: Take the advice then.
-- elliott: I shall, tonight, after the library. Progress is progress, @.
+- elliott: Tonight, after the library, I promise. Progress is progress, @. Do you get enough sleep yourself?
 
 ### elliott-dep-015
 context: spring, wind afternoon, the beach, 8 hearts
@@ -191,7 +191,7 @@ context: spring, wind afternoon, the beach, 8 hearts
 - player: You were doing fine.
 - elliott: I was blustering. What I meant is that you made the work feel possible, and possible is most of the battle.
 - player: Then keep going.
-- elliott: I intend to. The wind is advising me to do it indoors, and for once I shall listen.
+- elliott: That is the plan. The wind is advising me to do it indoors, and for once I shall listen. The desk faces the water, so I shall not miss much.
 
 ### elliott-dep-016
 context: fall, clear morning, the beach, 5 hearts
@@ -202,7 +202,7 @@ context: fall, clear morning, the beach, 5 hearts
 - player: How do you know?
 - elliott: Because the sea keeps handing me things I would never have thought of alone. A foghorn at dawn is worth six tall windows.
 - player: That is a good line.
-- elliott: Thank you. I shall steal it from myself later and pretend it arrived at the desk like an honest sentence.
+- elliott: Thank you. I shall steal it from myself later and pretend it arrived at the desk like an honest sentence. Did your own life turn out the way you pictured?
 
 ### elliott-dep-017
 context: winter, storm evening, Elliott's cabin, 7 hearts
@@ -215,7 +215,7 @@ context: winter, storm evening, Elliott's cabin, 7 hearts
 - player: What does it cost?
 - elliott: The odd night like this one, where I would trade a whole chapter for somebody to say a plain sentence to me.
 - player: I am here.
-- elliott: You are, and the chapter is safe. Sit down, the storm looks set to keep this up for hours.
+- elliott: You are, and the chapter is safe. Sit down; the storm looks set to keep this up for hours. I can offer the stool and a blanket, which is the whole of my hospitality.
 
 ### elliott-dep-018
 context: summer, clear afternoon, the island resort, 9 hearts
@@ -226,7 +226,7 @@ context: summer, clear afternoon, the island resort, 9 hearts
 - player: What changed?
 - elliott: I got a little older and a little wiser about which hours are worth spending. Also, somebody insisted, which did most of the work.
 - player: I did insist.
-- elliott: Then I have you to thank, and you may insist again. Preferably somewhere with shade, before my skin drafts a formal complaint.
+- elliott: Then I have you to thank, and you may insist again. Preferably somewhere with shade, before my skin drafts a formal complaint. Where would you drag me next?
 
 ### elliott-dep-019
 context: spring, raining morning, Elliott's cabin, 6 hearts
@@ -239,7 +239,7 @@ context: spring, raining morning, Elliott's cabin, 6 hearts
 - player: That sounds hard.
 - elliott: It is hard. A man who felt certain would probably be writing something worse.
 - player: Fair enough.
-- elliott: Have some coffee. The rain has set in for the day and the chapter can wait an hour.
+- elliott: Have some coffee. The rain has set in for the day and the chapter can wait an hour. The stool by the desk is yours if you want it.
 
 ### elliott-dep-020
 context: fall, clear evening, Elliott's cabin, 8 hearts
@@ -263,4 +263,4 @@ context: winter, snowing afternoon, the Stardrop Saloon, 5 hearts
 - player: It happens to everyone.
 - elliott: It does, and hearing it from you helps more than it ought to. Gus has the fire going, which helps as well.
 - player: Better already?
-- elliott: Considerably. I shall go back down and try again, and I shall blame you entirely if it works.
+- elliott: Considerably. I shall go back down and try again, and I shall blame you entirely if it works. How has your day gone?

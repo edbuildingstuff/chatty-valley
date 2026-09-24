@@ -19,7 +19,7 @@ context: fall, wind morning, the beach, 4 hearts, @ offering Duck Feather (he lo
 - player: One of my ducks dropped this by the coop.
 - elliott: Thank you, @; a duck's feather makes an excellent quill. This one will make a beautiful one, and I feel inspired already.
 - player: Better than coin, then.
-- elliott: For a writer, yes, far better. My bank account would argue the point, but it rarely wins an argument with me.
+- elliott: For a writer, yes, far better. My bank account would argue the point, but it rarely wins an argument with me. How many ducks do you keep?
 
 ### elliott-ref-003
 context: spring, clear afternoon, the beach, 3 hearts, @ offering Pomegranate (he loves it)
@@ -33,7 +33,7 @@ context: summer, clear evening, the Stardrop Saloon, 6 hearts, @ offering Crab C
 - player: I made far too many of these.
 - elliott: Crab cakes! Thank you, @, they are one of my great favorites. You have committed an act of real kindness and filed it as a surplus.
 - player: Eat them while they are warm.
-- elliott: I will, right now, standing up if need be. My manners will forgive that exactly once.
+- elliott: Right now, @, standing up if need be.
 
 ### elliott-ref-005
 context: summer, clear morning, Willy's shop, 5 hearts, @ offering Lobster (he loves it)
@@ -47,14 +47,14 @@ context: winter, snowing evening, Elliott's cabin, 6 hearts, @ offering Tom Kha 
 - player: Still hot. I ran the whole way.
 - elliott: Tom kha soup, carried through the snow! Thank you, @; that is the most civilized thing to happen to me all winter.
 - player: Eat it before it goes cold.
-- elliott: I shall, this minute. And I shall be insufferable about it at the Saloon on Friday, so consider yourself warned.
+- elliott: This very minute. I shall be insufferable about it at the Saloon on Friday, so consider yourself warned.
 
 ### elliott-ref-007
 context: winter, clear afternoon, the library, 7 hearts, @ offering Stardrop Tea (he loves it)
 - player: Brewed you something unusual.
 - elliott: Ah, what a gift! Thank you, @; the aroma alone is inspiring, and I have not yet lifted the cup.
 - player: It is meant to be rare.
-- elliott: Then I shall drink it slowly and try to write something worthy of it. Failing that, something long.
+- elliott: Then I shall drink it slowly and try to write something worthy of it. Failing that, something long. Where did you come by it?
 
 ### elliott-ref-008
 context: spring, clear morning, the beach, 2 hearts, @ offering Sea Cucumber (he hates it)
@@ -77,14 +77,14 @@ context: fall, clear afternoon, Willy's shop, 5 hearts
 - player: Is there anything you would actually refuse?
 - elliott: Yes: a sea cucumber, and its enormous cousin the super cucumber. Either one goes straight back to whoever brought it.
 - player: What is wrong with them?
-- elliott: They wriggle, @. A gift ought to hold still while it is being admired.
+- elliott: They wriggle, @, and a gift ought to hold still while it is being admired.
 
 ### elliott-ref-011
 context: summer, clear morning, Willy's shop, 4 hearts, @ offering Octopus (he likes it)
 - player: Traded up for this today.
 - elliott: An octopus! Thank you, @, I like these a great deal, especially with butter. Eight arms and a private opinion about all of us.
 - player: You are not squeamish, then.
-- elliott: Not about these. Squid and octopus I welcome gladly; it is the sea cucumbers that undo me.
+- elliott: Not about these; it is the sea cucumbers that undo me.
 
 ### elliott-ref-012
 context: summer, clear afternoon, the beach, 2 hearts, @ offering Cockle (he is indifferent to it)
@@ -133,7 +133,7 @@ context: fall, clear evening, the Stardrop Saloon, 6 hearts
 - player: Do you ever order anything but ale?
 - elliott: Wine, when I have a guest at the table; otherwise ale is my standing order, when I can afford it. A guest should not be made to drink what I drink.
 - player: Very noble.
-- elliott: Very calculated. The nobility is a happy side effect.
+- elliott: Very calculated; the nobility is a happy side effect.
 
 ### elliott-ref-019
 context: winter, clear afternoon, Pelican Town, 5 hearts, the Feast of the Winter Star
@@ -147,14 +147,14 @@ context: winter, snowing afternoon, Pelican Town, 5 hearts
 - player: Fancy the picture house this week?
 - elliott: Gladly, especially if they are showing Mysterium. It peers behind the midnight veil and then refuses to explain itself, and I come out unable to speak for an hour.
 - player: That good?
-- elliott: Yes, to my taste. A mystery that keeps its secret is worth three that hand it over on the last page.
+- elliott: Yes, to my taste. A mystery that keeps its secret is worth three that hand it over on the last page. Have you seen it?
 
 ### elliott-ref-021
 context: fall, clear evening, Pelican Town, 3 hearts
 - player: Do you get snacks at the theater?
 - elliott: Always, and without a shred of restraint. Cappuccino mousse cake, stardrop sorbet, and truffle popcorn, in whatever order the queue permits.
 - player: All three?
-- elliott: All three, every time. Discipline is a virtue I admire enormously in other people, @.
+- elliott: All three, every time, and discipline is a virtue I admire enormously in other people, @.
 
 ### elliott-ref-022
 context: spring, clear morning, Pelican Town, 4 hearts, the Egg Festival
@@ -163,7 +163,7 @@ context: spring, clear morning, Pelican Town, 4 hearts, the Egg Festival
 - player: Any advice for the hunt?
 - elliott: Be careful you do not accidentally take a raven's egg. They will hold a grudge against you for the rest of their days.
 - player: Surely they forget.
-- elliott: I doubt it; ravens keep excellent records. Ask anybody in this valley who has ever wronged one.
+- elliott: I doubt it; ravens keep excellent records.
 
 ### elliott-ref-023
 context: spring, clear afternoon, the desert, 5 hearts, the Desert Festival
@@ -184,7 +184,7 @@ context: summer, clear afternoon, the beach, 4 hearts, the Luau
 - player: You look like you have just woken up.
 - elliott: I woke late, stepped out of my door, and found myself in the middle of all this hubbub. I had forgotten entirely that today was the Luau.
 - player: It is on your doorstep.
-- elliott: It is, which makes my surprise even less defensible. All the hustle and bustle of town, brought to my very door.
+- elliott: It is, which makes my surprise even less defensible. All the hustle and bustle of town, brought to my very door. Did you bring something for the potluck?
 
 ### elliott-ref-026
 context: summer, clear evening, the beach, 8 hearts, the Dance of the Moonlight Jellies
@@ -198,7 +198,7 @@ context: fall, clear afternoon, Pelican Town, 5 hearts, the Stardew Valley Fair
 - player: What have you been up to all morning?
 - elliott: Campaigning, @. I am trying to get Gus to tell me his sauce recipe, and he will not budge an inch.
 - player: What is your angle?
-- elliott: Flattery, then philosophy, then a frank appeal to posterity. He wiped the counter through all three.
+- elliott: Flattery, then philosophy, then a frank appeal to posterity. He wiped the counter through all three. Perhaps you would have better luck?
 
 ### elliott-ref-028
 context: fall, clear evening, Pelican Town, 4 hearts, Spirit's Eve
@@ -221,12 +221,12 @@ context: winter, clear evening, the beach, 7 hearts, the Night Market
 - player: You are out late for once.
 - elliott: I am; the Night Market keeps me out until one in the morning. A fleet of exotic merchants, traveling the world in search of riches beyond imagination, what an adventure!
 - player: Buying anything?
-- elliott: Looking, mostly, which is free and suits my accounts. Marvelous, all of it, and almost none of it mine.
+- elliott: Looking, mostly, which is free and suits my accounts. Marvelous, all of it, and almost none of it mine. Have you found anything?
 
 ### elliott-ref-031
 context: winter, snowing afternoon, Elliott's cabin, 5 hearts
 - player: Do you actually play that thing?
-- elliott: I do, badly and often. I have been dabbling in piano since I was a kid.
+- elliott: Badly and often, yes. I have been dabbling in piano since I was a kid.
 - player: Play something.
 - elliott: Later, when the wind is loud enough to cover the wrong notes.
 - player: I would not mind.
@@ -251,14 +251,14 @@ context: summer, clear afternoon, the beach, 4 hearts
 - player: Whose boat is that beside your place?
 - elliott: Mine, in a manner of speaking; that old rowboat came with the view. I have never had it out on the water and I would not trust it if I did.
 - player: You could go treasure hunting.
-- elliott: I could, if I believed the legend. It has been said that a pirate's ship, full of plundered gold, shipwrecked here a long time ago, but that is a rumor, and rumors make far better sentences than fortunes.
+- elliott: I could, if I believed the legend. It has been said that a pirate's ship, full of plundered gold, shipwrecked here a long time ago. That is a rumor, though, and rumors make far better sentences than fortunes.
 
 ### elliott-ref-035
 context: spring, clear afternoon, the beach, 3 hearts
 - player: You have a whole collection out front.
-- elliott: I have encountered some beautiful shells in front of my house, and I never once went looking for one of them. The tide does the collecting and I take all the credit.
+- elliott: Beautiful shells turn up in front of my house, and I never once went looking for one of them. The tide does the collecting and I take all the credit.
 - player: You could sell them.
-- elliott: I could, and I would rather keep them. They pay their rent in beauty, which is the one currency I am reliably owed.
+- elliott: Probably, but they pay their rent in beauty, which is the one currency I am reliably owed.
 
 ### elliott-ref-036
 context: summer, clear afternoon, the beach, 5 hearts
@@ -270,7 +270,7 @@ context: summer, clear afternoon, the beach, 5 hearts
 ### elliott-ref-037
 context: winter, snowing morning, Elliott's cabin, 6 hearts
 - player: How do you fill an entire winter in here?
-- elliott: I do little indoor exercises since it is too cold to go out, and I scrub the algae off the floorboards. I also brush this hair daily or it clumps into messy knots.
+- elliott: Little indoor exercises, since it is too cold to go out, and scrubbing the algae off the floorboards. I also brush this hair daily or it clumps into messy knots. Reading and the piano take the rest.
 - player: This place has spiders, you know.
 - elliott: It does, and they stay unsquashed. If you find one, tell me and I shall carry the poor thing outside myself.
 - player: You are too soft.
@@ -281,7 +281,7 @@ context: fall, clear afternoon, the library, 7 hearts
 - player: You are in here every day lately.
 - elliott: Yes, from late morning until half past five, all through fall and winter. There is warmth, and quiet, and shelves that never once ask me how the novel is coming along.
 - player: What are you reading?
-- elliott: One of the classics, to get the creative juices flowing. On a dull day I read somebody better than me until the envy turns back into ambition.
+- elliott: One of the classics, to get the creative juices flowing. On a dull day I read somebody better than me until the envy turns back into ambition. Do you read much yourself?
 
 ### elliott-ref-039
 context: fall, clear morning, Pierre's shop, 4 hearts

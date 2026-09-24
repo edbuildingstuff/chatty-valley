@@ -16,23 +16,23 @@ context: spring, raining morning, Elliott's cabin, 3 hearts
 - player: The rain has you shut in.
 - elliott: It has, and I surrendered gracefully. A wet morning is the only editor who has ever got me to sit still.
 - player: Sounds productive.
-- elliott: Somewhat. So far I have written one excellent sentence and moved it four times.
+- elliott: Somewhat. So far I have written one excellent sentence and moved it four times. What brings you out in the rain?
 
 ### elliott-sta-002
 context: summer, raining afternoon, Elliott's cabin, 5 hearts
 - player: I thought you would be off in the forest today.
 - elliott: I stay in my cabin whenever it rains. The path turns to soup and my shoes never forgive me, so I let the roof earn its keep.
 - player: Is it holding up?
-- elliott: Mostly. There is one corner that weeps a little, and I have put a cup under it and declared the matter settled.
+- elliott: Mostly. There is one corner by the window that weeps a little. I have put a cup under it and declared the matter settled.
 - player: Very practical.
 - elliott: I contain hidden depths, @, and one of them is a cup on the floor.
 
 ### elliott-sta-003
 context: fall, raining evening, Elliott's cabin, 6 hearts
 - player: You never made it to the library today.
-- elliott: I did not; on rainy days I stay home. The rain arrived before I did, and I have never once won an argument with it.
+- elliott: No; on rainy days I stay home in the cabin.
 - player: Was the day wasted?
-- elliott: Far from it. The foghorn kept me company and I got two pages out of listening to it, @.
+- elliott: Far from it. The foghorn kept me company and I got two pages out of listening to it, @. Both of them are about the sea, naturally.
 
 ### elliott-sta-004
 context: spring, raining afternoon, Elliott's cabin, 7 hearts
@@ -44,18 +44,18 @@ context: spring, raining afternoon, Elliott's cabin, 7 hearts
 ### elliott-sta-005
 context: summer, raining morning, Elliott's cabin, 2 hearts
 - player: Is the whole day going to be like this?
-- elliott: I think so; the sky has that settled look about it. A wet summer day is a gift, though my floorboards disagree and grow algae in protest.
+- elliott: Probably; the sky has that settled look about it. A wet summer day is a gift, though my floorboards disagree and grow algae in protest.
 - player: Algae indoors?
 - elliott: Yes, on the floorboards. That is the trouble with living on the beach: I scrub, the sea replies, and the correspondence continues.
 - player: Sounds exhausting.
-- elliott: It is, a little, and it keeps me humble, @. A man cannot hold grand ideas with a brush in his hand.
+- elliott: It is, a little, and it keeps me humble, @. A man cannot hold grand ideas with a brush in his hand. Does the damp ever get into your farmhouse?
 
 ### elliott-sta-006
 context: fall, raining afternoon, Elliott's cabin, 8 hearts
 - player: Can I wait the rain out in here?
 - elliott: Please do. The stool by the desk is the driest seat I own, and I would be glad of the company.
 - player: You do not mind the interruption?
-- elliott: I do not mind at all. I was interrupting myself perfectly well already, and you have improved the quality of it.
+- elliott: Not at all, @; I was interrupting myself perfectly well already.
 
 <!-- ===== Storm and wind ===== -->
 
@@ -64,7 +64,7 @@ context: fall, storm afternoon, Elliott's cabin, 5 hearts
 - player: The whole cabin is rattling.
 - elliott: It does that. On an afternoon like this the walls take up percussion and I take up a blanket.
 - player: Is it safe?
-- elliott: Yes, it is safe; the cabin has held through worse. Sit down, @, and let the sky finish its piece.
+- elliott: Yes, it is safe; the cabin has held through worse. Sit down, @, and let the sky finish its piece. There is a blanket on the bed if you are cold.
 
 ### elliott-sta-008
 context: summer, storm evening, Elliott's cabin, 4 hearts
@@ -73,7 +73,7 @@ context: summer, storm evening, Elliott's cabin, 4 hearts
 - player: You are enjoying this.
 - elliott: Enormously. Afterward I shall be picking kelp off my step and enjoying it a good deal less.
 - player: Want help with that?
-- elliott: I would take it gladly. Kelp is heavier than it looks, and so is my pride.
+- elliott: Gladly; kelp is heavier than it looks, and so is my pride.
 
 ### elliott-sta-009
 context: spring, storm evening, Elliott's cabin, 6 hearts
@@ -87,14 +87,14 @@ context: fall, wind afternoon, the beach, 5 hearts
 - player: This wind is fierce today.
 - elliott: It is. It has taken my hat twice and I have chased it twice, which is the whole of my exercise for the week.
 - player: Why not go inside?
-- elliott: Because the water is magnificent when it is bad tempered, @. I shall stay until my dignity gives out.
+- elliott: Because the water is magnificent when it is bad tempered, @. Look at the spray coming off the far rocks. I shall stay until my dignity gives out.
 
 ### elliott-sta-011
 context: winter, wind evening, the beach, 3 hearts
 - player: You are out here with the gale doing that?
 - elliott: Only for a moment. The wind comes off the water with a sound I have been trying to describe for a year, and I keep coming back to check my work.
 - player: Any luck?
-- elliott: None whatever. I shall try again tomorrow, colder and no wiser.
+- elliott: None whatever; I shall try again tomorrow, colder and no wiser.
 
 <!-- ===== Snow and winter habits ===== -->
 
@@ -103,7 +103,7 @@ context: winter, snowing morning, the beach, 4 hearts
 - player: Snow lying on sand looks all wrong.
 - elliott: It does, and every winter the two of them insist on meeting anyway. I come down early to see it before the tide takes the joke away.
 - player: Worth the cold?
-- elliott: Entirely. I shall thaw at the Saloon later and complain about it then.
+- elliott: Entirely. I shall thaw out at home later and complain about it then.
 
 ### elliott-sta-013
 context: winter, snowing afternoon, Elliott's cabin, 5 hearts
@@ -131,16 +131,16 @@ context: winter, clear afternoon, the library, 5 hearts
 ### elliott-sta-016
 context: winter, snowing morning, Elliott's cabin, 3 hearts
 - player: Your rose is still alive in all this cold.
-- elliott: Stubbornly so. I water it faithfully, and not with sea water this time.
+- elliott: Stubbornly so. It sits on my desk where I can keep an eye on it. I water it faithfully, and not with sea water this time.
 - player: This time?
-- elliott: I once watered it with sea water, and it very nearly died. The rose has forgiven me more readily than I have forgiven myself.
+- elliott: Once I watered it with sea water, and it very nearly died. The rose has forgiven me more readily than I have forgiven myself.
 
 ### elliott-sta-017
 context: winter, clear evening, Elliott's cabin, 7 hearts
 - player: Is that a piano under all that paper?
-- elliott: It is. I have been dabbling since I was a kid, and I am not very good, but it is fun.
+- elliott: It is, under a week of drafts. I have been dabbling since I was a kid. I am not very good, but it is fun.
 - player: Play something.
-- elliott: I will, on the condition that you describe it to nobody. What I do to a slow tune should be handled privately.
+- elliott: Yes, on one condition: you describe it to nobody. What I do to a slow tune should be handled privately.
 - player: Deal.
 - elliott: Then sit down, @, and lower your expectations to somewhere near the floor.
 
@@ -149,7 +149,7 @@ context: winter, clear evening, Elliott's cabin, 7 hearts
 ### elliott-sta-018
 context: summer, clear afternoon, the forest, 6 hearts
 - player: You have come a long way up from the water.
-- elliott: I have. In high summer the shore turns into a very beautiful frying pan, and I am the egg.
+- elliott: I have. In high summer the shore turns into a very beautiful frying pan, and I am the egg. My skin burns if I so much as look at the sun.
 - player: So you sit in the shade instead.
 - elliott: Yes, under these trees south of Leah's cottage, every summer afternoon. I miss the sound of the water within the hour, @, every single time.
 
@@ -158,7 +158,7 @@ context: summer, clear morning, the beach, 4 hearts
 - player: You are out unusually early for a summer day.
 - elliott: Deliberately so. I take my shore hours before the sun is properly awake, and then I retreat like a sensible crab.
 - player: And after that?
-- elliott: The forest, the shade, and a page or two. My complexion negotiated these terms years ago and I honor them.
+- elliott: The forest, the shade, and a page or two. My complexion negotiated these terms years ago and I honor them. Where are you off to this morning?
 
 ### elliott-sta-020
 context: summer, clear afternoon, the island resort, 5 hearts
@@ -170,7 +170,7 @@ context: summer, clear afternoon, the island resort, 5 hearts
 ### elliott-sta-021
 context: summer, clear evening, the beach, 9 hearts
 - player: The heat has finally broken.
-- elliott: Thank goodness. The evening hands the shore back to me, and the light on the water at this hour is worth every burnt afternoon.
+- elliott: Thank goodness. I spent the worst of the day in the forest shade. The evening hands the shore back to me, and the light on the water at this hour is worth every burnt afternoon.
 - player: You say that every summer.
 - elliott: And I shall keep saying it, @, until I find words that do it justice. That may take some years.
 - player: I do not mind hearing it.
@@ -179,7 +179,7 @@ context: summer, clear evening, the beach, 9 hearts
 ### elliott-sta-022
 context: summer, wind afternoon, the beach, 3 hearts
 - player: At least there is a breeze today.
-- elliott: A mercy. The wind takes the worst of the heat off the sand and puts most of the sand into my shoes as payment, @.
+- elliott: A mercy. The wind takes the worst of the heat off the sand and puts most of the sand into my shoes as payment, @. I have emptied them twice already.
 - player: Seems a fair trade.
 - elliott: Fair enough; it is the only contract I have ever signed without reading. That is the trouble with living on the beach.
 
@@ -190,19 +190,19 @@ context: fall, clear morning, Elliott's cabin, 5 hearts
 - player: You will be heading out shortly, then.
 - elliott: At half past eleven, as I do all autumn. The library takes me in, keeps me warm, and returns me at half past five with ink on my cuff.
 - player: Every day?
-- elliott: Every day the weather allows. Routine is the only discipline I own that actually works.
+- elliott: Every day the weather allows. Routine is the only discipline I own that actually works. On rainy days I stay in the cabin instead.
 
 ### elliott-sta-024
 context: fall, clear afternoon, the library, 6 hearts
 - player: Autumn suits this room.
 - elliott: It does. The light comes in low and lands on the shelves as though somebody arranged it, and I get nothing done for the first ten minutes.
 - player: Only ten?
-- elliott: I have trained myself down from thirty. Progress, @, of a sort.
+- elliott: Yes, down from thirty. Progress, @, of a sort. The corner by the window gets the best of the light.
 
 ### elliott-sta-025
 context: fall, clear evening, Elliott's cabin, 4 hearts
 - player: What is that little tree by the window?
-- elliott: My bonsai. I stand with it most autumn evenings and clip almost nothing, which it seems to prefer.
+- elliott: My bonsai. It sits on its low table by the window for the light. I stand with it most autumn evenings and clip almost nothing, which it seems to prefer.
 - player: It looks well kept.
 - elliott: Thank you; restraint is the whole art of the thing. I wish I could apply the same to a paragraph.
 
@@ -211,7 +211,7 @@ context: fall, wind evening, the beach, 6 hearts
 - player: Autumn came in fast this year.
 - elliott: Overnight, practically. The wind changed its accent and the whole shore agreed to be melancholy about it.
 - player: You like it that way.
-- elliott: I do. Autumn writes half my pages and takes none of the credit, @.
+- elliott: I do; autumn writes half my pages and takes none of the credit, @.
 - player: Lucky you.
 - elliott: Lucky me. I shall be insufferable until the first snow, and then I shall simply be cold.
 
@@ -229,21 +229,21 @@ context: spring, clear morning, the beach, 4 hearts
 - player: The shore is empty at this hour.
 - elliott: It is, and that is the appeal. For an hour the whole coast belongs to me, @, and I do very little with it.
 - player: Not writing?
-- elliott: Looking. Looking is the part of the work nobody can see me doing, so I get away with a great deal of it.
+- elliott: Not yet; the writing comes later, at the desk. Right now I am looking, which is the part of the work nobody sees me doing. Would you walk the tideline with me?
 
 ### elliott-sta-029
 context: spring, clear afternoon, the beach, 5 hearts
 - player: You are drifting toward the bridge again.
 - elliott: I am. From three until six it is the finest seat in the valley, and it costs nothing but the walk.
 - player: What is up there?
-- elliott: The water going one way and the light going the other. I have written that badly four times.
+- elliott: The water going one way and the light going the other. The river runs out under the bridge into the sea just there. I have written that badly four times.
 - player: Try a fifth.
 - elliott: I intend to, this evening, with worse handwriting and better intentions.
 
 ### elliott-sta-030
 context: winter, clear morning, Elliott's cabin, 2 hearts
 - player: You are awake before the light.
-- elliott: Always. Coffee first, and then several hours of what I insist on calling hair maintenance, @.
+- elliott: Always. Coffee first, and then several hours of what I insist on calling hair maintenance, @. The desk gets whatever is left of the morning.
 - player: Several hours?
 - elliott: Several, yes, and I know precisely how that sounds. I suppose I am too vain, and I have made my peace with the charge.
 
@@ -259,16 +259,16 @@ context: summer, clear evening, Elliott's cabin, 8 hearts
 - player: Evenings are when you are happiest, I think.
 - elliott: You may be right. The day asks things of a man. The evening only asks that he sit down and notice the light.
 - player: And do you?
-- elliott: Most evenings. Some evenings I sit down and argue with chapter four instead, and it always wins.
+- elliott: Most evenings. Some evenings I sit down and argue with the first chapter instead, and it always wins. How do you spend yours?
 
 ### elliott-sta-033
 context: spring, wind morning, the beach, 6 hearts
 - player: This morning wind has the whole shore singing.
 - elliott: It does, and it has rearranged my hair into something structural. Do not look directly at it.
 - player: Too late.
-- elliott: Then we shall both pretend otherwise and speak of the sea instead, @. A far more dignified subject.
+- elliott: Then we shall both pretend otherwise and speak of the sea instead, @.
 - player: Fine. Tell me about the sea.
-- elliott: Gladly. It has been showing off since dawn and I have four pages of notes about it.
+- elliott: Gladly. The wind has the swell running high, and the spray is reaching halfway up the sand. It has been showing off since dawn and I have four pages of notes about it.
 
 <!-- ===== Festivals ===== -->
 
@@ -289,7 +289,7 @@ context: spring, clear afternoon, the desert, 5 hearts, the Desert Festival
 ### elliott-sta-036
 context: spring, clear afternoon, the forest, 6 hearts, the Flower Dance
 - player: You have dressed up for this one.
-- elliott: I wore my best shirt for the dance. This sort of thing does not happen very often and I refuse to meet it in yesterday's collar.
+- elliott: Yes, my best shirt, for the dance. This sort of thing does not happen very often and I refuse to meet it in yesterday's collar.
 - player: You look the part.
 - elliott: Then the shirt has done its work. I shall spend the afternoon hoping my feet are half as convincing.
 - player: Save me a dance.
@@ -300,7 +300,7 @@ context: summer, clear afternoon, the beach, 4 hearts, the Luau
 - player: This one lands in your own front garden.
 - elliott: It does, and I still managed to forget that today was the Luau. I wandered out for my morning walk and found the governor on my doorstep, @.
 - player: What did you do?
-- elliott: Said something about the weather and went back inside for a better shirt. Marvelous soup, though.
+- elliott: Said something about the weather and went back inside for a better shirt. Marvelous soup, though. Have you added anything to the pot?
 
 ### elliott-sta-038
 context: summer, clear evening, the beach, 7 hearts, the Dance of the Moonlight Jellies
@@ -314,9 +314,9 @@ context: fall, clear afternoon, Pelican Town, 5 hearts, the Stardew Valley Fair
 - player: You have been at Gus's stall for a solid hour.
 - elliott: I have, and for good reason. That sauce recipe is the great unsolved mystery of the valley and he will not budge.
 - player: Try asking nicely.
-- elliott: I have asked nicely, poetically, and once in what I believed was a persuasive whisper. The man is granite.
+- elliott: Already done: nicely, poetically, and once in what I believed was a persuasive whisper. The man is granite.
 - player: Give it up.
-- elliott: Never. I shall wear him down over a decade, one festival at a time.
+- elliott: Never; I shall wear him down one festival at a time.
 
 ### elliott-sta-040
 context: fall, clear evening, Pelican Town, 6 hearts, Spirit's Eve
@@ -330,12 +330,12 @@ context: winter, clear afternoon, the forest, 4 hearts, the Festival of Ice
 - player: They have you signed up for the contest.
 - elliott: They do, and I agreed just to be sporting. I have a flask, a borrowed rod, and no expectations whatsoever.
 - player: No chance at all?
-- elliott: Very little; it is rare that Willy ever loses. I am here for the cold air and the company, and I shall applaud him warmly.
+- elliott: Very little; it is rare that Willy ever loses. I am here for the cold air and the company, and I shall applaud him warmly. Are you entering yourself?
 
 ### elliott-sta-042
 context: winter, clear evening, the beach, 5 hearts, the Night Market
 - player: The market boats came in tonight.
-- elliott: They did, a fleet of exotic merchants traveling the world in search of riches beyond imagination. What an adventure, @.
+- elliott: They did, a fleet of exotic merchants traveling the world in search of riches beyond imagination. What an adventure, @. I have been down at the water watching them since they came in.
 - player: You will be down here late.
 - elliott: Until one in the morning, and I shall regret it beautifully at dawn.
 
@@ -346,7 +346,7 @@ context: winter, clear afternoon, Pelican Town, 6 hearts, the Feast of the Winte
 - player: And the gift exchange?
 - elliott: Mine is wrapped and hidden behind my back, badly. I have never once managed to look casual about it.
 - player: Who did you draw?
-- elliott: That is a secret until the exchange, @, and I mean to keep it. Ask me again in an hour.
+- elliott: That is a secret until the exchange, @.
 
 <!-- ===== Gifts: loved ===== -->
 
@@ -355,12 +355,12 @@ context: fall, clear afternoon, the beach, 5 hearts, @ offering Squid Ink (he lo
 - player: Willy put this aside for you.
 - elliott: Ah, a bottle of fine ink. A writer can never have too much, and it is quite expensive. Thank you, @.
 - player: Use it well.
-- elliott: I shall use it on chapter four, which deserves better ink than it has been getting.
+- elliott: I shall use it on the first chapter, which deserves better ink than it has been getting.
 
 ### elliott-sta-045
 context: fall, clear afternoon, the library, 4 hearts, @ offering Pomegranate (he loves it)
 - player: Straight off the tree this morning.
-- elliott: Oh, marvelous, thank you. A fruit that makes you work for it and then rewards the work handsomely.
+- elliott: Oh, marvelous, thank you. Pomegranates are one of my great favorites. A fruit that makes you work for it and then rewards the work handsomely.
 - player: Worth the trouble?
 - elliott: Entirely. I shall eat it slowly, get nothing done, and beg you not to tell Gunther I was eating in here.
 
@@ -369,30 +369,30 @@ context: winter, snowing evening, the Stardrop Saloon, 6 hearts, @ offering Crab
 - player: Gus said you would want these.
 - elliott: He is a wicked man and he is completely right. Crab cakes, on a snowing evening, handed to me at the bar, @.
 - player: Enjoy them.
-- elliott: I shall enjoy them audibly. You may wish to step back.
+- elliott: Audibly, I expect. You may wish to step back.
 - player: I will risk it.
-- elliott: Brave of you. Some men are undone by ale, and I am undone by a good crab cake.
+- elliott: Brave of you. Some men are undone by ale, and I am undone by a good crab cake. Will you have one with me?
 
 ### elliott-sta-047
 context: summer, clear morning, Willy's shop, 5 hearts, @ offering Lobster (he loves it)
 - player: Pulled this out of a trap at dawn.
 - elliott: Thank you, @, and look at the size of it. I shall eat like a man of means for one evening and go back to bread without a single complaint.
 - player: That good?
-- elliott: That good. Seafood is my great weakness, and a lobster is the best of it.
+- elliott: That good. Seafood is my great weakness, and a lobster is the best of it. Crab cakes come a close second.
 
 ### elliott-sta-048
 context: winter, snowing afternoon, Elliott's cabin, 7 hearts, @ offering Tom Kha Soup (he loves it)
 - player: It is still hot. Fetch a bowl.
-- elliott: I shall fetch one at once. Soup carried through the snow for me, @, and I am going to need a moment with that.
+- elliott: At once, @. Soup carried through the snow for me, and I am going to need a moment with that.
 - player: It is only soup.
 - elliott: It is coconut and shrimp and somebody thinking of me on a cold afternoon. There is a mushroom in it somewhere too, and for this one dish I have agreed to look the other way.
 
 ### elliott-sta-049
 context: spring, wind afternoon, the beach, 3 hearts, @ offering Duck Feather (he loves it)
 - player: The wind blew this across the sand to me.
-- elliott: Thank you, @, this will make a beautiful quill. I feel inspired already, which is more than the morning managed.
+- elliott: Thank you, @, this will make a beautiful quill. A duck's feather makes for an excellent one. I feel inspired already, which is more than the morning managed.
 - player: Glad it helps.
-- elliott: It helps a great deal; a duck's feather makes for an excellent quill. I shall think kindly of the wind for a whole week now.
+- elliott: It helps a great deal, and I shall think kindly of the wind for a whole week now.
 
 <!-- ===== Gifts: liked ===== -->
 
@@ -410,7 +410,7 @@ context: fall, raining afternoon, Elliott's cabin, 4 hearts, @ offering Jewels O
 - player: This one seemed like yours.
 - elliott: Oh, it is entirely mine. A whole volume on what the water keeps. I shall read it in one sitting and then pretend I paced myself.
 - player: Good rainy day for it.
-- elliott: The very best kind. The foghorn will handle the narration.
+- elliott: The very best kind. The foghorn will handle the narration. I shall start it by the lamp this evening.
 
 ### elliott-sta-052
 context: summer, clear afternoon, the beach, 6 hearts, @ offering Melon (he likes it)
@@ -433,7 +433,7 @@ context: fall, clear morning, Willy's shop, 5 hearts, @ offering Octopus (he lik
 - player: And yet.
 - elliott: And yet supper is supper, @. I shall be respectful about it, and I shall be full.
 - player: You cook much?
-- elliott: Hardly at all; my cabin has no kitchen. Seafood is the one thing I would learn to cook if it had.
+- elliott: Hardly at all; my cabin has no kitchen. Seafood is the one thing I would learn to cook if it had. Until then Gus does my cooking, when I can afford him.
 
 ### elliott-sta-055
 context: fall, clear afternoon, Pierre's shop, 3 hearts, @ offering Amaranth (he hates it)
@@ -463,14 +463,14 @@ context: summer, clear afternoon, the beach, 4 hearts, @ offering Super Cucumber
 - player: It is harmless.
 - elliott: It is purple, it is wriggling, and it is going straight back into the sea.
 - player: You are being dramatic.
-- elliott: I am a writer on a hot afternoon holding a grudge. Bring me a lobster and I shall forgive the whole episode.
+- elliott: Guilty. I am a writer on a hot afternoon holding a grudge. Bring me a lobster and I shall forgive the whole episode.
 
 ### elliott-sta-059
 context: spring, clear morning, Pierre's shop, 3 hearts, @ offering Goat Milk (he dislikes it)
 - player: Marnie had a surplus this morning.
 - elliott: How kind of you to think of me, @, but milk and I have never got on. I shall have to leave it for someone who enjoys it.
 - player: Not even in coffee?
-- elliott: Especially not in coffee. Coffee is a robust flavor and I take it exactly as it comes.
+- elliott: Especially not in coffee. Coffee is a robust flavor and I take it exactly as it comes. Black, first thing in the morning, before I sit down at the desk.
 
 ### elliott-sta-060
 context: fall, clear evening, the Stardrop Saloon, 5 hearts, @ offering Pizza (he dislikes it)
@@ -484,14 +484,14 @@ context: summer, clear afternoon, the forest, 6 hearts, @ offering Common Mushro
 - player: The shade under these trees is full of them.
 - elliott: It is, and I have admired every one from a respectful distance. The forest pleases my eye far more than my palate, @.
 - player: You will not even try it?
-- elliott: I have tried. That is precisely why I now admire them from over here.
+- elliott: Once, and that is precisely why I now admire them from over here.
 - player: More for me, then.
 - elliott: Take the lot with my blessing. I shall walk home and eat something that came out of the water.
 
 ### elliott-sta-062
 context: spring, clear morning, the beach, 4 hearts, @ offering Coral (he is indifferent to it)
 - player: The tide left this right by your door.
-- elliott: Ah, you have been doing some beach combing. A fine hobby, and thank you.
+- elliott: Ah, you have been doing some beach combing. A fine hobby, and thank you. The shells in front of my house are the best on this stretch of sand.
 - player: It is only a bit of coral.
 - elliott: A bit of coral is welcome all the same, and it shall join the shells on my sill. I would imagine the rarer varieties to be quite valuable, though I have never had the heart to find out.
 
@@ -527,7 +527,7 @@ context: fall, clear evening, the Stardrop Saloon, 3 hearts
 - player: ugh
 - elliott: That sounded heartfelt. Is something wrong?
 - player: nothing. everything. idk
-- elliott: I know that feeling well; my desk gives it to me most mornings. Sit here until it passes, or tell me about it if you like.
+- elliott: That feeling visits my desk most mornings. Sit here until it passes, or tell me about it if you like.
 
 ### elliott-nend-005
 context: spring, clear evening, the Stardrop Saloon, 6 hearts
@@ -536,7 +536,7 @@ context: spring, clear evening, the Stardrop Saloon, 6 hearts
 - player: yeah pretty bad
 - elliott: I am sorry, @. Sit with me and tell me about it once the ale arrives.
 - player: ok
-- elliott: Good. I am in no hurry at all tonight.
+- elliott: Good; I am in no hurry at all tonight.
 
 ### elliott-nend-006
 context: fall, wind evening, the beach, 5 hearts
@@ -550,7 +550,7 @@ context: summer, clear evening, the Stardrop Saloon, 4 hearts
 - player: my feet hurt
 - elliott: Then take a seat and rest them. What had you on your feet all day?
 - player: walking around town all day delivering stuff
-- elliott: That is a great many steps. Sit as long as you like; I shall keep you company.
+- elliott: That is a great many steps. Sit as long as you like; I shall keep you company. Who were all the deliveries for?
 
 ### elliott-nend-008
 context: spring, clear evening, the beach, 8 hearts

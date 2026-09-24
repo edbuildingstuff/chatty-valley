@@ -30,7 +30,7 @@ context: summer, clear afternoon, the forest, 7 hearts
 ### elliott-far-004
 context: winter, snowing morning, the library, 4 hearts
 - player: I have to head out.
-- elliott: Of course. Gunther will be glad of the quiet, and I shall pretend I was reading the whole time.
+- elliott: Of course. I shall return to my book and try to look as though I never stopped reading.
 - player: Talk later.
 - elliott: Later, then. Keep your hands in your pockets until you reach the square. [end]
 
@@ -93,7 +93,7 @@ context: winter, snowing afternoon, the library, 5 hearts
 ### elliott-far-013
 context: spring, clear morning, the beach, 6 hearts
 - player: im out
-- elliott: Out into a fine morning, by the look of it.
+- elliott: Off you go, then, into a fine morning by the look of it.
 - player: yep
 - elliott: Then I shall not keep you. Come back when the tide is low, the shells are worth the walk. [end]
 
@@ -130,7 +130,7 @@ context: spring, clear afternoon, the beach, 4 hearts
 - player: Not today, thanks.
 - elliott: No matter. You know where to find me.
 - player: What are you working on anyway?
-- elliott: The first chapter of my novel, which I have rewritten four times. I am hoping the fifth is kinder.
+- elliott: The first chapter of my novel, which I have rewritten more times than I will admit. I am hoping the next version is kinder.
 
 ### elliott-far-019
 context: summer, clear morning, the beach, 5 hearts
@@ -144,7 +144,7 @@ context: fall, clear afternoon, the library, 6 hearts
 - player: I will pass on the book, I have too much to read already.
 - elliott: A fine complaint to have. It goes back on the shelf with my other rejected recommendations, where it has company.
 - player: What else is good in here?
-- elliott: Gunther keeps the histories by the window, where the light is best. Whether that is thoughtful or accidental I have never dared ask.
+- elliott: The histories are good, and so are the mysteries on the shelf by the window. I have borrowed most of them at least once.
 
 ### elliott-far-021
 context: winter, clear evening, the Stardrop Saloon, 7 hearts

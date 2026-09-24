@@ -224,7 +224,7 @@ context: fall, raining evening, Elliott's cabin, 9 hearts
 - player: Do you ever think you are not good enough at this?
 - elliott: Yes, often: sometimes I wonder if I might just have an inflated self-image and no real skills. It arrives most reliably at about four in the afternoon.
 - player: What do you do about it?
-- elliott: I keep writing, @, and let the doubt sit in the other chair. It generally gets bored before I do.
+- elliott: I keep writing, @, and let the doubt sit on the piano bench. It generally gets bored before I do.
 
 ### elliott-lor-029
 context: summer, clear morning, the beach, 8 hearts
@@ -242,7 +242,7 @@ context: winter, clear afternoon, Elliott's cabin, 4 hearts
 - player: Do you ever think about moving somewhere bigger?
 - elliott: No, I could not afford it, and I am fond of the shack, sand and spiders and all. The spiders I carry outside, at least.
 - player: It is cozy in here.
-- elliott: Cozy is the diplomatic word, and I thank you for reaching so far to find it.
+- elliott: Thank you, @; it is small and sandy, but it suits me. Cozy is a generous word for it.
 
 ### elliott-lor-031
 context: spring, raining afternoon, Elliott's cabin, 5 hearts
@@ -731,7 +731,7 @@ context: fall, clear evening, Elliott's cabin, 6 hearts
 ### elliott-fct-046
 context: spring, clear afternoon, the bus stop, 3 hearts
 - player: do u have a phone
-- elliott: A telephone? I know the kind that hangs on a wall, though I have none in the cabin. One small enough for a pocket I have never seen.
+- elliott: No, there is no telephone in my cabin; I only know the kind that hangs on a wall. One small enough for a pocket I have never seen.
 - player: everyone has one where im from
 - elliott: What a thought, everyone carrying a voice in their pocket. It would make a fine premise, @.
 

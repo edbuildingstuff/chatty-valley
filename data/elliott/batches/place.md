@@ -197,7 +197,7 @@ context: summer, clear afternoon, the island resort, 6 hearts
 - player: Something over here smells strongly of coconut.
 - elliott: That would be me. There is an oil they sell on this beach and I have applied it with far more enthusiasm than technique.
 - player: Does it help?
-- elliott: My hair has never been so glossy or so uncooperative. I shall be finding it in my collar for a month, @.
+- elliott: A little; I have not burned yet. My hair has never been so glossy or so uncooperative, and I shall be finding the oil in my collar for a month, @.
 
 ### elliott-pla-024
 context: summer, clear afternoon, the island resort, 4 hearts
@@ -209,7 +209,7 @@ context: summer, clear afternoon, the island resort, 4 hearts
 ### elliott-pla-025
 context: summer, clear evening, the island resort, 7 hearts
 - player: The whole bar is toasting you.
-- elliott: Yes, well. I bought a round for everyone in a moment of tropical confidence and then discovered my pockets were less enthusiastic than the rest of me.
+- elliott: They are, because I bought a round for everyone in a moment of tropical confidence. My pockets turned out to be less enthusiastic than the rest of me.
 - player: What happened?
 - elliott: Gus covered it and was gracious about it, which was far worse than if he had shouted. I shall be paying that back in installments and gratitude, @.
 

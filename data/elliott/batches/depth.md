@@ -135,9 +135,9 @@ context: winter, snowing evening, Elliott's cabin, 9 hearts
 ### elliott-dep-011
 context: summer, clear morning, Willy's shop, 5 hearts
 - player: You are always down here by the water.
-- elliott: I am, whenever I can manage it. Willy must think I pay rent on this corner.
+- elliott: I am, whenever I can manage it, and I can see you wondering why. Willy must think I pay rent on this corner.
 - player: What did you have for breakfast?
-- elliott: Coffee, and then more coffee. That was a swerve, though; you were asking why I haunt this dock.
+- elliott: Coffee, and then more coffee. That was a swerve, though; you were wondering why I haunt this dock.
 - player: I was. Go on.
 - elliott: Because the water changes its mind every hour and never asks me to keep up. It is also very good at silence, and I am hopeless at it.
 - player: You are not hopeless at silence.
@@ -226,7 +226,7 @@ context: summer, clear afternoon, the island resort, 9 hearts
 - player: What changed?
 - elliott: I got a little older and a little wiser about which hours are worth spending. Also, somebody insisted, which did most of the work.
 - player: I did insist.
-- elliott: You did, and I shall let you insist again. Preferably somewhere with shade, before my skin drafts a formal complaint.
+- elliott: Then I have you to thank, and you may insist again. Preferably somewhere with shade, before my skin drafts a formal complaint.
 
 ### elliott-dep-019
 context: spring, raining morning, Elliott's cabin, 6 hearts

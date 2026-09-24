@@ -55,7 +55,7 @@ context: winter, snowing morning, Elliott's cabin, 6 hearts
 - player: idk. mines maybe
 - elliott: Be careful down there; I only know the mines from what the town says, and it says they are dark. Come and thaw out here afterward if you like.
 - player: is the rose ok in the cold tho
-- elliott: It is holding on by the window, better than the chapter, as I said. I water it, and not with sea water this time.
+- elliott: It is holding on at the desk, doing better than the chapter, as I said. I water it, and not with sea water this time.
 
 ### elliott-lnga-003
 context: summer, clear afternoon, the forest, 5 hearts
@@ -138,7 +138,7 @@ context: fall, wind evening, the Stardrop Saloon, 7 hearts
 - player: u always come here?
 - elliott: Friday and Sunday evenings, when I can afford it. The rest of the week I am at my desk.
 - player: hows the writing going
-- elliott: Better this week. I wrote a chapter in the middle of the mystery and liked it.
+- elliott: Better this week. I wrote a chapter in the middle of the mystery and liked it, though the first page still beats me.
 - player: huh
 - elliott: I mean the middle of the book is going well and the start is going badly. I still cannot write the first page.
 - player: that seems backwards
@@ -186,7 +186,7 @@ context: spring, clear afternoon, the beach, 1 hearts
 - player: probably the second one lol
 - elliott: Perhaps. Everyone back home said the same, and I came here anyway.
 - player: damn ok thats kinda sad
-- elliott: A little. It is also why I keep going. Are you settling in on the farm?
+- elliott: A little. It is also why I keep going. How is the farm?
 - player: its a lot of work
 - elliott: I can imagine. What has been the hardest part so far?
 
@@ -399,7 +399,7 @@ context: spring, clear evening, the beach, 6 hearts
 - player: i like it tbh
 - elliott: Do you? Then that one moves to the top of the pile.
 - player: wait so which of the six did u like most before i said anything
-- elliott: None of them, honestly. You picked the one I disliked least, and that helps.
+- elliott: None of them, honestly. The one I read you was the one I disliked least, and your liking it helps.
 
 ### elliott-lnga-021
 context: winter, clear afternoon, Pierre's shop, 5 hearts
@@ -634,7 +634,7 @@ context: fall, clear afternoon, the library, 6 hearts
 - player: is she nice
 - elliott: She seems very kind with the children. Beyond that I do not really know her.
 - player: whats gunther like
-- elliott: Quiet and careful, and he keeps the library very still. I am grateful for it.
+- elliott: He is the curator; he looks after the library and the museum. It is very still in here, and I am grateful for it.
 - player: boring place tho
 - elliott: Boring for some, perfect for me. I get more reading done here than anywhere.
 - player: what r u reading now

@@ -17,7 +17,7 @@ context: fall, clear afternoon, Elliott's cabin, 5 hearts, @ offering Squid Ink 
 ### elliott-ref-002
 context: fall, wind morning, the beach, 4 hearts, @ offering Duck Feather (he loves it)
 - player: One of my ducks dropped this by the coop.
-- elliott: Did you know? A duck's feather makes for an excellent quill. This one will make a beautiful one, and I feel inspired already.
+- elliott: Thank you, @; a duck's feather makes an excellent quill. This one will make a beautiful one, and I feel inspired already.
 - player: Better than coin, then.
 - elliott: For a writer, yes, far better. My bank account would argue the point, but it rarely wins an argument with me.
 
@@ -126,7 +126,7 @@ context: summer, clear morning, Elliott's cabin, 5 hearts
 - player: You look half awake.
 - elliott: I am, until the coffee. I find myself craving that robust flavor nearly every morning, and the first cup makes the hour a great deal more pleasant.
 - player: That bad without it?
-- elliott: Yes, fairly. I am courteous without it and interesting after it, and the difference is one pot.
+- elliott: Yes, fairly. I am courteous without it and interesting after it, and the difference is one cup.
 
 ### elliott-ref-018
 context: fall, clear evening, the Stardrop Saloon, 6 hearts
@@ -249,7 +249,7 @@ context: fall, clear evening, Elliott's cabin, 5 hearts
 ### elliott-ref-034
 context: summer, clear afternoon, the beach, 4 hearts
 - player: Whose boat is that beside your place?
-- elliott: That old rowboat? It came with the view. I have never had it out on the water and I would not trust it if I did.
+- elliott: Mine, in a manner of speaking; that old rowboat came with the view. I have never had it out on the water and I would not trust it if I did.
 - player: You could go treasure hunting.
 - elliott: I could, if I believed the legend. It has been said that a pirate's ship, full of plundered gold, shipwrecked here a long time ago, but that is a rumor, and rumors make far better sentences than fortunes.
 
@@ -270,7 +270,7 @@ context: summer, clear afternoon, the beach, 5 hearts
 ### elliott-ref-037
 context: winter, snowing morning, Elliott's cabin, 6 hearts
 - player: How do you fill an entire winter in here?
-- elliott: Badly and thoroughly. I do little indoor exercises since it is too cold to go out, I scrub the algae off the floorboards, and I brush this hair daily or it clumps into messy knots.
+- elliott: I do little indoor exercises since it is too cold to go out, and I scrub the algae off the floorboards. I also brush this hair daily or it clumps into messy knots.
 - player: This place has spiders, you know.
 - elliott: It does, and they stay unsquashed. If you find one, tell me and I shall carry the poor thing outside myself.
 - player: You are too soft.

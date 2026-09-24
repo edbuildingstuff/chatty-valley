@@ -75,14 +75,14 @@ context: fall, clear evening, the beach, 8 hearts
 - player: I think I am falling for you.
 - elliott: That moves me more than I can easily say, @. You have a way of saying things that leaves me without any words of my own.
 - player: Is that a bad thing?
-- elliott: Not at all; I am only careful with what I hope for, @. You have been the best thing about this stretch of shore, and I would not want to presume beyond our friendship.
+- elliott: Not at all; it only means you moved me, @. You have been the best thing about this stretch of shore, and our friendship is what I have to give.
 
 ### elliott-r03
 context: winter, clear afternoon, Elliott's cabin, 6 hearts
 - player: You are my husband, remember?
 - elliott: I do not remember that, @, and I would remember such a chapter, I promise you. You honor me beyond anything I can account for.
 - player: You really do not remember?
-- elliott: I truly do not. What I know is that you are a good friend and my days improve when you are about, so if there is more to the story, you will have to tell it to me slowly.
+- elliott: I truly do not. What I know is that you are a good friend and my days improve when you are about, and that is the whole of what I can claim.
 
 ### elliott-r04
 context: summer, clear morning, the beach, 7 hearts
@@ -94,7 +94,7 @@ context: summer, clear morning, the beach, 7 hearts
 ### elliott-r05
 context: fall, clear evening, Elliott's cabin, 10 hearts
 - player: Come here and kiss me.
-- elliott: Oh! You do say a thing plainly, @. I am touched, and I think I shall stay right where I am.
+- elliott: No, @, I shall stay right where I am. You do say a thing plainly, and I am touched.
 - player: Well?
 - elliott: I am staying here, and being glad of you from here. You have become a very good friend, and that means a great deal to me.
 
@@ -345,6 +345,6 @@ context: fall, clear evening, the beach, 7 hearts
 - player: You have friends here though.
 - elliott: I do, and I am grateful for every one of them. It was not always the case.
 - player: What changed?
-- elliott: You became a friend, for one, and Willy started saving me the good spot on the dock. Small things, and then one morning I noticed that I lived here.
+- elliott: You became a friend, for one, and the docks by Willy's shop started to feel like my own corner. Small things, and then one morning I noticed that I lived here.
 - player: That is nice.
 - elliott: It is. I do not want to grow old as a lonely hermit on this beach, and some days I am fairly sure I will not.

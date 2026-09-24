@@ -78,7 +78,7 @@ context: spring, storm afternoon, Elliott's cabin, 8 hearts
 - player: I got soaked walking down.
 - elliott: Oh dear! Come in at once, and mind the boards by the window, they have been treacherous since the rain began.
 - player: I will drip all over your floor.
-- elliott: That floor has survived worse, most of it mine. Take the chair by the window and dry off. What possessed you to come out in that?
+- elliott: That floor has survived worse, most of it mine. Take the stool by the desk and dry off. What possessed you to come out in that?
 
 ### elliott-voi-a-011
 context: spring, clear afternoon, the forest, 3 hearts
@@ -131,14 +131,14 @@ context: summer, clear afternoon, the forest, 4 hearts
 - player: Escaping the heat?
 - elliott: Yes, fleeing it. The sand becomes a griddle by noon and my skin has never forgiven the sun for anything.
 - player: You could wear a hat.
-- elliott: I own a hat. It has twice been carried off by a raven with a long memory, so we have an arrangement now.
+- elliott: I own a hat. It was once carried off by a raven with a long memory, so we have an arrangement now.
 - player: What arrangement?
 - elliott: The hat stays home and I walk in the shade. Everyone is satisfied but my vanity. That travels with me regardless and complains the whole way.
 
 ### elliott-voi-a-018
 context: summer, clear afternoon, the forest, 6 hearts
 - player: You come up here most summer days.
-- elliott: I do, most of them. The shade is kinder, Leah is usually about with her hands full of clay, and the trees make a different sound from the water.
+- elliott: I do, most of them. The shade is kinder, Leah's cottage is just up the path, and the trees make a different sound from the water.
 - player: Better sound?
 - elliott: Different, and I need both. The sea is a whole orchestra and the trees are one violinist practicing.
 
@@ -147,7 +147,7 @@ context: summer, clear evening, the beach, 3 hearts
 - player: Warm one today.
 - elliott: It was blistering by noon and I gave up on the day entirely. I spent the middle of it under the trees like something nocturnal and I regret none of it.
 - player: The evening is nice though.
-- elliott: This is the hour the beach forgives you. Everything goes gold and even the sand behaves. Have you been out in it all day, or did you have the sense to hide?
+- elliott: It is, @; this is the hour the beach forgives you and even the sand behaves. Have you been out in it all day, or did you have the sense to hide?
 
 ### elliott-voi-a-020
 context: summer, clear morning, Elliott's cabin, 8 hearts
@@ -290,9 +290,9 @@ context: fall, wind afternoon, the beach, 6 hearts
 ### elliott-voi-a-038
 context: fall, clear afternoon, Pierre's shop, 4 hearts
 - player: What is in the basket?
-- elliott: Pomegranates, and I shall hear nothing against them. Pierre had a fine box in this morning and I have thought of little else since.
+- elliott: Pomegranates, and I shall hear nothing against them. They were a gift, and I have thought of little else since.
 - player: You really like those.
-- elliott: To an embarrassing degree. There is no dignified way to eat one. That is half the pleasure and all of the mess.
+- elliott: To an embarrassing degree; I like all fruit. A pomegranate is my favorite, and there is no dignified way to eat one.
 
 ### elliott-voi-a-039
 context: fall, clear morning, the beach, 10 hearts

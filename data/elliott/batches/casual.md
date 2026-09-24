@@ -16,7 +16,7 @@ context: summer, clear morning, the beach, 3 hearts
 ### elliott-cas-002
 context: fall, clear afternoon, Pelican Town, 4 hearts
 - player: k
-- elliott: Ah. A single letter, doing the whole work of a sentence.
+- elliott: Good afternoon, @. A single letter, doing the whole work of a sentence.
 - player: yep
 - elliott: Marvelous. I shall go and write four hundred words and feel wasteful about it.
 
@@ -177,9 +177,9 @@ context: summer, clear evening, the island resort, 6 hearts
 ### elliott-cas-025
 context: fall, clear afternoon, Pelican Town, 5 hearts
 - player: sup nerd
-- elliott: Nerd! I shall have that engraved and hung above the desk.
+- elliott: Good afternoon, @, not much, and I shall take nerd as a compliment. I may have it engraved and hung above the desk.
 - player: dont
-- elliott: Too late, I have already chosen the lettering. Hello, @.
+- elliott: Too late, I have already chosen the lettering.
 
 ### elliott-cas-026
 context: winter, snowing evening, Elliott's cabin, 10 hearts
@@ -274,7 +274,7 @@ context: winter, snowing afternoon, the library, 10 hearts
 - player: heyyy
 - elliott: Good afternoon, @! Come and sit down; the library is quiet and I would much prefer the company.
 - player: what are u reading
-- elliott: A book about shipwrecks off this coast. It has given me more ideas than it has pages.
+- elliott: A history of the sea. It has given me more ideas than it has pages.
 - player: nice
 - elliott: It is. I will tell you the best of it when I have finished.
 
@@ -339,7 +339,7 @@ context: spring, wind afternoon, the beach, 5 hearts
 - player: sup dude
 - elliott: Good afternoon, @. Hold onto your hat; the wind is determined to have mine.
 - player: u dont have a hat
-- elliott: Quite right, so it has taken my hair instead. The principle stands.
+- elliott: Not today; it stays at home in wind like this, so the wind has taken my hair instead. The principle stands.
 
 ### elliott-grt-022
 context: summer, clear evening, the Stardrop Saloon, 7 hearts

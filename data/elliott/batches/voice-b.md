@@ -124,7 +124,7 @@ context: summer, clear evening, the Stardrop Saloon, 4 hearts
 - player: It is a lot.
 - elliott: It is a great deal, and I hear every syllable of it on the way out. I have simply decided to enjoy myself.
 - player: Fair enough.
-- elliott: How kind, and most people do wait until I have gone home before they say so.
+- elliott: Thank you for putting up with it. Most people wait until I have gone home to say it is a lot.
 
 ### elliott-voi-b-017
 context: spring, clear evening, the beach, 8 hearts
@@ -226,14 +226,14 @@ context: fall, clear evening, Elliott's cabin, 9 hearts
 - player: You left the lamp on for me.
 - elliott: I did. It costs almost nothing, and it means the window says something friendly to whoever is walking the shore.
 - player: It said something to me.
-- elliott: Then it has more than earned its oil. Come in, @, before it starts thinking too well of itself.
+- elliott: Then it has more than earned its keep. Come in, @, before it starts thinking too well of itself.
 
 ### elliott-voi-b-031
 context: spring, clear morning, the bus stop, 4 hearts
 - player: You have a bag packed.
-- elliott: To the desert, on the bus. I have packed as though I were crossing an ocean rather than a valley.
+- elliott: Only a notebook and a lunch, @; I walked up to watch the bus leave for the desert. I have packed as though I were crossing an ocean rather than standing at a bus stop.
 - player: What do you even want out there?
-- elliott: Sand of a quite different character, milky to the toe but with plenty of body. You should come out one day; I should like somebody to disagree with me about it.
+- elliott: Nothing today; I only go out there for the Desert Festival. The sand is milky to the toe but with plenty of body, and I should like somebody to disagree with me about it.
 - player: You are strange.
 - elliott: I am, a little. A connoisseur is only strangeness with a better vocabulary.
 
@@ -263,7 +263,7 @@ context: summer, clear afternoon, the forest, 8 hearts
 - player: Leah's place is just there.
 - elliott: It is, and I have been careful not to hover. She works out here, and I have learned exactly what an interrupted artist looks like.
 - player: You could knock.
-- elliott: I could, and some days I do. We compare our failures, and both of us walk away feeling a great deal better about them.
+- elliott: I could, and some days I do. We compare notes on our work for a few minutes, and I walk away feeling a great deal better about mine.
 - player: That sounds nice.
 - elliott: It is one of the better inventions of country living. Back home everyone was quite certain about everything, and nobody compared anything at all.
 
@@ -346,7 +346,7 @@ context: spring, clear afternoon, Willy's shop, 5 hearts, @ offering Apricot (he
 - player: First one off the tree.
 - elliott: And you carried it all the way down here? How kind, @. I shall eat it slowly and pretend I have earned it.
 - player: You have.
-- elliott: I have written four hundred words today and thrown away three hundred of them. Let us agree that the apricot and I are square.
+- elliott: Only just. I have written four hundred words today and thrown away three hundred of them, so the apricot and I are square.
 
 ### elliott-voi-b-047
 context: summer, clear evening, the Stardrop Saloon, 9 hearts

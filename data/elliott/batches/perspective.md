@@ -102,7 +102,7 @@ context: fall, clear evening, the Stardrop Saloon, 5 hearts
 - player: What is Emily's story?
 - elliott: I only know that she carries the drinks here and is kind about it.
 - player: She seems mysterious.
-- elliott: Everyone seems mysterious from a table away. I have decided half the people in this room are fascinating and never asked any of them a question.
+- elliott: She may be; I only see her from a table away, so I could not say. I have decided half the people in this room are fascinating and never asked any of them a question.
 - player: Then ask her.
 - elliott: I might. Though I suspect she would rather be asked by someone who is not three quarters of the way through his ale.
 
@@ -174,7 +174,7 @@ context: winter, clear afternoon, Elliott's cabin, 5 hearts
 - player: Who painted the picture on your wall?
 - elliott: Leah did. It has hung there long enough that the cabin looks wrong without it, which I have told her exactly once.
 - player: Why only once?
-- elliott: Because she would never let me forget it. Artists are dreadful about praise, and I am the worst of us.
+- elliott: Because praising a fellow artist to her face makes me shy. Artists are dreadful about praise, and I am the worst of us.
 
 ### elliott-per-021
 context: fall, clear afternoon, Willy's shop, 5 hearts

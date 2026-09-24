@@ -169,7 +169,7 @@ context: summer, clear afternoon, the forest, 2 hearts
 - player: ur hair is really pretty
 - elliott: Thank you, it takes several hours each morning. I am vain about it, I admit.
 - player: wanna go on a date sometime
-- elliott: That is very flattering, @, but we are still getting acquainted. I would be glad of your company as a friend, though.
+- elliott: No, @, though it is flattering to be asked. I would be glad of your company as a friend.
 - player: ouch ok
 - elliott: No offense meant. I am happy to walk with you anytime.
 - player: fine what are u doing out here
@@ -371,7 +371,7 @@ context: winter, snowing afternoon, the library, 5 hearts
 - player: huh
 - elliott: I mean the blacksmith repairs broken tools. Take it to him and ask.
 - player: whats the planet like
-- elliott: I am still working that out. So far I know how it falls better than how it rises, which is backwards.
+- elliott: I am still working that out. The title promises a rise and a fall, and so far I have written neither.
 - player: fall how
 - elliott: I have not decided that either, @. That is the part I came here to figure out.
 
@@ -390,7 +390,7 @@ context: summer, clear evening, the Stardrop Saloon, 2 hearts
 - player: ok gotta ask whats ur favorite drink
 - elliott: Ale, here at the Saloon. It is the one I can afford.
 - player: so do u think im handsome too or what
-- elliott: I think you are good company, @, and I am glad you sat down. That is as far as I will go tonight.
+- elliott: I think you are good company, @, and I am glad you sat down. I will leave the compliments there.
 
 ### elliott-lngb-021
 context: summer, clear afternoon, the forest, 0 hearts
@@ -587,7 +587,7 @@ context: winter, clear afternoon, the library, 9 hearts
 - player: tell me
 - elliott: "The winter sea is patient, and I am learning to be." It came to me on the walk here.
 - player: thats actually good
-- elliott: Thank you, @. Your opinion counts for more than you know.
+- elliott: Thank you, @. Yours is the opinion I trust most.
 - player: is it for the train one
 - elliott: It is for the mystery. The man in the strange city stands by a gray sea in the first chapter.
 - player: sick
@@ -741,7 +741,7 @@ context: winter, clear afternoon, Pierre's shop, 7 hearts
 - player: its so cold outside
 - elliott: It is. The walk up from the beach froze my ears.
 - player: u should get a hat
-- elliott: I should. I refuse to wear one, because it flattens my hair.
+- elliott: I have one. I refuse to wear it, because it flattens my hair.
 - player: vanity kills
 - elliott: So I have been told. I intend to be a well-groomed casualty.
 - player: huh

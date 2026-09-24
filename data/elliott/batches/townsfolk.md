@@ -119,7 +119,7 @@ context: summer, clear morning, the beach, 4 hearts
 ### elliott-twn-016
 context: winter, clear afternoon, Pelican Town, 5 hearts
 - player: Vincent nearly ran me over out there.
-- elliott: I am sorry to hear it; that is Jodi's boy, and he and Jas do run everywhere. Between the two of them they make more noise than the gulls, which I consider a public service.
+- elliott: I am sorry to hear it; that is Jodi's boy, Vincent. Children do dash about the square, and I have learned to step aside smartly.
 - player: The families here keep to themselves.
 - elliott: Mostly, I think. They are kind and they are busy, as families are.
 - player: Kent barely leaves the house.
@@ -185,7 +185,7 @@ context: summer, clear evening, the Stardrop Saloon, 5 hearts
 - player: why do you keep bugging gus about his sauce lol
 - elliott: Because it is the best thing in the valley and he will not give me the recipe. I have asked many times and he will not budge.
 - player: maybe try bribing him
-- elliott: With what, @? I could not afford to bribe a gull.
+- elliott: I have nothing to bribe him with, @. I could not afford to bribe a gull.
 - player: haha
 - elliott: I shall keep asking politely instead. One of us will tire, and I suspect it will be me.
 

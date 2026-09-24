@@ -82,7 +82,7 @@ context: summer, storm evening, Elliott's cabin, 6 hearts
 - player: this storm is crazy
 - elliott: It is. The sea has been throwing a tantrum since noon and the roof is taking it personally.
 - player: huh
-- elliott: The storm has been strong all afternoon, and the roof leaks a little when it blows like this.
+- elliott: The storm has been strong since noon, and the wind is hard on my roof.
 
 ### elliott-rep-011
 context: fall, wind morning, the beach, 4 hearts

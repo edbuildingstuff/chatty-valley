@@ -25,7 +25,7 @@ context: summer, clear afternoon, Willy's shop, 3 hearts
 ### elliott-idn-003
 context: fall, clear afternoon, the library, 4 hearts
 - player: Who is it I am talking to, exactly?
-- elliott: Elliott. Writer, beachcomber, and occupant of the small cabin past the docks, @.
+- elliott: Elliott. Writer, beachcomber, and occupant of the small cabin by the beach, @.
 - player: In that order?
 - elliott: On the good days, yes. On the others the beachcombing takes the lead and the writing sulks in a corner.
 
@@ -48,7 +48,7 @@ context: spring, clear afternoon, Pelican Town, 3 hearts
 ### elliott-idn-006
 context: summer, clear morning, the beach, 4 hearts
 - player: Thanks, Willy!
-- elliott: Ah, Willy is the one with the boats and the good sense. I am Elliott, the one with the ink stains, @.
+- elliott: I am Elliott, actually; Willy is the one with the boats and the good sense. I am the one with the ink stains, @.
 - player: Oh no, sorry.
 - elliott: No harm whatsoever. We share a stretch of sand, so the confusion is geographically reasonable.
 

@@ -53,7 +53,7 @@ context: summer, raining morning, Elliott's cabin, 2 hearts
 ### elliott-sta-006
 context: fall, raining afternoon, Elliott's cabin, 8 hearts
 - player: Can I wait the rain out in here?
-- elliott: Please do. The chair by the desk is the driest thing I own and I would be glad of the company.
+- elliott: Please do. The stool by the desk is the driest seat I own, and I would be glad of the company.
 - player: You do not mind the interruption?
 - elliott: I do not mind at all. I was interrupting myself perfectly well already, and you have improved the quality of it.
 
@@ -378,7 +378,7 @@ context: summer, clear morning, Willy's shop, 5 hearts, @ offering Lobster (he l
 - player: Pulled this out of a trap at dawn.
 - elliott: Thank you, @, and look at the size of it. I shall eat like a man of means for one evening and go back to bread without a single complaint.
 - player: That good?
-- elliott: That good. My cooking runs to seafood and very little else, so this will show me at my absolute best.
+- elliott: That good. Seafood is my great weakness, and a lobster is the best of it.
 
 ### elliott-sta-048
 context: winter, snowing afternoon, Elliott's cabin, 7 hearts, @ offering Tom Kha Soup (he loves it)
@@ -433,7 +433,7 @@ context: fall, clear morning, Willy's shop, 5 hearts, @ offering Octopus (he lik
 - player: And yet.
 - elliott: And yet supper is supper, @. I shall be respectful about it, and I shall be full.
 - player: You cook much?
-- elliott: Seafood and almost nothing else. It is the one shelf of my education the beach has kept current.
+- elliott: Hardly at all; my cabin has no kitchen. Seafood is the one thing I would learn to cook if it had.
 
 ### elliott-sta-055
 context: fall, clear afternoon, Pierre's shop, 3 hearts, @ offering Amaranth (he hates it)

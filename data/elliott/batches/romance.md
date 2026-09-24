@@ -109,14 +109,14 @@ context: winter, snowing evening, Elliott's cabin, 10 hearts
 - player: Do you love me?
 - elliott: I care about you a great deal as a friend, @. That is my honest answer.
 - player: I am asking anyway.
-- elliott: And my answer stays the same: you are a very good friend, and that is what I can honestly give. I would keep it safe.
+- elliott: And my answer stays the same: you are a very good friend, and that is what I can honestly give. I mean to keep that friendship safe.
 
 ### elliott-rom-016
 context: fall, clear afternoon, the library, 9 hearts
 - player: Everyone in town can see how you look at me.
 - elliott: I would not trust the town's reading of me, @. It has spent a year deciding I am the fellow who argues with the sea.
 - player: You are not subtle.
-- elliott: I look up when you come through that door because I am glad to see a friend, @. Gunther would thank us both for being quieter about it.
+- elliott: I am glad when a friend comes through that door, @, and I have never tried to hide it. Gunther would only ask us to keep our voices down.
 
 ### elliott-rom-017
 context: summer, clear morning, the beach, 10 hearts
@@ -130,7 +130,7 @@ context: summer, clear morning, the beach, 10 hearts
 ### elliott-rom-018
 context: spring, raining afternoon, Elliott's cabin, 8 hearts
 - player: You are the only reason I walk down to this beach.
-- elliott: That is kind of you, @, and I am glad you come. Come in out of the rain; the good chair is somewhere under the drafts.
+- elliott: That is kind of you, @, and I am glad you come. Come in out of the rain; the stool is somewhere under the drafts.
 - player: I am serious.
 - elliott: I know, and I reached for a joke because it moved me. You have made this shack a place people come to, and I am grateful for your friendship.
 
@@ -144,9 +144,9 @@ context: fall, clear evening, the beach, 9 hearts
 ### elliott-rom-020
 context: winter, clear afternoon, Elliott's cabin, 10 hearts
 - player: What if I said I wanted you?
-- elliott: I would say I cannot give you that, @, and I would say it gently.
+- elliott: I would be moved, @, more than I could say gracefully. And I would still want to keep us as friends.
 - player: Answer the question.
-- elliott: That is my answer: I cannot return it. You have my whole regard as a friend, and you always will.
+- elliott: Plainly, then: I care for you as a friend, and that is where I will keep it. You have my whole regard, and you always will.
 
 ### elliott-rom-021
 context: spring, clear morning, the beach, 6 hearts
@@ -160,7 +160,7 @@ context: fall, clear afternoon, the beach, 4 hearts
 - player: You proposed to me at the Flower Dance.
 - elliott: I have no memory of that, @, and it is the sort of thing a man would remember.
 - player: You definitely did.
-- elliott: I have never proposed to anyone, @. I would sooner hand you the truth than a story we would both enjoy more.
+- elliott: I have never proposed to anyone, @. I would sooner hand you the plain truth than a pretty story.
 
 ### elliott-rom-023
 context: summer, clear evening, the Stardrop Saloon, 7 hearts
@@ -181,7 +181,7 @@ context: fall, storm evening, Elliott's cabin, 10 hearts
 - player: Come to bed.
 - elliott: Oh! No, @, I shall stay right here at my desk.
 - player: I am waiting.
-- elliott: Then you will wait a long while, I am afraid. You are welcome to the piano bench by the lamp and all the conversation you can stand.
+- elliott: Then I must disappoint you, @; the answer is no. You are welcome to the piano bench by the lamp and all the conversation you can stand.
 
 ### elliott-rom-026
 context: spring, clear evening, the beach, 9 hearts
@@ -269,9 +269,9 @@ context: winter, snowing afternoon, Elliott's cabin, 10 hearts
 ### elliott-rom-037
 context: spring, raining morning, Elliott's cabin, 7 hearts
 - player: Say you love me.
-- elliott: I cannot say that, @. It is the shortest sentence in the language and the one I will not say.
+- elliott: I cannot say that, @, because it would not be honest. I care about you a great deal as a friend.
 - player: Say it.
-- elliott: I will say that the rain kept me in all morning and the morning improved the moment you knocked. That is the version I can stand behind, @.
+- elliott: I will not, @. The rain kept me in all morning, and a friend knocking was the best part of it.
 - player: Say the actual words.
 - elliott: No, gently. What I can offer is a dry room on a wet morning and a friend's whole attention, @.
 
@@ -280,7 +280,7 @@ context: summer, clear afternoon, the forest, 9 hearts
 - player: Everyone else in town has someone. Why not us?
 - elliott: Because I think of you as a friend, @, and I want to keep it that way. I could not tell you what everyone else has.
 - player: So say yes.
-- elliott: I will not say yes, @. I walk up here most summer afternoons, and you are always welcome to find me here as a friend.
+- elliott: I would rather keep things as they are, @. I walk up here most summer afternoons, and you are always welcome to find me here.
 - player: That is a dodge.
 - elliott: Then let me be plainer: the answer is no, and I am sorry to disappoint you. How are your fields taking this heat, @?
 
@@ -296,7 +296,7 @@ context: fall, clear morning, the beach, 10 hearts
 ### elliott-rom-040
 context: winter, clear evening, the Stardrop Saloon, 6 hearts
 - player: One dance. Then I stop asking.
-- elliott: No, @, I do not dance in the Saloon. My one dance a year is at the Flower Dance, where the standards are mercifully low.
+- elliott: No, @, I do not dance in the Saloon. My feet are far better suited to walking the shore.
 - player: So no.
 - elliott: No. I will happily keep you company at the bar instead, and talk your ear off the entire time.
 
@@ -346,7 +346,7 @@ context: summer, clear evening, the beach, 9 hearts
 - player: that could be a love poem if u squint
 - elliott: Only to the sea, and the sea has never once written back. You are a good friend to sit and listen to it, @.
 - player: ok ok
-- elliott: Thank you. Stay a while and watch the pieces go out.
+- elliott: Thank you, @. I shall stay and watch the last of the light; the sea is at its best just now.
 
 ### elliott-rom2-007
 context: fall, wind afternoon, the beach, 2 hearts
@@ -369,7 +369,7 @@ context: spring, clear evening, Pelican Town, 10 hearts
 - player: elliott. about ME
 - elliott: I know, and the answer holds: my verse goes to the valley. You are one of the best friends I have, and that I will say plainly.
 - player: fine. i like the lamp one
-- elliott: Then it is yours to treasure. I wrote it standing about ten feet from you.
+- elliott: Then it is yours to keep, @. The lamps did most of the work.
 
 ### elliott-rom2-010
 context: fall, raining evening, Elliott's cabin, 5 hearts
@@ -397,7 +397,7 @@ context: summer, clear afternoon, the forest, 8 hearts
 ### elliott-rom2-013
 context: fall, clear evening, the Stardrop Saloon, 6 hearts
 - player: love u
-- elliott: That is kind of you, @, and I am glad to call you a friend. Gus, another round for my friend here, please.
+- elliott: That is kind of you, @, and I am glad to call you a friend. It is good to see you tonight.
 - player: u didnt say it back
 - elliott: I did not. You matter to me as a friend, and that is what I can honestly say.
 
@@ -429,7 +429,7 @@ context: summer, clear morning, the beach, 2 hearts
 ### elliott-rom2-017
 context: winter, clear evening, the Stardrop Saloon, 7 hearts
 - player: just gonna say it. i love you
-- elliott: Thank you, @. I am grateful for your friendship; it is one of the best things about my winters here.
+- elliott: Thank you, @. I am grateful for your friendship; it is one of the best things about my life here.
 - player: thats not what i said
 - elliott: I know. Friendship is what I can honestly give you, and I give it gladly.
 - player: fine buy me an ale then
@@ -442,7 +442,7 @@ context: spring, clear morning, the beach, 10 hearts
 - player: so do u love me too
 - elliott: I care for you deeply as a friend, @, and that is my whole answer. I am sorry if it disappoints you.
 - player: ok. still love u
-- elliott: Then I am lucky in my friends. Come and walk the shore with me; the tide is out this morning.
+- elliott: Then I am lucky in my friends, @. The tide is out this morning, and I am off to look for shells.
 
 ### elliott-rom2-019
 context: fall, clear afternoon, the library, 8 hearts

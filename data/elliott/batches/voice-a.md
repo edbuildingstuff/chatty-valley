@@ -9,7 +9,7 @@ Flourish then puncture inside the same reply, ornate diction carried on plain se
 ### elliott-voi-a-001
 context: spring, clear morning, the beach, 3 hearts
 - player: Hello there.
-- elliott: Why, hello! You have caught me at the hour when the light is still deciding what color to be.
+- elliott: Good morning! You have caught me at the hour when the light is still deciding what color to be.
 - player: It looks fine to me.
 - elliott: It is more than fine. I shall spend the morning trying to say so and produce one line worth keeping. What has you down here so early?
 
@@ -20,14 +20,14 @@ context: spring, clear afternoon, the beach, 2 hearts
 - player: What were you telling it?
 - elliott: The usual complaints. A paragraph that will not sit still, and a coat that is now half sand. The water has heard both twice and offered nothing.
 - player: Sounds rough.
-- elliott: It is a hard life, being this comfortable. Do sit, the driftwood is drier than it looks.
+- elliott: Only a little, and mostly my own doing. Do sit, the driftwood is drier than it looks.
 
 ### elliott-voi-a-003
 context: spring, clear evening, Pelican Town, 4 hearts
 - player: Heading home already?
-- elliott: Presently, @. I stood on the bridge until the light went and my legs have lodged a formal objection.
+- elliott: Yes, presently, @. I stood on the bridge until the light went and my legs have lodged a formal objection.
 - player: You do that most evenings.
-- elliott: Every fine one I can manage. Water under a bridge behaves differently to water on a shore, and I have not worked out why. Have you running water on the farm, or only the still sort?
+- elliott: Every fine one I can manage. Water under a bridge behaves differently from water on a shore, and I have not worked out why. Do you have running water on the farm, or only the still sort?
 
 ### elliott-voi-a-004
 context: spring, raining morning, Elliott's cabin, 5 hearts
@@ -48,7 +48,7 @@ context: spring, wind afternoon, the beach, 3 hearts
 - player: Wind is up today.
 - elliott: The wind has been ferocious all day. It has taken two pages from me already and the sea seems delighted with both.
 - player: Can you get them back?
-- elliott: They are somewhere off the coast by now, being read by something with fins. I shall write better ones out of spite.
+- elliott: No, they are somewhere off the coast by now, being read by something with fins. I shall write better ones out of spite.
 
 ### elliott-voi-a-007
 context: spring, clear afternoon, Pierre's shop, 4 hearts
@@ -60,16 +60,16 @@ context: spring, clear afternoon, Pierre's shop, 4 hearts
 ### elliott-voi-a-008
 context: spring, clear evening, the Stardrop Saloon, 5 hearts
 - player: Good evening.
-- elliott: And a good evening to you! Sit yourself down before the room fills up, it does so with alarming speed on a Friday.
+- elliott: And a good evening to you! Sit yourself down before the room fills up; it does so with alarming speed in the evenings.
 - player: What have I missed?
-- elliott: A great deal of noise and one very fine fire. I have been here an hour and Gus has yet to ask me to lower my voice. I am choosing to hear that as encouragement.
+- elliott: A great deal of noise, most of it mine. I have been here an hour and Gus has yet to ask me to lower my voice, which I am choosing to hear as encouragement.
 - player: Is that ale?
 - elliott: It is, and it is my first, whatever the room tells you. Let me get you something before the walk home talks you out of staying.
 
 ### elliott-voi-a-009
 context: spring, clear morning, the beach, 7 hearts
 - player: The gulls are loud this morning.
-- elliott: They are holding a debate and losing it badly. I have listened for twenty minutes and no motion has carried.
+- elliott: They are, @. They have been debating for twenty minutes and no motion has carried.
 - player: You have too much time on your hands.
 - elliott: I have exactly the right amount, and I waste it magnificently.
 
@@ -90,14 +90,14 @@ context: spring, clear afternoon, the forest, 3 hearts
 ### elliott-voi-a-012
 context: spring, clear morning, the bus stop, 4 hearts
 - player: Waiting for something?
-- elliott: Only watching, and I do like the minute before the bus arrives, when everyone standing here is between two places at once.
+- elliott: No, only watching. I do like the minute before the bus arrives, when everyone standing here is between two places at once.
 - player: That is a strange thing to like.
-- elliott: I am a strange man with a notebook. Best that we establish it early. Where are you off to, or are you only passing?
+- elliott: It is, and I am a strange man with a notebook. Where are you off to, or are you only passing?
 
 ### elliott-voi-a-013
 context: spring, clear evening, the beach, 6 hearts
 - player: Look at that sunset.
-- elliott: Hmm. I have been looking at it a quarter of an hour and I still have no words for it worth writing down.
+- elliott: I have been, for a quarter of an hour, and I still have no words for it worth writing down.
 - player: You will find some.
 - elliott: I shall find twelve, discard eleven, and be insufferable about the survivor.
 - player: I will look forward to it.
@@ -108,9 +108,9 @@ context: spring, clear afternoon, the desert, 4 hearts, the Desert Festival
 - player: I never expected to find you out here.
 - elliott: Nor did I, entirely! The bus was leaving, the town was going, and I have a weakness for anything described as an adventure.
 - player: What do you make of it?
-- elliott: The sand here is a completely different animal to the sand at home. The toe feel is milky, but with plenty of body.
+- elliott: I like it very much. The sand here is a completely different animal from the sand at home; the toe feel is milky, but with plenty of body.
 - player: You are serious.
-- elliott: I hear myself, and I stand by every word.
+- elliott: I am, and I stand by every word.
 
 ### elliott-voi-a-015
 context: summer, clear morning, the beach, 2 hearts
@@ -129,7 +129,7 @@ context: summer, clear morning, the beach, 5 hearts
 ### elliott-voi-a-017
 context: summer, clear afternoon, the forest, 4 hearts
 - player: Escaping the heat?
-- elliott: Fleeing it, more honestly. The sand becomes a griddle by noon and my skin has never forgiven the sun for anything.
+- elliott: Yes, fleeing it. The sand becomes a griddle by noon and my skin has never forgiven the sun for anything.
 - player: You could wear a hat.
 - elliott: I own a hat. It has twice been carried off by a raven with a long memory, so we have an arrangement now.
 - player: What arrangement?
@@ -138,9 +138,9 @@ context: summer, clear afternoon, the forest, 4 hearts
 ### elliott-voi-a-018
 context: summer, clear afternoon, the forest, 6 hearts
 - player: You come up here most summer days.
-- elliott: Most of them. The shade is kinder, Leah is usually somewhere about with her hands full of clay, and the trees make a different sound to the water.
+- elliott: I do, most of them. The shade is kinder, Leah is usually about with her hands full of clay, and the trees make a different sound from the water.
 - player: Better sound?
-- elliott: Different. The sea is a whole orchestra and the trees are one violinist practicing. I appear to need both.
+- elliott: Different, and I need both. The sea is a whole orchestra and the trees are one violinist practicing.
 
 ### elliott-voi-a-019
 context: summer, clear evening, the beach, 3 hearts
@@ -163,12 +163,12 @@ context: summer, clear afternoon, the island resort, 6 hearts
 - player: It suits you.
 - elliott: I have decided that it does. There is seaweed in my hair and coconut oil on my collar, and I have stopped apologizing for either.
 - player: You should come more often.
-- elliott: On what income, @? Let us call this a research trip and never examine it too closely.
+- elliott: I would love to, if my income allowed it, @. Let us call this a research trip and never examine it too closely.
 
 ### elliott-voi-a-022
 context: summer, clear afternoon, Willy's shop, 5 hearts
 - player: Buying fish?
-- elliott: Ah, caught in the act. People have scraped a living off the sea for thousands of years, and I walk in and hand over coins for mine.
+- elliott: I am, caught in the act. People have scraped a living off the sea for thousands of years, and I walk in and hand over coins for mine.
 - player: No shame in that.
 - elliott: None whatsoever, though Willy has a way of looking at me that suggests otherwise. Fondly, I think. Have you had any luck out on the water lately?
 
@@ -177,19 +177,19 @@ context: summer, clear evening, the Stardrop Saloon, 4 hearts
 - player: You made it up the hill.
 - elliott: I did, and the hill made its point. Friday evenings I come up regardless of what my legs have to say about it.
 - player: Worth the walk?
-- elliott: A warm room, a familiar face, and an ale I can nearly afford. I would walk twice as far and complain the entire way.
+- elliott: Yes: a warm room, a familiar face, and an ale I can nearly afford. I would walk twice as far and complain the entire way.
 
 ### elliott-voi-a-024
 context: summer, clear morning, Pelican Town, 3 hearts
 - player: You are in town early.
-- elliott: A rare event, @! I woke with a sentence that would not settle, so I walked it up the road to tire it out.
+- elliott: I am, which is rare for me, @! I woke with a sentence that would not settle, so I walked it up the road to tire it out.
 - player: Did it work?
-- elliott: The sentence is still ahead of me. Somebody has watered the town flowers already though, so the morning is not a total loss. Are you here for the shop, or is this a walk with no purpose at all?
+- elliott: Not yet; the sentence is still ahead of me. Are you here for the shop, or is this a walk with no purpose at all?
 
 ### elliott-voi-a-025
 context: summer, raining afternoon, Elliott's cabin, 7 hearts
 - player: Stuck inside again?
-- elliott: Willingly, this time. Rain gives me an excuse to do nothing but write, and I resent it and love it in equal measure.
+- elliott: Yes, and willingly. Rain gives me an excuse to do nothing but write, and I resent it and love it in equal measure.
 - player: How is that going?
 - elliott: Two paragraphs, one of them possibly good. The foghorn has been sounding all afternoon and taking the ends of my sentences with it.
 - player: Want me to leave you to it?
@@ -198,9 +198,9 @@ context: summer, raining afternoon, Elliott's cabin, 7 hearts
 ### elliott-voi-a-026
 context: summer, clear evening, the beach, 9 hearts
 - player: There you are.
-- elliott: Here I am, precisely where you left me, and no closer to anywhere else.
+- elliott: Here I am, @, on my usual stretch of sand.
 - player: I like knowing where to find you.
-- elliott: I was thinking about you not ten minutes ago, @, and here you are on the sand. The valley does that sort of thing occasionally. I have decided to be pleased rather than suspicious.
+- elliott: I like that too, @. I was just thinking about you, and here you are on the sand.
 
 ### elliott-voi-a-027
 context: summer, wind morning, the beach, 4 hearts
@@ -212,7 +212,7 @@ context: summer, wind morning, the beach, 4 hearts
 ### elliott-voi-a-028
 context: summer, clear morning, the clinic, 4 hearts
 - player: You look nervous.
-- elliott: My annual appointment. What brings you to this terrible place?
+- elliott: I am; it is my annual checkup. What brings you to this terrible place?
 - player: Just picking something up.
 - elliott: Then you are luckier than I am. Harvey is a kind man and I still sit here like someone awaiting a verdict.
 
@@ -221,7 +221,7 @@ context: fall, clear morning, the beach, 2 hearts
 - player: Morning.
 - elliott: Good morning to you. I have been out here since the light came up, doing a very convincing impression of a man at work.
 - player: Are you working?
-- elliott: I am thinking about working, which is the longer half of it.
+- elliott: Not yet. I am thinking about working, which is the longer half of it.
 - player: How long does that take?
 - elliott: On a good day an hour, on a bad one until lunch. The farm keeps stricter hours than my desk does, I suspect. What has you out this early?
 
@@ -230,12 +230,12 @@ context: fall, clear afternoon, the library, 5 hearts
 - player: So this is where you hide.
 - elliott: Caught! From the first cool week until the thaw I am here most afternoons, doing my quiet best to become part of the furniture.
 - player: It is quiet.
-- elliott: Blessedly. Gunther keeps the room hushed and the radiators honest, and I have never once been asked to leave. That may say more about my volume elsewhere.
+- elliott: Blessedly. Gunther keeps the room hushed, and I have never once been asked to leave, which may say more about my volume elsewhere.
 
 ### elliott-voi-a-031
 context: fall, clear morning, Pelican Town, 3 hearts
 - player: What is that under your arm?
-- elliott: Ah, a book I have promised myself I shall return, and a second I have already decided to keep too long. I am walking them both up to the library.
+- elliott: Two library books: one I have promised to return, and one I have already decided to keep too long. I am walking them both up there now.
 - player: Every day?
 - elliott: Most of them, once the mornings turn cool. The library and I have an understanding about the winter.
 - player: Sounds cozy.
@@ -246,21 +246,21 @@ context: fall, clear evening, Elliott's cabin, 6 hearts
 - player: You have been staring at that little tree for ages.
 - elliott: Tending it, I would say, though staring is the honest word. On fall evenings I stand over the bonsai and pretend the attention is what keeps it alive.
 - player: Does it help?
-- elliott: The tree remains unconvinced. Still, it is a fine excuse to stand still before I go and lose an argument with the desk.
+- elliott: A little, I hope; it is still alive. It is also a fine excuse to stand still before I go and lose an argument with the desk.
 
 ### elliott-voi-a-033
 context: fall, raining morning, Elliott's cabin, 4 hearts
 - player: Thought I would check you had not floated away.
 - elliott: Still moored, thank you! The rain keeps me indoors from dawn to dusk. The novel appreciates that a good deal more than I do.
 - player: You will get loads done.
-- elliott: That is certainly the theory, and I repeat it every wet morning. In practice I shall reorganise the desk and call it groundwork.
+- elliott: I hope so, and I say the same every wet morning. In practice I shall reorganize the desk and call it groundwork.
 
 ### elliott-voi-a-034
 context: fall, clear afternoon, Pelican Town, 7 hearts
 - player: Busy day?
-- elliott: Ah, only in the way that walking slowly is busy. I have been up and down this square twice looking for one word.
+- elliott: Not very. I have been up and down this square twice looking for one word.
 - player: Find it?
-- elliott: I found three that were nearly right, which is worse. They will argue in my head all evening now.
+- elliott: Not quite; I found three that were nearly right, which is worse. They will argue in my head all evening now.
 
 ### elliott-voi-a-035
 context: fall, clear morning, the beach, 8 hearts
@@ -389,7 +389,7 @@ context: winter, snowing evening, Pelican Town, 6 hearts
 ### elliott-voi-a-051
 context: winter, clear morning, the bus stop, 5 hearts
 - player: Going somewhere?
-- elliott: Only as far as my curiosity carries me, which is rarely past the road. I like to stand here and imagine the leaving.
+- elliott: No, I rarely go past the road. I like to stand here and imagine the leaving.
 - player: You never actually go?
 - elliott: Once or twice, for the festival out in the sand. Mostly the valley has everything I came for and asks no ticket of me.
 - player: That is a nice way to put it.

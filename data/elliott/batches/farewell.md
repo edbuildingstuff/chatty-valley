@@ -9,7 +9,7 @@ negative-contrast rows where a refusal or a mention of leaving later carries no 
 ### elliott-far-001
 context: spring, clear morning, the beach, 3 hearts
 - player: I should get going, there is a whole field to plant.
-- elliott: Ah, the season does not wait for either of us. Go and put things in the ground while the light is this generous.
+- elliott: Go on, then; the season does not wait for either of us. Put things in the ground while the light is this generous.
 - player: See you around.
 - elliott: See you around, @. I shall be here, rearranging the same three sentences. [end]
 
@@ -67,12 +67,12 @@ context: fall, raining afternoon, Elliott's cabin, 7 hearts
 - player: I will leave you to your writing.
 - elliott: The writing will keep. It always keeps, whether I ask it to or not.
 - player: Bye for now.
-- elliott: Bye for now, @. Take the umbrella by the door, it is more use to you than to me today. [end]
+- elliott: Bye for now, @. Keep to the high side of the path; the rain turns the sand to soup. [end]
 
 ### elliott-far-010
 context: summer, clear afternoon, the beach, 4 hearts
 - player: k bye
-- elliott: Two letters and a farewell. You are a good deal more efficient than I shall ever be.
+- elliott: Goodbye, then, in two letters. You are a good deal more efficient than I shall ever be.
 - player: haha yeah
 - elliott: Off with you, then. The sea and I will hold your place. [end]
 
@@ -121,21 +121,21 @@ context: fall, clear evening, the Stardrop Saloon, 4 hearts
 ### elliott-far-017
 context: winter, snowing evening, the beach, 6 hearts
 - player: Not interested.
-- elliott: Noted, and no offence taken. It was a thin idea to begin with.
+- elliott: Noted, and no offense taken. It was a thin idea to begin with.
 - player: Really, leave it.
 - elliott: Consider it left. Get yourself somewhere warm, @, and I shall do the same. [end]
 
 ### elliott-far-018
 context: spring, clear afternoon, the beach, 4 hearts
 - player: Not today, thanks.
-- elliott: No matter. The shore will be here tomorrow and so, in all likelihood, will I.
+- elliott: No matter. You know where to find me.
 - player: What are you working on anyway?
-- elliott: A chapter I have rewritten four times, each version worse than the last. I am hoping the fifth shows me some mercy.
+- elliott: The first chapter of my novel, which I have rewritten four times. I am hoping the fifth is kinder.
 
 ### elliott-far-019
 context: summer, clear morning, the beach, 5 hearts
 - player: I can only stay a minute, I am meeting Robin later.
-- elliott: A minute is a generous unit if it is spent well. What shall we do with ours?
+- elliott: Then let us spend it well; a minute is a generous unit. What shall we do with ours?
 - player: Tell me something good.
 - elliott: The gulls found an unattended picnic on the far rocks this morning and conducted themselves disgracefully. I took notes and called it research.
 
@@ -151,11 +151,11 @@ context: winter, clear evening, the Stardrop Saloon, 7 hearts
 - player: I cannot stay long tonight.
 - elliott: Then we shall be brisk, which will be a novelty for me.
 - player: How has your week been?
-- elliott: Three good pages and a great deal of staring at the ceiling. The ceiling is ahead on volume.
+- elliott: Quiet: three good pages and a lot of staring at the ceiling. The ceiling is ahead on volume.
 
 ### elliott-far-022
 context: summer, clear afternoon, the island resort, 6 hearts
 - player: The boat back leaves at six, so I have to be on it.
 - elliott: Six is hours away. Sit down and let the sun do its work on you.
 - player: Fine, a little longer.
-- elliott: Marvelous. I shall order a round I cannot afford and let Gus give me the look afterwards.
+- elliott: Marvelous. I shall order a round I cannot afford and let Gus give me the look afterward.

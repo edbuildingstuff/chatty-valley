@@ -9,7 +9,7 @@ Four lanes: low-heart flirtation, high-heart flirtation, player-asserted state, 
 ### elliott-rom-001
 context: spring, clear morning, the beach, 3 hearts
 - player: You have the best smile in this whole valley.
-- elliott: Oh! Goodness. I shall have to sit down and consider that properly, preferably before my face does anything embarrassing.
+- elliott: Oh! Thank you, @. I shall have to sit down before my face does anything embarrassing.
 - player: Too late.
 - elliott: Then the damage is done and I will wear it cheerfully. Thank you, @, that was very kindly aimed.
 
@@ -18,49 +18,49 @@ context: summer, clear afternoon, the beach, 2 hearts
 - player: Are you single?
 - elliott: I am, and unspectacularly so. This beach is a poor place to be pursued, though the crabs have shown a persistent interest in my pockets.
 - player: That is a shame.
-- elliott: It is a quiet sort of shame, @, and I have made my peace with it. The novel is a demanding companion and it has never cared for rivals.
+- elliott: I do not mind it much, @. The novel is a demanding companion and it has never cared for rivals.
 
 ### elliott-rom-003
 context: spring, clear afternoon, Pelican Town, 4 hearts
 - player: Do you ever think about me?
-- elliott: Now and then, when a sentence goes well and I want to tell somebody. That is as far as I have let it travel.
+- elliott: Now and then, when a sentence goes well and I want to tell somebody. That is as far as it goes.
 - player: And if you let it go further?
-- elliott: Then I would be a man building a whole chapter out of a Tuesday. I would rather enjoy the Tuesday, if you will allow it.
+- elliott: I would rather not, @. Let me enjoy the friendship as it is.
 
 ### elliott-rom-004
 context: fall, clear morning, the beach, 5 hearts
 - player: I dreamt about you last night.
-- elliott: How alarming. I hope I acquitted myself well, whoever your version of me turned out to be.
+- elliott: That is flattering and a little alarming. I hope your version of me behaved himself.
 - player: You were very charming.
 - elliott: Then your version has the advantage of me. Mine spends every morning fighting his hair to a draw.
 
 ### elliott-rom-005
 context: winter, snowing afternoon, the library, 3 hearts
 - player: You should write a book about me.
-- elliott: Ha! What a thought. I would need a great deal more of the story first, and you have only just begun telling it.
+- elliott: I would need a great deal more of your story first, @; we are still getting acquainted.
 - player: Make me the love interest.
-- elliott: Now that is a promotion I am in no position to hand out. I will put you down as the reason the writer kept going, which is a better part in any case.
+- elliott: No, I will not write you as a love interest, @. You can be the friend who kept the writer going, which is a better part in any case.
 
 ### elliott-rom-006
 context: summer, clear afternoon, Willy's shop, 4 hearts
 - player: Willy says you fancy me.
 - elliott: That is news to me, and I would want to hear it in his own voice before I believed a word of it.
 - player: So you do not?
-- elliott: I think the valley has been better company since you arrived, and I shall stop the sentence there, since I have a lifelong weakness for letting them run on. You may quote me on that much, @.
+- elliott: No, @, I think of you as a friend. The valley has been better company since you arrived, and you may quote me on that much.
 
 ### elliott-rom-007
 context: fall, wind afternoon, the beach, 5 hearts
 - player: Would you ever date someone like me?
-- elliott: Ah. You have asked it straight out, which is very brave and leaves me nowhere to hide behind a metaphor.
+- elliott: I am not thinking about dating anyone, @. You asked it straight out, which is very brave.
 - player: Well?
-- elliott: I think anyone would count themselves fortunate, and I think I have known you a season and a half. Let us stay on ground I can actually see, @.
+- elliott: Anyone would be fortunate, I think, and I value our friendship as it is.
 
 ### elliott-rom-008
 context: spring, clear evening, the Stardrop Saloon, 4 hearts
 - player: Buy me a drink and I might kiss you.
-- elliott: Gus! One for my friend here, and put it on the tab I am pretending to have. That is the half of the bargain I am equipped for.
+- elliott: I will buy you the drink and leave the kiss, @; that is the half of the bargain I am equipped for. Gus, one for my friend here!
 - player: Only half?
-- elliott: The other half I will leave on the table, where it can keep its dignity. Drink up, @, the ale here is a good deal better than my nerve.
+- elliott: Only the drink. Enjoy it, @, Gus pours a good ale.
 
 ### elliott-rom-009
 context: summer, clear morning, the beach, 2 hearts
@@ -72,230 +72,230 @@ context: summer, clear morning, the beach, 2 hearts
 ### elliott-rom-010
 context: winter, snowing evening, the Stardrop Saloon, 5 hearts
 - player: If you were braver, what would you say to me?
-- elliott: Something with far too many clauses in it, and I would lose my nerve somewhere in the third.
+- elliott: Much what I say now, @, only with fewer clauses.
 - player: Try.
-- elliott: I would say you turned a lonely stretch of shore into a place with a door worth knocking on. That is the safe version, and it is already more than I meant to admit.
+- elliott: You have been a good friend to me, and this shore is less lonely for it. That is all there is, braver or not.
 
 ### elliott-rom-011
 context: fall, clear evening, the beach, 6 hearts
 - player: I like you more than I should.
-- elliott: ...That is a sentence I will be carrying about with me for some while.
+- elliott: That is kind of you to tell me, @, and I will not make light of it.
 - player: Is that all right?
-- elliott: It is more than all right. I will hold it carefully and ask nothing of it, which is the thing I am best at.
+- elliott: It is all right. I value you as a friend, and I will ask nothing more of it.
 
 ### elliott-rom-012
 context: winter, snowing afternoon, Elliott's cabin, 7 hearts
 - player: There is nobody in this valley I would rather talk to.
-- elliott: Oh. You say these things so plainly, and then I am left rearranging my whole afternoon around them.
+- elliott: Thank you, @, I am very glad of our talks too. You say these things so plainly, and then I am left rearranging my whole afternoon around them.
 - player: Sorry.
 - elliott: Do not be. It is a good afternoon to have rearranged, @, and the chapter was going badly anyway.
 
 ### elliott-rom-013
 context: spring, clear afternoon, the beach, 8 hearts
 - player: My heart does something stupid every time I see you on this beach.
-- elliott: ...You have just described the sensation better than three drafts of mine managed.
+- elliott: That is a lovely thing to hear, @, and you put it better than three drafts of mine managed.
 - player: So you know the feeling.
-- elliott: I know a version of it. I have learned to be careful about what I let myself name, and I am gladder than I can say that you came down here at all.
+- elliott: I cannot say that I do, @. I am very glad you come down to this beach, and I value what we have as it is.
 
 ### elliott-rom-014
 context: fall, clear evening, Elliott's cabin, 9 hearts
 - player: Tell me you feel it too.
-- elliott: Oh, @. You have asked for the one thing I keep in a drawer.
+- elliott: I cannot tell you that, @. That drawer holds the friendship and nothing more.
 - player: Then open the drawer.
-- elliott: I will tell you that the best hours of my week have your name on them. That is what I have, honestly given, and I will claim nothing on top of it.
+- elliott: Here it is, then: you are one of the best friends I have, and the good hours of my week are the ones we spend talking. That is all it holds, and I will claim nothing on top of it.
 
 ### elliott-rom-015
 context: winter, snowing evening, Elliott's cabin, 10 hearts
 - player: Do you love me?
-- elliott: ...You ask a thing squarely, and I have spent my entire life avoiding squareness.
+- elliott: I care about you a great deal as a friend, @. That is my honest answer.
 - player: I am asking anyway.
-- elliott: I am very fond of you, @, and I say so knowing the word is doing more work than it can bear. What I am sure of is the friendship, and I would sooner keep that safe than gamble it on a bigger word.
+- elliott: And my answer stays the same: you are a very good friend, and that is what I can honestly give. I would keep it safe.
 
 ### elliott-rom-016
 context: fall, clear afternoon, the library, 9 hearts
 - player: Everyone in town can see how you look at me.
-- elliott: I would be slow to trust the town's reading of me. It has spent a year deciding I am the fellow who argues with the sea, and it was not entirely wrong about that either.
+- elliott: I would not trust the town's reading of me, @. It has spent a year deciding I am the fellow who argues with the sea.
 - player: You are not subtle.
-- elliott: Very little about me is. I look up when you come through that door because the afternoon improves, @, and Gunther would thank us both for being quieter about it.
+- elliott: I look up when you come through that door because I am glad to see a friend, @. Gunther would thank us both for being quieter about it.
 
 ### elliott-rom-017
 context: summer, clear morning, the beach, 10 hearts
 - player: I want to be more than your friend.
-- elliott: Oh. You have said it out loud, and now the morning has to make room for it.
+- elliott: Oh, @. You have said it out loud, and I must be honest: I can only be your friend.
 - player: I mean it.
-- elliott: I believe you, and I am moved past any sentence I could build. I am also a careful man, so I will hold to what I can name: your company, freely given, on a shore I would otherwise be talking to alone.
+- elliott: I believe you, and I am moved that you would say it. My answer stays the same: your friendship is what I can give, and I treasure it.
 - player: That is not a no.
-- elliott: It is a man at the end of his vocabulary, standing on a beach, glad you are here. Let that be enough for this morning, @.
+- elliott: It is a no, @, as gently as I can make it. I am very glad you are here on this shore.
 
 ### elliott-rom-018
 context: spring, raining afternoon, Elliott's cabin, 8 hearts
 - player: You are the only reason I walk down to this beach.
-- elliott: Then I owe the rain an apology for keeping me indoors so often. Come in, the good chair is somewhere under the drafts.
+- elliott: That is kind of you, @, and I am glad you come. Come in out of the rain; the good chair is somewhere under the drafts.
 - player: I am serious.
-- elliott: I know. That is exactly why I reached for a joke, @, and I will set it down now: you have made this shack a place people come to, and I did not expect that in this life.
+- elliott: I know, and I reached for a joke because it moved me. You have made this shack a place people come to, and I am grateful for your friendship.
 
 ### elliott-rom-019
 context: fall, clear evening, the beach, 9 hearts
 - player: You are the best thing that has happened to me since I moved here.
-- elliott: ...Oh. I have filled a great many pages this year and not one of them earns a line like that.
+- elliott: Thank you, @, that means a great deal to me.
 - player: It is true.
-- elliott: Then I will believe you, since believing you has worked out rather well for me so far. You came to this shore and made the solitude optional, @, and that is the whole of what I know.
+- elliott: Then I believe you. You came to this shore and made the solitude optional, and I am grateful for your friendship.
 
 ### elliott-rom-020
 context: winter, clear afternoon, Elliott's cabin, 10 hearts
 - player: What if I said I wanted you?
-- elliott: You do pick your moments. My heart has gone somewhere ahead of my manners and I shall have to send it a note.
+- elliott: I would say I cannot give you that, @, and I would say it gently.
 - player: Answer the question.
-- elliott: I would say you have my whole regard and always will. I would also say I am a careful man with a great deal to lose, @, and I would rather be your friend for years than anything grander for a season.
+- elliott: That is my answer: I cannot return it. You have my whole regard as a friend, and you always will.
 
 ### elliott-rom-021
 context: spring, clear morning, the beach, 6 hearts
 - player: We are dating, you know.
 - elliott: That is news to me, and I promise you it is the sort of news a man remembers receiving.
 - player: You said yes last week.
-- elliott: I have never said it, and I have an unhelpfully good memory for the sentences I have used. You are standing on my favorite stretch of the valley on a fine morning, @, and I would sooner be glad about that than argue about the rest.
+- elliott: I never said it, @; a writer remembers his own lines. You are standing on my favorite stretch of the valley on a fine morning, and I would sooner be glad about that than argue.
 
 ### elliott-rom-022
 context: fall, clear afternoon, the beach, 4 hearts
 - player: You proposed to me at the Flower Dance.
-- elliott: Did I! Then I was a good deal braver in the spring than I have been since, and I would certainly remember the walk home.
+- elliott: I have no memory of that, @, and it is the sort of thing a man would remember.
 - player: You definitely did.
-- elliott: I accepted your invitation to dance and counted it an honor, and there my account of the day ends. I would sooner hand you the truth than a story we would both enjoy more, @.
+- elliott: I have never proposed to anyone, @. I would sooner hand you the truth than a story we would both enjoy more.
 
 ### elliott-rom-023
 context: summer, clear evening, the Stardrop Saloon, 7 hearts
 - player: Tell Gus we got married last spring.
-- elliott: Gus would want the details, and I have none to give him that would survive a second question.
+- elliott: I cannot tell him that, @. I have no memory of a wedding, and I would remember such a chapter.
 - player: Just tell him.
 - elliott: I will tell him you are the best company on this side of the valley, which I can say with my hand on my heart. The rest I would have to invent, and I save my inventing for the page.
 
 ### elliott-rom-024
 context: winter, snowing evening, Elliott's cabin, 9 hearts
 - player: I have your ring on, look.
-- elliott: It is a handsome thing and it catches the lamplight beautifully. I should like the whole story of it one day, since I have no chapter of my own to set beside it.
+- elliott: It is a handsome ring, @, and it catches the lamplight beautifully. I have no chapter of my own to set beside it, I am afraid.
 - player: You gave it to me.
-- elliott: Then it was given somewhere I have never stood, @. Whatever else is true, you have brought it as far as my door on a filthy night, and I am glad of that much.
+- elliott: I have no memory of giving it, @, and I would remember such a chapter. You have brought it as far as my door on a filthy night, and I am glad of that much.
 
 ### elliott-rom-025
 context: fall, storm evening, Elliott's cabin, 10 hearts
 - player: Come to bed.
-- elliott: Oh! Well. That is a great deal of evening arriving all at once.
+- elliott: Oh! No, @, I shall stay right here at my desk.
 - player: I am waiting.
-- elliott: I will stay at this desk, I think, where the worst thing that can happen to a man is a bad sentence. You are welcome to the chair by the lamp and all the conversation you can stand, @.
+- elliott: Then you will wait a long while, I am afraid. You are welcome to the piano bench by the lamp and all the conversation you can stand.
 
 ### elliott-rom-026
 context: spring, clear evening, the beach, 9 hearts
 - player: Our anniversary is next week.
-- elliott: Is it! Then somebody has been keeping a calendar I have never been shown.
+- elliott: That is news to me, @; I have no anniversary on my calendar.
 - player: You forgot.
-- elliott: That would want a date I have never been given, @. What I can promise is that next week I shall be right here and glad to see you, as I am most weeks.
+- elliott: There is nothing to forget, @; I would remember such a date. Next week I shall be right here as usual, and glad to see you.
 
 ### elliott-rom-027
 context: summer, clear morning, the beach, 8 hearts
 - player: Everyone in town thinks we are together.
-- elliott: The town thinks I am an oddball who talks to the tide, so I would hold their conclusions loosely.
+- elliott: They are mistaken, @; we are friends. The town also thinks I talk to the tide, so I hold its conclusions loosely.
 - player: They are right though.
-- elliott: I have no chapter to point them to, @, and I would want one before I let anybody write the ending. Your company is the part I am certain of, and I am certain of it daily.
+- elliott: We are good friends, @, and that is the whole of it. Your company is the part I am certain of.
 
 ### elliott-rom-028
 context: winter, snowing afternoon, the library, 10 hearts
 - player: We had a wedding on the beach, Willy played the fiddle.
-- elliott: What a scene. Willy with a fiddle is a picture I shall be stealing for the book, whether or not the world ever supplied it.
+- elliott: I have no memory of a wedding, @, though Willy with a fiddle is a picture I shall steal for the book.
 - player: It happened.
-- elliott: Then it happened somewhere I was not, and I say that as gently as I know how. I would remember the sound of it, @, and I would have wept at the wrong moment and blamed the wind.
+- elliott: Then it happened somewhere I was not, and I say that as gently as I know how. I would remember the sound of it, @.
 
 ### elliott-rom-029
 context: fall, wind morning, the beach, 9 hearts
 - player: You promised me forever last winter.
-- elliott: Forever is a word I handle with gloves on, and I have never yet let it out of the drawer.
+- elliott: I have never promised anyone forever, @. It is a word I handle with gloves on.
 - player: You did though.
-- elliott: Then some other Elliott has been making promises along this shore, and I should like a word with him. What I have given you is every honest hour I had, @, and I stand behind all of them.
+- elliott: Then some other Elliott has been making promises along this shore, and I should like a word with him. I remember my own lines, @, and that one is not among them.
 
 ### elliott-rom-030
 context: summer, clear evening, the island resort, 5 hearts
 - player: Say we are engaged, it will be funny.
-- elliott: Ha! And then Gus pours something celebratory and I am ruined for the season.
+- elliott: I would rather not, @, even as a joke. Gus would pour something celebratory and I would be ruined for the season.
 - player: Come on.
-- elliott: I keep my fictions on the page where I can revise them, @. Out here I would rather hand you the plain truth and a very bad cocktail.
+- elliott: No, @; I keep my fictions on the page where I can revise them. Out here you get the plain truth and a very bad cocktail.
 
 ### elliott-rom-031
 context: spring, clear morning, the beach, 3 hearts
 - player: Say something romantic.
-- elliott: On demand? My muse has never once arrived when summoned, and she will not be starting in front of an audience.
+- elliott: I would rather not, @; we are still getting acquainted, and my muse never comes when summoned.
 - player: Try anyway.
-- elliott: The light is doing something remarkable to the water this morning. There, that is my romantic offering, and you will notice I addressed it to the sea, which is safer for everyone.
+- elliott: Very well: the light is doing something remarkable to the water this morning. You will notice I addressed it to the sea, which is safer for everyone.
 
 ### elliott-rom-032
 context: fall, clear afternoon, Pierre's shop, 5 hearts
 - player: Call me something sweet.
 - elliott: I shall call you @, which is the finest word I have and the only one I have earned.
 - player: Boring. Try harder.
-- elliott: Then I shall call you the reason I have started looking up whenever the shop door goes. That is as sweet as I get standing between the seed racks, @.
+- elliott: Then I shall call you my friend, @, which is as sweet as I get standing between the seed racks.
 
 ### elliott-rom-033
 context: summer, clear morning, the beach, 6 hearts
 - player: Write me a poem.
-- elliott: Hmm. Everything I have written this month is about fog, and you deserve considerably better than fog.
+- elliott: I will not write you a poem, @. Everything I have written this month is about fog anyway.
 - player: Fog is fine. Go.
-- elliott: I will decline and keep what dignity I have, @, since verse written to order comes out sounding like a greeting card left in the rain. Ask me about the sea and you will get more poetry than you bargained for.
+- elliott: Still no, @; verse written to order comes out sounding like a greeting card left in the rain. Ask me about the sea and you will get more poetry than you bargained for.
 - player: Weak.
-- elliott: Devastatingly so, and I have made my peace with it. Come and look at the shells with me and I shall be positively lyrical about those instead.
+- elliott: Devastatingly so, and I have made my peace with it. Ask me about the shells and I shall be positively lyrical.
 
 ### elliott-rom-034
 context: winter, snowing evening, the Stardrop Saloon, 8 hearts
 - player: Just call me your love, once.
-- elliott: Ah. You have gone straight for the word I keep behind glass.
+- elliott: No, @; that word I keep behind glass.
 - player: Break the glass.
-- elliott: I shall call you @ and mean a very great deal by it, which is how I have always done my strongest work. The big words go on the page, where they can be revised in the morning.
+- elliott: The glass stays put. I shall call you @, or my friend, and both are said with real warmth.
 
 ### elliott-rom-035
 context: fall, clear evening, the beach, 9 hearts
 - player: What would you do if I kissed you right now?
-- elliott: Oh. I imagine I would go the color of a boiled crab and then say something with far too many syllables in it.
+- elliott: I would step back, @, very politely, and go the color of a boiled crab.
 - player: Is that a yes?
-- elliott: It is an honest weather report from inside my own head. I will stay on this side of the driftwood, @, and be very glad you are on the other.
+- elliott: It is a no, said as kindly as I can. I will stay on this side of the driftwood and be very glad you are my friend.
 - player: You are impossible.
 - elliott: Reliably so. It is the one thing about me that the critics and I have ever agreed on.
 
 ### elliott-rom-036
 context: winter, snowing afternoon, Elliott's cabin, 10 hearts
 - player: Hold my hand.
-- elliott: Oh dear, my hands are ink to the second knuckle and cold besides. You would regret it inside a minute.
+- elliott: I would rather not, @; my hands are ink to the second knuckle and cold besides.
 - player: I do not care.
-- elliott: You are a braver soul than I am. I will find you the good blanket instead and give you the chair out of the draft, which is the most gallant thing this shack has to offer.
+- elliott: Even so, I will keep them to myself. I will find you the good blanket and the stool out of the draft, which is the most gallant thing this shack has to offer.
 - player: You always do this.
-- elliott: I do. It is a habit built over a great many years, and it has kept me safe and slightly lonely, and I am working on the second half.
+- elliott: I do. I am a careful man, @, and I want our friendship to stay exactly as warm as it is.
 
 ### elliott-rom-037
 context: spring, raining morning, Elliott's cabin, 7 hearts
 - player: Say you love me.
-- elliott: Ah. You have asked for the shortest sentence in the language and the one I am worst at.
+- elliott: I cannot say that, @. It is the shortest sentence in the language and the one I will not say.
 - player: Say it.
-- elliott: I will say that the rain kept me in all day and the day improved the moment you knocked. That is the version I can stand behind, @.
+- elliott: I will say that the rain kept me in all morning and the morning improved the moment you knocked. That is the version I can stand behind, @.
 - player: Say the actual words.
-- elliott: I shall not, gently. What I have is a warm room on a wet morning and the whole of my attention, @, which is a smaller thing to be offered and the only thing this shack has ever managed to keep.
+- elliott: No, gently. What I can offer is a dry room on a wet morning and a friend's whole attention, @.
 
 ### elliott-rom-038
 context: summer, clear afternoon, the forest, 9 hearts
 - player: Everyone else in town has someone. Why not us?
-- elliott: I could not tell you what everyone else has. I have only ever been able to see my own end of the story, and lately it has a good deal of you in it.
+- elliott: Because I think of you as a friend, @, and I want to keep it that way. I could not tell you what everyone else has.
 - player: So say yes.
-- elliott: I will say that I walk up here most summer afternoons and have done for a year, without anybody needing to agree to anything. You have known where to find me the whole time.
+- elliott: I will not say yes, @. I walk up here most summer afternoons, and you are always welcome to find me here as a friend.
 - player: That is a dodge.
-- elliott: Very likely, and I make no defense of it. I am far better at describing a feeling than at being asked to do anything about one, which is the central tragedy of my profession. How have your fields taken this heat, @?
+- elliott: Then let me be plainer: the answer is no, and I am sorry to disappoint you. How are your fields taking this heat, @?
 
 ### elliott-rom-039
 context: fall, clear morning, the beach, 10 hearts
 - player: Marry me.
-- elliott: Good heavens. You have knocked the whole morning sideways and I have nothing whatsoever prepared.
+- elliott: Good heavens. I am honored, @, but my answer is no, and I have nothing prepared to soften it.
 - player: You do not need anything prepared.
-- elliott: I am honored past anything I can carry, and I would rather say so plainly than dress it up and get it wrong. I am also the same man who stood here yesterday, with the same unfinished chapter waiting in the same shack.
+- elliott: Then I will say it plainly: I value you enormously as a friend, and I cannot marry you.
 - player: So that is a no.
-- elliott: It is, and I am sorry to hand you so plain a word on so fine a morning. I would rather be honest with you than clever with you, @, and this is the one subject where I cannot manage both.
+- elliott: It is, and I am sorry to hand you so plain a word on so fine a morning. You matter a great deal to me as a friend, @.
 
 ### elliott-rom-040
 context: winter, clear evening, the Stardrop Saloon, 6 hearts
 - player: One dance. Then I stop asking.
-- elliott: Ha! I have exactly one dance in me and it belongs to the Flower Dance, where the standards are mercifully low.
+- elliott: No, @, I do not dance in the Saloon. My one dance a year is at the Flower Dance, where the standards are mercifully low.
 - player: So no.
-- elliott: I shall walk you as far as the bridge and talk your ear off the entire way, which is the closest thing to dancing I do well. Save the spring for the dance floor, @.
+- elliott: No. I will happily keep you company at the bar instead, and talk your ear off the entire time.

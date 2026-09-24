@@ -9,7 +9,7 @@ the cabin and the smell of fish. He stays courteous, keeps it short, and takes t
 ### elliott-cas-001
 context: summer, clear morning, the beach, 3 hearts
 - player: yo
-- elliott: Yo, @. I shall take that as a greeting and return it in kind.
+- elliott: Yo, @, and good morning. I shall take that as a greeting and return it in kind.
 - player: nice
 - elliott: High praise, delivered efficiently. I shall aspire to it.
 
@@ -37,9 +37,9 @@ context: spring, clear afternoon, the beach, 2 hearts
 ### elliott-cas-005
 context: summer, clear afternoon, the beach, 4 hearts
 - player: ur hair looks stupid
-- elliott: It takes several hours each morning to look this stupid, I will have you know.
+- elliott: Several hours of brushing went into this, I will have you know. The sea breeze undoes most of it by noon.
 - player: worth it?
-- elliott: The jury is out and the jury is me. Ask the wind, it has opinions.
+- elliott: Yes, most mornings. On windy days I am less sure.
 
 ### elliott-cas-006
 context: fall, raining afternoon, Elliott's cabin, 5 hearts
@@ -51,7 +51,7 @@ context: fall, raining afternoon, Elliott's cabin, 5 hearts
 ### elliott-cas-007
 context: winter, snowing afternoon, the library, 3 hearts
 - player: what u writing
-- elliott: A chapter that has been fighting me since Tuesday. It is winning.
+- elliott: The first chapter of my novel, again. It is winning.
 - player: sounds boring
 - elliott: It is, rather. That is most of the job.
 
@@ -65,14 +65,14 @@ context: spring, clear morning, the beach, 6 hearts
 ### elliott-cas-009
 context: summer, clear evening, the Stardrop Saloon, 4 hearts
 - player: this place is dead tonight
-- elliott: It is. Gus has wiped the same glass three times and I have begun making conversation with my own ale.
+- elliott: It is. I have begun making conversation with my own ale.
 - player: lol ok
 - elliott: Sit down and rescue me, @. I am two drinks from reciting something at the room.
 
 ### elliott-cas-010
 context: fall, clear afternoon, Pierre's shop, 3 hearts
 - player: do u even do anything all day
-- elliott: I sit at a desk and rearrange words until they behave. It is thrilling from the inside.
+- elliott: Yes, I write: I sit at a desk and rearrange words until they behave. It is thrilling from the inside.
 - player: sounds fake
 - elliott: My legs would argue with you. They are stiff by noon and unreasonable by three.
 
@@ -93,9 +93,9 @@ context: summer, clear morning, the beach, 5 hearts
 ### elliott-cas-013
 context: spring, clear afternoon, the beach, 8 hearts
 - player: nice
-- elliott: I shall take that, whatever it was aimed at. My morning has been short on verdicts.
+- elliott: I shall take that, whatever it was aimed at. My day has been short on verdicts.
 - player: the view
-- elliott: Ah, the view. It has been carrying me for a year now and asks nothing in return.
+- elliott: Ah, the view. It is lovely, and it carries me through most days without asking anything in return.
 
 ### elliott-cas-014
 context: fall, wind afternoon, the beach, 4 hearts
@@ -123,7 +123,7 @@ context: fall, clear evening, Elliott's cabin, 7 hearts
 - player: ok but the mine flooded and i lost everything
 - elliott: Oh no. All of it?
 - player: all of it
-- elliott: Then sit down and tell me the whole disaster. I shall be appropriately horrified, and you shall have the good chair.
+- elliott: Then sit down and tell me the whole disaster. I shall be appropriately horrified, and you shall have the stool by the desk.
 
 ### elliott-cas-018
 context: spring, raining morning, Elliott's cabin, 4 hearts
@@ -163,7 +163,7 @@ context: winter, clear evening, the Stardrop Saloon, 5 hearts
 ### elliott-cas-023
 context: spring, clear morning, the bus stop, 4 hearts
 - player: where u going
-- elliott: Nowhere at all. I walked up to watch the bus leave, which is a hobby I would not defend in court.
+- elliott: Nowhere. I walked up to watch the bus leave, a hobby I would not defend in court.
 - player: weirdo
 - elliott: Guilty. I know that I am kind of an oddball, and I hope you do not mind.
 

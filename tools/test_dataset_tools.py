@@ -147,5 +147,38 @@ class LongTests(unittest.TestCase):
         self.assertEqual(S.long_count(rows), 2)
 
 
+import copy
+import check_frozen as F
+
+
+class FrozenTests(unittest.TestCase):
+    def setUp(self):
+        self.before = [row("e-cas-001", "casual", "hello", turns=2)]
+
+    def test_assistant_only_change_is_counted_not_flagged(self):
+        after = copy.deepcopy(self.before)
+        after[0]["messages"][2]["content"] = "Hello, @. The tide is out."
+        problems, changed = F.compare(self.before, after)
+        self.assertEqual(problems, [])
+        self.assertEqual(changed, 1)
+
+    def test_player_line_change_is_flagged(self):
+        after = copy.deepcopy(self.before)
+        after[0]["messages"][1]["content"] = "hi"
+        problems, _ = F.compare(self.before, after)
+        self.assertTrue(any("e-cas-001" in p for p in problems))
+
+    def test_context_and_turn_count_changes_are_flagged(self):
+        a1 = copy.deepcopy(self.before); a1[0]["context"] = "fall, clear morning, the beach, 2 hearts"
+        a2 = copy.deepcopy(self.before); a2[0]["messages"] = a2[0]["messages"][:3]
+        self.assertTrue(F.compare(self.before, a1)[0])
+        self.assertTrue(F.compare(self.before, a2)[0])
+
+    def test_missing_row_is_flagged_and_new_row_is_allowed(self):
+        self.assertTrue(F.compare(self.before, [])[0])
+        grown = copy.deepcopy(self.before) + [row("e-long-001", "long", "x", turns=6)]
+        self.assertEqual(F.compare(self.before, grown)[0], [])
+
+
 if __name__ == "__main__":
     unittest.main()

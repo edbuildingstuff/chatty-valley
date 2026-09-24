@@ -285,7 +285,7 @@ context: summer, clear afternoon, the forest, 9 hearts
 - player: yeah took forever
 - elliott: Then you earned it; I would have dropped the rod in the river.
 - player: whats up with u today
-- elliott: I was just thinking about you, as it happens. I had a line I wanted to try on someone.
+- elliott: Nothing much, as it happens. I had a line I wanted to try on someone.
 - player: go on
 - elliott: "The river talks all day and says nothing, and I love it anyway." Too much?
 - player: bit much yeah
@@ -327,7 +327,7 @@ context: fall, raining evening, Elliott's cabin, 6 hearts
 - player: i heard willy is moving away
 - elliott: That is news to me. Willy has said nothing of it, and I would rather hear it from him.
 - player: everyones saying it
-- elliott: Then everyone knows more than I do. Until Willy tells me himself, I will assume he is staying.
+- elliott: I have still heard nothing of it, @. Until Willy tells me himself, I will assume he is staying.
 - player: youd be sad tho
 - elliott: I would miss him, yes; he is a good neighbor. I am not going to grieve over a rumor.
 - player: ok whatever. hows the novel
@@ -581,7 +581,7 @@ context: winter, clear afternoon, the library, 9 hearts
 - player: sup bookworm
 - elliott: Good afternoon, @. Guilty, and happily so.
 - player: i missed u
-- elliott: That is good to hear. I was just thinking about you, as it happens.
+- elliott: That is kind of you to say, @. I have been thinking about a sentence all morning.
 - player: what were u thinking
 - elliott: That I wanted to tell you about a sentence that finally worked. I have been saving it.
 - player: tell me

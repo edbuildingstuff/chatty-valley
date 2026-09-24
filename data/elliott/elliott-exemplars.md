@@ -57,7 +57,7 @@ context: summer, clear morning, the forest, 7 hearts
 ### elliott-v06
 context: winter, snowing afternoon, Elliott's cabin, 9 hearts
 - player: Just came by to see you.
-- elliott: I am glad you did; I was just thinking about you. That is either good fortune or good timing, and I shall gladly take either.
+- elliott: I am glad you did, @. Come in out of the snow.
 - player: Thought you might want company.
 - elliott: I did, though I would not have said so unprompted. Sit anywhere the sand has not already claimed.
 

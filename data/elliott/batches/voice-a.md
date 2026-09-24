@@ -200,7 +200,7 @@ context: summer, clear evening, the beach, 9 hearts
 - player: There you are.
 - elliott: Here I am, @, on my usual stretch of sand.
 - player: I like knowing where to find you.
-- elliott: So do I, @. I was just thinking about you, and here you are on the sand.
+- elliott: So do I, @. It is a good stretch of sand to be found on.
 
 ### elliott-voi-a-027
 context: summer, wind morning, the beach, 4 hearts

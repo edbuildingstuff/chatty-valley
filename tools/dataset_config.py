@@ -25,8 +25,11 @@ TARGETS = {
     # pressure, place rumors); perspective +15 companions; romance +25; townsfolk +20 Tier 1 warmth;
     # identity +10 bare openers; deflection +15 bare modern nouns; state +10 rows that must not end;
     # long 80; repair 40. "romance" is the conditional category for marriage candidates.
-    "elliott": {"voice": 110, "state": 75, "lore": 100, "romance": 70, "deflection": 65, "rumor": 102,
+    # v2b (replay findings, 2026-09-24): townsfolk +16 contrastive Tier 1 identity; lore +8 main
+    # characters; romance +8 poem-about-you; state +10 town events from his vantage; rumor +6
+    # denial-first answers to "everyone's saying it".
+    "elliott": {"voice": 110, "state": 85, "lore": 108, "romance": 78, "deflection": 65, "rumor": 108,
                 "reference": 42, "perspective": 47, "crossover": 32, "identity": 38, "place": 28,
-                "casual": 68, "farewell": 24, "nonsense": 24, "townsfolk": 38, "depth": 22,
+                "casual": 68, "farewell": 24, "nonsense": 24, "townsfolk": 54, "depth": 22,
                 "long": 80, "repair": 40},
 }

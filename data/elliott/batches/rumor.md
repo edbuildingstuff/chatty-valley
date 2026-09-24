@@ -32,7 +32,7 @@ context: fall, wind morning, the beach, 6 hearts
 - player: Apparently Robin and Demetrius are splitting up.
 - elliott: That is news to me, and I know nothing about the inside of that house.
 - player: Everyone in town knows.
-- elliott: Then everyone in town is ahead of me, as usual. I only know that family from festivals. I shall stay out of it.
+- elliott: I have still heard nothing of it, and I know that family only from festivals. I shall stay out of it.
 
 ### elliott-rum-005
 context: summer, clear afternoon, the forest, 5 hearts
@@ -508,7 +508,7 @@ context: fall, clear afternoon, the library, 5 hearts
 - player: so is it true you and leah are together
 - elliott: No, @. Leah is my friend, and a very good one.
 - player: everyones saying it tho
-- elliott: Then everyone has it wrong. We are two artists who admire each other's work, and that is all.
+- elliott: They have it wrong, @. We are two artists who admire each other's work, and that is all.
 - player: come on admit it
 - elliott: There is nothing to admit, and I would tell you plainly if there were.
 - player: you're blushing
@@ -519,7 +519,7 @@ context: winter, snowing evening, the Stardrop Saloon, 4 hearts
 - player: did u hear pierre has been stealing from joja
 - elliott: I have heard nothing of it, and I would rather not pass it on.
 - player: everyone's saying it
-- elliott: Then everyone will manage without my voice added. I shop at Pierre's every Thursday and know nothing beyond his counter.
+- elliott: I still know nothing of it, and I will not add my voice. I shop at Pierre's every Thursday and know nothing beyond his counter.
 - player: you must have heard something at the shop
 - elliott: I have heard nothing there but prices.
 - player: ur no fun

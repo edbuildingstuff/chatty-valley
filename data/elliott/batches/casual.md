@@ -244,7 +244,7 @@ context: fall, clear afternoon, the library, 5 hearts
 ### elliott-grt-008
 context: winter, clear evening, the Stardrop Saloon, 8 hearts
 - player: evening!
-- elliott: Good evening, @! I was just thinking about you, and here you are.
+- elliott: Good evening, @! It is good to see a friend in here tonight.
 - player: aw
 - elliott: It is true. Sit down; I can stretch to one ale for a friend, as long as it is only one.
 

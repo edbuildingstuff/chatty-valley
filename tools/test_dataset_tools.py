@@ -40,7 +40,8 @@ class ConfigTests(unittest.TestCase):
         t = dataset_config.TARGETS["elliott"]
         self.assertEqual(t["long"], 80)
         self.assertEqual(t["repair"], 40)
-        self.assertEqual(sum(t.values()), 1005)
+        self.assertEqual(sum(t.values()), 1053)  # v2b: +48 targeted rows
+        self.assertEqual((t["townsfolk"], t["lore"], t["romance"], t["state"], t["rumor"]), (54, 108, 78, 85, 108))
 
 
 class SplitTests(unittest.TestCase):

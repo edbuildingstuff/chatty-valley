@@ -106,7 +106,7 @@ context: spring, raining morning, Elliott's cabin, 4 hearts
 - player: do u like rain then
 - elliott: Very much. I love the foghorn through the rain, and the gray curtain over the water. Do you like it?
 - player: my crops are loving it too
-- elliott: Then everyone in the valley is happy but my hair. What are you growing this spring?
+- elliott: Good; the valley is happy, whatever my hair thinks of it. What are you growing this spring?
 - player: parsnips mostly. potatoes
 - elliott: Good, honest vegetables, and I hope they sell well.
 - player: ok u said rain keeps u at the desk. how much u write today

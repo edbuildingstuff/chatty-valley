@@ -137,6 +137,11 @@ class NameTests(unittest.TestCase):
         self.assertEqual(S.unprompted_names(self.convo("seen haley?", "Haley passed by."), "elliott"), [])
         self.assertEqual(S.unprompted_names(self.convo("hi", "Willy is out on the pier."), "elliott"), [])
 
+    def test_non_marriage_npcs_are_in_the_list(self):
+        # Gunther wrote itself past the report in the Task 8 modern-noun block.
+        self.assertEqual(S.unprompted_names(self.convo("hi", "Gunther keeps the library quiet."), "elliott"), ["Gunther"])
+        self.assertEqual(S.unprompted_names(self.convo("hi", "Marlon was at the guild door."), "elliott"), ["Marlon"])
+
     def test_self_is_not_reported(self):
         self.assertEqual(S.unprompted_names(self.convo("hi", "Elliott, at your service."), "elliott"), [])
 

@@ -71,8 +71,8 @@ def greeting_mismatch(context, first_reply):
 
 
 VILLAGERS = ["Abigail", "Alex", "Caroline", "Clint", "Demetrius", "Dwarf", "Elliott", "Emily", "Evelyn",
-             "George", "Gus", "Haley", "Harvey", "Jas", "Jodi", "Kent", "Krobus", "Leah", "Leo", "Lewis",
-             "Linus", "Marnie", "Maru", "Pam", "Penny", "Pierre", "Robin", "Sam", "Sandy", "Sebastian",
+             "George", "Gil", "Gunther", "Gus", "Haley", "Harvey", "Jas", "Jodi", "Kent", "Krobus", "Leah", "Leo", "Lewis",
+             "Linus", "Marlon", "Marnie", "Maru", "Morris", "Pam", "Penny", "Pierre", "Robin", "Sam", "Sandy", "Sebastian",
              "Shane", "Vincent", "Willy", "Wizard"]
 # Tier 1 per each villager's setting doc: named freely because the relationship is canon.
 TIER1 = {"elliott": {"Leah", "Willy", "Gus"}, "linus": set()}

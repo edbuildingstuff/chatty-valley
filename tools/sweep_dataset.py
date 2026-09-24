@@ -22,13 +22,7 @@ VILLAGER = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--vil
 BASE = f"data/{VILLAGER}"
 NAME = VILLAGER.capitalize()
 
-# Mirrors assemble_dataset.py. Categories absent here are reported without a target.
-TARGETS = {
-    "elliott": {"voice": 110, "state": 65, "lore": 50, "romance": 45, "deflection": 50, "rumor": 42,
-                "reference": 42, "perspective": 32, "crossover": 32, "identity": 28, "place": 28,
-                "casual": 28, "farewell": 24, "nonsense": 24, "townsfolk": 18, "depth": 22},
-}
-MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6, "romance": 6}
+from dataset_config import MAX_TURNS, TARGETS, max_turns
 
 # Assistant-turn content bans. The player may say any of these; he may not.
 BANS = {
@@ -122,7 +116,7 @@ def main():
 
         asst = [m for m in r["messages"] if m["role"] == "assistant"]
         usr = [m for m in r["messages"] if m["role"] == "user"]
-        cap = MAX_TURNS.get(r.get("category") or "", 3)
+        cap = max_turns(r.get("category"))
         if not (2 <= len(asst) <= cap):
             hard.append(f"{rid}: {len(asst)} assistant turns (cap {cap} for {r['category']})")
         if len(usr) != len(asst):

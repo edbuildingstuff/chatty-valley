@@ -27,7 +27,7 @@ DASHES = ("—", "–")  # em dash, en dash
 # probing, so its rows also run longer than the 2-to-3-turn default.
 # The romance batch (Elliott, villager #2) trains holding the undated register while the player
 # presses, so like the three above its rows run longer than the 2-to-3-turn default.
-MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6, "romance": 6}  # category -> max assistant turns (default 3)
+from dataset_config import MAX_TURNS, max_turns  # category -> max assistant turns (default 3)
 
 
 def villager_from_path(md_path):
@@ -89,9 +89,9 @@ def validate(rows):
         usr = [m for m in r["messages"] if m["role"] == "user"]
         if not r["context"]:
             hard.append(f"{rid}: missing context")
-        max_turns = MAX_TURNS.get(r["category"] or "", 3)
-        if not (2 <= len(asst) <= max_turns):
-            hard.append(f"{rid}: {len(asst)} assistant turns (want 2 to {max_turns})")
+        cap = max_turns(r["category"])
+        if not (2 <= len(asst) <= cap):
+            hard.append(f"{rid}: {len(asst)} assistant turns (want 2 to {cap})")
         if len(usr) != len(asst):
             hard.append(f"{rid}: {len(usr)} user vs {len(asst)} assistant turns (should alternate evenly)")
         for m in r["messages"]:

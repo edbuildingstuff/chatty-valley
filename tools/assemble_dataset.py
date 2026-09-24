@@ -76,20 +76,9 @@ def discover_sources():
 
 SOURCES = LINUS_SOURCES if VILLAGER == "linus" else discover_sources()
 
-TARGETS = {
-    "linus": {"voice": 210, "lore": 90, "state": 120, "place": 30, "deflection": 90, "crossover": 60,
-              "identity": 46, "nonsense": 40, "reference": 55, "depth": 30, "casual": 57, "townsfolk": 19,
-              "farewell": 42, "perspective": 40, "rumor": 73},
-    # Elliott v1, per data/elliott/dataset-plan.md section 5: 640 conversations over 17 categories.
-    # "romance" is the new conditional category for marriage candidates (the register boundary).
-    "elliott": {"voice": 110, "state": 65, "lore": 50, "romance": 45, "deflection": 50, "rumor": 42,
-                "reference": 42, "perspective": 32, "crossover": 32, "identity": 28, "place": 28,
-                "casual": 28, "farewell": 24, "nonsense": 24, "townsfolk": 18, "depth": 22},
-}
+from dataset_config import MAX_TURNS, TARGETS, max_turns
+PIN = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--pin=")), None)
 TARGET = TARGETS.get(VILLAGER, {})
-# category -> max assistant turns (default 3); matches build_batch.py. These four train holding a
-# position under SUSTAINED pressure, so their rows run longer than the 2-to-3-turn default.
-MAX_TURNS = {"depth": 6, "perspective": 6, "rumor": 6, "romance": 6}
 EVAL_FRACTION = 0.10
 SEED = 42
 DASHES = ("—", "–")
@@ -126,7 +115,7 @@ def relint(rows):
         usr = [m for m in r["messages"] if m["role"] == "user"]
         if not r.get("context"):
             problems.append(f"{rid}: missing context")
-        if not (2 <= len(asst) <= MAX_TURNS.get(r.get("category") or "", 3)):
+        if not (2 <= len(asst) <= max_turns(r.get("category"))):
             problems.append(f"{rid}: {len(asst)} assistant turns")
         if len(usr) != len(asst):
             problems.append(f"{rid}: {len(usr)} user vs {len(asst)} assistant turns")
@@ -152,6 +141,41 @@ def dedup(rows):
             seen[key] = r["id"]
             kept.append(r)
     return kept, dropped
+
+
+def split_rows(kept, stratum, eval_eligible, pin=None, fraction=EVAL_FRACTION, seed=SEED):
+    """Seeded split, stratified. With no pin this is byte-identical to the pre-2026-09-24 split.
+
+    With a pin ({"train": [...ids], "eval": [...ids]}), every pinned id keeps its side and only
+    unpinned rows are drawn, topping each stratum's eval share up to `fraction`. That is what lets a
+    data round add rows to a category without reshuffling which existing rows the eval holds out.
+    """
+    pin_train = set(pin["train"]) if pin else set()
+    pin_eval = set(pin["eval"]) if pin else set()
+    if pin:
+        present = {r["id"] for r in kept}
+        missing = sorted((pin_train | pin_eval) - present)
+        if missing:
+            raise ValueError(f"pinned ids missing from the assembled rows: {', '.join(missing[:10])}")
+        stale = sorted(r["id"] for r in kept if r["id"] in pin_eval and not eval_eligible(r))
+        if stale:
+            raise ValueError(f"pinned eval rows are no longer eval-eligible (opener now repeats): {', '.join(stale)}")
+    rng = random.Random(seed)
+    by_stratum = {}
+    for r in kept:
+        by_stratum.setdefault(stratum(r), []).append(r)
+    eval_rows, train_rows = [], []
+    for s, rs in by_stratum.items():
+        k = max(1, round(len(rs) * fraction))
+        fixed = [r for r in rs if r["id"] in pin_eval]
+        free = [r for r in rs if r["id"] not in pin_eval and r["id"] not in pin_train]
+        eligible = sorted([r for r in free if eval_eligible(r)], key=lambda r: r["id"])
+        rng.shuffle(eligible)
+        picked = fixed + eligible[:max(0, k - len(fixed))]
+        picked_ids = {r["id"] for r in picked}
+        eval_rows.extend(picked)
+        train_rows.extend([r for r in rs if r["id"] not in picked_ids])
+    return train_rows, eval_rows
 
 
 def main():
@@ -207,19 +231,16 @@ def main():
         u = [m for m in r["messages"] if m["role"] == "user"]
         return opener_count[norm(u[0]["content"])] == 1
 
-    rng = random.Random(SEED)
-    by_stratum = {}
-    for r in kept:
-        by_stratum.setdefault(stratum(r), []).append(r)
-    eval_rows, train_rows = [], []
-    for s, rs in by_stratum.items():
-        k = max(1, round(len(rs) * EVAL_FRACTION))
-        eligible = sorted([r for r in rs if eval_eligible(r)], key=lambda r: r["id"])
-        rng.shuffle(eligible)
-        picked = eligible[:k]
-        picked_ids = {r["id"] for r in picked}
-        eval_rows.extend(picked)
-        train_rows.extend([r for r in rs if r["id"] not in picked_ids])
+    pin = None
+    if PIN:
+        with open(PIN, encoding="utf-8") as f:
+            pin = json.load(f)
+        print(f"\npinned split: {len(pin['train'])} train / {len(pin['eval'])} eval ids from {PIN}")
+    try:
+        train_rows, eval_rows = split_rows(kept, stratum, eval_eligible, pin=pin)
+    except ValueError as e:
+        print(f"\nX {e}")
+        sys.exit(1)
 
     train_rows.sort(key=lambda r: (r["category"], r["id"]))
     eval_rows.sort(key=lambda r: (r["category"], r["id"]))
